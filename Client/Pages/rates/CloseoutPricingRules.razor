@@ -1,0 +1,279 @@
+﻿@page "/closeoupricingrules"
+<PageTitle>Close-out & Pricing Rules  </PageTitle>
+<div class="page-heading page-heading_centered page-heading_has-translation">
+    <div class="h2">
+        Close-out &amp; Pricing Rules
+    </div>
+    <div class="ml-auto bulk-update-actions mr6 s-bulk-update">
+        <div class="md-dd">
+            <a href="javascript:;" class="md-dd-icon btn s-md-dd-tgl btn-bulk">
+                <span class="btn-text ">Bulk actions</span>
+                <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+            </a>
+            <div class="md-dd-c s-ignore mod-form bulk-update">
+                <div class="bulk-options">
+                    <a id="bulkUpdate" href="javascript:;" class="disabled" data-tooltip="title" data-tooltip-pos="top" data-tooltip-title="Select rules of the same type to bulk edit" title="Select rules of the same type to bulk edit">Edit</a>
+                    <a id="bulkStatusChange" href="javascript:;" class="disabled" data-tooltip="title" data-tooltip-pos="top" data-tooltip-title="Select rules from the table to bulk update status" title="Select rules from the table to bulk update status">Status change</a>
+                    <a id="bulkDelete" href="javascript:;" class="red disabled" data-tooltip="title" data-tooltip-pos="top" data-tooltip-title="Select rules from the table to bulk delete" title="Select rules from the table to bulk delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>            <a href="javascript:;" class="btn" id="btnAddNew">Add rule</a>
+</div>
+<div class="l-centered mb70 cp-paper s-spinner-container">
+    
+
+
+
+<div id="eviivo-list-rule_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-rule_filter" class="dataTables_filter"><label></label></div><div class="cp-table_toolbar-actions"></div></div><table id="eviivo-list-rule" class="cp-table dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="1" colspan="1" aria-label="
+                
+                    
+                    
+                        
+                    
+                
+            ">
+                <div class="cp-custom-input">
+                    <input type="checkbox" id="rule-target-select-all" class="target-select-all">
+                    <label for="rule-target-select-all">
+                        <span class="checkbox-input"></span>
+                    </label>
+                </div>
+            </th><th class="filter-enabled code-desc" data-key="TypeCodeDescription" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label="Rule type: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Rule type</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-rule-search-1" name="eviivo-list-rule-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled rule-name" data-key="Name" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label="Rule name: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Rule name</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-rule-search-2" name="eviivo-list-rule-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled room-type" data-key="RoomTypeName" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label="Applies to: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Applies to</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-rule-search-3" name="eviivo-list-rule-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled channel-name" data-key="ChannelsFilter" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label="Channels: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Channels</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-rule-search-4" name="eviivo-list-rule-search-4">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-4">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-4 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-4 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-4" data-columnindex="4" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled status" data-key="Status" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Status</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-rule-search-5" name="eviivo-list-rule-search-5">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-5">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-5 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-5 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-5" data-columnindex="5" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/pricingrules#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="update-status cp-table_text-center sorting" data-key="UpdateStatus" tabindex="0" aria-controls="eviivo-list-rule" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th><th class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+    </thead>
+    <tbody><tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">No data available in table</td></tr></tbody>
+</table><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-rule_length" style="display: none;"><label>Show <select name="eviivo-list-rule_length" aria-controls="eviivo-list-rule" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-rule_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-rule" data-dt-idx="0" tabindex="-1" id="eviivo-list-rule_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="eviivo-list-rule" data-dt-idx="1" tabindex="-1" id="eviivo-list-rule_next">Next</a></div></div></div>
+
+
+
+                        </div>
+@code {
+
+}

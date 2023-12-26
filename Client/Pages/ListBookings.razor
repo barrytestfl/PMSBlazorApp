@@ -1,0 +1,983 @@
+﻿@page "/listbookings"
+<PageTitle>List Bookings</PageTitle>
+
+<div class="header-bottom">
+
+    <div class="mod-toolbar">
+        <div class="mod-toolbar_section">
+            <div id="selectRoomTypesContainer" class="md-dd">
+                <a href="javascript:;" class="md-dd-icon s-md-dd-tgl btn-base-hover" id="btnSelectRoomTypes">
+                    <span>Studio Type</span>
+                    <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use href="#icon-ic-arrow-dropdown-solid"></use></svg>
+                </a>
+                <div class="md-dd-c md-dd-c-l md-dd-c-s-l s-ignore s-fltr-cntnr"></div>
+            </div>
+
+        </div>
+        <div class="mod-toolbar_section" data-order="1">
+            <div id="range-picker-holder">
+                <label id="range-picker-label" for="from-date-selector"
+                       data-stays-between-text="Stays between"
+                       data-booked-between-text="Booked between">
+                    Stays between
+                </label>
+                <span>
+                    <input id="from-date-selector" type="text" class="datepicker" readonly="readonly">
+                </span>
+                <label for="to-date-selector">and</label>
+                <span>
+                    <input id="to-date-selector" type="text" class="datepicker" readonly="readonly">
+                </span>
+                <button id="getBookingsList" class="btn ml10">Go!</button>
+            </div>
+            <div id="range-message" style="display: none;">
+                <label>
+                    Booked since 23:30 yesterday
+                </label>
+            </div>
+        </div>
+
+        <div class="s-list-views mod-toolbar_section buttons-light" data-order="3">
+            <div class="cp-radio-group radio-group-small inline">
+                <input checked="True" data-val="true" data-val-required="The&#32;ListViewType&#32;field&#32;is&#32;required." id="radioAll" name="ListViewType" type="radio" value="0" />
+                <label for="radioAll" class="btn btn-grouped btn-invert btn-respond">&nbsp; All &nbsp;</label>
+                <input id="radioArrivals" name="ListViewType" type="radio" value="1" />
+                <label for="radioArrivals" class="btn btn-grouped btn-invert btn-icon btn-respond">
+                    <svg class="icon-bg icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                    <span>Arrivals</span>
+                </label>
+                <input id="radioInHouse" name="ListViewType" type="radio" value="2" />
+                <label for="radioInHouse" class="btn btn-grouped btn-invert btn-icon btn-respond">
+                    <svg class="icon-bg icon-bg-local_hotel"><use xlink:href="#icon-bg-local_hotel"></use></svg>
+                    <span>In House</span>
+                </label>
+                <input id="radioDepatures" name="ListViewType" type="radio" value="3" />
+                <label for="radioDepatures" class="btn btn-grouped btn-invert btn-icon btn-respond">
+                    <svg class="icon-bg icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                    <span>Departures</span>
+                </label>
+            </div>
+        </div>
+        <div class="s-list-views mod-toolbar_section mod-toolbar_section buttons-light" data-order="4">
+            <div class="cp-radio-group radio-group-small cp-radio-group_single float-left mr10">
+                <input id="radioNew" name="ListViewType" type="radio" value="4" />
+                <label for="radioNew" class="btn btn-invert">
+                    <span>Just In</span>
+                </label>
+            </div>
+            <div class="cp-radio-group radio-group-small cp-radio-group_single float-left mr10">
+                <input id="radioBooked" name="ListViewType" type="radio" value="5" />
+                <label for="radioBooked" class="btn btn-invert">
+                    <span>Booked</span>
+                </label>
+            </div>
+        </div>
+        <div class="s-list-views mod-toolbar_section mod-toolbar_section__no-right-border buttons-light" data-order="5">
+            <div class="cp-custom-input">
+                <input type="checkbox" id="withInvoice" />
+                <label for="withInvoice">
+                    <span class="checkbox-input"></span>
+                    <span class="label">With Invoice</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="mod-toolbar_section mod-toolbar_section__end" data-order="5">
+            <div class="toolbar-select">
+                <button id="btnActions" disabled class="btn btn-icon btn-icon_after mr10">
+                    <span>Bulk actions</span>
+                    <svg class="icon-bg icon-bg-expand_more"><use xlink:href="#icon-bg-expand_more"></use></svg>
+                </button>
+                <div class="dropdown-outer align-right">
+                    <button id="btnActionsCheckin" class="btn btn-stretch mb10" title="Check-in ">Check-in </button>
+                    <button id="btnActionsCheckout" class="btn btn-stretch mb10" title="Check out">Check out</button>
+                    <button id="btnPrintRegForm" class="btn btn-stretch mb10" title="Print Registration Form">Print Registration Form</button>
+                    <button id="btnPrintStatement" class="btn btn-stretch mb10" title="Print Guest Statement">Print Guest Statement</button>
+                    <button id="btnPrintInvoice" class="btn btn-stretch mb10" title="Print Invoice">Print Invoice</button>
+                </div>
+            </div>
+            <button id="btnAddBooking" class="btn btn-icon btn-respond">
+                <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                <span>Book</span>
+            </button>
+        </div>
+
+        <div class="mod-toolbar_breakpoint-divider"></div>
+    </div>
+
+
+    <span class="right hide">
+        <span id="noticeBoardNotification" class="popup-notice notice selectable">
+            <span class="popup-notice-inner icon-info icon-warning-message">
+                <input id="noticeBoardContent" name="noticeBoardContent" type="hidden" value="" />
+                <span id="noticeBoardNotificationMessage" class="pr25"></span>
+                <a id="iconCloseNoticeBoardNotification" href="javascript:;" class="icon icon-close">Close</a>
+            </span>
+        </span>
+    </span>
+</div>
+
+<div id="rooms-container" class="generic-content-outter genericContainer">
+    <table id="bookings-table" class="md-table md-table_condensed md-table_zebra md-table_sortable md-table_not-fixed selectable mb16">
+        <thead>
+            <tr>
+                <th></th>
+                    <th class="md-table_text-center md-table_checkbox-col">
+                        <span class="cp-custom-input cp-custom-input_align-center">
+                            <input id="cbSelectAll" type="checkbox" />
+                            <label for="cbSelectAll">
+                                <span class="checkbox-input"></span>
+                            </label>
+                        </span>
+                    </th>
+                                <th class="w10 md-table_white-space-nowrap">Studio</th>
+                <th class="w10 md-table_white-space-nowrap">Name</th>
+                <th class="w10 md-table_white-space-nowrap">Booked</th>
+                <th class="w5 md-table_white-space-nowrap">Status</th>
+                <th class="w10 md-table_white-space-nowrap">Check-in </th>
+                <th class="w10 md-table_white-space-nowrap">Check out</th>
+                <th class="w10 md-table_white-space-nowrap">Source</th>
+                <th class="md-table_text-right w10 md-table_white-space-nowrap">Total</th>
+                <th class="md-table_text-right w10 md-table_white-space-nowrap">Balance</th>
+                <th class="md-table_text-right w10 md-table_white-space-nowrap">Due Now</th>
+                <th class="md-table_text-right w10 md-table_white-space-nowrap hidden">Damage Deposit</th>
+
+                <th class="text-container md-table_text-center w5 md-table_white-space-nowrap">Card</th>
+                <th class="text-container w10 md-table_white-space-nowrap">Company Or Group</th>
+                <th class="text-container md-table_text-right w5 md-table_white-space-nowrap">Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+                    <tr data-bid="40305" data-id="60715202" data-room-id="232171" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60715202" data-id="60715202" type="checkbox" class="check" />
+                                        <label for="cbSelect60715202">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                16
+                            </span>
+                        </td>
+                        <td>Tiffany Mclelland</td>
+
+                        <td data-order="20231126T182813Z">Sun 26 Nov 2023 18:28:13</td>
+                        <td data-order="2">
+                    <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked out' title="Checked out">
+                                <svg class="icon icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-17" data-order="2023-12-17T15:00:00Z">Sun 17 Dec 2023</td>
+                        <td data-enddate="2023-12-19" data-order="2023-12-19">Tue 19 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£343.44</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Child Ages: 12, 13&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 16.12.2023 AUTH CODE: 830602&#10;&#10;CARDD EPOSIT AUTH: H06798 BY HIBS ON 17.12.23 &#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-16.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-16 and 2024-12-01.' title="Child Ages: 12, 13&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 16.12.2023 AUTH CODE: 830602&#10;&#10;CARDD EPOSIT AUTH: H06798 BY HIBS ON 17.12.23 &#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-16.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-16 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60948007" data-room-id="232172" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60948007" data-id="60948007" type="checkbox" class="check" />
+                                        <label for="cbSelect60948007">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                22
+                            </span>
+                        </td>
+                        <td>yeung ming</td>
+
+                        <td data-order="20231212T210250Z">Tue 12 Dec 2023 21:02:50</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£427.68</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate&#10;VC PAYMENT TAKEN BY HAIDER ON 17.12.2023 AUTH CODE: 252196&#10;Non-Smoking&#10;deposit auth NXQSQL yahia&#10;Promos: Mobile(MDot) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £36.35. It can be charged between 2023-12-17 and 2024-12-01.' title="Genius Rate&#10;VC PAYMENT TAKEN BY HAIDER ON 17.12.2023 AUTH CODE: 252196&#10;Non-Smoking&#10;deposit auth NXQSQL yahia&#10;Promos: Mobile(MDot) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £36.35. It can be charged between 2023-12-17 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60918333" data-room-id="232173" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60918333" data-id="60918333" type="checkbox" class="check" />
+                                        <label for="cbSelect60918333">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                9
+                            </span>
+                        </td>
+                        <td>Sam Neang Seoun</td>
+
+                        <td data-order="20231210T204740Z">Sun 10 Dec 2023 20:47:40</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-20" data-order="2023-12-20">Wed 20 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£284.72</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Child Ages: 6, 6&#10;PAYMENT TAKEN AUTH CODE:872260 BY GEHAD ON  11/12/2023&#10;&#10;CARD DEPOSIT AUTH: 024364 BY HIBS ON 18.12.23&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-11.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £284.72. It can be charged between 2023-12-11 and 2024-12-01.' title="Child Ages: 6, 6&#10;PAYMENT TAKEN AUTH CODE:872260 BY GEHAD ON  11/12/2023&#10;&#10;CARD DEPOSIT AUTH: 024364 BY HIBS ON 18.12.23&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-11.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £284.72. It can be charged between 2023-12-11 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60903696" data-room-id="232177" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60903696" data-id="60903696" type="checkbox" class="check" />
+                                        <label for="cbSelect60903696">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                19
+                            </span>
+                        </td>
+                        <td>Omar Duran</td>
+
+                        <td data-order="20231209T143714Z">Sat 09 Dec 2023 14:37:14</td>
+                        <td data-order="2">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked out' title="Checked out" >
+                                <svg class="icon icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-19" data-order="2023-12-19">Tue 19 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">Due shown on 3 - Duran</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">Due shown on 3 - Duran</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">Due shown on 3 - Duran</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span>Due shown on 3 - Duran</span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Group: 5 x Adult, 2 x Child&#10;PAYMENT TAKEN AUTH CODE:196218 BY GEHAD ON  10/12/2023&#10;&#10;Child Ages: 3, 7&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-10.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £283.94. It can be charged between 2023-12-10 and 2024-12-01.' title="Group: 5 x Adult, 2 x Child&#10;PAYMENT TAKEN AUTH CODE:196218 BY GEHAD ON  10/12/2023&#10;&#10;Child Ages: 3, 7&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-10.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £283.94. It can be charged between 2023-12-10 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60957098" data-room-id="232377" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60957098" data-id="60957098" type="checkbox" class="check" />
+                                        <label for="cbSelect60957098">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                10
+                            </span>
+                        </td>
+                        <td>Hisham Jawad</td>
+
+                        <td data-order="20231213T154036Z">Wed 13 Dec 2023 15:40:36</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-22" data-order="2023-12-22">Fri 22 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£541.72</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Child Ages: 17&#10;&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 821892&#10;cash deposit £100 yahia&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £541.72. It can be charged between 2023-12-14 and 2024-12-01.' title="Child Ages: 17&#10;&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 821892&#10;cash deposit £100 yahia&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £541.72. It can be charged between 2023-12-14 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60936468" data-room-id="232375" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60936468" data-id="60936468" type="checkbox" class="check" />
+                                        <label for="cbSelect60936468">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                14
+                            </span>
+                        </td>
+                        <td>kyounghee yang</td>
+
+                        <td data-order="20231212T072736Z">Tue 12 Dec 2023 07:27:36</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£223.17</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Non-Smoking&#10;&#10;VC Payment taken by Mahdi on 13.12.2023 Auth Code: 439904&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 1.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-13.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £223.17. It can be charged between 2023-12-13 and 2024-12-01.' title="Non-Smoking&#10;&#10;VC Payment taken by Mahdi on 13.12.2023 Auth Code: 439904&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 1.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-13.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £223.17. It can be charged between 2023-12-13 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="61003685" data-room-id="232380" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect61003685" data-id="61003685" type="checkbox" class="check" />
+                                        <label for="cbSelect61003685">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                18
+                            </span>
+                        </td>
+                        <td>Shelby Medhurst</td>
+
+                        <td data-order="20231217T132726Z">Sun 17 Dec 2023 13:27:26</td>
+                        <td data-order="2">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked out' title="Checked out" >
+                                <svg class="icon icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-17" data-order="2023-12-17T00:00:00Z">Sun 17 Dec 2023</td>
+                        <td data-enddate="2023-12-19" data-order="2023-12-19">Tue 19 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£185.45</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='VC PAYMENT AUTH:771794 BY HIBS ON 17.12.23&#10;&#10;CARD DEPOSIT AUTH:970870 BY HIBS ON 17.12.23&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £185.45. It can be charged between 2023-12-17 and 2024-12-01.' title="VC PAYMENT AUTH:771794 BY HIBS ON 17.12.23&#10;&#10;CARD DEPOSIT AUTH:970870 BY HIBS ON 17.12.23&#10;&#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £185.45. It can be charged between 2023-12-17 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60978442" data-room-id="232381" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60978442" data-id="60978442" type="checkbox" class="check" />
+                                        <label for="cbSelect60978442">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                21
+                            </span>
+                        </td>
+                        <td>Natalia Andrea Garzon Santodomingo</td>
+
+                        <td data-order="20231215T083030Z">Fri 15 Dec 2023 08:30:30</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-19" data-order="2023-12-19T00:00:00Z">Tue 19 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£213.76</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate&#10;VC PAYMENT TAKEN BY HAIDER ON 16.12.2023 AUTH CODE: 365169&#10;Non-Smoking&#10;DEPOSIT AUTH 446492 YAHIA&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-16.&#10;Approximate time of arrival: between 19:00 and 20:00&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £213.76. It can be charged between 2023-12-16 and 2024-12-01.' title="Genius Rate&#10;VC PAYMENT TAKEN BY HAIDER ON 16.12.2023 AUTH CODE: 365169&#10;Non-Smoking&#10;DEPOSIT AUTH 446492 YAHIA&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-16.&#10;Approximate time of arrival: between 19:00 and 20:00&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £213.76. It can be charged between 2023-12-16 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="59815676" data-room-id="232382" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect59815676" data-id="59815676" type="checkbox" class="check" />
+                                        <label for="cbSelect59815676">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                24
+                            </span>
+                        </td>
+                        <td>Marta Pla Puchades</td>
+
+                        <td data-order="20231004T203902Z">Wed 04 Oct 2023 20:39:02</td>
+                        <td data-order="2">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked out' title="Checked out" >
+                                <svg class="icon icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-15" data-order="2023-12-15T22:30:00Z">Fri 15 Dec 2023</td>
+                        <td data-enddate="2023-12-19" data-order="2023-12-19">Tue 19 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£534.60</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='pre auth  DBTZ9Y  £100 deposit lamine&#10;&#10;Genius Rate&#10;&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 807962&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £534.6. It can be charged between 2023-12-14 and 2024-12-01.' title="pre auth  DBTZ9Y  £100 deposit lamine&#10;&#10;Genius Rate&#10;&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 807962&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £534.6. It can be charged between 2023-12-14 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60974418" data-room-id="232382" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60974418" data-id="60974418" type="checkbox" class="check" />
+                                        <label for="cbSelect60974418">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                24
+                            </span>
+                        </td>
+                        <td>Mateusz Naduk</td>
+
+                        <td data-order="20231214T192416Z">Thu 14 Dec 2023 19:24:16</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-19" data-order="2023-12-19T15:00:00Z">Tue 19 Dec 2023</td>
+                        <td data-enddate="2023-12-22" data-order="2023-12-22">Fri 22 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£288.57</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 15.12.2023 AUTH CODE: 695587&#10;&#10;CARD DEPOSIT AUTH:026256 BY HIBS ON 19.12.23&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-15.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £288.57. It can be charged between 2023-12-15 and 2024-12-01.' title="Genius Rate&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 15.12.2023 AUTH CODE: 695587&#10;&#10;CARD DEPOSIT AUTH:026256 BY HIBS ON 19.12.23&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-15.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £288.57. It can be charged between 2023-12-15 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="59736478" data-room-id="232383" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect59736478" data-id="59736478" type="checkbox" class="check" />
+                                        <label for="cbSelect59736478">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                8
+                            </span>
+                        </td>
+                        <td>Esmee Seijbel</td>
+
+                        <td data-order="20231001T123430Z">Sun 01 Oct 2023 12:34:30</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T15:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£400.95</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 17.12.2023 AUTH CODE: 981280&#10;&#10;CARD DEPOSIT AUTH: 0HKKZW BY HIBS ON 18.12.23&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-17 and 2024-12-01.' title="Genius Rate&#10;&#10;VC PAYMENT TAKEN BY HAIDER ON 17.12.2023 AUTH CODE: 981280&#10;&#10;CARD DEPOSIT AUTH: 0HKKZW BY HIBS ON 18.12.23&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(App) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-17.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-17 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60954716" data-room-id="232384" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60954716" data-id="60954716" type="checkbox" class="check" />
+                                        <label for="cbSelect60954716">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                6
+                            </span>
+                        </td>
+                        <td>Naomi Day</td>
+
+                        <td data-order="20231213T125243Z">Wed 13 Dec 2023 12:52:43</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£333.45</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate&#10;cash deposit 100 euros. yahia&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 510141&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;Approximate time of arrival: between 17:00 and 18:00&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-14 and 2024-12-01.' title="Genius Rate&#10;cash deposit 100 euros. yahia&#10;VC Payment taken by Mahdi on 14.12.2023 Auth Code: 510141&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 2.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-14.&#10;Approximate time of arrival: between 17:00 and 18:00&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-14 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60692012" data-room-id="232385" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60692012" data-id="60692012" type="checkbox" class="check" />
+                                        <label for="cbSelect60692012">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                3
+                            </span>
+                        </td>
+                        <td>Shaleen Christie</td>
+
+                        <td data-order="20231124T180016Z">Fri 24 Nov 2023 18:00:16</td>
+                        <td data-order="4">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked in' title="Checked in" >
+                                <svg class="icon icon-bg-room_service"><use xlink:href="#icon-bg-room_service"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-19" data-order="2023-12-19T15:00:00Z">Tue 19 Dec 2023</td>
+                        <td data-enddate="2023-12-21" data-order="2023-12-21">Thu 21 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£322.38</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Genius Rate &#10;&#10;VC Payment taken by Mahdi on 18.12.2023 Auth Code: 303666&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(MDot) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 3.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-18.&#10;Would it be possible to have an earlier check-in at 11:00.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-18 and 2024-12-01.' title="Genius Rate &#10;&#10;VC Payment taken by Mahdi on 18.12.2023 Auth Code: 303666&#10;&#10;Non-Smoking&#10;&#10;Promos: Mobile(MDot) Rate&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 3.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest can cancel free of charge until 1 day before arrival. The guest will be charged the total price of the reservation if they cancel within 1 day before arrival.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-18.&#10;Would it be possible to have an earlier check-in at 11:00.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £0. It can be charged between 2023-12-18 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+                    <tr data-bid="40305" data-id="60903695" data-room-id="232385" data-type="booking">
+
+                        <td>1</td>
+                            <td class="md-table_checkbox-col md-table_text-center s-contains-checkbox md-table_checkbox-col-first">
+                                    <span class="cp-custom-input cp-custom-input_align-center">
+                                        <input id="cbSelect60903695" data-id="60903695" type="checkbox" class="check" />
+                                        <label for="cbSelect60903695">
+                                            <span class="checkbox-input"></span>
+                                        </label>
+                                    </span>
+                            </td>
+                                                <td 
+                            >
+                            <span>
+                                3
+                            </span>
+                        </td>
+                        <td>Omar Duran</td>
+
+                        <td data-order="20231209T143713Z">Sat 09 Dec 2023 14:37:13</td>
+                        <td data-order="2">
+                            <div class="double-icon icon-bg" data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title='Checked out' title="Checked out" >
+                                <svg class="icon icon-bg-work-empty"><use xlink:href="#icon-bg-work-empty"></use></svg>
+                                <svg class="icon icon-bg-check"><use xlink:href="#icon-bg-check"></use></svg>
+                            </div>
+                        </td>
+                        <td data-startdate="2023-12-18" data-order="2023-12-18T00:00:00Z">Mon 18 Dec 2023</td>
+                        <td data-enddate="2023-12-19" data-order="2023-12-19">Tue 19 Dec 2023</td>
+                        <td class="text-nowrap">
+                                <span class="ota-cell">
+                                    <span class="icon-channels  bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span>
+                                    <span class="channel-name">Booking.com</span>
+                                </span>
+                        </td>
+                        <td class="md-table_text-right" data-order="0.0000">£283.94</td>
+                        <td class="md-table_text-right" data-order="0.0000"><span class="">£0.00</span></td>
+                        <td class="md-table_text-right" data-order="0.0000">£0.00</td>
+                        <td class="md-table_text-right hidden" data-order="0">
+
+                                <span class="display-flex align-items-center justify-content-end">
+                                    <span></span>
+                                </span>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                    <span data-tooltip-pos="bottom" data-tooltip="title"  data-tooltip-title='Active card(s) available' title="Active card(s) available">
+                                        <svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg>
+                                    </span>
+
+                        </td>
+                        <td>
+                        </td>
+
+                        <td class="md-table_text-center">
+                                <span data-tooltip-pos="left" data-tooltip="title" data-tooltip-title='Group: 5 x Adult, 2 x Child&#10;CASH DEPOSIT &#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-10.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £283.94. It can be charged between 2023-12-10 and 2024-12-01.' title="Group: 5 x Adult, 2 x Child&#10;CASH DEPOSIT &#10;Genius Rate&#10;&#10;Non-Smoking&#10;&#10;Promos: Non-refundable (Standard Rate)&#10;&#10;There is no meal option with this room. Children and Extra Bed Policy: Children of any age are allowed. You haven&#39;t added any cots. You haven&#39;t added any extra beds. The maximum number of guests is 4.  Deposit Policy: The guest will be charged a prepayment of the total price of the reservation at any time.  Cancellation Policy: The guest will be charged the total price of the reservation if they cancel at any time.&#10;&#10;payment_on_Booking.com (Payout type: Virtual credit card)&#10;&#10;You have received a virtual credit card for this reservation.You may charge it as of 2023-12-10.&#10;&#10;Genius Booker&#10;&#10;&#10;Booking.com has provided a virtual card with a balance of £283.94. It can be charged between 2023-12-10 and 2024-12-01." data-tooltip-copy="paragraph" >
+                                    <svg class="icon-bg-note"><use xlink:href="#icon-bg-note"></use></svg>
+                                </span>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</div>
+  
+@code {
+
+}

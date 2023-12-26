@@ -1,0 +1,345 @@
+﻿@page "/cardsdeclined"
+<PageTitle>cardsdeclined</PageTitle>
+     <div class="header-bottom">
+            
+
+    <div class="mod-toolbar justify-space-between">
+        <div class="mod-toolbar_section mod-toolbar_section__no-right-border gap-8">
+            <select id="date-type-select" name="date-type-select"><option value="CheckedIn">Check-in</option>
+<option value="CheckedOut">Check Out</option>
+<option value="Booked">Booked</option>
+<option selected="selected" value="Declined">Declined</option>
+</select>
+            <label for="from-date-input">between</label>
+            <input id="from-date-input" type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" data-fromcalendarid="from-date-input" data-tocalendarid="to-date-input">
+            <label for="to-date-input">and</label>
+            <input id="to-date-input" type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" data-fromcalendarid="from-date-input" data-tocalendarid="to-date-input">
+
+            <button id="filter-actions-button" class="btn btn-small btn-loader ml10">
+                <span class="btn-text">Go!</span>
+                <span class="btn-spinner"></span>
+            </button>
+        </div>
+
+<div class="ml-auto bulk-update-actions mr6 s-bulk-update">
+    <div class="md-dd">
+        <a href="javascript:;" class="md-dd-icon btn s-md-dd-tgl btn-bulk">
+            <span class="btn-text ">Bulk actions</span>
+            <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+        </a>
+        <div class="md-dd-c s-ignore mod-form bulk-update" style="left: 0px;">
+            <div class="bulk-options">
+                    <a id="btnActionsHide" href="javascript:;" class="bulk-actions-btn disabled">Archive</a>
+                    <a id="btnActionsShow" href="javascript:;" class="bulk-actions-btn disabled">Unarchive</a>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+        </div>
+    <div class="generic-content-outter container-type-size">
+        <div class="page-heading page-heading_full-width">
+            <div class="h2">
+                Cards Declined
+            </div>
+        </div>
+        <div id="bookings-table-container" class="cp-paper fixed-table-container-height s-spinner-container">
+             
+
+
+
+<div id="eviivo-list-bookings_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-bookings_filter" class="dataTables_filter"><label><input type="search" class="" placeholder="Filter" aria-controls="eviivo-list-bookings"></label></div><div class="cp-table_toolbar-actions"></div></div><div class="cp-table_scroll-vertical cp-table_scroll-horizontal"><table id="eviivo-list-bookings" class="cp-table cp-table_fixed-header dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="1" colspan="1" aria-label="
+                
+                    
+                    
+                        
+                    
+                
+            ">
+                <div class="cp-custom-input">
+                    <input type="checkbox" id="bookings-target-select-all" class="target-select-all">
+                    <label for="bookings-target-select-all">
+                        <span class="checkbox-input"></span>
+                    </label>
+                </div>
+            </th><th class="filter-enabled cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 sorting" data-key="BusinessName" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Property: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Property</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner" style="left: 0px;">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-1" name="eviivo-list-bookings-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled cp-table_text-left sorting" data-key="GuestSurname" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Guest: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Guest</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner" style="left: 0px;">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-2" name="eviivo-list-bookings-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled cp-table_text-left sorting" data-key="RoomName" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Studio: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Studio</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner" style="left: 0px;">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-3" name="eviivo-list-bookings-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="BookingDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Booked: activate to sort column ascending">Booked</th><th class="sorting sorting_asc" data-key="CancellationDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Cancelled: activate to sort column descending" aria-sort="ascending">Cancelled</th><th class="sorting" data-key="CheckInDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Check-in: activate to sort column ascending">Check-in</th><th class="filter-enabled sorting" data-key="NumberOfNights" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Nights: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Nights</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-7" name="eviivo-list-bookings-search-7">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-7">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-7 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-7 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-7" data-columnindex="7" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="OrderReference" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Order: activate to sort column ascending">Order</th><th class="sorting" data-key="OutstandingAmount" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Balance: activate to sort column ascending">Balance</th><th class="sorting" data-key="DueDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Due Date: activate to sort column ascending">Due Date</th><th class="cp-table_text-center sorting" data-key="CardStatus" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Card: activate to sort column ascending">Card</th><th class="filter-enabled cp-table_text-left sorting" data-key="SourceFilter" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Source: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Source</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-12" name="eviivo-list-bookings-search-12">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-12">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-12 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-12 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-12" data-columnindex="12" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled sorting" data-key="IsMarkedBool" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Archived: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Archived</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-13" name="eviivo-list-bookings-search-13">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-13">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-13 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-13 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-13" data-columnindex="13" id=""></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cardsdeclined#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+    </thead>
+    <tbody><tr class="odd"><td valign="top" colspan="15" class="dataTables_empty">No bookings available for your specified dates</td></tr></tbody>
+</table></div><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-bookings_length" style="display: none;"><label>Show <select name="eviivo-list-bookings_length" aria-controls="eviivo-list-bookings" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-bookings_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-bookings" data-dt-idx="0" tabindex="-1" id="eviivo-list-bookings_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="eviivo-list-bookings" data-dt-idx="1" tabindex="-1" id="eviivo-list-bookings_next">Next</a></div></div></div>
+   
+                        </div>
+    </div>
+@code {
+
+}

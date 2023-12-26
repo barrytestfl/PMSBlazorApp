@@ -1,0 +1,1195 @@
+﻿@page "/cancellations"
+<PageTitle>Cancellations</PageTitle>
+
+<div class="header-bottom">
+
+
+    <div class="mod-toolbar justify-space-between">
+        <div class="mod-toolbar_section mod-toolbar_section__no-right-border gap-8">
+            <select id="date-type-select" name="date-type-select">
+                <option value="CheckedIn">Check-in</option>
+                <option value="CheckedOut">Check Out</option>
+                <option value="Booked">Booked</option>
+                <option selected="selected" value="Cancelled">Cancelled</option>
+            </select>
+            <label for="from-date-input">between</label>
+            <input id="from-date-input" type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" data-fromcalendarid="from-date-input" data-tocalendarid="to-date-input">
+            <label for="to-date-input">and</label>
+            <input id="to-date-input" type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" data-fromcalendarid="from-date-input" data-tocalendarid="to-date-input">
+
+            <button id="filter-actions-button" class="btn btn-small btn-loader ml10">
+                <span class="btn-text">Go!</span>
+                <span class="btn-spinner"></span>
+            </button>
+        </div>
+
+        <div class="ml-auto bulk-update-actions mr6 s-bulk-update">
+            <div class="md-dd">
+                <a href="javascript:;" class="md-dd-icon btn s-md-dd-tgl btn-bulk">
+                    <span class="btn-text ">Bulk actions</span>
+                    <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+                </a>
+                <div class="md-dd-c s-ignore mod-form bulk-update">
+                    <div class="bulk-options">
+                        <a id="btnActionsHide" href="javascript:;" class="bulk-actions-btn disabled">Archive</a>
+                        <a id="btnActionsShow" href="javascript:;" class="bulk-actions-btn disabled">Unarchive</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="generic-content-outter container-type-size">
+        <div class="page-heading page-heading_full-width">
+            <div class="h2">
+                Cancellations
+            </div>
+        </div>
+        <div id="bookings-table-container" class="cp-paper fixed-table-container-height s-spinner-container">
+             
+
+
+
+<div id="eviivo-list-bookings_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-bookings_filter" class="dataTables_filter"><label><input type="search" class="" placeholder="Filter" aria-controls="eviivo-list-bookings"></label></div><div class="cp-table_toolbar-actions"><a href="javascript:;" class="s-table-reset cp-table_reset-filters" data-table="eviivo-list-bookings"><svg class="icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg></a></div></div><div class="cp-table_scroll-vertical cp-table_scroll-horizontal"><table id="eviivo-list-bookings" class="cp-table cp-table_fixed-header dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="1" colspan="1" aria-label="
+                
+                    
+                    
+                        
+                    
+                
+            ">
+                <div class="cp-custom-input">
+                    <input type="checkbox" id="bookings-target-select-all" class="target-select-all">
+                    <label for="bookings-target-select-all">
+                        <span class="checkbox-input"></span>
+                    </label>
+                </div>
+            </th><th class="filter-enabled cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 sorting" data-key="BusinessName" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Property: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Property</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-1" name="eviivo-list-bookings-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id="">
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="MSK-–-Premium_0_1" data-value="MSK – Premium" name="filter-1" value="MSK – Premium">
+                            <label for="MSK-–-Premium_0_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">MSK – Premium</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled cp-table_text-left sorting" data-key="GuestSurname" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Guest: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Guest</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-2" name="eviivo-list-bookings-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Abbott_0_2" data-value="Abbott" name="filter-2" value="Abbott">
+                            <label for="Abbott_0_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Abbott</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="aljanahi_1_2" data-value="aljanahi" name="filter-2" value="aljanahi">
+                            <label for="aljanahi_1_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">aljanahi</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Bushnag_2_2" data-value="Bushnag" name="filter-2" value="Bushnag">
+                            <label for="Bushnag_2_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Bushnag</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="carmen_3_2" data-value="carmen" name="filter-2" value="carmen">
+                            <label for="carmen_3_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">carmen</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Christine-Eder_4_2" data-value="Christine Eder" name="filter-2" value="Christine Eder">
+                            <label for="Christine-Eder_4_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Christine Eder</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Cook_5_2" data-value="Cook" name="filter-2" value="Cook">
+                            <label for="Cook_5_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Cook</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Cutrona_6_2" data-value="Cutrona" name="filter-2" value="Cutrona">
+                            <label for="Cutrona_6_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Cutrona</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Dhafer_7_2" data-value="Dhafer" name="filter-2" value="Dhafer">
+                            <label for="Dhafer_7_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Dhafer</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="ENRIQUEZ-RIVERA_8_2" data-value="ENRIQUEZ RIVERA" name="filter-2" value="ENRIQUEZ RIVERA">
+                            <label for="ENRIQUEZ-RIVERA_8_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">ENRIQUEZ RIVERA</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Hamza_9_2" data-value="Hamza" name="filter-2" value="Hamza">
+                            <label for="Hamza_9_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Hamza</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Horsley_10_2" data-value="Horsley" name="filter-2" value="Horsley">
+                            <label for="Horsley_10_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Horsley</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="JUNGHEE_11_2" data-value="JUNGHEE" name="filter-2" value="JUNGHEE">
+                            <label for="JUNGHEE_11_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">JUNGHEE</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="mansori_12_2" data-value="mansori" name="filter-2" value="mansori">
+                            <label for="mansori_12_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">mansori</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="13">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Navarro-Puche_13_2" data-value="Navarro Puche" name="filter-2" value="Navarro Puche">
+                            <label for="Navarro-Puche_13_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Navarro Puche</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="14">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Qureshi_14_2" data-value="Qureshi" name="filter-2" value="Qureshi">
+                            <label for="Qureshi_14_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Qureshi</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="15">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Richardson_15_2" data-value="Richardson" name="filter-2" value="Richardson">
+                            <label for="Richardson_15_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Richardson</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="16">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Rodjanapong_16_2" data-value="Rodjanapong" name="filter-2" value="Rodjanapong">
+                            <label for="Rodjanapong_16_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Rodjanapong</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="17">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Rushton-Baker_17_2" data-value="Rushton-Baker" name="filter-2" value="Rushton-Baker">
+                            <label for="Rushton-Baker_17_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Rushton-Baker</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="18">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Saavedra_18_2" data-value="Saavedra" name="filter-2" value="Saavedra">
+                            <label for="Saavedra_18_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Saavedra</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="19">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Skidmore_19_2" data-value="Skidmore" name="filter-2" value="Skidmore">
+                            <label for="Skidmore_19_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Skidmore</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="20">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Ungurianu_20_2" data-value="Ungurianu" name="filter-2" value="Ungurianu">
+                            <label for="Ungurianu_20_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Ungurianu</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="21">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Unthank_21_2" data-value="Unthank" name="filter-2" value="Unthank">
+                            <label for="Unthank_21_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Unthank</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="22">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Urdangaray-Cabezuelo_22_2" data-value="Urdangaray Cabezuelo" name="filter-2" value="Urdangaray Cabezuelo">
+                            <label for="Urdangaray-Cabezuelo_22_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Urdangaray Cabezuelo</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="23">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Youssef_23_2" data-value="Youssef" name="filter-2" value="Youssef">
+                            <label for="Youssef_23_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Youssef</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled cp-table_text-left sorting" data-key="RoomName" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Studio: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Studio</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-3" name="eviivo-list-bookings-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="2_0_3" data-value="2" name="filter-3" value="2">
+                            <label for="2_0_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">2</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="3_1_3" data-value="3" name="filter-3" value="3">
+                            <label for="3_1_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">3</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="7_2_3" data-value="7" name="filter-3" value="7">
+                            <label for="7_2_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">7</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="9_3_3" data-value="9" name="filter-3" value="9">
+                            <label for="9_3_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">9</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="12_4_3" data-value="12" name="filter-3" value="12">
+                            <label for="12_4_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">12</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="13_5_3" data-value="13" name="filter-3" value="13">
+                            <label for="13_5_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">13</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="15_6_3" data-value="15" name="filter-3" value="15">
+                            <label for="15_6_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">15</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="16_7_3" data-value="16" name="filter-3" value="16">
+                            <label for="16_7_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">16</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="17_8_3" data-value="17" name="filter-3" value="17">
+                            <label for="17_8_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">17</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="18_9_3" data-value="18" name="filter-3" value="18">
+                            <label for="18_9_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">18</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="19_10_3" data-value="19" name="filter-3" value="19">
+                            <label for="19_10_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">19</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="20_11_3" data-value="20" name="filter-3" value="20">
+                            <label for="20_11_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">20</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="25_12_3" data-value="25" name="filter-3" value="25">
+                            <label for="25_12_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">25</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="BookingDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Booked: activate to sort column ascending">Booked</th><th class="sorting sorting_asc" data-key="CancellationDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Cancelled: activate to sort column descending" aria-sort="ascending">Cancelled</th><th class="sorting" data-key="CheckInDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Check-in: activate to sort column ascending">Check-in</th><th class="filter-enabled sorting" data-key="NumberOfNights" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Nights: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Nights</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-7" name="eviivo-list-bookings-search-7">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-7">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-7 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-7 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-7" data-columnindex="7" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="1_0_7" data-value="1" name="filter-7" value="1">
+                            <label for="1_0_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">1</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="2_1_7" data-value="2" name="filter-7" value="2">
+                            <label for="2_1_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">2</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="3_2_7" data-value="3" name="filter-7" value="3">
+                            <label for="3_2_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">3</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="4_3_7" data-value="4" name="filter-7" value="4">
+                            <label for="4_3_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">4</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="5_4_7" data-value="5" name="filter-7" value="5">
+                            <label for="5_4_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">5</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="7_5_7" data-value="7" name="filter-7" value="7">
+                            <label for="7_5_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">7</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="11_6_7" data-value="11" name="filter-7" value="11">
+                            <label for="11_6_7" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">11</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="BookingReference" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Booking Ref: activate to sort column ascending">Booking Ref</th><th class="sorting" data-key="AmountDueNow" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Amount Due: activate to sort column ascending">Amount Due</th><th class="sorting" data-key="DueDateDisplay" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Due Date: activate to sort column ascending">Due Date</th><th class="cp-table_text-center sorting" data-key="CardStatus" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Card: activate to sort column ascending">Card</th><th class="filter-enabled cp-table_text-left sorting" data-key="SourceFilter" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Source: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Source</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-12" name="eviivo-list-bookings-search-12">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-12">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-12 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-12 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-12" data-columnindex="12" id="">
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Airbnb_0_12" data-value="Airbnb" name="filter-12" value="Airbnb">
+                            <label for="Airbnb_0_12">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Airbnb</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Booking.com_1_12" data-value="Booking.com" name="filter-12" value="Booking.com">
+                            <label for="Booking.com_1_12">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Booking.com</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="My-Web_2_12" data-value="My Web" name="filter-12" value="My Web">
+                            <label for="My-Web_2_12">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">My Web</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled sorting" data-key="IsMarkedBool" tabindex="0" aria-controls="eviivo-list-bookings" rowspan="1" colspan="1" aria-label="Archived: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Archived</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false active">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-bookings-search-13" name="eviivo-list-bookings-search-13">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-13">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected">
+                <span class="s-select-count">All</span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-13 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-13 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-13" data-columnindex="13" id=""><li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="false_0_13" data-value="false" name="filter-13" value="false" checked="">
+                            <label for="false_0_13" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">No</span>
+                            </label>
+                        </div>
+                    </li>
+                    
+                    </ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/actions/cancellations#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+    </thead>
+    <tbody><tr data-booking-id="60876839" data-bid="40305" data-is-marked="false" class="s-row-60876839 odd" data-id="60876839"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings8" name="eviivo-list-bookings" data-id="60876839">
+                                <label for="eviivo-list-bookings8">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60876839" for="60876839">MSK – Premium</td><td class="  cp-table_text-left">Ungurianu</td><td class="  cp-table_text-left ">16</td><td>07 Dec 2023</td><td class="sorting_1">16 Dec 2023</td><td>22 Dec 2023</td><td>2</td><td>466-991-632</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline" style="">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60996114" data-bid="40305" data-is-marked="false" class="s-row-60996114 even" data-id="60996114"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings14" name="eviivo-list-bookings" data-id="60996114">
+                                <label for="eviivo-list-bookings14">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60996114" for="60996114">MSK – Premium</td><td class="  cp-table_text-left">Saavedra</td><td class="  cp-table_text-left ">16</td><td>16 Dec 2023</td><td class="sorting_1">16 Dec 2023</td><td>22 Dec 2023</td><td>4</td><td>318-823-964</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="56311349" data-bid="40305" data-is-marked="false" class="s-row-56311349 odd" data-id="56311349"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings0" name="eviivo-list-bookings" data-id="56311349">
+                                <label for="eviivo-list-bookings0">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label56311349" for="56311349">MSK – Premium</td><td class="  cp-table_text-left">Rushton-Baker</td><td class="  cp-table_text-left ">12</td><td>23 Apr 2023</td><td class="sorting_1">16 Dec 2023</td><td>20 Apr 2024</td><td>1</td><td>385-240-982</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60647431" data-bid="40305" data-is-marked="false" class="s-row-60647431 even" data-id="60647431"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings4" name="eviivo-list-bookings" data-id="60647431">
+                                <label for="eviivo-list-bookings4">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60647431" for="60647431">MSK – Premium</td><td class="  cp-table_text-left">Cutrona</td><td class="  cp-table_text-left ">25</td><td>21 Nov 2023</td><td class="sorting_1">17 Dec 2023</td><td>02 Jan 2025</td><td>5</td><td>384-238-941</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60647430" data-bid="40305" data-is-marked="false" class="s-row-60647430 odd" data-id="60647430"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings3" name="eviivo-list-bookings" data-id="60647430">
+                                <label for="eviivo-list-bookings3">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60647430" for="60647430">MSK – Premium</td><td class="  cp-table_text-left">Cutrona</td><td class="  cp-table_text-left ">18</td><td>21 Nov 2023</td><td class="sorting_1">17 Dec 2023</td><td>02 Jan 2025</td><td>5</td><td>508-990-344</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60817703" data-bid="40305" data-is-marked="false" class="s-row-60817703 even" data-id="60817703"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings5" name="eviivo-list-bookings" data-id="60817703">
+                                <label for="eviivo-list-bookings5">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60817703" for="60817703">MSK – Premium</td><td class="  cp-table_text-left">carmen</td><td class="  cp-table_text-left ">17</td><td>03 Dec 2023</td><td class="sorting_1">17 Dec 2023</td><td>26 Dec 2023</td><td>4</td><td>906-694-241</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61008090" data-bid="40305" data-is-marked="false" class="s-row-61008090 odd" data-id="61008090"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings19" name="eviivo-list-bookings" data-id="61008090">
+                                <label for="eviivo-list-bookings19">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61008090" for="61008090">MSK – Premium</td><td class="  cp-table_text-left">Navarro Puche</td><td class="  cp-table_text-left ">3</td><td>17 Dec 2023</td><td class="sorting_1">17 Dec 2023</td><td>04 Sep 2024</td><td>5</td><td>500-968-151</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="59449840" data-bid="40305" data-is-marked="false" class="s-row-59449840 even" data-id="59449840"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings1" name="eviivo-list-bookings" data-id="59449840">
+                                <label for="eviivo-list-bookings1">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label59449840" for="59449840">MSK – Premium</td><td class="  cp-table_text-left">Horsley</td><td class="  cp-table_text-left ">19</td><td>16 Sep 2023</td><td class="sorting_1">17 Dec 2023</td><td>13 Dec 2024</td><td>2</td><td>124-129-311</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61012030" data-bid="40305" data-is-marked="false" class="s-row-61012030 odd" data-id="61012030"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings20" name="eviivo-list-bookings" data-id="61012030">
+                                <label for="eviivo-list-bookings20">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61012030" for="61012030">MSK – Premium</td><td class="  cp-table_text-left">Urdangaray Cabezuelo</td><td class="  cp-table_text-left ">9</td><td>18 Dec 2023</td><td class="sorting_1">18 Dec 2023</td><td>23 Mar 2025</td><td>4</td><td>233-248-441</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61024588" data-bid="40305" data-is-marked="false" class="s-row-61024588 even" data-id="61024588"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings21" name="eviivo-list-bookings" data-id="61024588">
+                                <label for="eviivo-list-bookings21">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61024588" for="61024588">MSK – Premium</td><td class="  cp-table_text-left">JUNGHEE</td><td class="  cp-table_text-left ">2</td><td>19 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>14 Jul 2024</td><td>3</td><td>352-223-614</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61024616" data-bid="40305" data-is-marked="false" class="s-row-61024616 odd" data-id="61024616"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings22" name="eviivo-list-bookings" data-id="61024616">
+                                <label for="eviivo-list-bookings22">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61024616" for="61024616">MSK – Premium</td><td class="  cp-table_text-left">JUNGHEE</td><td class="  cp-table_text-left ">7</td><td>19 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>14 Jul 2024</td><td>3</td><td>089-136-242</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61034882" data-bid="40305" data-is-marked="false" class="s-row-61034882 even" data-id="61034882"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings23" name="eviivo-list-bookings" data-id="61034882">
+                                <label for="eviivo-list-bookings23">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61034882" for="61034882">MSK – Premium</td><td class="  cp-table_text-left">Dhafer</td><td class="  cp-table_text-left ">20</td><td>19 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>21 Dec 2023</td><td>1</td><td>983-423-982</td><td>£0.00</td><td></td><td class="  cp-table_text-center"></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-airbnb bk-lgo-airbnb"></span><span class="channel-name">Airbnb</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60997891" data-bid="40305" data-is-marked="false" class="s-row-60997891 odd" data-id="60997891"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings16" name="eviivo-list-bookings" data-id="60997891">
+                                <label for="eviivo-list-bookings16">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60997891" for="60997891">MSK – Premium</td><td class="  cp-table_text-left">Youssef</td><td class="  cp-table_text-left ">15</td><td>16 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>19 Dec 2023</td><td>5</td><td>692-840-414</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-myweb"></span><span class="channel-name">My Web</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60997892" data-bid="40305" data-is-marked="false" class="s-row-60997892 even" data-id="60997892"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings17" name="eviivo-list-bookings" data-id="60997892">
+                                <label for="eviivo-list-bookings17">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60997892" for="60997892">MSK – Premium</td><td class="  cp-table_text-left">Youssef</td><td class="  cp-table_text-left ">17</td><td>16 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>19 Dec 2023</td><td>5</td><td>960-020-824</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-myweb"></span><span class="channel-name">My Web</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60997815" data-bid="40305" data-is-marked="false" class="s-row-60997815 odd" data-id="60997815"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings15" name="eviivo-list-bookings" data-id="60997815">
+                                <label for="eviivo-list-bookings15">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60997815" for="60997815">MSK – Premium</td><td class="  cp-table_text-left">Hamza</td><td class="  cp-table_text-left ">18</td><td>16 Dec 2023</td><td class="sorting_1">19 Dec 2023</td><td>19 Dec 2023</td><td>5</td><td>305-401-251</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-myweb"></span><span class="channel-name">My Web</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60882675" data-bid="40305" data-is-marked="false" class="s-row-60882675 even" data-id="60882675"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings9" name="eviivo-list-bookings" data-id="60882675">
+                                <label for="eviivo-list-bookings9">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60882675" for="60882675">MSK – Premium</td><td class="  cp-table_text-left">Cook</td><td class="  cp-table_text-left ">3</td><td>07 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>22 Dec 2023</td><td>1</td><td>926-532-031</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60920590" data-bid="40305" data-is-marked="false" class="s-row-60920590 odd" data-id="60920590"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings11" name="eviivo-list-bookings" data-id="60920590">
+                                <label for="eviivo-list-bookings11">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60920590" for="60920590">MSK – Premium</td><td class="  cp-table_text-left">ENRIQUEZ RIVERA</td><td class="  cp-table_text-left ">19</td><td>11 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>22 Dec 2023</td><td>1</td><td>042-630-291</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61007538" data-bid="40305" data-is-marked="false" class="s-row-61007538 even" data-id="61007538"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings18" name="eviivo-list-bookings" data-id="61007538">
+                                <label for="eviivo-list-bookings18">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61007538" for="61007538">MSK – Premium</td><td class="  cp-table_text-left">mansori</td><td class="  cp-table_text-left ">17</td><td>17 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>24 Dec 2023</td><td>11</td><td>546-009-942</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61036835" data-bid="40305" data-is-marked="false" class="s-row-61036835 odd" data-id="61036835"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings24" name="eviivo-list-bookings" data-id="61036835">
+                                <label for="eviivo-list-bookings24">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61036835" for="61036835">MSK – Premium</td><td class="  cp-table_text-left">Unthank</td><td class="  cp-table_text-left ">9</td><td>20 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>12 Feb 2025</td><td>2</td><td>929-540-851</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60852498" data-bid="40305" data-is-marked="false" class="s-row-60852498 even" data-id="60852498"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings7" name="eviivo-list-bookings" data-id="60852498">
+                                <label for="eviivo-list-bookings7">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60852498" for="60852498">MSK – Premium</td><td class="  cp-table_text-left">Richardson</td><td class="  cp-table_text-left ">13</td><td>05 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>06 Jul 2024</td><td>1</td><td>094-405-641</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61046205" data-bid="40305" data-is-marked="false" class="s-row-61046205 odd" data-id="61046205"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings25" name="eviivo-list-bookings" data-id="61046205">
+                                <label for="eviivo-list-bookings25">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61046205" for="61046205">MSK – Premium</td><td class="  cp-table_text-left">Christine Eder</td><td class="  cp-table_text-left ">7</td><td>20 Dec 2023</td><td class="sorting_1">20 Dec 2023</td><td>21 May 2024</td><td>4</td><td>465-990-902</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60935119" data-bid="40305" data-is-marked="false" class="s-row-60935119 even" data-id="60935119"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings12" name="eviivo-list-bookings" data-id="60935119">
+                                <label for="eviivo-list-bookings12">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60935119" for="60935119">MSK – Premium</td><td class="  cp-table_text-left">Abbott</td><td class="  cp-table_text-left ">3</td><td>11 Dec 2023</td><td class="sorting_1">21 Dec 2023</td><td>23 Dec 2023</td><td>1</td><td>342-211-161</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60885966" data-bid="40305" data-is-marked="false" class="s-row-60885966 odd" data-id="60885966"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings10" name="eviivo-list-bookings" data-id="60885966">
+                                <label for="eviivo-list-bookings10">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60885966" for="60885966">MSK – Premium</td><td class="  cp-table_text-left">aljanahi</td><td class="  cp-table_text-left ">16</td><td>07 Dec 2023</td><td class="sorting_1">21 Dec 2023</td><td>28 Dec 2023</td><td>2</td><td>026-840-131</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60841016" data-bid="40305" data-is-marked="false" class="s-row-60841016 even" data-id="60841016"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings6" name="eviivo-list-bookings" data-id="60841016">
+                                <label for="eviivo-list-bookings6">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60841016" for="60841016">MSK – Premium</td><td class="  cp-table_text-left">Bushnag</td><td class="  cp-table_text-left ">25</td><td>05 Dec 2023</td><td class="sorting_1">22 Dec 2023</td><td>24 Feb 2024</td><td>7</td><td>292-892-812</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60963005" data-bid="40305" data-is-marked="false" class="s-row-60963005 odd" data-id="60963005"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings13" name="eviivo-list-bookings" data-id="60963005">
+                                <label for="eviivo-list-bookings13">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60963005" for="60963005">MSK – Premium</td><td class="  cp-table_text-left">Skidmore</td><td class="  cp-table_text-left ">16</td><td>14 Dec 2023</td><td class="sorting_1">22 Dec 2023</td><td>31 Dec 2023</td><td>1</td><td>526-018-024</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="60106604" data-bid="40305" data-is-marked="false" class="s-row-60106604 even" data-id="60106604"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings2" name="eviivo-list-bookings" data-id="60106604">
+                                <label for="eviivo-list-bookings2">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label60106604" for="60106604">MSK – Premium</td><td class="  cp-table_text-left">Rodjanapong</td><td class="  cp-table_text-left ">18</td><td>20 Oct 2023</td><td class="sorting_1">22 Dec 2023</td><td>25 Dec 2023</td><td>7</td><td>983-861-094</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr><tr data-booking-id="61059445" data-bid="40305" data-is-marked="false" class="s-row-61059445 odd" data-id="61059445"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-bookings26" name="eviivo-list-bookings" data-id="61059445">
+                                <label for="eviivo-list-bookings26">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="cp-table_text-left cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label61059445" for="61059445">MSK – Premium</td><td class="  cp-table_text-left">Qureshi</td><td class="  cp-table_text-left ">9</td><td>22 Dec 2023</td><td class="sorting_1">22 Dec 2023</td><td>26 Dec 2023</td><td>1</td><td>032-360-982</td><td>£0.00</td><td></td><td class="  cp-table_text-center"><span data-tooltip-pos="bottom" data-tooltip="title" data-tooltip-title="Active card(s) available" title="Active card(s) available"><svg class="icon-bg icon-bg-credit-card"><use xlink:href="#icon-bg-credit-card"></use></svg></span></td><td class="  cp-table_text-left"><span class=" bk-lgo bk-lgo-booking_com bk-lgo-bookingcom"></span><span class="channel-name">Booking.com</span></td><td></td><td class="   cp-table_text-right cp-table_sticky-column-right  actions-2 "><a href="javascript:;" class="s-hide-show cp-table_action cp-table_action-item cp-table_action-interchange">
+                    <svg class="icon-ic-archive" data-tooltip-pos="top" data-tooltip-title="Archive" data-tooltip="title" title="Archive">
+                        <use xlink:href="#icon-ic-archive"></use>
+                    </svg>
+                </a> <button class="s-view-booking-button cp-table_action cp-table_action-item cp-table_action-interchange" data-tooltip-pos="top" data-tooltip-title="View" data-tooltip="title" title="View">
+                                    <svg class="s-icon icon-ic-eye-outline">
+                                        <use xlink:="" href="#icon-ic-eye-outline"></use>
+                                    </svg>
+                                </button></td></tr></tbody>
+</table></div>
+<div class="cp-table_footer">
+    <div class="dataTables_length" id="eviivo-list-bookings_length" style="display: none;">
+        <label>Show <select name="eviivo-list-bookings_length" aria-controls="eviivo-list-bookings" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-bookings_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-bookings" data-dt-idx="0" tabindex="-1" id="eviivo-list-bookings_previous">Previous</a><span><a class="paginate_button current" aria-controls="eviivo-list-bookings" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="eviivo-list-bookings" data-dt-idx="2" tabindex="-1" id="eviivo-list-bookings_next">Next</a></div></div></div>
+ 
+
+        
+                        </div>
+    </div>
+@code {
+
+}

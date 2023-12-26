@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSBlazorApp.Server", "Server\PMSBlazorApp.Server.csproj", "{97889808-A937-4DF3-A05A-C49BD95E0F21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMSBlazorApp.Server", "Server\PMSBlazorApp.Server.csproj", "{97889808-A937-4DF3-A05A-C49BD95E0F21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSBlazorApp.Client", "Client\PMSBlazorApp.Client.csproj", "{9FD2AED2-B0CE-4C3C-BB80-C802404CB739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMSBlazorApp.Client", "Client\PMSBlazorApp.Client.csproj", "{9FD2AED2-B0CE-4C3C-BB80-C802404CB739}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSBlazorApp.Shared", "Shared\PMSBlazorApp.Shared.csproj", "{B73033FD-3930-4877-B2B3-B23BCFBEDCC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMSBlazorApp.Shared", "Shared\PMSBlazorApp.Shared.csproj", "{B73033FD-3930-4877-B2B3-B23BCFBEDCC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

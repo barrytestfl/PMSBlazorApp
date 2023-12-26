@@ -1,0 +1,1201 @@
+﻿@page "/charges"
+<PageTitle>Charges  </PageTitle>
+<div class="fixed-table-height-grid-layout">
+ <div class="mod-header-tools">
+
+        <div class="mod-header-tools-inner cp-search-bar s-search-bar"><input type="search" class="" placeholder="Filter" aria-controls="eviivo-list-charge"></div>
+
+    
+    <div class="md-dd ml8">
+        <a href="javascript:;" class="md-dd-icon s-md-dd-tgl s-drag-false btn-base-hover btn-base-rounded">
+            <svg class="icon-bg icon-ic-user"><use xlink:href="#icon-ic-user"></use></svg>
+            <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+        </a>
+        <div class="md-dd-c md-dd-c-s-m s-ignore mod-form dd-user-managment">
+                <div class="mod-user-section user-details">
+                    
+                        <div class="user-names display-flex">
+                            <div class="user">
+Heidar                                Hosseini                                <br>
+                                
+                                    <div class="user-email" title="heidar.hosseini@gmail.com">
+                                        heidar.hosseini@gmail.com
+                                    </div>
+                            </div>
+
+                            
+
+                        </div>
+                                                                <div class="user-profile">
+                            <a href="javascript:;" id="show-my-profile" class="s-my-profile btn-link-icon">
+                                <svg class="icon-bg icon-bg-cog"> <use xlink:="" href="#icon-bg-cog"></use></svg>
+                                My profile
+
+                                <span class="spinner small-spinner no-background active light-spinner s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                        </div>
+
+                </div>
+                <div class="mod-user-section user-properties ">
+                    <div class="user-property-name btn-link-icon">
+                        <svg class="icon-ic-buildings"><use href="#icon-ic-buildings"></use></svg>
+                        
+                            <div class="business-name">MSK – Premium</div>
+                    </div>
+                    <div class="user-property-shortname clearfix property-link">
+                        <span class="float-left crop-text property-shortname" title="MSKPremiumW2">MSKPremiumW2</span>
+
+                        <span class="multi-property-link">
+                            <a href="https://on.eviivo.com/suite/select-properties/reselect">All properties</a>
+                        </span>
+
+                    </div>
+
+                </div>
+                    <div class="mod-user-section user-actions">
+
+                                                    <a href="javascript:;" id="show-business-eulas" class="btn-text user-eviivo-account s-user-eviivo-account">
+                                <span class="mr6">
+                                    <svg class="icon-bg icon-ic-book"><use xlink:href="#icon-ic-book"></use></svg>
+                                </span>
+                                <span>eviivo subscription</span>
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+
+
+                            <a href="https://on.eviivo.com/suite/settings/guestmessagingintegrations" class="btn-text s-user-guest-messaging-intergrations">
+                                Partner integrations
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>                            
+
+                            <a href="https://on.eviivo.com/admin/wl/pos/select-point-of-sale" class="btn-text">
+                                Manage points of sale
+                                <span class="spinner small-spinner active no-background light-spinner s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                    </div>
+                    <div class="mod-user-section">
+                        <div class="user-logout clearfix">
+
+
+
+
+<a href="https://on.eviivo.com/suite/signout" id="logout" class="btn">Logout</a>
+
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <div id="product-updates-list-item" class="mod-header-tools-help product-updates" style="display: none;">
+        <a href="javascript:;" draggable="false" class="user-select-none s-drag-false notification btn-base-hover btn-base-rounded">
+            <svg class="icon-bg icon-ic-megaphone"><use xlink:href="#icon-ic-megaphone"></use></svg>
+        </a>
+        <div class="file-icon">
+            <svg class="icon-bg icon-bg-file-document-outline"><use xlink:href="#icon-bg-file-document-outline"></use></svg>
+        </div>
+    </div>
+
+    <div id="help-container" class="mod-header-tools-help help-container">
+        <a href="https://on.eviivo.com/suite/helpme?page=contact_us" target="_blank" class="s-drag-false btn-base-hover btn-base-rounded">
+            <svg class="icon-bg icon-bg-error"><use xlink:href="#icon-bg-error"></use></svg>
+            <svg class="icon-bg icon-ic-chat"><use xlink:href="#icon-ic-chat"></use></svg>
+            <span class="btn-text user-select-none btn-help-text" draggable="false">Help</span>
+        </a>
+    </div>
+</div>
+        
+
+    <div class="generic-content-outter container-type-size">
+        <div class="page-heading page-heading_full-width page-heading_has-translation">
+            <div class="h2">Charges</div>
+
+            <div class="ml-auto">
+                    <div class="md-dd s-bulk-update mr10 bulk-update-actions">
+                        <a href="javascript:;" class="md-dd-icon btn s-md-dd-tgl btn-bulk">
+                            <span class="btn-text ">Bulk actions</span>
+                            <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+                        </a>
+                        <div class="md-dd-c s-ignore mod-form bulk-update" style="right: 0px;">
+                            <div class="bulk-options">
+                                    <a id="bulkDelete" href="javascript:;" class="red disabled">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <button class="btn ml-auto s-manage-categories mr10">Categories</button>
+            </div>
+
+                    <button id="btnAddNew" class="btn">Add New</button>
+        </div>
+        <div class="cp-paper fixed-table-container-height s-spinner-container">
+
+
+
+
+<div id="eviivo-list-charge_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-charge_filter" class="dataTables_filter"><label></label></div><div class="cp-table_toolbar-actions"></div></div><div class="cp-table_scroll-vertical cp-table_scroll-horizontal"><table id="eviivo-list-charge" class="cp-table cp-table_fixed-header dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+            <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="2" colspan="1" aria-label="
+                        
+                            
+                            
+                                
+                            
+                        
+                    ">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="charge-target-select-all" class="target-select-all">
+                            <label for="charge-target-select-all">
+                                <span class="checkbox-input"></span>
+                            </label>
+                        </div>
+                    </th><th rowspan="2" colspan="1" data-key="Name" class="align-bottom" tabindex="0" aria-controls="eviivo-list-charge" aria-label="Charge: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Charge</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-charge-search-1" name="eviivo-list-charge-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Breakfast_0_1" data-value="Breakfast" name="filter-1" value="Breakfast">
+                            <label for="Breakfast_0_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Breakfast</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="City-Tax_1_1" data-value="City Tax" name="filter-1" value="City Tax">
+                            <label for="City-Tax_1_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">City Tax</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Cleaning-Fee_2_1" data-value="Cleaning Fee" name="filter-1" value="Cleaning Fee">
+                            <label for="Cleaning-Fee_2_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Cleaning Fee</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Damage-Deposit_3_1" data-value="Damage Deposit" name="filter-1" value="Damage Deposit">
+                            <label for="Damage-Deposit_3_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Damage Deposit</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Internet-WiFi_4_1" data-value="Internet WiFi" name="filter-1" value="Internet WiFi">
+                            <label for="Internet-WiFi_4_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Internet WiFi</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Linen_5_1" data-value="Linen" name="filter-1" value="Linen">
+                            <label for="Linen_5_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Linen</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Parking_6_1" data-value="Parking" name="filter-1" value="Parking">
+                            <label for="Parking_6_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Parking</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Pets_7_1" data-value="Pets" name="filter-1" value="Pets">
+                            <label for="Pets_7_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Pets</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th rowspan="2" colspan="1" data-key="CategoryName" class="align-bottom sorting_disabled" aria-label="Category"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Category</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-charge-search-2" name="eviivo-list-charge-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Breakfast_0_2" data-value="Breakfast" name="filter-2" value="Breakfast">
+                            <label for="Breakfast_0_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Breakfast</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Comms-&amp;-Media_1_2" data-value="Comms &amp; Media" name="filter-2" value="Comms &amp; Media">
+                            <label for="Comms-&amp;-Media_1_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Comms &amp; Media</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Extras_2_2" data-value="Extras" name="filter-2" value="Extras">
+                            <label for="Extras_2_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Extras</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Housekeeping_3_2" data-value="Housekeeping" name="filter-2" value="Housekeeping">
+                            <label for="Housekeeping_3_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Housekeeping</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Pets_4_2" data-value="Pets" name="filter-2" value="Pets">
+                            <label for="Pets_4_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Pets</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Room-charge_5_2" data-value="Room charge" name="filter-2" value="Room charge">
+                            <label for="Room-charge_5_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Room charge</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tax_6_2" data-value="Tax" name="filter-2" value="Tax">
+                            <label for="Tax_6_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tax</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th rowspan="2" colspan="1" data-key="DisplayOnline" class="align-bottom sorting_disabled" aria-label="Online Display"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Online Display</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-charge-search-3" name="eviivo-list-charge-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id="">
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_0_3" data-value="" name="filter-3" value="">
+                            <label for="Empty_0_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Myweb,-OTA_1_3" data-value="Myweb,  OTA" name="filter-3" value="Myweb,  OTA">
+                            <label for="Myweb,-OTA_1_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Myweb,  OTA</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="collection align-bottom sorting_disabled" rowspan="2" colspan="1" data-key="CollectionMethodDisplay" aria-label="Collection"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Collection</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-charge-search-4" name="eviivo-list-charge-search-4">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-4">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-4 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-4 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-4" data-columnindex="4" id="">
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_0_4" data-value="" name="filter-4" value="">
+                            <label for="Empty_0_4">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="automation" rowspan="1" colspan="2" data-key="ApplyToRatePlans">Charge applies to</th><th rowspan="2" colspan="1" data-key="PricingRulesDisplay" class="align-bottom sorting_disabled" aria-label="Pricing">Pricing</th><th rowspan="2" colspan="1" data-key="UpdateStatus" class="update-status cp-table_text-center sorting" tabindex="0" aria-controls="eviivo-list-charge" aria-label=": activate to sort column ascending"></th><th rowspan="2" class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" colspan="1" aria-label=""></th></tr>
+    <tr><th class="automation align-bottom sorting_disabled" data-key="ApplyToRatePlans" rowspan="1" colspan="1" aria-label="Rates">Rates</th><th class="align-bottom text-left sorting_disabled" data-key="AddToBillForBookings" rowspan="1" colspan="1" aria-label="Channels">Channels</th></tr>
+    </thead>
+    <tbody><tr class="s-row-703360 odd" data-id="703360"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge0" name="eviivo-list-charge" data-id="703360">
+                                <label for="eviivo-list-charge0">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703360" for="703360">Linen</td><td class="  align-bottom">Housekeeping</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703360" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703360"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703360"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703361 even" data-id="703361"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge1" name="eviivo-list-charge" data-id="703361">
+                                <label for="eviivo-list-charge1">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703361" for="703361">Cleaning Fee</td><td class="  align-bottom">Housekeeping</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703361" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703361"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703361"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703362 odd" data-id="703362"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge2" name="eviivo-list-charge" data-id="703362">
+                                <label for="eviivo-list-charge2">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703362" for="703362">Parking</td><td class="  align-bottom">Extras</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703362" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703362"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703362"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703363 even" data-id="703363"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge3" name="eviivo-list-charge" data-id="703363">
+                                <label for="eviivo-list-charge3">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703363" for="703363">Internet WiFi</td><td class="  align-bottom">Comms &amp; Media</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703363" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703363"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703363"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703364 odd" data-id="703364"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge4" name="eviivo-list-charge" data-id="703364">
+                                <label for="eviivo-list-charge4">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703364" for="703364">Pets</td><td class="  align-bottom">Pets</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703364" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703364"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703364"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703365 even" data-id="703365"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge5" name="eviivo-list-charge" data-id="703365">
+                                <label for="eviivo-list-charge5">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703365" for="703365">Damage Deposit</td><td class="  align-bottom">Room charge</td><td class="  align-bottom">Myweb,  OTA</td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£100.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703365" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703365"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703365"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703366 odd" data-id="703366"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge6" name="eviivo-list-charge" data-id="703366">
+                                <label for="eviivo-list-charge6">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703366" for="703366">City Tax</td><td class="  align-bottom">Tax</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">0.00%</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703366" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703366"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703366"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-703367 even" data-id="703367"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-charge7" name="eviivo-list-charge" data-id="703367">
+                                <label for="eviivo-list-charge7">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="align-bottom s-row-selector-label s-row-selector-label703367" for="703367">Breakfast</td><td class="  align-bottom">Breakfast</td><td class="  align-bottom"></td><td class="  align-bottom"></td><td class="  align-bottom">All Rates</td><td class="  align-bottom text-left"></td><td class="  align-bottom">£0.00 per item / instance</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/charges/edit/703367" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="703367"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="703367"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr></tbody>
+</table></div><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-charge_length" style="display: none;"><label>Show <select name="eviivo-list-charge_length" aria-controls="eviivo-list-charge" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-charge_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-charge" data-dt-idx="0" tabindex="-1" id="eviivo-list-charge_previous">Previous</a><span><a class="paginate_button current" aria-controls="eviivo-list-charge" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="eviivo-list-charge" data-dt-idx="2" tabindex="-1" id="eviivo-list-charge_next">Next</a></div></div></div>
+
+        
+                        </div>
+    </div>
+</div>
+
+<section class="cp-flyout_stacks" data-flyout-stack="0">
+ 
+  
+
+<section class="cp-flyout_overlay" id="categories" data-onload="" data-onshow="eviivo.pms.charges.categoriesFlyout.flyoutOnShow" data-onclose="eviivo.pms.charges.categoriesFlyout.flyoutOnClose" data-oncancel="" data-beforeclose="" data-ondataloadsuccess="" data-ajaxurl="" data-closeonclickoutside="False" data-confirmclosure="" data-flyout-stack="null">
+    <div class="cp-flyout_container flyout_size-xl no-footer">
+        <div class="cp-flyout_outer">
+            <div class="cp-flyout_header">
+
+                    <div class="h3 user-select-none s-heading-title">
+                        Categories
+                    </div>
+
+
+                <div class="s-close cp-flyout_close">
+                    <svg class="icon-bg" pointer-events="none"><use xlink:href="#icon-bg-close"></use></svg>
+                </div>
+            </div>
+
+            <div id="" class="pms-fly-out-body cp-flyout_body s-container-body">
+
+<button id="add-chargeCategories" type="submit" class="btn-right btn">Add New Category</button>
+
+
+
+
+
+<div id="eviivo-list-categories_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-categories_filter" class="dataTables_filter"><label><input type="search" class="" placeholder="Filter" aria-controls="eviivo-list-categories"></label></div><div class="cp-table_toolbar-actions"></div></div><table id="eviivo-list-categories" class="cp-table dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="filter-enabled" data-key="Category" tabindex="0" aria-controls="eviivo-list-categories" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Category</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-categories-search-0" name="eviivo-list-categories-search-0">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-0">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-0 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-0 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-0" data-columnindex="0" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Activity_0_0" data-value="Activity" name="filter-0" value="Activity">
+                            <label for="Activity_0_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Activity</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Bar_1_0" data-value="Bar" name="filter-0" value="Bar">
+                            <label for="Bar_1_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Bar</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Breakfast_2_0" data-value="Breakfast" name="filter-0" value="Breakfast">
+                            <label for="Breakfast_2_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Breakfast</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Charges_3_0" data-value="Charges" name="filter-0" value="Charges">
+                            <label for="Charges_3_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Charges</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Comms-&amp;-Media_4_0" data-value="Comms &amp; Media" name="filter-0" value="Comms &amp; Media">
+                            <label for="Comms-&amp;-Media_4_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Comms &amp; Media</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Discounts_5_0" data-value="Discounts" name="filter-0" value="Discounts">
+                            <label for="Discounts_5_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Discounts</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Extras_6_0" data-value="Extras" name="filter-0" value="Extras">
+                            <label for="Extras_6_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Extras</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Food-&amp;-Restaurant_7_0" data-value="Food &amp; Restaurant" name="filter-0" value="Food &amp; Restaurant">
+                            <label for="Food-&amp;-Restaurant_7_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Food &amp; Restaurant</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Housekeeping_8_0" data-value="Housekeeping" name="filter-0" value="Housekeeping">
+                            <label for="Housekeeping_8_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Housekeeping</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Laundry_9_0" data-value="Laundry" name="filter-0" value="Laundry">
+                            <label for="Laundry_9_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Laundry</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Partner-Charges_10_0" data-value="Partner Charges" name="filter-0" value="Partner Charges">
+                            <label for="Partner-Charges_10_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Partner Charges</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Pets_11_0" data-value="Pets" name="filter-0" value="Pets">
+                            <label for="Pets_11_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Pets</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Room-charge_12_0" data-value="Room charge" name="filter-0" value="Room charge">
+                            <label for="Room-charge_12_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Room charge</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="13">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Spa_13_0" data-value="Spa" name="filter-0" value="Spa">
+                            <label for="Spa_13_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Spa</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="14">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Sundries_14_0" data-value="Sundries" name="filter-0" value="Sundries">
+                            <label for="Sundries_14_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Sundries</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="15">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tax_15_0" data-value="Tax" name="filter-0" value="Tax">
+                            <label for="Tax_15_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tax</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="16">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tax-Rebate_16_0" data-value="Tax Rebate" name="filter-0" value="Tax Rebate">
+                            <label for="Tax-Rebate_16_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tax Rebate</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled" data-key="Code" tabindex="0" aria-controls="eviivo-list-categories" rowspan="1" colspan="1" aria-label="Code: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Code</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-categories-search-1" name="eviivo-list-categories-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_0_1" data-value="null" name="filter-1" value="">
+                            <label for="Empty_0_1" class="no-visible-data">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="BFAST_2_1" data-value="BFAST" name="filter-1" value="BFAST">
+                            <label for="BFAST_2_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">BFAST</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="TAX_3_1" data-value="TAX" name="filter-1" value="TAX">
+                            <label for="TAX_3_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">TAX</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="TXRBT_4_1" data-value="TXRBT" name="filter-1" value="TXRBT">
+                            <label for="TXRBT_4_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">TXRBT</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/charges#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="AssociatedTemplates" tabindex="0" aria-controls="eviivo-list-categories" rowspan="1" colspan="1" aria-label="Associated templates: activate to sort column ascending">Associated templates</th><th class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+    </thead>
+    <tbody><tr class="s-row-449071 odd" data-id="449071"><td>Food &amp; Restaurant</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449071"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449071"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449072 even" data-id="449072"><td>Bar</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449072"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449072"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449073 odd" data-id="449073"><td>Charges</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449073"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449073"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449074 even" data-id="449074"><td>Housekeeping</td><td></td><td>2</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449074"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449074" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449075 odd" data-id="449075"><td>Extras</td><td></td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449075"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449075" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449076 even" data-id="449076"><td>Activity</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449076"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449076"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449077 odd" data-id="449077"><td>Spa</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449077"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449077"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449078 even" data-id="449078"><td>Comms &amp; Media</td><td></td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449078"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449078" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449079 odd" data-id="449079"><td>Pets</td><td></td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449079"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449079" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449080 even" data-id="449080"><td>Room charge</td><td></td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449080"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449080" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449081 odd" data-id="449081"><td>Tax</td><td>TAX</td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449081" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449081" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449082 even" data-id="449082"><td>Discounts</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449082"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="s-listing-table-delete cp-table_action cp-table_action-item " data-id="449082"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449084 odd" data-id="449084"><td>Tax Rebate</td><td>TXRBT</td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449084" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449084" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449085 even" data-id="449085"><td>Breakfast</td><td>BFAST</td><td>1</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449085" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449085" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449086 odd" data-id="449086"><td>Sundries</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449086" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449086" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-449087 even" data-id="449087"><td>Laundry</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="449087" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="449087" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr><tr class="s-row-557189 odd" data-id="557189"><td>Partner Charges</td><td></td><td>0</td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="javascript:;" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="557189" disabled="disabled"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a><a href="javascript:;" class="cp-table_action cp-table_action-item" data-id="557189" disabled="disabled"><svg class=" icon-ic-delete"><use href="#icon-ic-delete"></use></svg></a></td></tr></tbody>
+</table><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-categories_length" style="display: none;"><label>Show <select name="eviivo-list-categories_length" aria-controls="eviivo-list-categories" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-categories_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-categories" data-dt-idx="0" tabindex="-1" id="eviivo-list-categories_previous">Previous</a><span><a class="paginate_button current" aria-controls="eviivo-list-categories" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="eviivo-list-categories" data-dt-idx="2" tabindex="-1" id="eviivo-list-categories_next">Next</a></div></div></div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+ 
+ 
+
+<section class="cp-flyout_overlay" id="categoryManage" data-onload="" data-onshow="eviivo.pms.charges.categoryManageFlyout.flyoutOnShow" data-onclose="eviivo.pms.charges.categoryManageFlyout.flyoutOnClose" data-oncancel="" data-beforeclose="" data-ondataloadsuccess="" data-ajaxurl="" data-closeonclickoutside="False" data-confirmclosure="" data-flyout-stack="null" data-previous-flyout="null">
+    <div class="cp-flyout_container flyout_size-m ">
+        <div class="cp-flyout_outer">
+            <div class="cp-flyout_header">
+
+                    <div class="h3 user-select-none s-heading-title">Add Category</div>
+
+
+                <div class="s-close cp-flyout_close">
+                    <svg class="icon-bg" pointer-events="none"><use xlink:href="#icon-bg-close"></use></svg>
+                </div>
+            </div>
+
+            <div id="" class="pms-fly-out-body cp-flyout_body s-container-body">
+
+<section class="l-row mb16 s-catergory-multi-property-lookup hide">
+    <div class="l-column large-3">
+        <label for="chargeCategoryName" class="block">Select property</label>
+    </div>
+    <div class="l-column large-6 end">
+        
+
+
+<div class="auto-display-select s-eviivo-lookup-container cp-lookup">
+    <div class="s-drag-false s-eviivo-lookup">
+        <div class="cp-lookup_input-container">
+            <input type="text" class="stretch-input" id="eviivo-lookup-property-create-category" name="search-eviivo-lookup-property-create-category" autocomplete="off" placeholder="Search">
+
+            <div class="cp-lookup_controls">
+                <a href="javascript:;" class="cp-lookup_input-icon cp-lookup_input-icon__close s-clear-search-eviivo-lookup-property-create-category">
+                    <svg class="icon-bg"><use xlink:href="#icon-ic-close"></use></svg>
+                </a>
+                <span class="cp-lookup_input-icon cp-lookup_input-icon__search s-search-icon-eviivo-lookup-property-create-category">
+                    <svg class="icon-bg"><use xlink:href="#icon-icon-magnifying-glass"></use></svg>
+                </span>
+                <span class="cp-spinner_inline s-spinner-eviivo-lookup-property-create-category" style="--size: 14px"></span>
+            </div>
+        </div>
+    </div>
+    <div class="s-ignore cp-lookup_results-container">
+        <div class="cp-lookup_results">
+            <ul>
+            </ul>
+        </div>
+        <div class="cp-lookup_footer s-footer-eviivo-lookup-property-create-category">
+        </div>
+    </div>
+</div>
+
+ 
+    </div>
+</section>
+
+<section class="l-row mb16">
+    <div class="l-column large-3">
+        <label for="chargeCategoryName" class="block">Name</label>
+    </div>
+    <div class="l-column large-6 end">
+        <input id="chargeCategoryName" type="text" maxlength="100" class="w100">
+    </div>
+</section>
+
+<section class="l-row mb16">
+    <div class="l-column large-3">
+        <label for="chargeCategoryCode" class="block">Code</label>
+    </div>
+    <div class="l-column large-6 end">
+        <input id="chargeCategoryCode" type="text" maxlength="5" class="w100">
+    </div>
+</section>
+            </div>
+
+                <div class="cp-flyout_footer">
+
+                <button class="btn s-cancel s-close btn btn-secondary ">
+                    <span class="btn-text">Cancel</span>
+                </button>
+         
+
+                <button class="btn s-save btn btn-right " id="categoryManage_flyoutSave">
+                    <span class="btn-text">Save</span>
+                </button>
+           
+
+                </div>
+        </div>
+    </div>
+</section>
+ 
+
+<section class="cp-flyout_overlay hide" id="clone-status" data-onload="" data-onshow="eviivo.pms.clone.statusFlyout.flyoutOnShow" data-onclose="eviivo.pms.clone.statusFlyout.flyoutOnClose" data-oncancel="" data-beforeclose="" data-ondataloadsuccess="" data-ajaxurl="" data-closeonclickoutside="False" data-confirmclosure="">
+    <div class="cp-flyout_container flyout_size-l ">
+        <div class="cp-flyout_outer">
+            <div class="cp-flyout_header">
+
+                    <div class="h3 user-select-none s-heading-title">
+                        -
+                    </div>
+
+
+                <div class="s-close cp-flyout_close">
+                    <svg class="icon-bg" pointer-events="none"><use xlink:href="#icon-bg-close"></use></svg>
+                </div>
+            </div>
+
+            <div id="" class="pms-fly-out-body cp-flyout_body s-container-body">
+<span class="flyout-spinner spinner light-spinner active s-flyout-spinner hide">
+    <span class="spin"></span>
+</span>
+<div id="cloneStatusContainer">
+</div>
+            </div>
+
+                <div class="cp-flyout_footer">
+
+                <button class="btn s-cancel s-close btn btn-secondary ">
+                    <span class="btn-text">Close</span>
+                </button>
+              
+
+                </div>
+        </div>
+    </div>
+</section>
+ 
+
+<section class="cp-flyout_overlay" id="addNewChargeFlyout" data-onload="" data-onshow="" data-onclose="eviivo.pms.charge.newCharge.close" data-oncancel="" data-beforeclose="" data-ondataloadsuccess="" data-ajaxurl="" data-closeonclickoutside="False" data-confirmclosure="" data-flyout-stack="null">
+    <div class="cp-flyout_container flyout_size-m ">
+        <div class="cp-flyout_outer">
+            <div class="cp-flyout_header">
+
+                    <div class="h3 user-select-none s-heading-title">
+                        Add a charge
+                    </div>
+
+
+                <div class="s-close cp-flyout_close">
+                    <svg class="icon-bg" pointer-events="none"><use xlink:href="#icon-bg-close"></use></svg>
+                </div>
+            </div>
+
+            <div id="" class="pms-fly-out-body cp-flyout_body s-container-body">
+
+<div id="create-flow-property-selector" class="hide display-flex align-items-center gap-16 mb32">
+    <div class="w20 maxw-200-px">
+        <label>Select property</label>
+    </div>
+    <div class="">
+        
+
+
+<div class="auto-display-select s-eviivo-lookup-container cp-lookup">
+    <div class="s-drag-false s-eviivo-lookup">
+        <div class="cp-lookup_input-container">
+            <input type="text" class="stretch-input" id="eviivo-lookup-property-create-rule-flow" name="search-eviivo-lookup-property-create-rule-flow" autocomplete="off" placeholder="Search">
+
+            <div class="cp-lookup_controls">
+                <a href="javascript:;" class="cp-lookup_input-icon cp-lookup_input-icon__close s-clear-search-eviivo-lookup-property-create-rule-flow">
+                    <svg class="icon-bg"><use xlink:href="#icon-ic-close"></use></svg>
+                </a>
+                <span class="cp-lookup_input-icon cp-lookup_input-icon__search s-search-icon-eviivo-lookup-property-create-rule-flow">
+                    <svg class="icon-bg"><use xlink:href="#icon-icon-magnifying-glass"></use></svg>
+                </span>
+                <span class="cp-spinner_inline s-spinner-eviivo-lookup-property-create-rule-flow" style="--size: 14px"></span>
+            </div>
+        </div>
+    </div>
+    <div class="s-ignore cp-lookup_results-container">
+        <div class="cp-lookup_results">
+            <ul>
+            </ul>
+        </div>
+        <div class="cp-lookup_footer s-footer-eviivo-lookup-property-create-rule-flow">
+        </div>
+    </div>
+</div>
+
+ 
+    </div>
+</div>
+<div class="mb32">
+    <input data-val="true" data-val-required="The IsGuestCharge field is required." id="hdnIsGuestCharge" name="IsGuestCharge" type="hidden" value="True">
+    <div class="h3 mb16">Common charges (OTA compatible)</div>
+    <p>
+        Select one of the common charges supported by OTAs.  OTAs impose restrictions on how they handle the charge on their site, as explained in the next screen.  You can also offer these common charges on your own website, or offline.
+    </p>
+
+        <div class="cp-custom-input mb6">
+            <input id="breakfast_fee" name="DistributorReference" type="radio" value="BREAKFAST_FEE">
+            <label for="breakfast_fee">
+                <span class="radio-input"></span>
+                <span class="label">Breakfast</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="city_tax" name="DistributorReference" type="radio" value="CITY_TAX">
+            <label for="city_tax">
+                <span class="radio-input"></span>
+                <span class="label">City or Special Tax</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="cleaning_fee" name="DistributorReference" type="radio" value="CLEANING_FEE">
+            <label for="cleaning_fee">
+                <span class="radio-input"></span>
+                <span class="label">Cleaning Fee</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="security_deposit" name="DistributorReference" type="radio" value="SECURITY_DEPOSIT">
+            <label for="security_deposit">
+                <span class="radio-input"></span>
+                <span class="label">Damage Deposit</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="internet_fee" name="DistributorReference" type="radio" value="INTERNET_FEE">
+            <label for="internet_fee">
+                <span class="radio-input"></span>
+                <span class="label">Internet WiFi</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="linen_fee" name="DistributorReference" type="radio" value="LINEN_FEE">
+            <label for="linen_fee">
+                <span class="radio-input"></span>
+                <span class="label">Linen</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="management_fee" name="DistributorReference" type="radio" value="MANAGEMENT_FEE">
+            <label for="management_fee">
+                <span class="radio-input"></span>
+                <span class="label">Management Fee</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="parking_fee" name="DistributorReference" type="radio" value="PARKING_FEE">
+            <label for="parking_fee">
+                <span class="radio-input"></span>
+                <span class="label">Parking</span>
+            </label>
+        </div>
+        <div class="cp-custom-input mb6">
+            <input id="pet_fee" name="DistributorReference" type="radio" value="PET_FEE">
+            <label for="pet_fee">
+                <span class="radio-input"></span>
+                <span class="label">Pets</span>
+            </label>
+        </div>
+</div>
+<div class="">
+    <div class="h3 mt24 mb16">Custom charges (Not supported by OTAs)</div>
+    <p>
+        Custom charges cannot be displayed on OTA sites, and are not subject to OTA restrictions.  Use this option to create a competitive differentiator on your website, Google, or offline.  You can also add custom charges to OTA bookings AFTER you receive these bookings.
+
+    </p>
+    <div class="cp-custom-input mb6">
+        <input id="customFee" name="DistributorReference" type="radio" value="CUSTOM_CHARGE">
+        <label for="customFee">
+            <span class="radio-input"></span>
+            <span class="label">Create my own</span>
+        </label>
+    </div>
+</div>
+            </div>
+
+                <div class="cp-flyout_footer">
+
+                <button class="btn s-cancel s-close btn btn-secondary ">
+                    <span class="btn-text">Cancel</span>
+                </button>
+               
+
+                <button class="btn s-save btn btn-right " id="addNewChargeFlyout_flyoutSave">
+                    <span class="btn-text">Next</span>
+                </button>
+               
+
+                </div>
+        </div>
+    </div>
+</section>
+ 
+</section>
+
+  
+@code {
+
+}
