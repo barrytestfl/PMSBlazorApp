@@ -1,0 +1,365 @@
+﻿@page "/cancellation"
+<PageTitle>Cancellation  </PageTitle>
+<div class="header-bottom">
+    <section class="mod-toolbar">
+        <div class="h2 mod-toolbar_section mod-toolbar_page-heading mod-toolbar_section__no-right-border">Cancellation</div>
+        <div class="mod-toolbar_section mod-toolbar_section__end">
+            <a class="btn rounded" href="https://on.eviivo.com/suite/settings/policies/cancellation?policyId=0" id="lnkAddPolicy">Add Policy</a>
+        </div>
+    </section>
+</div>
+<div class="clearfix mod-highlight-sections content-with-sidebar">
+
+    <section class="sidebar">
+        <div id="cancellationNavBar" class="sibebarGeneric">
+            <ul class="sidebar-nav">
+                <li><a href="https://on.eviivo.com/suite/cancellation?policyId=35208" id="universalPolicy" data-policy="35208" data-universal="True" class="policyRadio active">Universal</a></li>
+                <li>
+                    <a href="https://on.eviivo.com/suite/cancellation?policyId=48944" id="PolicyLink_48944" data-policy="48944" data-universal="False" class="policyRadio">Non-Refundable </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="outterWithSidebar">
+        <div class="genericContainer generic-content-sidebar">
+            <div id="divPolicies" class="">
+
+                <form action="https://on.eviivo.com/suite/settings/managecancellationpolicy" data-ajax="true" data-ajax-failure="OnManageCancellationPolicyFailure" data-ajax-loading="#loading-overlay" data-ajax-method="Post" data-ajax-success="FadeInOutSuccess" id="saveCancPolicyForm" method="post">
+                    <input data-val="true" data-val-number="The field BusinessId must be a number." data-val-required="The BusinessId field is required." id="BusinessId" name="BusinessId" type="hidden" value="40305"><input data-val="true" data-val-required="The IsUniversalPolicy field is required." id="Policy_IsUniversalPolicy" name="Policy.IsUniversalPolicy" type="hidden" value="True"><input data-val="true" data-val-required="The IsUniversalPolicy field is required." id="IsUniversalPolicy" name="IsUniversalPolicy" type="hidden" value="True"><input data-val="true" data-val-required="The CanModifyCancellation field is required." id="CanModifyCancellation" name="CanModifyCancellation" type="hidden" value="False">    <input id="hdnPolicyId" type="hidden" value="35208" name="Policy.Id">
+                    <input id="hdnChannelId" type="hidden" value="0" name="Policy.ChannelId">
+                    <div class="rounded content-area mod-inline-form highlight-section">
+                        <h2 class="mb16">
+                            <span id="divChannelImage" class="policyChannelImage"></span>
+                        </h2>
+
+                        <section class="display-flex justify-content-start align-items-center mb16">
+                            <label for="txtName" class="mr8">Cancellation Policy Name:</label>
+                            <div>
+                                <label id="txtName" for="Universal">Universal</label><input data-val="true" data-val-length="The cancellation name must be less than or equal to 50 characters." data-val-length-max="50" data-val-requiredif="Please specify a cancellation policy name." data-val-requiredif-dependentproperty="IsUniversalPolicy" data-val-requiredif-dependentvalue="False" data-val-requiredif-operator="EqualTo" id="Policy_Name" name="Policy.Name" type="hidden" value="Universal">
+                            </div>
+                        </section>
+                        <div id="divPolicyDetails" class="">
+                            <section class="section">
+                                <div class="v-2">
+                                    <div class="cp-radio-group radio-group-small" id="rgCancellationPolicies">
+
+
+                                        <input checked="checked" data-val="true" data-val-required="The CancellationPolicyType field is required." id="rbTiered" name="Policy.CancellationRuleToDisplay.CancellationPolicyType" type="radio" value="WindowedCharge" disabled=""><label aria_disabled="false" aria_pressed="false" class="btn btn-grouped btn-invert" for="rbTiered" role="button">By Date</label>                        <input id="rbNonRefundable" name="Policy.CancellationRuleToDisplay.CancellationPolicyType" type="radio" value="NonRefundable" disabled=""><label aria_disabled="false" aria_pressed="false" class="btn btn-grouped btn-invert" for="rbNonRefundable" role="button">Non Refundable</label>                        <input id="rbFullyRefundable" name="Policy.CancellationRuleToDisplay.CancellationPolicyType" type="radio" value="FullyRefundable" disabled=""><label aria_disabled="false" aria_pressed="false" class="btn btn-grouped btn-invert" for="rbFullyRefundable" role="button">Fully Refundable</label>                        <input id="rbSingleCharge" name="Policy.CancellationRuleToDisplay.CancellationPolicyType" type="radio" value="FlatCharge" disabled=""><label aria_disabled="false" aria_pressed="false" class="btn btn-grouped btn-invert" for="rbSingleCharge" role="button">Fixed Penalty</label>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="sectionCancellationRule">
+
+
+
+
+                                <input data-val="true" data-val-number="The field BusinessId must be a number." id="Policy_CancellationRuleToDisplay_BusinessId" name="Policy.CancellationRuleToDisplay.BusinessId" type="hidden" value="40305">
+                                <input data-val="true" data-val-number="The field ChannelId must be a number." id="Policy_CancellationRuleToDisplay_ChannelId" name="Policy.CancellationRuleToDisplay.ChannelId" type="hidden" value="">
+                                <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Policy_CancellationRuleToDisplay_Id" name="Policy.CancellationRuleToDisplay.Id" type="hidden" value="90382">
+                                <input data-val="true" data-val-number="The field CancellationPolicyId must be a number." id="Policy_CancellationRuleToDisplay_CancellationPolicyId" name="Policy.CancellationRuleToDisplay.CancellationPolicyId" type="hidden" value="35208">
+
+                                <div class="mod-inline-form">
+                                    <section id="sectionTiers">
+
+
+                                        <div class="mod-inline-form_row s-section">
+                                            <input data-val="true" data-val-required="The IsFirstTier field is required." id="Policy_CancellationRuleToDisplay_Tiers_0__IsFirstTier" name="Policy.CancellationRuleToDisplay.Tiers[0].IsFirstTier" type="hidden" value="True">
+                                            <input data-val="true" data-val-required="The CancellationType field is required." id="Policy_CancellationRuleToDisplay_Tiers_0__CancellationType" name="Policy.CancellationRuleToDisplay.Tiers[0].CancellationType" type="hidden" value="WindowedCharge">
+
+                                            <div class="element-row">
+                                                <label class="label-first" for="txtWindowValue_0">If cancelled more than</label>
+                                            </div>
+                                            <div class="element-row">
+                                                <input class="stretch-input valid" data-val="true" data-val-number="The field WindowValue must be a number." disabled="disabled" id="txtWindowValue_0" name="Policy.CancellationRuleToDisplay.Tiers[1].WindowValue" type="text" value="24">
+                                            </div>
+                                            <div class="element-row">
+                                                <select class="cp-custom-select cp-custom-select_fw" data-val="true" data-val-number="The field WindowType must be a number." disabled="disabled" id="ddlCancellationWindows_0" name="Policy.CancellationRuleToDisplay.Tiers[1].WindowType">
+                                                    <option value="">- Please Select -</option>
+                                                    <option selected="selected" value="1">Hours</option>
+                                                    <option value="2">Days</option>
+                                                    <option value="3">Weeks</option>
+                                                </select>
+                                            </div>
+                                            <div class="element-row">
+                                                <label for="before_check-in">before check-in</label>;
+                                            </div>
+                                            <div class="element-row">
+                                                <label for="ddlCancellationCharges_0">charge</label>
+
+                                                <input class="stretch-input valid" data-val="true" data-val-number="The field CancellationChargeValue must be a number." id="txtPolicyChargeValues_0" name="Policy.CancellationRuleToDisplay.Tiers[0].CancellationChargeValue" readonly="readonly" type="text" value="0.00" disabled="">
+                                                <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[0].CancellationChargeValue" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="element-row">
+
+                                                <select class="cp-custom-select cp-custom-select_fw" data-val="true" data-val-number="The field CancellationCharge must be a number." data-val-required="The CancellationCharge field is required." disabled="Disabled" id="ddlCancellationCharges_0" name="Policy.CancellationRuleToDisplay.Tiers[0].CancellationCharge">
+                                                    <option value="">- Please Select -</option>
+                                                    <option selected="selected" value="5">Nothing</option>
+                                                    <option value="2">Percent (%)</option>
+                                                    <option value="3">First Night</option>
+                                                    <option value="1">Value (£)</option>
+                                                </select>
+                                                <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[0].CancellationCharge" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="error-messages mb16">
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[0].WindowValue" data-valmsg-replace="true"></span>
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[0].CancellationChargeValue" data-valmsg-replace="true"></span>
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[0].CancellationCharge" data-valmsg-replace="true"></span>
+                                        </div>
+                                        <div class="mod-inline-form_row s-section">
+                                            <input data-val="true" data-val-required="The IsFirstTier field is required." id="Policy_CancellationRuleToDisplay_Tiers_1__IsFirstTier" name="Policy.CancellationRuleToDisplay.Tiers[1].IsFirstTier" type="hidden" value="False">
+                                            <input data-val="true" data-val-required="The CancellationType field is required." id="Policy_CancellationRuleToDisplay_Tiers_1__CancellationType" name="Policy.CancellationRuleToDisplay.Tiers[1].CancellationType" type="hidden" value="WindowedCharge">
+
+                                            <div class="element-row">
+                                                <label class="label-first" for="txtWindowValue_1">If cancelled less than</label>
+                                            </div>
+                                            <div class="element-row">
+                                                <input class="stretch-input valid" disabled="disabled" id="txtWindowValue_1" name="Policy.CancellationRuleToDisplay.Tiers[1].WindowValue" type="text" value="24">
+                                            </div>
+                                            <div class="element-row">
+                                                <select class="cp-custom-select cp-custom-select_fw" disabled="disabled" id="ddlCancellationWindows_1" name="Policy.CancellationRuleToDisplay.Tiers[1].WindowType">
+                                                    <option value="">- Please Select -</option>
+                                                    <option selected="selected" value="1">Hours</option>
+                                                    <option value="2">Days</option>
+                                                    <option value="3">Weeks</option>
+                                                </select>
+                                            </div>
+                                            <div class="element-row">
+                                                <label for="before_check-in">before check-in</label>;
+                                            </div>
+                                            <div class="element-row">
+                                                <label for="ddlCancellationCharges_1">charge</label>
+
+                                                <input class="stretch-input valid" data-val="true" data-val-number="The field CancellationChargeValue must be a number." id="txtPolicyChargeValues_1" name="Policy.CancellationRuleToDisplay.Tiers[1].CancellationChargeValue" readonly="readonly" type="text" value="100.00">
+                                                <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[1].CancellationChargeValue" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="element-row">
+
+                                                <select class="cp-custom-select cp-custom-select_fw" data-val="true" data-val-number="The field CancellationCharge must be a number." data-val-required="The CancellationCharge field is required." disabled="Disabled" id="ddlCancellationCharges_1" name="Policy.CancellationRuleToDisplay.Tiers[1].CancellationCharge">
+                                                    <option value="">- Please Select -</option>
+                                                    <option selected="selected" value="2">Percent (%)</option>
+                                                    <option value="3">First Night</option>
+                                                    <option value="1">Value (£)</option>
+                                                </select>
+                                                <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[1].CancellationCharge" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="error-messages mb16">
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[1].WindowValue" data-valmsg-replace="true"></span>
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[1].CancellationChargeValue" data-valmsg-replace="true"></span>
+                                            <span class="field-validation-valid v-2" data-valmsg-for="Policy.CancellationRuleToDisplay.Tiers[1].CancellationCharge" data-valmsg-replace="true"></span>
+                                        </div>
+
+                                    </section>
+                                </div>
+
+
+
+                            </section>
+                        </div>
+
+                    </div>
+                    <div id="documents-submit-wrap" class="rounded content-area mt20 mb24 highlight-section v-2 clearfix hide">
+                        <div id="successMessage" class="notice grey icon-tickGreen hide">Policy saved</div>
+
+
+
+                        <button id="btnCancel" type="button" name="button" class="btn btn-secondary mr10 hide">Cancel</button>
+                    </div>
+                </form>
+                <input id="OverridePolicyId" name="OverridePolicyId" type="hidden" value="35208">
+
+
+
+
+
+                <div class="cp-paper">
+                    <table class="mod-tiered-table channels md-table md-table_zebra md-table_not-fixed">
+                        <thead>
+                            <tr>
+                                <td class="w15">&nbsp;</td>
+                                <td>
+                                    <span class="line">&nbsp;</span>
+                                    <span class="tier-title"> 24 hours</span>
+                                </td>
+                                <td>
+                                    <span class="line">&nbsp;</span>
+                                    <span class="tier-title"></span>
+                                </td>
+                                <td class="exclude centered md-table_text-center w10">
+                                    <span class="line">&nbsp;</span>
+                                    <span class="svg-icon"><svg class="icon-bg icon-bg-enter"><use xlink:href="#icon-bg-enter"></use></svg></span>
+                                    <span class="tier-title">
+                                        Check-in
+                                    </span>
+                                </td>
+                                <td class="w10">&nbsp;</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="secondary-heading">
+                                <th class="w10">Cancellation Charges</th>
+                                <th class="highlight-divider">&nbsp;</th>
+                                <th class="highlight-divider">&nbsp;</th>
+                                <th class="cancellation-cutoff-time w10"></th>
+                                <th class="w5">&nbsp;</th>
+                            </tr>
+
+                            <tr data-channel-id="270">
+                                <td class="logo-col">
+                                    <img alt="My Web" title="" src="./Cancellation _ eviivo_files/MyWebsite2.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-black">23:30</span>
+                                    <span class="small-text"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="687">
+                                <td class="logo-col">
+                                    <img alt="Google Vacation Rental" title="" src="./Cancellation _ eviivo_files/googlevr.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-black">23:30</span>
+                                    <span class="small-text"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="554">
+                                <td class="logo-col">
+                                    <img alt="Expedia &amp; Affiliate Network" title="" src="./Cancellation _ eviivo_files/Expedia-Channels-logo.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-black">23:30</span>
+                                    <span class="small-text"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="272">
+                                <td class="logo-col">
+                                    <img alt="Booking.com" title="" src="./Cancellation _ eviivo_files/booking_com.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-red">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-red">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-red">00:00</span>
+                                    <span class="small-text-red">(morning of check-in)</span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="630">
+                                <td class="logo-col">
+                                    <img alt="Airbnb" title="" src="./Cancellation _ eviivo_files/airbnb.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-red">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-red">First Night</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-red">15:00</span>
+                                    <span class="small-text-red"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="655">
+                                <td class="logo-col">
+                                    <img alt="Agoda" title="" src="./Cancellation _ eviivo_files/agoda.png">
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-black">23:30</span>
+                                    <span class="small-text"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="468">
+                                <td class="logo-col">
+                                    <span>eviivo powered</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span class="color-black">100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span class="color-black">23:30</span>
+                                    <span class="small-text"></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                            <tr data-channel-id="720">
+                                <td class="logo-col">
+                                    <span>eviivo community</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span>No Charge</span>
+                                </td>
+                                <td colspan="1" class="highlight-divider md-table_text-center">
+                                    <span>100.00%</span>
+                                </td>
+                                <td class="cancellation-cutoff-time w10 md-table_text-center">
+                                    <span>23:30</span>
+                                    <span></span>
+                                </td>
+
+                                <td class="md-table_text-right w5">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mod-overlay"></div>
+</div>
+
+@code {
+
+}

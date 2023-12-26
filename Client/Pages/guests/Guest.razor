@@ -1,0 +1,47 @@
+﻿ 
+@page "/guest"
+<PageTitle>Profile  </PageTitle>
+   <div class="header-bottom">
+        <section class="mod-toolbar guest-search">
+            <div class="mod-toolbar_section mod-toolbar_section__no-right-border">
+                
+    <div class="mod-form ">
+        <form id="frm-search-ContactsSearch" action="https://on.eviivo.com/suite/guest/searchGuest" method="post">
+            <div class="cp-search-bar cp-search-bar_inline">
+                    <label for="txt-search-ContactsSearch" class="searchLabel">Guest Search</label>
+                <div class=" relative">
+                    <div class="cp-icon-input before">
+                        <input id="txt-search-ContactsSearch" name="SearchTerm" type="text" class="cp-input-spinner_search cp-input-spinner" placeholder="Name / Email / Tel / Postcode / City / Group" autocomplete="off">
+                        <span class="icons">
+                            <svg class="icon-bg icon-icon-magnifying-glass"><use xlink:href="#icon-icon-magnifying-glass"></use></svg>
+                            <span class="cp-spinner"></span>
+                        </span>
+                    </div>
+                    <div class="cp-autocomplete cp-autocomplete_align-left results-container_show">
+                        <div id="results-search-ContactsSearch" class="cp-autocomplete-content"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+                <button id="reset-table" class="btn btn-small btn-left ml10">Reset</button>
+            </div>
+
+                <div class="mod-toolbar_section mod-toolbar_section__end">
+                    <button id="guest-add-new" class="btn btn-icon btn-respond ml-auto">
+                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                        <span>Add New</span>
+                    </button>
+                </div>
+        </section>
+    </div>
+
+<div class="generic-content-outter mb70">
+    <div id="contacts-table_wrapper" class="dataTables_wrapper no-footer"><div class="top"></div><table id="contacts-table" class="md-table md-table_condensed md-table_sortable md-table_zebra search-results-row mb16 dataTable no-footer"><thead><tr><th class="md-table_word-wrap sorting sorting_desc" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-sort="descending" aria-label="Surname: activate to sort column ascending">Surname</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Forename: activate to sort column ascending">Forename</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Telephone: activate to sort column ascending">Telephone</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Town/City: activate to sort column ascending">Town/City</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Company: activate to sort column ascending">Company</th><th class="md-table_word-wrap sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Group: activate to sort column ascending">Group</th><th class="sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Member ID: activate to sort column ascending">Member ID</th><th class="sorting" tabindex="0" aria-controls="contacts-table" rowspan="1" colspan="1" aria-label="Date Modified: activate to sort column ascending">Date Modified</th><th class="md-table_text-right md-table_swop-actions s-action-col sorting_disabled" rowspan="1" colspan="1" aria-label="Actions">Actions</th></tr></thead><tbody><tr class="odd"><td class="md-table_word-wrap sorting_1">Rhodes </td><td class="  md-table_word-wrap">Steven </td><td class="  md-table_word-wrap">srhode.500015@guest.booking.com</td><td class="  md-table_word-wrap">+447771199743</td><td class="  md-table_word-wrap"></td><td class="  md-table_word-wrap"></td><td class="  md-table_word-wrap">booking.com</td><td></td><td>06 Sep 2021</td><td class="  md-table_text-right md-table_swop-actions s-action-col"><button class="md-table_action md-table_action-item md-table_action-interchange s-guest-edit" data-id="53920603"><svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg></button><button class="md-table_action md-table_action-item md-table_action-interchange s-guest-delete" data-id="53920603"><svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg></button><div class="md-table_action-select md-table_action-item"><button class="md-table_action s-trigger-inline-menu" data-id="53920603"><svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg></button><ul class="md-table_action-list"> <li class="md-table_action-interchange s-guest-edit" id="s-guest-edit" data-id="53920603">Edit</li>  <li id="btn-single-popup" data-id="53920603">Book guest</li>  <li id="btn-group-popup" data-id="53920603">Book guest - group</li>  <li class="md-table_action-list__divider md-table_action-interchange"></li> <li class="md-table_action-interchange md-table_action-list__icon s-guest-delete" id="s-guest-delete" data-id="53920603">  <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>  <span>Delete</span></li></ul></div></td></tr></tbody></table><div class="md-table_footer display-flex justify-space-between"><div class="dataTables_length" id="contacts-table_length" style="display: none;"><label>Show <select name="contacts-table_length" aria-controls="contacts-table" class=""><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="contacts-table_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="contacts-table" data-dt-idx="0" tabindex="-1" id="contacts-table_previous">Previous</a><span><a class="paginate_button current" aria-controls="contacts-table" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="contacts-table" data-dt-idx="2" tabindex="-1" id="contacts-table_next">Next</a></div></div></div>
+</div>
+
+@code {
+
+}

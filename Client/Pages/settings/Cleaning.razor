@@ -1,0 +1,1028 @@
+﻿
+@page "/cleaning"
+<PageTitle> Cleaning </PageTitle>
+<div class="page-heading page-heading_centered">
+    <div class="h2">Cleaning</div>
+</div>
+
+<div class="l-centered mb70 pb70">
+    <form id="CleaningSettingsForm" novalidate="novalidate">
+
+
+<div class="cp-paper l-main-container mb16" id="propertySettingsSection">
+    <div class="mod-collapsable">
+        <input type="checkbox" id="propertyScheduleSettingsArea">
+        <label for="propertyScheduleSettingsArea" class="mod-collapsable_title mod-collapsable_title-clear mb32">
+            <span>General cleaning rules</span>
+        </label>
+
+
+        <div class="mod-collapsable_body">
+            <div id="propertyRules">
+                <section class="mb20 small-collapse medium-uncollapse">
+                    <div class="l-row l-row_full-width">
+                        <div class="l-column small-12 medium-3 large-3 mb16">When should your studios be cleaned?</div>
+                        <div class="l-column cp-custom-input mb16">
+                            <input type="checkbox" id="alwaysCleanBeforeCheckin_propertySettings" checked="">
+                            <label for="alwaysCleanBeforeCheckin_propertySettings">
+                                <span class="checkbox-input"></span>
+                                <span class="label">Always clean before check-in</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="l-row l-row_full-width">
+                        <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                        <div class="l-column cp-custom-input mb16">
+                            <input type="checkbox" id="alwaysCleanAfterCheckout_propertySettings">
+                            <label for="alwaysCleanAfterCheckout_propertySettings">
+                                <span class="checkbox-input"></span>
+                                <span class="label">Always clean after check out</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="l-row l-row_full-width">
+                        <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                        <div class="l-column small-12 medium-8 large-8 end">
+                            
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>        
+
+<div id="roomnUnitRuleSection" class="cp-paper l-main-container mb16">
+    <div class="mod-collapsable">
+        <input type="checkbox" id="unitScheduleSettingsArea">
+        <label for="unitScheduleSettingsArea" class="mod-collapsable_title mod-collapsable_title-clear mb32">
+            <span>Studio type specific cleaning rules</span>
+        </label>
+        <div class="mod-collapsable_body">    
+            <div id="unitRules">
+            <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16" style="display:none">
+                <div class="cleaning-section-remove">
+                    <a href="javascript:;" class="remove-section">
+                        <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                    </a>
+                </div>
+                <section class="mb20 small-collapse medium-uncollapse">
+                    <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                            <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                            <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                            <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                            <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                            <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                            <option value="136114">Studio-Deluxe-Private Bathroom</option>
+                                            <option value="136116">Apartment-Superior-Private Bathroom</option>
+                                            <option value="136136">Studio-Standard-Private Bathroom</option>
+                                            <option value="136137">Studio-Classic-Private Bathroom</option>
+                                            <option value="136139">Apartment-Deluxe-Private Bathroom</option>
+                                            <option value="136265">Studio-Premium-Private Bathroom</option>
+                                            <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                </section>
+            </div>
+            <div id="NoUnitRules" style="display:none"><span>No cleaning schedule rules are set up</span></div>
+                <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16">
+                    <div class="cleaning-section-remove">
+                        <a href="javascript:;" class="remove-section">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <section class="mb20 small-collapse medium-uncollapse">
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                                <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                                <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                                <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                                <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                                <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                                <option value="136114" selected="true">Studio-Deluxe-Private Bathroom</option>
+                                                <option value="136116">Apartment-Superior-Private Bathroom</option>
+                                                <option value="136136">Studio-Standard-Private Bathroom</option>
+                                                <option value="136137">Studio-Classic-Private Bathroom</option>
+                                                <option value="136139">Apartment-Deluxe-Private Bathroom</option>
+                                                <option value="136265">Studio-Premium-Private Bathroom</option>
+                                                <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_0" checked="">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_0">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_0">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_0">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16">
+                    <div class="cleaning-section-remove">
+                        <a href="javascript:;" class="remove-section">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <section class="mb20 small-collapse medium-uncollapse">
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                                <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                                <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                                <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                                <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                                <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                                <option value="136114">Studio-Deluxe-Private Bathroom</option>
+                                                <option value="136116" selected="true">Apartment-Superior-Private Bathroom</option>
+                                                <option value="136136">Studio-Standard-Private Bathroom</option>
+                                                <option value="136137">Studio-Classic-Private Bathroom</option>
+                                                <option value="136139">Apartment-Deluxe-Private Bathroom</option>
+                                                <option value="136265">Studio-Premium-Private Bathroom</option>
+                                                <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_1" checked="">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_1">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_1">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_1">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16">
+                    <div class="cleaning-section-remove">
+                        <a href="javascript:;" class="remove-section">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <section class="mb20 small-collapse medium-uncollapse">
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                                <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                                <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                                <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                                <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                                <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                                <option value="136114">Studio-Deluxe-Private Bathroom</option>
+                                                <option value="136116">Apartment-Superior-Private Bathroom</option>
+                                                <option value="136136" selected="true">Studio-Standard-Private Bathroom</option>
+                                                <option value="136137">Studio-Classic-Private Bathroom</option>
+                                                <option value="136139">Apartment-Deluxe-Private Bathroom</option>
+                                                <option value="136265">Studio-Premium-Private Bathroom</option>
+                                                <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_2" checked="">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_2">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_2">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_2">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16">
+                    <div class="cleaning-section-remove">
+                        <a href="javascript:;" class="remove-section">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <section class="mb20 small-collapse medium-uncollapse">
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                                <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                                <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                                <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                                <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                                <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                                <option value="136114">Studio-Deluxe-Private Bathroom</option>
+                                                <option value="136116">Apartment-Superior-Private Bathroom</option>
+                                                <option value="136136">Studio-Standard-Private Bathroom</option>
+                                                <option value="136137" selected="true">Studio-Classic-Private Bathroom</option>
+                                                <option value="136139">Apartment-Deluxe-Private Bathroom</option>
+                                                <option value="136265">Studio-Premium-Private Bathroom</option>
+                                                <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_3" checked="">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_3">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_3">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_3">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="sl-cleaningRuleSection mb32 cp-paper cp-paper_p16">
+                    <div class="cleaning-section-remove">
+                        <a href="javascript:;" class="remove-section">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <section class="mb20 small-collapse medium-uncollapse">
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">
+                                <label>Select a specific accommodation type:</label>
+                            </div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+                                <div class="mb16">
+                                    <select class="cp-custom-select sl-unitSelected">
+                                                <option value="136273">Suite-Private Bathroom-Apartment</option>
+                                                <option value="140590">Quad room-Business-Private Bathroom-No view-Apartment </option>
+                                                <option value="140591">Apartment-Private Bathroom-Balcony-Club</option>
+                                                <option value="140663">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</option>
+                                                <option value="140664">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</option>
+                                                <option value="136114">Studio-Deluxe-Private Bathroom</option>
+                                                <option value="136116">Apartment-Superior-Private Bathroom</option>
+                                                <option value="136136">Studio-Standard-Private Bathroom</option>
+                                                <option value="136137">Studio-Classic-Private Bathroom</option>
+                                                <option value="136139" selected="true">Apartment-Deluxe-Private Bathroom</option>
+                                                <option value="136265">Studio-Premium-Private Bathroom</option>
+                                                <option value="136266">Apartment-Standard-Private Bathroom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16">When should it be cleaned?</div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanBeforeCheckin_UnitSetting_4" checked="">
+                                <label for="alwaysCleanBeforeCheckin_UnitSetting_4">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean before check-in</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column cp-custom-input mb16">
+                                <input type="checkbox" id="alwaysCleanAfterCheckout_UnitSetting_4">
+                                <label for="alwaysCleanAfterCheckout_UnitSetting_4">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Always clean after check out</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="l-row l-row_full-width">
+                            <div class="l-column small-12 medium-3 large-3 mb16"></div>
+                            <div class="l-column small-12 medium-8 large-8 end">
+
+
+<table class="md-table md-table_zebra md-table_condensed md-table_not-fixed md-table_hover">
+    <thead>
+            <tr><th colspan="5">&nbsp;</th></tr>
+    </thead>
+    <tbody>
+            <tr class="s-empty-row"><td colspan="5">No cleaning schedule rules are set up</td></tr>
+        <tr style="display:none;">
+            <td>Clean</td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="everyday">Every day</option>
+                        <option value="everytwodays">Every 2 days</option>
+                        <option value="everythreedays">Every 3 days</option>
+                        <option value="everyfourdays">Every 4 days</option>
+                        <option value="everyfivedays">Every 5 days</option>
+                        <option value="everysixdays">Every 6 days</option>
+                        <option value="everyweek">Every week</option>
+                        <option value="everysunday">Every Sunday</option>
+                        <option value="everymonday">Every Monday</option>
+                        <option value="everytuesday">Every Tuesday</option>
+                        <option value="everywednesday">Every Wednesday</option>
+                        <option value="everythursday">Every Thursday</option>
+                        <option value="everyfriday">Every Friday</option>
+                        <option value="everysaturday">Every Saturday</option>
+                </select>
+            </td>
+            <td>
+                <select class="cp-custom-select cp-custom-select_fw sl-ruleValidation">
+                        <option value="whenbooked">only when occupied</option>
+                        <option value="whenvacant">only when empty</option>
+                        <option value="eitherbookedorvacant">when occupied or empty</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" maxlength="50" value="">
+            </td>
+            <td class="md-table_btn-col">
+                <a href="javascript:;">
+                    <svg class="icon-bg icon-bg-delete sl-deleteRule"><use xlink:href="#icon-bg-delete"></use></svg>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <span class="sl-duplicateRuleError" style="color:#B71C1C; display:none;">You have duplicate cleaning schedule rules</span>
+            </td>
+            <td class="md-table_text-right">
+                <button type="button" class="btn-table_primary sl-addRule">Add rule</button>
+            </td>
+        </tr>
+</tfoot></table></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="clearfix mb16 mt16">
+                <button id="AddRoomScheduleRules" class="btn btn-right">Add rule</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+
+<div id="EmailScheduleSection" class="cp-paper l-main-container mb16">
+    <div class="mod-collapsable">
+        <input type="checkbox" id="EmailsSection">
+        <label for="EmailsSection" class="mod-collapsable_title mod-collapsable_title-clear">
+            <span>Cleaning alerts</span>
+        </label>
+        <div class="mod-collapsable_body">
+            <div class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3">
+                    <label>Enable cleaning alerts</label>
+                </div>
+                <div class="l-column medium-4 small-7 large-8 end">
+                    <input class="switch s-switch" id="CleaningSummaryEnabled" name="emailsEnabled" type="checkbox" value="value" checked="">
+                    <label for="CleaningSummaryEnabled"></label>
+                </div>
+            </div>
+            <div class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3">
+                    <label>Send emails at</label>
+                </div>
+                <div class="l-column medium-4 small-7 large-8 end">
+                    <div class="mod-flex-row mod-flex_nowrap">
+                        <select class="cp-custom-select mr8" id="SendTime" name="SendTime">
+                <option value="00:00">00:00</option>                <option value="00:30">00:30</option>                <option value="01:00">01:00</option>                <option value="01:30">01:30</option>                <option value="02:00">02:00</option>                <option value="02:30">02:30</option>                <option value="03:00">03:00</option>                <option value="03:30">03:30</option>                <option value="04:00">04:00</option>                <option value="04:30">04:30</option>                <option value="05:00">05:00</option>                <option value="05:30">05:30</option>                <option value="06:00">06:00</option>                <option value="06:30">06:30</option>                <option value="07:00">07:00</option>                <option value="07:30">07:30</option>                <option value="08:00">08:00</option>                <option value="08:30">08:30</option>                <option value="09:00">09:00</option>                <option value="09:30">09:30</option>                <option value="10:00">10:00</option>                <option value="10:30">10:30</option>                <option value="11:00">11:00</option>                <option value="11:30">11:30</option>                <option value="12:00">12:00</option>                <option value="12:30">12:30</option>                <option value="13:00">13:00</option>                <option value="13:30">13:30</option>                <option value="14:00">14:00</option>                <option value="14:30">14:30</option>                <option value="15:00">15:00</option>                <option value="15:30" selected="selected">15:30</option>                 <option value="16:00">16:00</option>                <option value="16:30">16:30</option>                <option value="17:00">17:00</option>                <option value="17:30">17:30</option>                <option value="18:00">18:00</option>                <option value="18:30">18:30</option>                <option value="19:00">19:00</option>                <option value="19:30">19:30</option>                <option value="20:00">20:00</option>                <option value="20:30">20:30</option>                <option value="21:00">21:00</option>                <option value="21:30">21:30</option>                <option value="22:00">22:00</option>                <option value="22:30">22:30</option>                <option value="23:00">23:00</option>                <option value="23:30">23:30</option>                        </select>
+                        <select class="cp-custom-select" id="SendDay" name="SendTime">
+                <option value="sameday" selected="selected">Same day</option>                 <option value="onedaybefore">1 day in advance</option>                <option value="twodaysbefore">2 days in advance</option>                <option value="threedaysbefore">3 days in advance</option>                <option value="fourdaysbefore">4 days in advance</option>                <option value="fivedaysbefore">5 days in advance</option>                <option value="sixdaysbefore">6 days in advance</option>                <option value="oneweekbefore">1 week in advance</option>                <option value="twoweeksbefore">2 weeks in advance</option>                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3">                    
+                </div>
+                <div class="l-column">
+                    <div class="l-row">
+                        <div class="l-column medium-8 small-7 cp-custom-input mb16 end">
+                            <input type="checkbox" id="SendEmailToCleaners" name="SendEmailToCleaners">
+                            <label for="SendEmailToCleaners">
+                                <span class="checkbox-input"></span>
+                                <span class="label">Send individual assignments to each cleaner or cleaning team</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="l-row">
+                        <div class="l-column medium-8 small-7 cp-custom-input mb16 end">
+                            <input type="checkbox" id="SendFullSummary" name="SendFullSummary" value="value" checked="">
+                            <label for="SendFullSummary">
+                                <span class="checkbox-input"></span>
+                                <span class="label">Send entire property cleaning schedule to:</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="l-row">
+                        <div class="l-column medium-8 small-7 end">
+                            <input class="stretch-input" id="emailList" name="emailList" type="text" value="info@stayinncentral.com">
+                            <small class="helper-text">Email addresses can be separated by a comma</small>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3">
+                    <label>Which studios should be included?</label>
+                </div>
+                <div class="l-column medium-8 small-7 large-8 end">
+                    <div class="cp-radio-group mb10">
+                        <input id="selectAll" type="radio" name="msddType" hidden="" value="true" checked="checked">
+                        <label id="lblSelectAll" for="selectAll" class="btn btn-grouped btn-invert">All</label>
+                        <input id="multiSelect" type="radio" name="msddType" hidden="" value="false">
+                        <label id="lblMultiSelect" for="multiSelect" class="btn btn-grouped btn-icon btn-icon-right btn-invert accordion">
+                            Select studios
+                            <svg class="icon-bg icon-bg-expand_more"><use xlink:href="#icon-bg-expand_more"></use></svg>
+                        </label>
+                    </div>
+
+                    <div class="accordion-container clearfix">
+                        <div id="ratePlanCount" class="accordion-count">
+                            <div class="accordion-content hide">
+                                <div id="RoomSelection" class="mod-sortable-container">
+                                    <div class="mod-sortable_left-column">
+                                        <h4 class="firstItem">Studios NOT selected </h4>
+                                        <ul id="NotSelectedRooms" class="connectedSortable mod-sortable mod-sortable_has-children s-new-sortable rounded ui-sortable">
+                                <li class="ui-state-default ui-sortable-handle" data-id="232157"><span class="ui-state-title"><strong>7</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232171"><span class="ui-state-title"><strong>16</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232172"><span class="ui-state-title"><strong>22</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232173"><span class="ui-state-title"><strong>9</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232174"><span class="ui-state-title"><strong>23</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232175"><span class="ui-state-title"><strong>20</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232176"><span class="ui-state-title"><strong>13</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232177"><span class="ui-state-title"><strong>19</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232178"><span class="ui-state-title"><strong>12</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232375"><span class="ui-state-title"><strong>14</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232376"><span class="ui-state-title"><strong>11</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232377"><span class="ui-state-title"><strong>10</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232378"><span class="ui-state-title"><strong>2</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232379"><span class="ui-state-title"><strong>25</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232380"><span class="ui-state-title"><strong>18</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232381"><span class="ui-state-title"><strong>21</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232382"><span class="ui-state-title"><strong>24</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232383"><span class="ui-state-title"><strong>8</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232384"><span class="ui-state-title"><strong>6</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232385"><span class="ui-state-title"><strong>3</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232386"><span class="ui-state-title"><strong>4</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232465"><span class="ui-state-title"><strong>15</strong><br></span></li>                                <li class="ui-state-default ui-sortable-handle" data-id="232466"><span class="ui-state-title"><strong>17</strong><br></span></li>                                        </ul>
+                                    </div>
+                                    <div class="mod-sortable_center-column">
+                                        <div class="arrow-double-l s-new-sortable">
+                                            <button class="arrow-double-l-icon btn btn-icon btn-icon_only btn-stretch">
+                                                <svg class="icon-bg icon-bg-chevron_double_right"><use xlink:href="#icon-bg-chevron_double_right"></use></svg>
+                                            </button>
+                                            <span>Enable All</span>
+                                        </div>
+                                        <div class="arrow-single-l s-new-sortable">
+                                            <button class="arrow-single-l-icon btn btn-icon btn-icon_only btn-stretch">
+                                                <svg class="icon-bg icon-bg-chevron_right"><use xlink:href="#icon-bg-chevron_right"></use></svg>
+                                            </button>
+                                            <span>Enable</span>
+                                        </div>
+                                        <div class="arrow-single-r s-new-sortable">
+                                            <button class="arrow-single-r-icon btn btn-icon btn-icon_only btn-stretch">
+                                                <svg class="icon-bg icon-bg-chevron_left"><use xlink:href="#icon-bg-chevron_left"></use></svg>
+                                            </button>
+                                            <span>Remove</span>
+                                        </div>
+                                        <div class="arrow-double-r s-new-sortable">
+                                            <button class="arrow-double-r-icon btn btn-icon btn-icon_only btn-stretch">
+                                                <svg class="icon-bg icon-bg-chevron_double_left"><use xlink:href="#icon-bg-chevron_double_left"></use></svg>
+                                            </button>
+                                            <span>Remove All</span>
+                                        </div>
+                                    </div>
+                                    <div class="mod-sortable_right-column">
+                                        <h4>Studios selected</h4>
+                                        <ul id="SelectedRooms" class="connectedSortable mod-sortable mod-sortable_has-children s-new-sortable rounded ui-sortable">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <small>Use CTRL + click to select multiple items</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3 mb16">
+                    <label>Send on save?</label>
+                </div>
+                <div class="l-column">
+                    <div id="divSendEmailOnSave" class=" cp-radio-group radio-group-small">
+                        <input id="yesSendEmailOnSave" name="SendEmailOnSave" type="radio" value="True">
+                        <label id="lblYesSendEmailOnSave" for="yesSendEmailOnSave" class="btn btn-grouped btn-invert">Yes</label>
+                        <input checked="checked" id="noSendEmailOnSave" name="SendEmailOnSave" type="radio" value="False">
+                        <label id="lblnoSendEmailOnSave" for="noSendEmailOnSave" class="btn btn-grouped btn-invert">No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+<div id="CleaningBuffersSection" class="cp-paper">
+    <div class="mod-collapsable">
+        <input type="checkbox" id="cleaning_settings">
+        <label for="cleaning_settings" class="mod-collapsable_title mod-collapsable_title-clear">
+            <span>Cleaning Buffers</span>
+        </label>
+
+        <div class="mod-collapsable_body">
+            <input id="isCleaningEnabledValueOnLoad" name="isCleaningEnabledValueOnLoad" type="hidden" value="False" style="display: none;">
+            <section class="l-row l-row-borderbox l-row_full-width mb20">
+                <div class="l-column medium-4 small-5 large-3">
+                    <label>
+                        Enable cleaning buffers?
+                    </label>
+                </div>
+                <div class="l-column medium-8 small-7 end">
+                    <div class="">
+                        <input class="switch s-switch" data-val="true" data-val-required="The IsCleaningEnabled field is required." id="isCleaningEnabled" name="IsCleaningEnabled" type="checkbox" value="true"><input name="IsCleaningEnabled" type="hidden" value="false">
+                        <label for="isCleaningEnabled"> </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="l-row l-row-borderbox l-row_full-width mb20" style="display: none;">
+                <div class="l-column large-3 medium-4 small-5">
+                    <label for="bufferLengthLbl">Automatically space out bookings by:</label>
+                </div>
+                <div class="l-column large-8 medium-8 small-7 end">
+                    <span class="cp-radio-group s-tabbed">
+                            <input id="bufferLength_1" value="1" name="BookingBufferLength" type="radio">
+                            <label class="btn btn-grouped btn-invert" for="bufferLength_1">1 night</label>
+                            <input id="bufferLength_2" value="2" name="BookingBufferLength" type="radio">
+                            <label class="btn btn-grouped btn-invert" for="bufferLength_2">2 nights</label>
+                            <input id="bufferLength_3" value="3" name="BookingBufferLength" type="radio">
+                            <label class="btn btn-grouped btn-invert" for="bufferLength_3">3 nights</label>
+                    </span>
+                    <label class="error" generated="true" for="BookingBufferLength" style="display:none;"></label>
+                </div>
+            </section>
+
+            <section class="l-row l-row-borderbox l-row_full-width mb20" style="display: none;">
+                <div class="l-column large-3 medium-4 small-5">
+                    <label for="calendarInputBufferLastDay">Stop adding buffers from this check-in date:</label>
+                </div>
+
+                <div class="l-column medium-3 small-5 end">
+                    <div class="cp-icon-input before after-clear after after-field-clear-toggle">
+                        <input id="calendarInputBufferLastDay" type="text" class="datepicker hasDatepicker" name="bufferEndDate" readonly="">
+                        <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                        <a href="javascript:;" class="btn btn-tiny btn-link btn-red" id="clearCalendarValue">
+                            <svg class="icon-bg icon-bg-close"><use xlink:href="#icon-bg-close"></use></svg>
+                        </a>
+                    </div>
+                    <label class="error" generated="true" for="calendarInputBufferLastDay" style="display:none;"></label>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    </form>
+    
+  <div class="mod-sticky-footer" id="buttonBar">
+                <button id="save" type="submit" class="btn btn-right ml10">Save</button>
+
+
+        <input type="hidden" id="navigateToNextUrl" value="false">
+    </div>
+
+</div>
+@code {
+
+}

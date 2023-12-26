@@ -1,0 +1,537 @@
+﻿@page "/emails"
+<PageTitle>Emails &amp; Messages  </PageTitle>
+   <div class="generic-content-outter container-type-size">
+        <div class="page-heading page-heading_full-width page-heading_has-translation">
+            <div class="h2">
+                Emails &amp; Messages
+            </div>
+<div class="ml-auto bulk-update-actions mr6 s-bulk-update">
+    <div class="md-dd">
+        <a href="javascript:;" class="md-dd-icon btn s-md-dd-tgl btn-bulk">
+            <span class="btn-text ">Bulk actions</span>
+            <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use xlink:href="#icon-ic-arrow-dropdown-solid"></use></svg>
+        </a>
+        <div class="md-dd-c s-ignore mod-form bulk-update" style="right: 0px;">
+            <div class="bulk-options">
+                    <a id="bulkStatusChange" href="javascript:;" class="disabled">Status change</a>
+                    <a id="bulkDelete" href="javascript:;" class="red disabled">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>                            <a href="javascript:;" class="ml10 btn" id="btnAddNew">Add template</a>
+        </div>
+
+        <div class="cp-paper fixed-table-container-height s-spinner-container">
+            
+
+
+
+<div id="eviivo-list-emails_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-emails_filter" class="dataTables_filter"><label></label></div><div class="cp-table_toolbar-actions"></div></div><div class="cp-table_scroll-vertical cp-table_scroll-horizontal"><table id="eviivo-list-emails" class="cp-table cp-table_fixed-header dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="1" colspan="1" aria-label="
+                
+                    
+                    
+                        
+                    
+                
+            ">
+                <div class="cp-custom-input">
+                    <input type="checkbox" id="emails-target-select-all" class="target-select-all">
+                    <label for="emails-target-select-all">
+                        <span class="checkbox-input"></span>
+                    </label>
+                </div>
+            </th><th class="filter-enabled guest-cycle sorting_asc" data-key="GuestCycle" tabindex="0" aria-controls="eviivo-list-emails" rowspan="1" colspan="1" aria-label="Category: activate to sort column descending" aria-sort="ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Category</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-emails-search-1" name="eviivo-list-emails-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Confirmation_0_1" data-value="Confirmation" name="filter-1" value="Confirmation">
+                            <label for="Confirmation_0_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Confirmation</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Payment_1_1" data-value="Payment" name="filter-1" value="Payment">
+                            <label for="Payment_1_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Payment</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Post-departure_2_1" data-value="Post-departure" name="filter-1" value="Post-departure">
+                            <label for="Post-departure_2_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Post-departure</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Pre-arrival_3_1" data-value="Pre-arrival" name="filter-1" value="Pre-arrival">
+                            <label for="Pre-arrival_3_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Pre-arrival</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled desc" data-key="Description" tabindex="0" aria-controls="eviivo-list-emails" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Description</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-emails-search-2" name="eviivo-list-emails-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Cancellation-confirmation_0_2" data-value="Cancellation confirmation" name="filter-2" value="Cancellation confirmation">
+                            <label for="Cancellation-confirmation_0_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Cancellation confirmation</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Confirmation-of-arrival-time_1_2" data-value="Confirmation of arrival time" name="filter-2" value="Confirmation of arrival time">
+                            <label for="Confirmation-of-arrival-time_1_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Confirmation of arrival time</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Confirm-Guest-stay_2_2" data-value="Confirm Guest stay" name="filter-2" value="Confirm Guest stay">
+                            <label for="Confirm-Guest-stay_2_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Confirm Guest stay</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Guest-review-request_3_2" data-value="Guest review request" name="filter-2" value="Guest review request">
+                            <label for="Guest-review-request_3_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Guest review request</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="MessagingOutbound_4_2" data-value="MessagingOutbound" name="filter-2" value="MessagingOutbound">
+                            <label for="MessagingOutbound_4_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">MessagingOutbound</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Online-Check-In_5_2" data-value="Online Check-In" name="filter-2" value="Online Check-In">
+                            <label for="Online-Check-In_5_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Online Check-In</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Payment/Refund-notification_6_2" data-value="Payment/Refund notification" name="filter-2" value="Payment/Refund notification">
+                            <label for="Payment/Refund-notification_6_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Payment/Refund notification</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Payment-reminder---reservation-not-secured_7_2" data-value="Payment reminder - reservation not secured" name="filter-2" value="Payment reminder - reservation not secured">
+                            <label for="Payment-reminder---reservation-not-secured_7_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Payment reminder - reservation not secured</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Payment-Request---Booking-Deposit_8_2" data-value="Payment Request - Booking Deposit" name="filter-2" value="Payment Request - Booking Deposit">
+                            <label for="Payment-Request---Booking-Deposit_8_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Payment Request - Booking Deposit</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Pre-Arrival_9_2" data-value="Pre-Arrival" name="filter-2" value="Pre-Arrival">
+                            <label for="Pre-Arrival_9_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Pre-Arrival</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Reconfirmation---travel-agency-booking_10_2" data-value="Reconfirmation - travel agency booking" name="filter-2" value="Reconfirmation - travel agency booking">
+                            <label for="Reconfirmation---travel-agency-booking_10_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Reconfirmation - travel agency booking</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Rental-Agreement_11_2" data-value="Rental Agreement" name="filter-2" value="Rental Agreement">
+                            <label for="Rental-Agreement_11_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Rental Agreement</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Request-valid-payment-card_12_2" data-value="Request valid payment card" name="filter-2" value="Request valid payment card">
+                            <label for="Request-valid-payment-card_12_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Request valid payment card</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="13">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Reservation-confirmation_13_2" data-value="Reservation confirmation" name="filter-2" value="Reservation confirmation">
+                            <label for="Reservation-confirmation_13_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Reservation confirmation</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled schedule" data-key="Schedule" tabindex="0" aria-controls="eviivo-list-emails" rowspan="1" colspan="1" aria-label="Schedule: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Schedule</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-emails-search-3" name="eviivo-list-emails-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="2-days-after-day-of-check-out_0_3" data-value="2 days after day of check out" name="filter-3" value="2 days after day of check out">
+                            <label for="2-days-after-day-of-check-out_0_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">2 days after day of check out</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="2-days-before-check-in_1_3" data-value="2 days before check-in" name="filter-3" value="2 days before check-in">
+                            <label for="2-days-before-check-in_1_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">2 days before check-in</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="3-days-before-earliest-check-in-_2_3" data-value="3 days before earliest check-in " name="filter-3" value="3 days before earliest check-in ">
+                            <label for="3-days-before-earliest-check-in-_2_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">3 days before earliest check-in </span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="5-days-before-earliest-check-in-_3_3" data-value="5 days before earliest check-in " name="filter-3" value="5 days before earliest check-in ">
+                            <label for="5-days-before-earliest-check-in-_3_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">5 days before earliest check-in </span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Access-to-services-cannot-be-guaranteed-without-a-further-payment-or-deposit_4_3" data-value="Access to services cannot be guaranteed without a further payment or deposit" name="filter-3" value="Access to services cannot be guaranteed without a further payment or deposit">
+                            <label for="Access-to-services-cannot-be-guaranteed-without-a-further-payment-or-deposit_4_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Access to services cannot be guaranteed without a further payment or deposit</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="At-time-of-booking_5_3" data-value="At time of booking" name="filter-3" value="At time of booking">
+                            <label for="At-time-of-booking_5_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">At time of booking</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="At-time-of-cancellation_6_3" data-value="At time of cancellation" name="filter-3" value="At time of cancellation">
+                            <label for="At-time-of-cancellation_6_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">At time of cancellation</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="At-time-of-transaction_7_3" data-value="At time of transaction" name="filter-3" value="At time of transaction">
+                            <label for="At-time-of-transaction_7_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">At time of transaction</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Manually-sent-by-you_8_3" data-value="Manually sent by you" name="filter-3" value="Manually sent by you">
+                            <label for="Manually-sent-by-you_8_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Manually sent by you</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Sent-after-rental-agreement-is-signed_9_3" data-value="Sent after rental agreement is signed" name="filter-3" value="Sent after rental agreement is signed">
+                            <label for="Sent-after-rental-agreement-is-signed_9_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Sent after rental agreement is signed</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="When-card-decline-reported_10_3" data-value="When card decline reported" name="filter-3" value="When card decline reported">
+                            <label for="When-card-decline-reported_10_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">When card decline reported</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled status" data-key="Status" tabindex="0" aria-controls="eviivo-list-emails" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Status</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-emails-search-4" name="eviivo-list-emails-search-4">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-4">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-4 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-4 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-4" data-columnindex="4" id="">
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="System_0_4" data-value="System" name="filter-4" value="System">
+                            <label for="System_0_4">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">System</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/settings/emails#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="update-status cp-table_text-center sorting" data-key="UpdateStatus" tabindex="0" aria-controls="eviivo-list-emails" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th><th class="cp-table_text-right cp-table_sticky-column-right actions-2 sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+    </thead>
+    <tbody><tr class="s-no-select-row s-row-206335 odd" data-id="206335"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206335 sorting_1" for="206335">Confirmation</td><td class="  desc">Reservation confirmation</td><td class="  schedule">At time of booking</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206335/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206335"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206332 even" data-id="206332"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206332 sorting_1" for="206332">Confirmation</td><td class="  desc">Reconfirmation - travel agency booking</td><td class="  schedule">At time of booking</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206332/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206332"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206334 odd" data-id="206334"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206334 sorting_1" for="206334">Confirmation</td><td class="  desc">Cancellation confirmation</td><td class="  schedule">At time of cancellation</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206334/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206334"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206339 even" data-id="206339"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206339 sorting_1" for="206339">Confirmation</td><td class="  desc">Confirm Guest stay</td><td class="  schedule">2 days before check-in</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206339/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206339"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-475995 odd" data-id="475995"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label475995 sorting_1" for="475995">Confirmation</td><td class="  desc">Rental Agreement</td><td class="  schedule">Sent after rental agreement is signed</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/475995/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="475995"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206331 even" data-id="206331"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206331 sorting_1" for="206331">Payment</td><td class="  desc">Request valid payment card</td><td class="  schedule">When card decline reported</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206331/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206331"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206333 odd" data-id="206333"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206333 sorting_1" for="206333">Payment</td><td class="  desc">Payment/Refund notification</td><td class="  schedule">At time of transaction</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206333/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206333"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206338 even" data-id="206338"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206338 sorting_1" for="206338">Payment</td><td class="  desc">Payment Request - Booking Deposit</td><td class="  schedule">Manually sent by you</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206338/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206338"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-287224 odd" data-id="287224"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label287224 sorting_1" for="287224">Payment</td><td class="  desc">Payment reminder - reservation not secured</td><td class="  schedule">Access to services cannot be guaranteed without a further payment or deposit</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/287224/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="287224"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-209572 even" data-id="209572"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label209572 sorting_1" for="209572">Pre-arrival</td><td class="  desc">Pre-Arrival</td><td class="  schedule">5 days before earliest check-in </td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/209572/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="209572"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-213353 odd" data-id="213353"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label213353 sorting_1" for="213353">Pre-arrival</td><td class="  desc">Confirmation of arrival time</td><td class="  schedule">3 days before earliest check-in </td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/213353/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="213353"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-206340 even" data-id="206340"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label206340 sorting_1" for="206340">Pre-arrival</td><td class="  desc">Online Check-In</td><td class="  schedule">Manually sent by you</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/206340/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="206340"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-273892 odd" data-id="273892"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label273892 sorting_1" for="273892">Post-departure</td><td class="  desc">Guest review request</td><td class="  schedule">2 days after day of check out</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/273892/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="273892"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr><tr class="s-no-select-row s-row-428762 even" data-id="428762"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"></td><td class="guest-cycle s-row-selector-label s-row-selector-label428762 sorting_1" for="428762">Post-departure</td><td class="  desc">MessagingOutbound</td><td class="  schedule">Manually sent by you</td><td class="  status">System</td><td class="  update-status cp-table_text-center"></td><td class="   cp-table_text-right cp-table_sticky-column-right actions-2 cp-table_sticky-column-right"><a href="https://on.eviivo.com/suite/settings/emails/property/40305/edit-template/428762/EML" class="s-listing-table-edit cp-table_action cp-table_action-item " data-id="428762"><svg class=" icon-ic-notes"><use href="#icon-ic-notes"></use></svg></a></td></tr></tbody>
+</table></div><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-emails_length" style="display: none;"><label>Show <select name="eviivo-list-emails_length" aria-controls="eviivo-list-emails" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-emails_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-emails" data-dt-idx="0" tabindex="-1" id="eviivo-list-emails_previous">Previous</a><span><a class="paginate_button current" aria-controls="eviivo-list-emails" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="eviivo-list-emails" data-dt-idx="2" tabindex="-1" id="eviivo-list-emails_next">Next</a></div></div></div>
+ 
+
+        
+                        </div>
+    </div>
+
+@code {
+
+}

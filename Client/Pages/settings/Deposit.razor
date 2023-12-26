@@ -1,0 +1,345 @@
+﻿@page "/deposit"
+<PageTitle>Deposit  </PageTitle>
+<div class="header-bottom">
+    <section class="mod-toolbar">
+        <div class="h2 mod-toolbar_section mod-toolbar_page-heading mod-toolbar_section__no-right-border">Deposit</div>
+        <div class="mod-toolbar_section mod-toolbar_section__end">
+            <a class="btn " href="https://on.eviivo.com/suite/settings/policies/deposit?policyId=0" id="lnkAddPolicy">Add Policy</a>
+        </div>
+    </section>
+</div>
+<div class="clearfix mod-highlight-sections content-with-sidebar">
+    <section class="sidebar">
+        <div id="depositNavBar" class="sibebarGeneric">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="https://on.eviivo.com/suite/deposit?policyId=33002" id="universalPolicy" data-policy="33002" data-universal="True" class="s-policy active">Universal</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="outterWithSidebar">
+        <div class="genericContainer generic-content-sidebar">
+            <div id="divPolicies">
+
+                <form action="https://on.eviivo.com/suite/settings/managedepositpolicy?Length=8" data-ajax="true" data-ajax-failure="FadeInOutFailure" data-ajax-loading="#loading-overlay" data-ajax-method="Post" data-ajax-success="FadeInOutSuccess" id="saveDepositPolicyForm" method="post" novalidate="novalidate">
+                    <input data-val="true" data-val-number="The field BusinessId must be a number." data-val-required="The BusinessId field is required." id="Policy_BusinessId" name="Policy.BusinessId" type="hidden" value="40305"><input data-val="true" data-val-required="The IsActive field is required." id="Policy_IsActive" name="Policy.IsActive" type="hidden" value="True"><input data-val="true" data-val-required="The IsUniversalPolicy field is required." id="Policy_IsUniversalPolicy" name="Policy.IsUniversalPolicy" type="hidden" value="True"><input data-val="true" data-val-required="The IsUniversalPolicy field is required." id="IsUniversalPolicy" name="IsUniversalPolicy" type="hidden" value="True"><input data-val="true" data-val-required="The SupportsZeroAmount field is required." id="Policy_SupportsZeroAmount" name="Policy.SupportsZeroAmount" type="hidden" value="True"><input data-val="true" data-val-required="The HasAssociatedRatePlans field is required." id="hdnHasRatePlans" name="Policy.HasAssociatedRatePlans" type="hidden" value="False">    <input id="hdnIsDepositsScreenLocked" type="hidden" value="">
+                    <input id="hdnPolicyName" type="hidden" value="Universal">
+                    <input id="hdnPolicyId" type="hidden" value="33002" name="Policy.Id">
+                    <input id="hdnChannelId" type="hidden" name="Policy.ChannelId">
+                    <div class="rounded content-area highlight-section">
+                        <h2 class="mb16">
+                            <span id="divChannelImage" class="policyChannelImage"></span>
+                        </h2>
+
+                        <section class="display-flex justify-content-start align-items-center mb16">
+                            <label class="mr8" for="txtName">Deposit Policy Name:</label>
+                            <div>
+                                Universal
+                            </div>
+                        </section>
+
+                        <div id="divPolicyDetails" class="">
+                            <section class="mb20">
+                                <div id="divPolicyTypes" class="cp-radio-group radio-group-small">
+
+                                    <input checked="checked" data-val="true" data-val-required="The PolicyType field is required." id="roTiered" name="Policy.PolicyType" type="radio" value="Tiered"><label class="btn btn-grouped btn-invert" for="roTiered">By Date</label>
+                                    <input id="roSingle" name="Policy.PolicyType" type="radio" value="Single"><label class="btn btn-grouped btn-invert" for="roSingle">Single Deposit</label>
+                                </div>
+                            </section>
+
+                            <div id="divPolicyRules" class="mod-inline-form">
+
+
+
+
+                                <div class="mod-inline-form_row s-section">
+                                    <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Policy_DepositRules_0__Id" name="Policy.DepositRules[0].Id" type="hidden" value="179631">
+                                    <input data-val="true" data-val-number="The field BusinessId must be a number." id="Policy_DepositRules_0__BusinessId" name="Policy.DepositRules[0].BusinessId" type="hidden" value="40305">
+                                    <input data-val="true" data-val-number="The field DepositPolicyId must be a number." id="Policy_DepositRules_0__DepositPolicyId" name="Policy.DepositRules[0].DepositPolicyId" type="hidden" value="33002">
+                                    <input data-val="true" data-val-number="The field ChannelId must be a number." id="Policy_DepositRules_0__ChannelId" name="Policy.DepositRules[0].ChannelId" type="hidden" value="">
+                                    <input data-val="true" data-val-required="The IsPrimaryTier field is required." id="Policy_DepositRules_0__IsPrimaryTier" name="Policy.DepositRules[0].IsPrimaryTier" type="hidden" value="True">
+
+                                    <div class="element-row">
+                                        <label>More than</label>
+                                    </div>
+                                    <div class="element-row input-number">
+                                        <input class="s-number input-number" data-val="true" data-val-number="The field WindowValue must be a number." disabled="disabled" id="txtWindowValue0" maxlength="3" name="Policy.DepositRules[1].WindowValue" type="text" value="24">
+                                        <span class="field-validation-valid " data-valmsg-for="Policy.DepositRules[1].WindowValue" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row input-time">
+                                        <select class="s-dropdowns cp-custom-select input-time" disabled="disabled" id="ddlWindows0" name="Policy.DepositRules[1].WindowType">
+                                            <option value="">- Please Select -</option>
+                                            <option selected="selected" value="1">Hours</option>
+                                            <option value="2">Days</option>
+                                            <option value="3">Weeks</option>
+                                        </select>
+                                        <span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[1].WindowType" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div class="element-row input-value">
+                                        <label for="PrepayTypeSelect">before check-in the deposit is</label>
+                                        <input class="s-decimal" data-val="true" data-val-number="The field DepositValue must be a number." id="txtDepositValue0" name="Policy.DepositRules[0].DepositValue" type="text" value="" disabled="disabled">
+                                        <span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[0].DepositValue" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row input-unit">
+                                        <select class="s-dropdowns cp-custom-select input-time s-depositTypes" id="ddlPolicyTypes0" name="Policy.DepositRules[0].DepositType">
+                                            <option value="">- Please Select -</option>
+                                            <option value="1">Value (£)</option>
+                                            <option value="3">Percent (%)</option>
+                                            <option value="2">Nights</option>
+                                            <option selected="selected" value="4">Nothing</option>
+                                        </select><span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[0].DepositType" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row">
+                                    </div>
+                                </div>
+                                <div class="mod-inline-form_row s-section">
+                                    <input data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Policy_DepositRules_1__Id" name="Policy.DepositRules[1].Id" type="hidden" value="181104">
+                                    <input data-val="true" data-val-number="The field BusinessId must be a number." id="Policy_DepositRules_1__BusinessId" name="Policy.DepositRules[1].BusinessId" type="hidden" value="40305">
+                                    <input data-val="true" data-val-number="The field DepositPolicyId must be a number." id="Policy_DepositRules_1__DepositPolicyId" name="Policy.DepositRules[1].DepositPolicyId" type="hidden" value="33002">
+                                    <input data-val="true" data-val-number="The field ChannelId must be a number." id="Policy_DepositRules_1__ChannelId" name="Policy.DepositRules[1].ChannelId" type="hidden" value="">
+                                    <input data-val="true" data-val-required="The IsPrimaryTier field is required." id="Policy_DepositRules_1__IsPrimaryTier" name="Policy.DepositRules[1].IsPrimaryTier" type="hidden" value="False">
+
+                                    <div class="element-row">
+                                        <label>Less than</label>
+                                    </div>
+                                    <div class="element-row input-number">
+                                        <input class="s-number input-number" id="txtWindowValue1" maxlength="3" name="Policy.DepositRules[1].WindowValue" type="text" value="24">
+                                        <span class="field-validation-valid " data-valmsg-for="Policy.DepositRules[1].WindowValue" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row input-time">
+                                        <select class="s-dropdowns cp-custom-select input-time" id="ddlWindows1" name="Policy.DepositRules[1].WindowType">
+                                            <option value="">- Please Select -</option>
+                                            <option selected="selected" value="1">Hours</option>
+                                            <option value="2">Days</option>
+                                            <option value="3">Weeks</option>
+                                        </select>
+                                        <span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[1].WindowType" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div class="element-row input-value">
+                                        <label for="PrepayTypeSelect">before check-in the deposit is</label>
+                                        <input class="s-decimal" data-val="true" data-val-number="The field DepositValue must be a number." id="txtDepositValue1" name="Policy.DepositRules[1].DepositValue" type="text" value="250.00">
+                                        <span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[1].DepositValue" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row input-unit">
+                                        <select class="s-dropdowns cp-custom-select input-time s-depositTypes" id="ddlPolicyTypes1" name="Policy.DepositRules[1].DepositType">
+                                            <option value="">- Please Select -</option>
+                                            <option selected="selected" value="1">Value (£)</option>
+                                            <option value="3">Percent (%)</option>
+                                            <option value="2">Nights</option>
+                                            <option value="4">Nothing</option>
+                                        </select><span class="field-validation-valid v-2" data-valmsg-for="Policy.DepositRules[1].DepositType" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="element-row">
+                                    </div>
+                                </div>
+
+
+                                <input data-val="true" data-val-number="The field TierIndexToDelete must be a number." id="hdnTierDeleteIndex" name="TierIndexToDelete" type="hidden" value="">
+
+                                <section class="section" id="sectionAddWindow">
+                                    <button id="btnAddDepositWindow" type="button" class="btn mb10">+ Add Deadline</button>
+                                </section>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix genericContainer mt20 mb24 v-2 ">
+                        <div id="documents-submit-wrap" class="rounded content-area highlight-section clearfix">
+                            <button id="btnSave" type="submit" name="button" class="btn btn-right ml10">Save</button>
+
+
+                            <button id="btnCancel" type="button" name="button" class="btn btn-secondary hide">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="cp-paper">
+
+
+
+
+                        <table class="mod-tiered-table channels md-table md-table_zebra md-table_not-fixed">
+                            <thead>
+                                <tr>
+                                    <td class="w15">&nbsp;</td>
+                                    <td class="w10">&nbsp;</td>
+                                    <td>
+                                        <span class="line">&nbsp;</span>
+                                        <span class="tier-title"> 24 hours</span>
+                                    </td>
+                                    <td class="exclude">
+                                        <span class="line">&nbsp;</span>
+                                        <span class="svg-icon"><svg class="icon-bg icon-bg-enter"><use xlink:href="#icon-bg-enter"></use></svg></span>
+                                        <span class="tier-title">
+                                            Check-in
+                                        </span>
+                                    </td>
+                                    <td class="w10">&nbsp;</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="secondary-heading">
+                                    <th class="w10">Channels</th>
+                                    <th class="w10">Method</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th class="w5">&nbsp;</th>
+                                </tr>
+                                <tr class="dark" data-channel-id="270">
+                                    <td class="logo-col">
+                                        <img alt="My Web" title="" src="./Deposit _ eviivo_files/MyWebsite2.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-black">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-black">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-black">£250.00</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="" data-channel-id="687">
+                                    <td class="logo-col">
+                                        <img alt="Google Vacation Rental" title="" src="./Deposit _ eviivo_files/googlevr.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-black">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-black">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-black">£250.00</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="dark" data-channel-id="554">
+                                    <td class="logo-col">
+                                        <img alt="Expedia &amp; Affiliate Network" title="" src="./Deposit _ eviivo_files/Expedia-Channels-logo.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-black">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-black">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-black">£250.00</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="" data-channel-id="272">
+                                    <td class="logo-col">
+                                        <img alt="Booking.com" title="" src="./Deposit _ eviivo_files/booking_com.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-red">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-red">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-red">100%</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="dark" data-channel-id="630">
+                                    <td class="logo-col">
+                                        <img alt="Airbnb" title="" src="./Deposit _ eviivo_files/airbnb.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span>Pre-Paid</span></td>
+
+                                    <td colspan="2" class="highlight-divider md-table_text-center" data="0">
+                                        <span>100%</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="" data-channel-id="655">
+                                    <td class="logo-col">
+                                        <img alt="Agoda" title="" src="./Deposit _ eviivo_files/agoda.png">
+                                    </td>
+                                    <td class="md-table_border-right"><span>Pre-Paid</span></td>
+
+                                    <td colspan="2" class="highlight-divider md-table_text-center" data="0">
+                                        <span>100%</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="dark" data-channel-id="468">
+                                    <td class="logo-col">
+                                        <span>eviivo powered</span>
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-black">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-black">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-black">£250.00</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                                <tr class="" data-channel-id="720">
+                                    <td class="logo-col">
+                                        <span>eviivo community</span>
+                                    </td>
+                                    <td class="md-table_border-right"><span class="color-black">Collected by You</span></td>
+
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="0">
+                                        <span class="color-black">£0</span>
+                                    </td>
+                                    <td colspan="1" class="highlight-divider md-table_text-center" data="1">
+                                        <span class="color-black">£250.00</span>
+                                    </td>
+
+                                    <td class=" md-table_text-right">
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <strong>* This table shows the deposit policy for each channel. If you see a pencil icon next to a policy, you can edit it. If you override your standard policy, your new choice will appear in red.</strong>
+                                        <strong>
+                                            <br>¹ Some community sites collect their commission at the time of booking.
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="mod-overlay"></div>
+
+</div>
+
+@code {
+
+}

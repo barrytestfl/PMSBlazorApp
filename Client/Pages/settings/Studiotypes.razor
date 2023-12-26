@@ -1,0 +1,660 @@
+﻿@page "/roomtypes"
+<PageTitle>Studiotypes  </PageTitle>
+<div class="header-bottom">
+    <section class="mod-toolbar">
+        <div class="mod-toolbar_section mod-toolbar_section__no-right-border">
+            <a href="javascript:;" class="btn btn-grouped btn-invert btn-active">Studio Types</a>
+            <a class="btn btn-grouped btn-invert" href="https://on.eviivo.com/suite/settings/rooms" target="_parent"><span>Studios</span></a>
+            <span class="more-info icon-font icon-font-help p10 float-left ml5" data-tooltip-pos="bottom" data-tooltip-title="You need to create a room or unit type BEFORE you can create rooms/units.  A room type or unit type defines a group of rooms that are usually priced and sold in the same way.  A room can also be a unit of course.  For example, rooms 01,03,04 would always be marketed and sold under the pricing rules and terms associated with the room type “double”.   " data-tooltip="title" title="You need to create a room or unit type BEFORE you can create rooms/units.  A room type or unit type defines a group of rooms that are usually priced and sold in the same way.  A room can also be a unit of course.  For example, rooms 01,03,04 would always be marketed and sold under the pricing rules and terms associated with the room type “double”.   "></span>
+        </div>
+        <div class="mod-toolbar_section mod-toolbar_section__end">
+            <a class="btn btn-right ml10" href="https://on.eviivo.com/suite/settings/roomtypes/general" id="lnkAddRoomType">Add Studio Type</a>
+        </div>
+    </section>
+</div>
+<div id="room-types-container" class="generic-content-outter">
+    <div class="l-centered mb70 pb70">
+        <div class="cp-paper">
+            <div id="room-types-table_wrapper" class="dataTables_wrapper no-footer">
+                <div>
+                    <div class="dataTables_length" id="room-types-table_length" style="display: none;"><label>Show <select name="room-types-table_length" aria-controls="room-types-table" class=""><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="-1">All</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="room-types-table_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="room-types-table" data-dt-idx="0" tabindex="-1" id="room-types-table_previous">Previous</a><span><a class="paginate_button current" aria-controls="room-types-table" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="room-types-table" data-dt-idx="2" tabindex="-1" id="room-types-table_next">Next</a></div><table id="room-types-table" class="md-table md-table_condensed md-table_zebra md-table_sortable mb16 dataTable no-footer" aria-describedby="room-types-table_info">
+                        <thead>
+                            <tr><th class="w25 sorting sorting_asc" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Studio Type: activate to sort column ascending">Studio Type</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Max Capacity: activate to sort column ascending">Max Capacity</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Adults: activate to sort column ascending">Adults</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Children: activate to sort column ascending">Children</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Inventory: activate to sort column ascending">Inventory</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Bedrooms: activate to sort column ascending">Bedrooms</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Bathrooms: activate to sort column ascending">Bathrooms</th><th class="align-center sorting" tabindex="0" aria-controls="room-types-table" rowspan="1" colspan="1" aria-label="Bed Config: activate to sort column ascending">Bed Config</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label=""></th></tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <tr class="odd">
+                                <td class="sorting_1">Apartment-Deluxe-Private Bathroom</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Apartment-Deluxe-Private%20Bathroom">2</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136139"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136139" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136139#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136139" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136139">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136139" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136139?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136139" class="" id="lnkRoomTypId136139">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136139?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136139" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Apartment-Private Bathroom-Balcony-Club</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Apartment-Private%20Bathroom-Balcony-Club">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-140591"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-140591" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/140591#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140591" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId140591">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="140591" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/140591?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140591" class="" id="lnkRoomTypId140591">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/140591?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="140591" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="sorting_1">Apartment-Standard-Private Bathroom</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center">2</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Apartment-Standard-Private%20Bathroom">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136266"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136266" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136266#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136266" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136266">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136266" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136266?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136266" class="" id="lnkRoomTypId136266">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136266?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136266" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Apartment-Superior-Private Bathroom</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Apartment-Superior-Private%20Bathroom">5</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136116"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136116" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136116#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136116" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136116">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136116" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136116?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136116" class="" id="lnkRoomTypId136116">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136116?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136116" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="sorting_1">Quad room-Business-Private Bathroom-No view-Apartment </td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Quad%20room-Business-Private%20Bathroom-No%20view-Apartment%20">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-140590"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-140590" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/140590#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140590" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId140590">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="140590" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/140590?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140590" class="" id="lnkRoomTypId140590">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/140590?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="140590" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Quad room-Superior-Private Bathroom-Balcony-Duplex Apartment</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Quad%20room-Superior-Private%20Bathroom-Balcony-Duplex%20Apartment">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-140663"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-140663" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/140663#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140663" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId140663">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="140663" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/140663?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140663" class="" id="lnkRoomTypId140663">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/140663?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="140663" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="sorting_1">Studio-Classic-Private Bathroom</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">0</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Studio-Classic-Private%20Bathroom">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136137"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136137" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136137#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136137" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136137">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136137" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136137?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136137" class="" id="lnkRoomTypId136137">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136137?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136137" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Studio-Deluxe-Private Bathroom</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Studio-Deluxe-Private%20Bathroom">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136114"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136114" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136114#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136114" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136114">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136114" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136114?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136114" class="" id="lnkRoomTypId136114">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136114?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136114" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="sorting_1">Studio-Premium-Private Bathroom</td>
+                                <td class="align-center">2</td>
+                                <td class="align-center">2</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Studio-Premium-Private%20Bathroom">5</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136265"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136265" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136265#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136265" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136265">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136265" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136265?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136265" class="" id="lnkRoomTypId136265">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136265?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136265" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Studio-Standard-Private Bathroom</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">4</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Studio-Standard-Private%20Bathroom">2</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136136"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136136" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136136#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136136" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136136">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136136" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136136?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136136" class="" id="lnkRoomTypId136136">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136136?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136136" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td class="sorting_1">Suite-Private Bathroom-Apartment</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center">2</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Suite-Private%20Bathroom-Apartment">2</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-136273"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-136273" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/136273#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136273" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId136273">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="136273" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/136273?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/136273" class="" id="lnkRoomTypId136273">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/136273?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="136273" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="even">
+                                <td class="sorting_1">Suite-Superior-Private Bathroom-Balcony-Duplex Aapartment</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">5</td>
+                                <td class="align-center">3</td>
+                                <td class="align-center"><a href="https://on.eviivo.com/suite/settings/rooms?Name=Suite-Superior-Private%20Bathroom-Balcony-Duplex%20Aapartment">1</a></td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">1</td>
+                                <td class="align-center">
+
+
+                                    <template id="bed-configs-tooltip-140664"></template>
+
+                                    <a data-tooltip="bed-configs-tooltip-140664" data-tooltip-pos="top" data-tooltip-title="No configuration (click to add)" href="https://on.eviivo.com/suite/settings/roomtypes/general/140664#bed-configs">1</a>
+                                </td>
+                                <td class="md-table_text-right md-table_swop-actions md-table_white-space-nowrap">
+
+                                    <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140664" class="md-table_action md-table_action-item md-table_action-interchange" id="lnkRoomTypId140664">
+                                        <svg class="icon-bg icon-bg-create"><use xlink:href="#icon-bg-create"></use></svg>
+                                    </a>
+
+                                    <button id="140664" class="md-table_action md-table_action-item md-table_action-interchange s-icon-delete">
+                                        <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                    </button>
+                                    <a href="https://on.eviivo.com/suite/settings/rooms/140664?addNew=True" class="md-table_action md-table_action-item md-table_action-interchange" title="Inventory" data-tooltip-title="Inventory" data-tooltip="title" data-tooltip-pos="top">
+                                        <svg class="icon-bg icon-bg-add"><use xlink:href="#icon-bg-add"></use></svg>
+                                    </a>
+                                    <div class="md-table_action-select md-table_action-item md-action-list_hide-initial">
+                                        <button class="md-table_action s-menu-toggle">
+                                            <svg class="icon-bg icon-bg-icon-more_vert"><use xlink:href="#icon-bg-icon-more_vert"></use></svg>
+                                        </button>
+                                        <ul class="md-table_action-list">
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/roomTypes/general/140664" class="" id="lnkRoomTypId140664">
+                                                    Edit
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://on.eviivo.com/suite/settings/rooms/140664?addNew=True" class="">
+                                                    Inventory
+                                                </a>
+                                            </li>
+                                            <li class="md-table_action-interchange md-table_action-list__divider"></li>
+                                            <li id="140664" class="md-table_action-interchange md-table_action-list__icon s-icon-delete">
+                                                <svg class="icon-bg icon-bg-delete"><use xlink:href="#icon-bg-delete"></use></svg>
+                                                <span>Delete</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><div class="clearfix datatableFooter"><div class="dataTables_info" id="room-types-table_info" role="status" aria-live="polite">Showing 1 to 12 of 12 entries</div><div class="dataTables_paginate paging_simple_numbers" style="display: none;"><a class="paginate_button previous disabled" aria-controls="room-types-table" data-dt-idx="0" tabindex="-1">Previous</a><span><a class="paginate_button current" aria-controls="room-types-table" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="room-types-table" data-dt-idx="2" tabindex="-1">Next</a></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+}

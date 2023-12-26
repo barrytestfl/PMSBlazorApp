@@ -106,6 +106,41 @@
     <link href="Content/css/rates/booking-cutoff.min.css" rel="stylesheet" />
     <link href="Content/css/rates/seasons.min.css" rel="stylesheet" />
 
+    <link href="Content/css/dashboard/kpi.min.css" rel="stylesheet" />
+    <link href="Content/css/dashboard/dashboard.min.css" rel="stylesheet" />
+    <link href="Content/css/dashboard/reports.min.css" rel="stylesheet" />
+    <link href="Content/css/dashboard/cleaning.min.css" rel="stylesheet" />
+    <script src="scripts/dashboard/kpis.min.js"></script>
+    <script src="scripts/dashboard/c3.min.js"></script>
+    <script src="scripts/dashboard/charts.min.js"></script>
+    <script src="scripts/dashboard/d3.v3.5.17.min.js"></script>
+    <script src="scripts/dashboard/reports.min.js"></script>
+    <script src="scripts/dashboard/ReportingScript.js"></script>
+    <script src="scripts/dashboard/CleaningScript.js"></script>
+    <script src="scripts/dashboard/cleaning.min.js"></script>
+
+    <link href="Content/css/myweb/media.min.css" rel="stylesheet" />
+    <link href="Content/css/myweb/content.min.css" rel="stylesheet" />
+    <script src="scripts/myweb/myWebGeneralPage.min.js"></script>
+    <script src="scripts/myweb/footerBar.min.js"></script>
+
+    <link href="Content/css/settings/property.min.css" rel="stylesheet" />
+    <link href="Content/css/settings/list-page.min.css" rel="stylesheet" />
+    <link href="Content/css/settings/policies-pages.min.css" rel="stylesheet" />
+    <link href="Content/css/settings/cleaning-settings.min.css" rel="stylesheet" />
+    <link href="Content/css/settings/channels-optin.min.css" rel="stylesheet" />
+    <link href="Content/css/settings/channels-rateplans.min.css" rel="stylesheet" />
+    <script src="scripts/settings/propertyGeneral.min.js"></script>
+    <script src="scripts/settings/PropertyScript.js"></script>
+    <script src="scripts/settings/room.min.js"></script>
+    <script src="scripts/settings/cancellationPolicy.min.js"></script>
+    <script src="scripts/settings/depositPolicy.min.js"></script>
+    <script src="scripts/settings/policies.min.js"></script>
+    <script src="scripts/settings/main_loader.min.js"></script>
+    <script src="scripts/settings/cleaningGeneral.min.js"></script>
+    <script src="scripts/settings/channelOptIn.min.js"></script>
+    <script src="scripts/settings/channelRatePlans.min.js"></script>
+    <script src="scripts/settings/RatePlansScript.js"></script>
 
     <script>
         var logSentry;
@@ -430,22 +465,22 @@
                                     </div>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/kpi" id="nav-KPIs" class="nav-button user-select-none s-drag-false  " draggable="false">
+                                    <a href="/kpi" id="nav-KPIs" class="nav-button user-select-none s-drag-false  " draggable="false">
                                         Key Figures
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/dashboard" id="nav-Dashboards" class="nav-button user-select-none s-drag-false  " draggable="false">
+                                    <a href="/dashboard" id="nav-Dashboards" class="nav-button user-select-none s-drag-false  " draggable="false">
                                         Charts
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/reporting" id="nav-Reports" class="nav-button user-select-none s-drag-false  " draggable="false">
+                                    <a href="/reporting" id="nav-Reports" class="nav-button user-select-none s-drag-false  " draggable="false">
                                         Reports
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/cleaning" id="nav-Cleaning" class="nav-button user-select-none s-drag-false " draggable="false">
+                                    <a href="/cleaning" id="nav-Cleaning" class="nav-button user-select-none s-drag-false " draggable="false">
                                         Cleaning
                                     </a>
                                 </li>
@@ -471,12 +506,12 @@
                                     </div>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/guest" id="nav-Guests" class=" user-select-none s-drag-false " draggable="false">
+                                    <a href="/guest" id="nav-Guests" class=" user-select-none s-drag-false " draggable="false">
                                         Profiles
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/conversations" id="nav-Conversations" class=" user-select-none s-drag-false " draggable="false">
+                                    <a href="/conversations" id="nav-Conversations" class=" user-select-none s-drag-false " draggable="false">
                                         Conversations
                                     </a>
                                 </li>
@@ -500,21 +535,32 @@
                                             </div>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/headers" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/headers" class=" user-select-none s-drag-false " draggable="false">
                                                 Headers
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/emails" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/emails" class=" user-select-none s-drag-false " draggable="false">
                                                 Emails &amp;Messages
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/statements" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/statements" class=" user-select-none s-drag-false " draggable="false">
                                                 Documents
                                             </a>
                                         </li>
+                                        <li class="">
+                                            <a href="/agreementtemplates" class=" user-select-none s-drag-false " draggable="false">
+                                                Agreements
+                                            </a>
+                                        </li>
                                     </ul>
+                                </li>
+                                
+                                <li  >
+                                    <a href="/agreements" id="nav-agreements" class=" user-select-none s-drag-false " draggable="false">
+                                        Agreements
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -538,10 +584,10 @@
                                     </div>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/media" id="nav-Media" class=" user-select-none s-drag-false " draggable="false">Media</a>
+                                    <a href="/media" id="nav-Media" class=" user-select-none s-drag-false " draggable="false">Media</a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/myweb/generalpage" id="nav-MyWebSettings" class=" user-select-none s-drag-false " draggable="false">Settings</a>
+                                    <a href="/generalpage" id="nav-MyWebSettings" class=" user-select-none s-drag-false " draggable="false">Settings</a>
                                 </li>
                             </ul>
                         </li>
@@ -565,12 +611,12 @@
                                     </div>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/settings/property" class=" user-select-none s-drag-false " draggable="false">
+                                    <a href="/property" class=" user-select-none s-drag-false " draggable="false">
                                         Property
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="/suite/settings/roomtypes" class=" user-select-none s-drag-false " draggable="false">
+                                    <a href="/roomtypes" class=" user-select-none s-drag-false " draggable="false">
                                         Studios
                                     </a>
                                 </li>
@@ -594,24 +640,24 @@
                                             </div>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/policies/cancellation" class="user-select-none s-drag-false " draggable="false">
+                                            <a href="/cancellation" class="user-select-none s-drag-false " draggable="false">
                                                 Cancellation
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/policies/deposit" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/deposit" class=" user-select-none s-drag-false " draggable="false">
                                                 Deposit
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/settings/policies" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/policies" class=" user-select-none s-drag-false " draggable="false">
                                                 General Terms
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="" id="navCleaningSettings">
-                                    <a href="/suite/settings/cleaning" class=" user-select-none s-drag-false " draggable="false">
+                                    <a href="/cleaning" class=" user-select-none s-drag-false " draggable="false">
                                         Cleaning
                                     </a>
                                 </li>
@@ -635,12 +681,12 @@
                                             </div>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/channels" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/channels" class=" user-select-none s-drag-false " draggable="false">
                                                 Opt Ins
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="/suite/channels/rateplans" class=" user-select-none s-drag-false " draggable="false">
+                                            <a href="/rateplans" class=" user-select-none s-drag-false " draggable="false">
                                                 Rate Status
                                             </a>
                                         </li>

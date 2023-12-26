@@ -1,0 +1,590 @@
+﻿@page "/property"
+<PageTitle>Property </PageTitle>
+
+<div class="page-heading page-heading_centered page-heading_side-menu">
+    <div class="h2">Property</div>
+</div>
+
+<div class="l-centered l-centered_side-menu mb70 pb70 mod-form">
+
+    
+    <ul class="mod-page-nav mod-page-nav_level-1">
+                <li class="selected " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property" class="s-header-link user-select-none s-drag-false" draggable="false">General</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/tax" class="s-header-link user-select-none s-drag-false" draggable="false">Tax</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/contacts" class="s-header-link user-select-none s-drag-false" draggable="false">Contacts</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/propertypayment" class="s-header-link user-select-none s-drag-false" draggable="false">Payment</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/listing/location" class="s-header-link user-select-none s-drag-false" draggable="false">Directions</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/listing/descriptions" class="s-header-link user-select-none s-drag-false" draggable="false">Descriptions</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/listing/facilities" class="s-header-link user-select-none s-drag-false" draggable="false">Facilities &amp; Services</a>
+                </li>
+                <li class=" " draggable="false" ondragstart="return false;">
+                    <a href="https://on.eviivo.com/suite/settings/property/photos" class="s-header-link user-select-none s-drag-false" draggable="false">Photos</a>
+                </li>
+    </ul>
+
+
+<form   class="l-main-container" data-ajax="true" data-ajax-failure="eviivo.eagle.footerBarButtons.onFailure" data-ajax-loading="#loading-overlay" data-ajax-method="Post" data-ajax-success="eviivo.eagle.footerBarButtons.onSuccess" id="propertyForm" method="post" novalidate="novalidate">
+        <div class="cp-paper mb16">
+            <div class="mod-collapsable">
+                <input type="checkbox" id="property_location"/>
+                <label for="property_location" class="mod-collapsable_title mod-collapsable_title-clear">
+                    General information
+                </label>
+
+              
+            </div>
+        </div>
+
+        <div class="cp-paper mb16">
+            <div class="mod-collapsable">
+                <input type="checkbox" id="property_brand_panel">
+                <label for="property_brand_panel" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Brand and logo</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="language-select">Brand name</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <input class="stretch-input valid" data-val="true" data-val-length="The field BrandName must be a string with a maximum length of 80." data-val-length-max="80" id="BrandName" name="BrandName" type="text" value="">
+                                <span class="field-validation-valid field-validation-error " data-valmsg-for="BrandName" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>Brand logo</label>
+                            <div class="mod-notice mod-notice-small plain" id="BrandLogoLabel">
+        <i class="icon-font icon-font-info_outline"></i>
+
+    Upload an image of the host or logo to be presented on your website and some travel agencies.
+</div>
+                        </div>
+                        <div class="l-column small-7 medium-8 large-7">
+                            <div id="brand-logo-image" class="cp-media-placeholder-preview s-media-preview"><div class="cp-media-placeholder-preview_container s-select-image"><img src="./Property _ eviivo_files/b485f4b32a633e98c2092f3bfd0d0048d58fa54ff0a761629026fea661e6df5a-e8092979f1_v0_w250xh250_rDEF.png" data-item-id="1900903" class="s-preview-item"></div><div class="clearfix"><button class="s-remove-image btn btn-red">Remove</button><button class="s-select-image btn btn-right">Modify</button></div></div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper mb16">
+            <div class="mod-collapsable">
+                <input type="checkbox" id="property_lang_panel">
+                <label for="property_lang_panel" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Language, currency and timezone</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="language-select">What is the main language of your business?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <select class="cp-custom-select cp-custom-select_fw" data-selected-value="en-GB" id="language-select" name="SelectedDefaultCultureCode"><option value="">- Please Select -</option>
+<option selected="selected" value="en-GB">English</option>
+<option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="working-currency-input">Currency you work in</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <input id="working-currency-input" value="British Pound (£)" readonly="readonly" ev-readonly="ev-readonly">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="contract-currency-input">Currency used to pay eviivo</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <input id="contract-currency-input" value="British Pound (£)" readonly="readonly" ev-readonly="ev-readonly">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="timezone-select">What timezone is your property in?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <select class="cp-custom-select cp-custom-select_fw" data-selected-value="36" data-val="true" data-val-number="The field SelectedTimeZoneId must be a number." data-val-required="The SelectedTimeZoneId field is required." id="timezone-select" name="SelectedTimeZoneId"><option value="">- Please Select -</option>
+<option value="2">(UTC-11:00) Co-ordinated Universal Time-11</option>
+<option value="3">(UTC-10:00) Hawaii</option>
+<option value="4">(UTC-09:00) Alaska</option>
+<option value="5">(UTC-08:00) Baja California</option>
+<option value="6">(UTC-08:00) Pacific Time (US &amp; Canada)</option>
+<option value="7">(UTC-07:00) Arizona</option>
+<option value="8">(UTC-07:00) Chihuahua, La Paz, Mazatlan</option>
+<option value="9">(UTC-07:00) Mountain Time (US &amp; Canada)</option>
+<option value="10">(UTC-06:00) Central America</option>
+<option value="11">(UTC-06:00) Central Time (US &amp; Canada)</option>
+<option value="12">(UTC-06:00) Guadalajara, Mexico City, Monterrey</option>
+<option value="13">(UTC-06:00) Saskatchewan</option>
+<option value="14">(UTC-05:00) Bogota, Lima, Quito</option>
+<option value="15">(UTC-05:00) Eastern Time (US &amp; Canada)</option>
+<option value="16">(UTC-05:00) Indiana (East)</option>
+<option value="17">(UTC-04:30) Caracas</option>
+<option value="18">(UTC-04:00) Asuncion</option>
+<option value="19">(UTC-04:00) Atlantic Time (Canada)</option>
+<option value="20">(UTC-04:00) Cuiaba</option>
+<option value="21">(UTC-04:00) Georgetown, La Paz, Manaus, San Juan</option>
+<option value="22">(UTC-04:00) Santiago</option>
+<option value="23">(UTC-03:30) Newfoundland</option>
+<option value="24">(UTC-03:00) Brasilia</option>
+<option value="25">(UTC-03:00) Buenos Aires</option>
+<option value="26">(UTC-03:00) Cayenne, Fortaleza</option>
+<option value="27">(UTC-03:00) Greenland</option>
+<option value="28">(UTC-03:00) Montevideo</option>
+<option value="29">(UTC-03:00) Salvador</option>
+<option value="30">(UTC-02:00) Co-ordinated Universal Time-02</option>
+<option value="31">(UTC-02:00) Mid-Atlantic</option>
+<option value="32">(UTC-01:00) Azores</option>
+<option value="33">(UTC-01:00) Cape Verde Is.</option>
+<option value="34">(UTC) Casablanca</option>
+<option value="35">(UTC) Co-ordinated Universal Time</option>
+<option selected="selected" value="36">(UTC) Dublin, Edinburgh, Lisbon, London</option>
+<option value="37">(UTC) Monrovia, Reykjavik</option>
+<option value="38">(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+<option value="39">(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+<option value="40">(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+<option value="41">(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+<option value="42">(UTC+01:00) West Central Africa</option>
+<option value="43">(UTC+01:00) Windhoek</option>
+<option value="44">(UTC+02:00) Amman</option>
+<option value="45">(UTC+02:00) Athens, Bucharest</option>
+<option value="46">(UTC+02:00) Beirut</option>
+<option value="47">(UTC+02:00) Cairo</option>
+<option value="48">(UTC+02:00) Damascus</option>
+<option value="49">(UTC+02:00) E. Europe</option>
+<option value="50">(UTC+02:00) Harare, Pretoria</option>
+<option value="51">(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+<option value="52">(UTC+02:00) Istanbul</option>
+<option value="53">(UTC+02:00) Jerusalem</option>
+<option value="54">(UTC+03:00) Baghdad</option>
+<option value="55">(UTC+03:00) Kaliningrad, Minsk</option>
+<option value="56">(UTC+03:00) Kuwait, Riyadh</option>
+<option value="57">(UTC+03:00) Nairobi</option>
+<option value="58">(UTC+03:30) Tehran</option>
+<option value="59">(UTC+04:00) Abu Dhabi, Muscat</option>
+<option value="60">(UTC+04:00) Baku</option>
+<option value="61">(UTC+04:00) Moscow, St. Petersburg, Volgograd</option>
+<option value="62">(UTC+04:00) Port Louis</option>
+<option value="63">(UTC+04:00) Tbilisi</option>
+<option value="64">(UTC+04:00) Yerevan</option>
+<option value="65">(UTC+04:30) Kabul</option>
+<option value="66">(UTC+05:00) Islamabad, Karachi</option>
+<option value="67">(UTC+05:00) Tashkent</option>
+<option value="68">(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+<option value="69">(UTC+05:30) Sri Jayawardenepura</option>
+<option value="70">(UTC+05:45) Kathmandu</option>
+<option value="71">(UTC+06:00) Astana</option>
+<option value="72">(UTC+06:00) Dhaka</option>
+<option value="73">(UTC+06:00) Ekaterinburg</option>
+<option value="74">(UTC+06:30) Yangon (Rangoon)</option>
+<option value="75">(UTC+07:00) Bangkok, Hanoi, Jakarta</option>
+<option value="76">(UTC+07:00) Novosibirsk</option>
+<option value="77">(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+<option value="78">(UTC+08:00) Krasnoyarsk</option>
+<option value="79">(UTC+08:00) Kuala Lumpur, Singapore</option>
+<option value="80">(UTC+08:00) Perth</option>
+<option value="81">(UTC+08:00) Taipei</option>
+<option value="82">(UTC+08:00) Ulaanbaatar</option>
+<option value="83">(UTC+09:00) Irkutsk</option>
+<option value="84">(UTC+09:00) Osaka, Sapporo, Tokyo</option>
+<option value="85">(UTC+09:00) Seoul</option>
+<option value="86">(UTC+09:30) Adelaide</option>
+<option value="87">(UTC+09:30) Darwin</option>
+<option value="88">(UTC+10:00) Brisbane</option>
+<option value="89">(UTC+10:00) Canberra, Melbourne, Sydney</option>
+<option value="90">(UTC+10:00) Guam, Port Moresby</option>
+<option value="91">(UTC+10:00) Hobart</option>
+<option value="92">(UTC+10:00) Yakutsk</option>
+<option value="93">(UTC+11:00) Solomon Is., New Caledonia</option>
+<option value="94">(UTC+11:00) Vladivostok</option>
+<option value="95">(UTC+12:00) Auckland, Wellington</option>
+<option value="96">(UTC+12:00) Co-ordinated Universal Time+12</option>
+<option value="97">(UTC+12:00) Fiji</option>
+<option value="98">(UTC+12:00) Magadan</option>
+<option value="99">(UTC+12:00) Petropavlovsk-Kamchatsky - Old</option>
+<option value="100">(UTC+13:00) Nuku'alofa</option>
+<option value="101">(UTC+13:00) Samoa</option>
+</select>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper mb16">
+            <div class="mod-collapsable">
+                <input type="checkbox" id="property_biling-info">
+                <label for="property_biling-info" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Billing and ownership</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="BillingEntityName">Legal entity or company name to be displayed on invoices.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                            <div class="mod-flex-row mod-flex_nowrap mb16">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <label class="color-dark" for="BillingEntityName">
+                                        Billing entity
+                                        <span class="icon-font icon-font-help more-info" data-tooltip="title" data-tooltip-title="This entity name will be displayed on your invoices" title="This entity name will be displayed on your invoices" data-tooltip-pos="top"></span>
+                                    </label>
+                                    <input class="stretch-input valid" id="billingEntityName" name="BillingEntityName" type="text" value="STAYINN CENTRAL LTD">
+                                    <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingEntityName" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+
+                            <div class="stacked">
+                                <span class="cp-radio-group s-tabbed mb16">
+                                    <input id="usePropertyAddressYes" name="UsePropertyAddressAsBillingAddress" value="True" type="radio">
+                                    <label class="btn btn-grouped btn-invert" for="usePropertyAddressYes">Use property address</label>
+                                    <input id="usePropertyAddressNo" name="UsePropertyAddressAsBillingAddress" value="False" type="radio" checked="checked">
+                                    <label class="btn btn-grouped btn-invert" for="usePropertyAddressNo">Enter a billing address</label>
+                                </span>
+                            </div>
+
+                            <div id="billing-address-panel" class="">
+                                <input data-val="true" data-val-number="The field BillingAddressId must be a number." id="BillingAddressId" name="BillingAddressId" type="hidden" value="5574">
+
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="billing-address-1">Address Line 1 <span aria-required="true" class="required">*</span></label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field BillingAddress1 must be a string with a maximum length of 100." data-val-length-max="100" id="billing-address-1" name="BillingAddress1" type="text" value="10 Crawford Place">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingAddress1" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="billing-address-2">Address Line 2</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field BillingAddress2 must be a string with a maximum length of 100." data-val-length-max="100" id="billing-address-2" name="BillingAddress2" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingAddress2" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="billing-address-3">Address Line 3</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field BillingAddress3 must be a string with a maximum length of 100." data-val-length-max="100" id="billing-address-3" name="BillingAddress3" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingAddress3" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_four">
+                                        <label for="billing-city">Town/City <span aria-required="true" class="required">*</span></label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field BillingCity must be a string with a maximum length of 100." data-val-length-max="100" id="billing-city" name="BillingCity" type="text" value="London">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingCity" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_four">
+                                        <label for="billing-postcode">Postcode</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field BillingPostcode must be a string with a maximum length of 20." data-val-length-max="20" id="billing-postcode" name="BillingPostcode" type="text" value="W1H 5NF">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingPostcode" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_two">
+                                        <label for="billing-county-state">State/Province <span aria-required="true" class="required">*</span></label>
+                                        <select class="cp-custom-select cp-custom-select_fw" data-selected-value="448" data-val="true" data-val-number="The field BillingStateId must be a number." id="billing-county-state" name="BillingStateId"><option value="">----</option><option value="413">Aberdeen City</option><option value="414">Aberdeenshire</option><option value="308">Alderney</option><option value="415">Angus</option><option value="416">Argyll &amp; Bute</option><option value="309">Bedfordshire</option><option value="364">Berkshire</option><option value="399">Blaenau Gwent</option><option value="391">Bridgend</option><option value="365">Buckinghamshire</option><option value="392">Caerphilly</option><option value="310">Cambridgeshire</option><option value="393">Cardiff</option><option value="394">Carmarthenshire</option><option value="395">Ceredigion</option><option value="359">Cheshire</option><option value="373">City of Bristol</option><option value="419">Clackmannanshire</option><option value="396">Conwy</option><option value="374">Cornwall and Isles of Scilly</option><option value="444">County Antrim</option><option value="445">County Armagh</option><option value="446">County Down</option><option value="447">County Fermanagh</option><option value="448">County Londonderry</option><option value="449">County Tyrone</option><option value="360">Cumbria</option><option value="397">Denbighshire</option><option value="315">Derbyshire</option><option value="375">Devon</option><option value="376">Dorset</option><option value="420">Dumfries &amp; Galloway</option><option value="421">Dundee City</option><option value="355">Durham</option><option value="422">East Ayrshire</option><option value="423">East Dunbartonshire</option><option value="424">East Lothian</option><option value="425">East Renfrewshire</option><option value="366">East Sussex</option><option value="386">East Yorkshire</option><option value="417">Edinburgh</option><option value="311">Essex</option><option value="426">Falkirk</option><option value="427">Fife</option><option value="398">Flintshire</option><option value="418">Glasgow</option><option value="377">Gloucestershire</option><option value="726">Greater London</option><option value="361">Greater Manchester</option><option value="305">Guernsey</option><option value="400">Gwynedd</option><option value="367">Hampshire</option><option value="381">Herefordshire</option><option value="312">Hertfordshire</option><option value="428">Highland</option><option value="387">Humberside</option><option value="429">Inverclyde</option><option value="401">Isle of Anglesey</option><option value="354">Isle of Man</option><option value="368">Isle of Wight</option><option value="378">Isles of Scilly</option><option value="306">Jersey</option><option value="369">Kent</option><option value="362">Lancashire</option><option value="316">Leicestershire</option><option value="317">Lincolnshire</option><option value="363">Merseyside</option><option value="402">Merthyr Tydfil</option><option value="430">Midlothian</option><option value="403">Monmouthshire</option><option value="431">Moray</option><option value="404">Neath Port Talbot</option><option value="405">Newport</option><option value="313">Norfolk</option><option value="432">North Ayrshire</option><option value="433">North Lanarkshire</option><option value="388">North Yorkshire</option><option value="318">Northamptonshire</option><option value="356">Northumberland</option><option value="319">Nottinghamshire</option><option value="434">Orkney Islands</option><option value="370">Oxfordshire</option><option value="406">Pembrokeshire</option><option value="435">Perth &amp; Kinross</option><option value="407">Powys</option><option value="436">Renfrewshire</option><option value="408">Rhondda Cynon Taff</option><option value="320">Rutland</option><option value="307">Sark</option><option value="725">Scottish Borders</option><option value="437">Shetland Islands</option><option value="382">Shropshire</option><option value="379">Somerset</option><option value="438">South Ayrshire</option><option value="439">South Lanarkshire</option><option value="389">South Yorkshire</option><option value="383">Staffordshire</option><option value="440">Stirling</option><option value="314">Suffolk</option><option value="371">Surrey</option><option value="409">Swansea</option><option value="357">Teeside</option><option value="410">Torfaen</option><option value="358">Tyne and Wear</option><option value="411">Vale of Glamorgan</option><option value="384">Warwickshire</option><option value="441">West Dunbartonshire</option><option value="442">West Lothian</option><option value="727">West Midlands</option><option value="372">West Sussex</option><option value="390">West Yorkshire</option><option value="443">Western Isles</option><option value="380">Wiltshire</option><option value="385">Worcestershire</option><option value="412">Wrexham</option></select>
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingStateId" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div class="stacked mod-flex-item mod-flex-item_two">
+                                        <label for="billing-country">Country <span aria-required="true" class="required">*</span></label>
+                                        <select class="cp-custom-select cp-custom-select_fw" data-selected-value="235" data-val="true" data-val-number="The field BillingCountryId must be a number." id="billing-country" name="BillingCountryId"><option value="">----</option><option value="16">Afghanistan</option><option value="17">Albania</option><option value="18">Algeria</option><option value="19">American Samoa</option><option value="20">Andorra</option><option value="21">Angola</option><option value="22">Anguilla</option><option value="4355">Antarctica</option><option value="23">Antigua And Barbuda</option><option value="24">Argentina</option><option value="25">Armenia</option><option value="26">Aruba</option><option value="27">Australia</option><option value="28">Austria</option><option value="29">Azerbaijan</option><option value="30">Bahamas</option><option value="31">Bahrain</option><option value="32">Bangladesh</option><option value="33">Barbados</option><option value="34">Belarus</option><option value="35">Belgium</option><option value="36">Belize</option><option value="37">Benin</option><option value="38">Bermuda</option><option value="39">Bhutan</option><option value="40">Bolivia</option><option value="41">Bosnia-Herzegovina</option><option value="42">Botswana</option><option value="4356">Bouvet Island</option><option value="43">Brazil</option><option value="44">British Indian Ocean Territory</option><option value="45">Brunei Darussalam</option><option value="46">Bulgaria</option><option value="47">Burkina Faso</option><option value="48">Burundi</option><option value="49">Cambodia</option><option value="50">Cameroon</option><option value="51">Canada</option><option value="52">Cape Verde</option><option value="53">Cayman Islands</option><option value="54">Central African Republic</option><option value="55">Chad</option><option value="56">Chile</option><option value="57">China</option><option value="58">Christmas Island</option><option value="59">Cocos Islands</option><option value="60">Colombia</option><option value="61">Comoros</option><option value="62">Congo, Democratic Republic Of</option><option value="63">Congo, People's Republic Of</option><option value="64">Cook Islands</option><option value="65">Costa Rica</option><option value="66">Cote D'ivoire</option><option value="67">Croatia</option><option value="68">Cuba</option><option value="69">Cyprus</option><option value="70">Czech Republic</option><option value="71">Denmark</option><option value="72">Djibouti</option><option value="73">Dominica</option><option value="74">Dominican Republic</option><option value="75">East Timor</option><option value="76">Ecuador</option><option value="77">Egypt</option><option value="78">El Salvador</option><option value="79">Equatorial Guinea</option><option value="80">Eritrea</option><option value="81">Estonia</option><option value="82">Ethiopia</option><option value="83">Falkland Islands</option><option value="84">Faroe Islands</option><option value="85">Fiji</option><option value="86">Finland</option><option value="87">France</option><option value="88">French Guiana</option><option value="89">French Polynesia</option><option value="90">French Southern Territories</option><option value="91">Gabon</option><option value="92">Gambia</option><option value="93">Georgia</option><option value="94">Germany</option><option value="95">Ghana</option><option value="96">Gibraltar</option><option value="97">Greece</option><option value="98">Greenland</option><option value="99">Grenada</option><option value="100">Guadeloupe</option><option value="101">Guam</option><option value="102">Guatemala</option><option value="4357">Guernsey</option><option value="103">Guinea</option><option value="104">Guinea-bissau</option><option value="105">Guyana</option><option value="106">Haiti</option><option value="107">Honduras</option><option value="108">Hong Kong</option><option value="109">Hungary</option><option value="110">Iceland</option><option value="111">India</option><option value="112">Indonesia</option><option value="113">Iran</option><option value="114">Iraq</option><option value="115">Ireland</option><option value="4358">Isle of Man</option><option value="116">Israel</option><option value="117">Italy</option><option value="118">Jamaica</option><option value="119">Japan</option><option value="4359">Jersey</option><option value="120">Jordan</option><option value="121">Kazakhstan</option><option value="122">Kenya</option><option value="123">Kiribati</option><option value="124">Kuwait</option><option value="125">Kyrgyzstan</option><option value="126">Laos</option><option value="127">Latvia</option><option value="128">Lebanon</option><option value="129">Lesotho</option><option value="130">Liberia</option><option value="131">Libya</option><option value="132">Liechtenstein</option><option value="133">Lithuania</option><option value="134">Luxembourg</option><option value="135">Macau</option><option value="136">Macedonia</option><option value="137">Madagascar</option><option value="138">Malawi</option><option value="139">Malaysia</option><option value="140">Maldives</option><option value="141">Mali</option><option value="142">Malta</option><option value="143">Marshall Islands</option><option value="144">Martinique</option><option value="145">Mauritania</option><option value="146">Mauritius</option><option value="147">Mayotte</option><option value="148">Mexico</option><option value="149">Micronesia</option><option value="150">Moldova</option><option value="151">Monaco</option><option value="152">Mongolia</option><option value="153">Montenegro</option><option value="154">Montserrat</option><option value="155">Morocco</option><option value="156">Mozambique</option><option value="157">Myanmar</option><option value="158">Namibia</option><option value="159">Nauru</option><option value="160">Nepal</option><option value="162">Netherlands</option><option value="161">Netherlands Antilles</option><option value="163">New Caledonia</option><option value="164">New Zealand</option><option value="165">Nicaragua</option><option value="166">Niger</option><option value="167">Nigeria</option><option value="168">Niue</option><option value="169">Norfolk Island</option><option value="170">North Korea</option><option value="171">Northern Mariana Islands</option><option value="172">Norway</option><option value="173">Oman</option><option value="174">Pakistan</option><option value="175">Palau</option><option value="176">Panama</option><option value="177">Papua New Guinea</option><option value="178">Paraguay</option><option value="179">Peru</option><option value="180">Philippines</option><option value="181">Pitcairn</option><option value="182">Poland</option><option value="183">Portugal</option><option value="184">Puerto Rico</option><option value="185">Qatar</option><option value="186">Reunion</option><option value="187">Romania</option><option value="188">Russia</option><option value="189">Rwanda</option><option value="4360">Saint Barthelemy</option><option value="4361">Saint Martin (French part)</option><option value="190">Samoa</option><option value="191">San Marino</option><option value="192">Sao Tome And Principe</option><option value="193">Saudi Arabia</option><option value="194">Senegal</option><option value="195">Serbia</option><option value="196">Seychelles</option><option value="197">Sierra Leone</option><option value="198">Singapore</option><option value="4413">Sint Maarten</option><option value="199">Slovakia</option><option value="200">Slovenia</option><option value="201">Solomon Islands</option><option value="202">Somalia</option><option value="203">South Africa</option><option value="204">South Georgia And The South Sandwich Islands</option><option value="205">South Korea</option><option value="206">Spain</option><option value="207">Sri Lanka</option><option value="208">St. Helena</option><option value="209">St. Kitts And Nevis</option><option value="210">St. Lucia</option><option value="211">St. Pierre And Miquelon</option><option value="212">St. Vincent And The Grenadines</option><option value="213">Sudan</option><option value="214">Suriname</option><option value="215">Swaziland</option><option value="216">Sweden</option><option value="217">Switzerland</option><option value="218">Syria</option><option value="219">Taiwan</option><option value="220">Tajikistan</option><option value="221">Tanzania</option><option value="222">Thailand</option><option value="223">Togo</option><option value="224">Tokelau</option><option value="225">Tonga</option><option value="226">Trinidad And Tobago</option><option value="227">Tunisia</option><option value="228">Turkey</option><option value="229">Turkmenistan</option><option value="230">Turks And Caicos Islands</option><option value="231">Tuvalu</option><option value="232">Uganda</option><option value="233">Ukraine</option><option value="234">United Arab Emirates</option><option value="235">United Kingdom</option><option value="236">United States</option><option value="4362">United States Minor Outlying Islands</option><option value="237">Uruguay</option><option value="238">Uzbekistan</option><option value="239">Vanuatu</option><option value="240">Vatican City State (Holy See)</option><option value="241">Venezuela</option><option value="242">Vietnam</option><option value="243">Virgin Islands (British)</option><option value="244">Virgin Islands (U.S.)</option><option value="245">Wallis And Futuna Islands</option><option value="246">Western Sahara</option><option value="247">Yemen</option><option value="248">Zambia</option><option value="249">Zimbabwe</option></select>
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="BillingCountryId" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="registrationNumber">Company registration number</label>
+                        </div>
+
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two" id="registrationNumberTextDiv">
+                                <input class="stretch-input valid" data-val="true" data-val-length="The field RegistrationNumber must be a string with a maximum length of 50." data-val-length-max="50" id="registrationNumber" name="RegistrationNumber" type="text" value="12357825">
+                                <span class="field-validation-valid field-validation-error " data-valmsg-for="RegistrationNumber" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width ">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>Residence type</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <select class="cp-custom-select cp-custom-select_fw" data-selected-value="PUO" id="CategorisationTypeCode-select" name="SelectedCategorisationTypeCode"><option value="">- Please Select -</option>
+<option value="PRE">Primary residence</option>
+<option selected="selected" value="PUO">Professional use only</option>
+<option value="SRE">Secondary residence</option>
+</select>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>Ownership type</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <select class="cp-custom-select cp-custom-select_fw" data-selected-value="PCO" id="OwnershipTypeCode-select" name="SelectedOwnershipTypeCode"><option value="">- Please Select -</option>
+<option selected="selected" value="PCO">Professional company</option>
+<option value="PPE">Private person</option>
+</select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>Are your rental revenues subject to taxation?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <select class="cp-custom-select cp-custom-select_fw" data-selected-value="1" id="SubjectToTaxationType-select" name="SelectedSubjectToTaxationType"><option value="">- Please Select -</option>
+<option selected="selected" value="1">Yes</option>
+<option value="0">No</option>
+</select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Construction date
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <input data-val="true" data-val-date="The field PropertyConstructionDateValue must be a date." id="hid-construction-date" name="PropertyConstructionDateValue" type="hidden" value="">
+                            <div class="cp-icon-input before mod-flex-item mod-flex-item_two">
+                                <input type="text" name="PropertyConstructionDate" class="datepicker diary-datepicker hasDatepicker" id="txt-construction-date" data-fromcalendarid="txt-permitId-start-date" data-tocalendarid="txt-permitId-expiry-date">
+                                <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Last renovation date
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <input data-val="true" data-val-date="The field PropertyLastRenovationDateValue must be a date." id="hid-last-renovation-date" name="PropertyLastRenovationDateValue" type="hidden" value="">
+                            <div class="cp-icon-input before mod-flex-item mod-flex-item_two">
+                                <input type="text" name="PropertyLastRenovationDate" class="datepicker diary-datepicker hasDatepicker" id="txt-last-renovation-date" data-fromcalendarid="txt-permitId-start-date" data-tocalendarid="txt-permitId-expiry-date">
+                                <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                First opened to guests
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <input data-val="true" data-val-date="The field PropertyFirstOpenedToGuestsDateValue must be a date." id="hid-first-opened-to-guests-date" name="PropertyFirstOpenedToGuestsDateValue" type="hidden" value="">
+                            <div class="cp-icon-input before mod-flex-item mod-flex-item_two">
+                                <input type="text" name="PropertyFirstOpenedToGuestsDate" class="datepicker diary-datepicker hasDatepicker" id="txt-first-opened-to-guests-date" data-fromcalendarid="txt-permitId-start-date" data-tocalendarid="txt-permitId-expiry-date">
+                                <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper mb16">
+            <div class="mod-collapsable">
+                <input type="checkbox" id="property_licence_permit-info">
+                <label for="property_licence_permit-info" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Licence and permits</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+
+                    <section class="l-row l-row-borderbox l-row_full-width ">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Permit or licence number
+                                <span aria-required="true" class="required permit-required" style="display: none;">*</span>
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <input class="stretch-input valid" data-val="true" data-val-length="The field PermitIdentifier must be a string with a maximum length of 50." data-val-length-max="50" id="permitId" name="PermitIdentifier" type="text" value="">
+                                <span class="field-validation-valid field-validation-error " data-valmsg-for="PermitIdentifier" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="stacked mod-flex-item">
+                                <div class="mod-notice mod-notice-small plain mb24 inline-block">
+                                    <span class="icon-font icon-font-info_outline"></span>
+                                    <span class="">
+                                        You can set a different permit ID for each of your <a href="https://on.eviivo.com/suite/Settings/RoomTypes" target="_blank" class="cp-link cp-link_new-tab-icon lowercase"> Studio types</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Permit or licence start date
+                                <span aria-required="true" class="required permit-required" style="display: none;">*</span>
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <input data-val="true" data-val-date="The field PermitIdStartDateValue must be a date." id="hid-permitId-start-date" name="PermitIdStartDateValue" type="hidden" value="">
+                            <div class="cp-icon-input before mod-flex-item mod-flex-item_two">
+                                <input type="text" name="PermitIdStartDate" class="datepicker diary-datepicker hasDatepicker" id="txt-permitId-start-date" data-fromcalendarid="txt-permitId-start-date" data-tocalendarid="txt-permitId-expiry-date">
+                                <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Permit or licence expiration date
+                                <span aria-required="true" class="required permit-required" style="display: none;">*</span>
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <input data-val="true" data-val-date="The field PermitIdExpiryDateValue must be a date." id="hid-permitId-expiry-date" name="PermitIdExpiryDateValue" type="hidden" value="">
+                            <div class="cp-icon-input before mod-flex-item mod-flex-item_two">
+                                <input type="text" name="PermitIdExpiryDate" class="datepicker diary-datepicker hasDatepicker" id="txt-permitId-expiry-date" data-fromcalendarid="txt-permitId-start-date" data-tocalendarid="txt-permitId-expiry-date">
+                                <svg class="icon-bg icon-bg-date_range"><use xlink:href="#icon-bg-date_range"></use></svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Licence holder
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked mod-flex-item mod-flex-item_two">
+                                <input class="stretch-input valid" data-val="true" data-val-length="The field LicenceHolder must be a string with a maximum length of 100." data-val-length-max="100" id="licenceHolder" name="LicenceHolder" type="text" value="">
+                                <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceHolder" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row-borderbox l-row_full-width mb20">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>
+                                Licence address
+                            </label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="stacked">
+                                <span class="cp-radio-group s-tabbed mb16">
+                                    <input id="usePropertyAddressAsLicenceAddress" name="LicenceAddressSettings" value="P" type="radio" checked="checked">
+                                    <label class="btn btn-grouped btn-invert" for="usePropertyAddressAsLicenceAddress">Use property address</label>
+                                    <input id="useLicenceAddressAsLicenceAddress" name="LicenceAddressSettings" value="B" type="radio">
+                                    <label class="btn btn-grouped btn-invert" for="useLicenceAddressAsLicenceAddress">Use billing address</label>
+                                    <input id="enterLicenceAddress" name="LicenceAddressSettings" value="L" type="radio">
+                                    <label class="btn btn-grouped btn-invert" for="enterLicenceAddress">Enter a licence address</label>
+                                </span>
+                            </div>
+                            <div id="licence-address-panel" class="hide">
+                                <input data-val="true" data-val-number="The field LicenceAddressId must be a number." id="LicenceAddressId" name="LicenceAddressId" type="hidden" value="">
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="licence-address-1">Address Line 1 <span aria-required="true" class="required">*</span></label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field LicenceAddress1 must be a string with a maximum length of 100." data-val-length-max="100" id="licence-address-1" name="LicenceAddress1" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceAddress1" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="licence-address-2">Address Line 2</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field LicenceAddress2 must be a string with a maximum length of 100." data-val-length-max="100" id="licence-address-2" name="LicenceAddress2" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceAddress2" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_three">
+                                        <label for="licence-address-3">Address Line 3</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field LicenceAddress3 must be a string with a maximum length of 100." data-val-length-max="100" id="licence-address-3" name="LicenceAddress3" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceAddress3" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_four">
+                                        <label for="licence-city">Town/City <span aria-required="true" class="required">*</span></label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field LicenceCity must be a string with a maximum length of 100." data-val-length-max="100" id="licence-city" name="LicenceCity" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceCity" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_four">
+                                        <label for="licence-postcode">Postcode</label>
+                                        <input class="stretch-input valid" data-val="true" data-val-length="The field LicencePostcode must be a string with a maximum length of 20." data-val-length-max="20" id="licence-postcode" name="LicencePostcode" type="text" value="">
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicencePostcode" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="stacked mod-flex-item mod-flex-item_two">
+                                        <label for="licence-county-state">State/Province</label>
+                                        <select class="cp-custom-select cp-custom-select_fw" data-selected-value="" data-val="true" data-val-number="The field LicenceStateId must be a number." id="licence-county-state" name="LicenceStateId" disabled=""></select>
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceStateId" data-valmsg-replace="true"></span>
+                                    </div>
+                                    <div class="stacked mod-flex-item mod-flex-item_two">
+                                        <label for="licence-country">Country <span aria-required="true" class="required">*</span></label>
+                                        <select class="cp-custom-select cp-custom-select_fw" data-selected-value="" data-val="true" data-val-number="The field LicenceCountryId must be a number." id="licence-country" name="LicenceCountryId"><option value="">----</option><option value="16">Afghanistan</option><option value="17">Albania</option><option value="18">Algeria</option><option value="19">American Samoa</option><option value="20">Andorra</option><option value="21">Angola</option><option value="22">Anguilla</option><option value="4355">Antarctica</option><option value="23">Antigua And Barbuda</option><option value="24">Argentina</option><option value="25">Armenia</option><option value="26">Aruba</option><option value="27">Australia</option><option value="28">Austria</option><option value="29">Azerbaijan</option><option value="30">Bahamas</option><option value="31">Bahrain</option><option value="32">Bangladesh</option><option value="33">Barbados</option><option value="34">Belarus</option><option value="35">Belgium</option><option value="36">Belize</option><option value="37">Benin</option><option value="38">Bermuda</option><option value="39">Bhutan</option><option value="40">Bolivia</option><option value="41">Bosnia-Herzegovina</option><option value="42">Botswana</option><option value="4356">Bouvet Island</option><option value="43">Brazil</option><option value="44">British Indian Ocean Territory</option><option value="45">Brunei Darussalam</option><option value="46">Bulgaria</option><option value="47">Burkina Faso</option><option value="48">Burundi</option><option value="49">Cambodia</option><option value="50">Cameroon</option><option value="51">Canada</option><option value="52">Cape Verde</option><option value="53">Cayman Islands</option><option value="54">Central African Republic</option><option value="55">Chad</option><option value="56">Chile</option><option value="57">China</option><option value="58">Christmas Island</option><option value="59">Cocos Islands</option><option value="60">Colombia</option><option value="61">Comoros</option><option value="62">Congo, Democratic Republic Of</option><option value="63">Congo, People's Republic Of</option><option value="64">Cook Islands</option><option value="65">Costa Rica</option><option value="66">Cote D'ivoire</option><option value="67">Croatia</option><option value="68">Cuba</option><option value="69">Cyprus</option><option value="70">Czech Republic</option><option value="71">Denmark</option><option value="72">Djibouti</option><option value="73">Dominica</option><option value="74">Dominican Republic</option><option value="75">East Timor</option><option value="76">Ecuador</option><option value="77">Egypt</option><option value="78">El Salvador</option><option value="79">Equatorial Guinea</option><option value="80">Eritrea</option><option value="81">Estonia</option><option value="82">Ethiopia</option><option value="83">Falkland Islands</option><option value="84">Faroe Islands</option><option value="85">Fiji</option><option value="86">Finland</option><option value="87">France</option><option value="88">French Guiana</option><option value="89">French Polynesia</option><option value="90">French Southern Territories</option><option value="91">Gabon</option><option value="92">Gambia</option><option value="93">Georgia</option><option value="94">Germany</option><option value="95">Ghana</option><option value="96">Gibraltar</option><option value="97">Greece</option><option value="98">Greenland</option><option value="99">Grenada</option><option value="100">Guadeloupe</option><option value="101">Guam</option><option value="102">Guatemala</option><option value="4357">Guernsey</option><option value="103">Guinea</option><option value="104">Guinea-bissau</option><option value="105">Guyana</option><option value="106">Haiti</option><option value="107">Honduras</option><option value="108">Hong Kong</option><option value="109">Hungary</option><option value="110">Iceland</option><option value="111">India</option><option value="112">Indonesia</option><option value="113">Iran</option><option value="114">Iraq</option><option value="115">Ireland</option><option value="4358">Isle of Man</option><option value="116">Israel</option><option value="117">Italy</option><option value="118">Jamaica</option><option value="119">Japan</option><option value="4359">Jersey</option><option value="120">Jordan</option><option value="121">Kazakhstan</option><option value="122">Kenya</option><option value="123">Kiribati</option><option value="124">Kuwait</option><option value="125">Kyrgyzstan</option><option value="126">Laos</option><option value="127">Latvia</option><option value="128">Lebanon</option><option value="129">Lesotho</option><option value="130">Liberia</option><option value="131">Libya</option><option value="132">Liechtenstein</option><option value="133">Lithuania</option><option value="134">Luxembourg</option><option value="135">Macau</option><option value="136">Macedonia</option><option value="137">Madagascar</option><option value="138">Malawi</option><option value="139">Malaysia</option><option value="140">Maldives</option><option value="141">Mali</option><option value="142">Malta</option><option value="143">Marshall Islands</option><option value="144">Martinique</option><option value="145">Mauritania</option><option value="146">Mauritius</option><option value="147">Mayotte</option><option value="148">Mexico</option><option value="149">Micronesia</option><option value="150">Moldova</option><option value="151">Monaco</option><option value="152">Mongolia</option><option value="153">Montenegro</option><option value="154">Montserrat</option><option value="155">Morocco</option><option value="156">Mozambique</option><option value="157">Myanmar</option><option value="158">Namibia</option><option value="159">Nauru</option><option value="160">Nepal</option><option value="162">Netherlands</option><option value="161">Netherlands Antilles</option><option value="163">New Caledonia</option><option value="164">New Zealand</option><option value="165">Nicaragua</option><option value="166">Niger</option><option value="167">Nigeria</option><option value="168">Niue</option><option value="169">Norfolk Island</option><option value="170">North Korea</option><option value="171">Northern Mariana Islands</option><option value="172">Norway</option><option value="173">Oman</option><option value="174">Pakistan</option><option value="175">Palau</option><option value="176">Panama</option><option value="177">Papua New Guinea</option><option value="178">Paraguay</option><option value="179">Peru</option><option value="180">Philippines</option><option value="181">Pitcairn</option><option value="182">Poland</option><option value="183">Portugal</option><option value="184">Puerto Rico</option><option value="185">Qatar</option><option value="186">Reunion</option><option value="187">Romania</option><option value="188">Russia</option><option value="189">Rwanda</option><option value="4360">Saint Barthelemy</option><option value="4361">Saint Martin (French part)</option><option value="190">Samoa</option><option value="191">San Marino</option><option value="192">Sao Tome And Principe</option><option value="193">Saudi Arabia</option><option value="194">Senegal</option><option value="195">Serbia</option><option value="196">Seychelles</option><option value="197">Sierra Leone</option><option value="198">Singapore</option><option value="4413">Sint Maarten</option><option value="199">Slovakia</option><option value="200">Slovenia</option><option value="201">Solomon Islands</option><option value="202">Somalia</option><option value="203">South Africa</option><option value="204">South Georgia And The South Sandwich Islands</option><option value="205">South Korea</option><option value="206">Spain</option><option value="207">Sri Lanka</option><option value="208">St. Helena</option><option value="209">St. Kitts And Nevis</option><option value="210">St. Lucia</option><option value="211">St. Pierre And Miquelon</option><option value="212">St. Vincent And The Grenadines</option><option value="213">Sudan</option><option value="214">Suriname</option><option value="215">Swaziland</option><option value="216">Sweden</option><option value="217">Switzerland</option><option value="218">Syria</option><option value="219">Taiwan</option><option value="220">Tajikistan</option><option value="221">Tanzania</option><option value="222">Thailand</option><option value="223">Togo</option><option value="224">Tokelau</option><option value="225">Tonga</option><option value="226">Trinidad And Tobago</option><option value="227">Tunisia</option><option value="228">Turkey</option><option value="229">Turkmenistan</option><option value="230">Turks And Caicos Islands</option><option value="231">Tuvalu</option><option value="232">Uganda</option><option value="233">Ukraine</option><option value="234">United Arab Emirates</option><option value="235">United Kingdom</option><option value="236">United States</option><option value="4362">United States Minor Outlying Islands</option><option value="237">Uruguay</option><option value="238">Uzbekistan</option><option value="239">Vanuatu</option><option value="240">Vatican City State (Holy See)</option><option value="241">Venezuela</option><option value="242">Vietnam</option><option value="243">Virgin Islands (British)</option><option value="244">Virgin Islands (U.S.)</option><option value="245">Wallis And Futuna Islands</option><option value="246">Western Sahara</option><option value="247">Yemen</option><option value="248">Zambia</option><option value="249">Zimbabwe</option></select>
+                                        <span class="field-validation-valid field-validation-error " data-valmsg-for="LicenceCountryId" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+</form>
+</div>
+@code {
+
+}

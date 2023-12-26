@@ -1,0 +1,161 @@
+﻿ @page "/generalpage"
+<PageTitle>My Web  </PageTitle>
+
+<div class="page-heading page-heading_centered page-heading_side-menu">
+    <div class="h2">General</div>
+</div>
+
+<div class="l-centered l-centered_side-menu mb70 pb70 mod-form">
+
+    <ul class="mod-page-nav mod-page-nav_level-1">
+        <li class="selected " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/generalpage" class="s-header-link user-select-none s-drag-false" draggable="false">General</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/brandingandstyling" class="s-header-link user-select-none s-drag-false" draggable="false">Branding &amp; Styling</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/ratingsandawards" class="s-header-link user-select-none s-drag-false" draggable="false">Ratings &amp; Awards</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/searchpage" class="s-header-link user-select-none s-drag-false" draggable="false">Search Page</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/checkoutpage" class="s-header-link user-select-none s-drag-false" draggable="false">Checkout Page</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/guestreviewssettingspage" class="s-header-link user-select-none s-drag-false" draggable="false">Guest Reviews</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/widgets" class="s-header-link user-select-none s-drag-false" draggable="false">Widgets</a>
+        </li>
+        <li class=" " draggable="false" ondragstart="return false;">
+            <a href="https://on.eviivo.com/suite/myweb/customwidgets" class="s-header-link user-select-none s-drag-false" draggable="false">Custom Widgets</a>
+        </li>
+    </ul>
+
+
+    <form action="https://on.eviivo.com/suite/myweb/generalpage?Length=5" class="l-main-container" data-ajax="true" data-ajax-loading="#loading-overlay" data-ajax-method="Post" id="generalPage-form" method="post" novalidate="novalidate">
+        <input data-val="true" data-val-required="The PropertyGuid field is required." id="PropertyGuid" name="PropertyGuid" type="hidden" value="e0000000-0000-0000-0000-000000040305"><input data-val="true" data-val-required="The Id field is required." id="Id" name="Id" type="hidden" value="e293f3b1-bb19-4706-8ada-5eb6d233dafa"><input data-val="true" data-val-required="The IsInstantWeb field is required." id="IsInstantWeb" name="IsInstantWeb" type="hidden" value="False"><input data-val="true" data-val-required="The IsValidDomain field is required." id="IsValidDomain" name="IsValidDomain" type="hidden" value="True">
+
+
+        <div class="cp-paper mb16">
+            <div class="mod-myweb-general">
+
+                <section class="l-row l-row-borderbox l-row_full-width mb24">
+                    <div class="l-column large-4 medium-3 small-12">
+                        <label>
+                            Website address
+                        </label>
+                    </div>
+                    <div class="l-column large-8 medium-9 small-12">
+                        <a href="https://via.eviivo.com/MSKPremiumW2" target="_blank">https://via.eviivo.com/MSKPremiumW2</a>
+                    </div>
+                </section>
+
+
+
+
+
+                <section class="l-row l-row-borderbox l-row_full-width ">
+                    <div class="l-column large-4 medium-3 small-12">
+                        <label>Google Analytics measurement/tracking ID</label>
+                    </div>
+                    <div class="l-column large-8 medium-9 small-12 end">
+                        <div class="w50">
+                            <input class="stretch-input" id="trackingCode" name="TrackingCode" type="text" value="">
+                            <input id="regexTrackingCode" name="RegexTrackingCode" type="hidden" value="^[A-Z][A-Z0-9]?-[A-Z0-9]{4,10}(?:\-[1-9]\d{0,3})?$">
+                            <div class="field-validation-error hide" data-valmsg-replace="true" id="trackingCodeValidationSpan">
+                                Your Google Analytics tracking code may not be valid.
+                            </div>
+                        </div>
+                        <div class="mod-notice mod-notice-small plain">
+                            <span class="icon-font icon-font-info_outline"></span>
+                            <div>
+                                <p>A Google Analytics account can be used to track how many customers use your booking pages to make an online reservation.</p>
+                                <p>Create a Google Analytics account, then enter the Steam Measurement ID (G-XXXXXX) or Tracking ID (UA-XXXXXX-Y) provided by Google. You will start to see data in your Google Analytics dashboard within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="cp-paper mb16">
+            <div class="mod-myweb-general">
+                <div class="mod-collapsable">
+
+                    <input type="checkbox" id="googleAdsTitle">
+                    <label for="googleAdsTitle" class="mod-collapsable_title mod-collapsable_title-clear">
+                        <span>Ad Campaigns</span>
+                    </label>
+                    <div class="mod-collapsable_body">
+
+
+                        <section class="l-row l-row-borderbox l-row_full-width ">
+                            <div class="l-column large-4 medium-3 small-12">
+                                <label>Google Ads Conversion ID</label>
+                            </div>
+                            <div class="l-column large-8 medium-9 small-12 end">
+                                <div class="w50">
+                                    <input class="stretch-input" data-val="true" data-val-length="The field GoogleAdsConversionId must be a string with a maximum length of 1024." data-val-length-max="1024" id="gadsConversionId" maxlength="1024" name="GoogleAdsConversionId" type="text" value="">
+                                    <span class="field-validation-valid" data-valmsg-for="GoogleAdsConversionId" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="mod-notice mod-notice-small plain">
+                                    <span class="icon-font icon-font-info_outline"></span>
+                                    <div>
+                                        <span>Your Conversion ID will be similar to: <b>AW-1003130324</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="l-row l-row-borderbox l-row_full-width ">
+                            <div class="l-column large-4 medium-3 small-12">
+                                <label>Google Ads Conversion Label</label>
+                            </div>
+                            <div class="l-column large-8 medium-9 small-12 end">
+                                <div class="w50">
+                                    <input class="stretch-input" data-val="true" data-val-length="The field GoogleAdsLabel must be a string with a maximum length of 1024." data-val-length-max="1024" id="gadsLabel" maxlength="1024" name="GoogleAdsLabel" type="text" value="">
+                                </div>
+                                <div class="mod-notice mod-notice-small plain">
+                                    <span class="icon-font icon-font-info_outline"></span>
+                                    <div>
+                                        <span>Your Conversion Label will be similar to the format: <b>AW-10779129653/22NfCPPO2vYCELXu8ZMo</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+                        <section class="l-row l-row-borderbox l-row_full-width ">
+                            <div class="l-column large-4 medium-3 small-12">
+                                <label>Facebook Pixel ID</label>
+                            </div>
+                            <div class="l-column large-8 medium-9 small-12 end">
+                                <div class="w50">
+                                    <input class="stretch-input" data-val="true" data-val-length="The field FacebookPixelId must be a string with a maximum length of 1024." data-val-length-max="1024" id="facebookPixelId" maxlength="1024" name="FacebookPixelId" type="text" value="">
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+@code {
+
+}

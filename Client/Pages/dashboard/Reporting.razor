@@ -1,0 +1,1057 @@
+﻿@page "/reporting"
+<PageTitle>Reporting  </PageTitle>
+
+<div class="generic-content-outter">
+    <div class="l-centered mb70 pb70">
+            <div class="page-heading page-heading_centered s-reporting-summary-header">
+                <div class="h2">
+                    Key Reports
+                </div>
+            </div>
+            <div class="reporting-summary s-reporting-summary cp-paper cp-paper_p16 mb16 display-flex justify-space-between">
+                <div class="kpi-set mr16">
+                    <div class="kpi-item">
+                        <div class="kpi-icon">
+                            <svg class="icon-bg icon-bg-local_hotel">
+                                <use xlink:href="#icon-bg-local_hotel"></use>
+                            </svg>
+                        </div>
+                        <div class="kpi-item_inner">
+                            <div class="kpi-result">Bookings</div>
+                            <div class="kpi-text">
+                                <a class="s-booking-report" href="https://on.eviivo.com/suite/reporting#" data-tooltip="title" data-tooltip-title="Shows bookings, guests and amounts due for a date range" data-tooltip-pos="top" title="Shows bookings, guests and amounts due for a date range">Booking Report</a><br>
+                                    <a href="javascript:;" data-id="Occupancy Levels" data-name="Reports.Ssrs.Occupancy_Levels.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Occupancy_Levels.Description" data-tooltip-title="Sales and occupancy by room type over 12 months and year-on-year change" data-tooltip-pos="top" title="Sales and occupancy by room type over 12 months and year-on-year change">Occupancy Levels</a><br>
+                                <a href="https://on.eviivo.com/suite/reporting#" data-id="Booking Extras" data-name="Reports.Ssrs.Booking_Extras.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Booking_Extras.Description" data-tooltip-title=" Charges and Deductions, grouped by category" data-tooltip-pos="top" title=" Charges and Deductions, grouped by category">Charges and Deductions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-set mr16">
+                    <div class="kpi-item">
+                        <div class="kpi-icon">
+                            <svg class="icon-bg icon-bg-graph">
+                                <use xlink:href="#icon-bg-graph"></use>
+                            </svg>
+                        </div>
+                        <div class="kpi-item_inner">
+                            <div class="kpi-result">Finance</div>
+                            <div class="kpi-text">
+                                <a href="javascript:;" data-id="Payments Received" data-name="Reports.Ssrs.Payments_Received.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Payments_Received.Description" data-tooltip-title="Payments &amp; Refunds received for a given period" data-tooltip-pos="top" title="Payments &amp; Refunds received for a given period">Payments &amp; Refunds Received</a><br>
+                                <a href="javascript:;" data-id="Daily Payments" data-name="Reports.Ssrs.Daily_Payments.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Daily_Payments.Description" data-tooltip-title="Bookings and payments - collected and outstanding - for a given period" data-tooltip-pos="top" title="Bookings and payments - collected and outstanding - for a given period">Daily Payments</a><br>
+                                    <a href="https://on.eviivo.com/suite/reporting#" data-id="Revenues" data-name="Reports.Ssrs.Revenues.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Revenues.Description" data-tooltip-title="Revenue by room type and by source for a given period" data-tooltip-pos="top" title="Revenue by room type and by source for a given period">Revenues</a><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kpi-set mr16">
+                    <div class="kpi-item">
+                        <div class="kpi-icon">
+                            <svg class="icon-bg icon-bg-group_two">
+                                <use xlink:href="#icon-bg-group_two"></use>
+                            </svg>
+                        </div>
+                        <div class="kpi-item_inner">
+                            <div class="kpi-result">Guests</div>
+                            <div class="kpi-text">
+                                <a href="javascript:;" data-id="Guests" data-name="Reports.Ssrs.Guests.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Guests.Description" data-tooltip-title="Guests with an email address showing their booking spend in the period and lifetime value" data-tooltip-pos="top" title="Guests with an email address showing their booking spend in the period and lifetime value">Guest Marketing Report</a><br>
+                                <a href="javascript:;" data-id="Cleaning" data-name="Reports.Ssrs.Cleaning.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Cleaning.Description" data-tooltip-title="Room cleaning schedule" data-tooltip-pos="top" title="Room cleaning schedule">Cleaning</a><br>
+                                <a href="javascript:;" data-id="Breakfast Report" data-name="Reports.Ssrs.Breakfast_Report.Name" class="s-open-report" data-tooltip="title" data-title="Reports.Ssrs.Breakfast_Report.Description" data-tooltip-title="Purchased breakfasts" data-tooltip-pos="top" title="Purchased breakfasts">Breakfast Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        <div class="page-heading page-heading_centered">
+            <div class="h2">
+                All Reports
+            </div>
+        </div>
+
+        <div class="cp-paper">
+            <div id="reports-unavailable-error" class="mod-notice mod-notice-small alert mod-notice_spinner" style="display: none">
+                <span class="spinner-container">
+                    <span class="spinner no-background light-spinner small-spinner hide">
+                        <span class="position-spinner">
+                            <span class="spin"></span>
+                        </span>
+                    </span>
+                </span>
+                <span>Your report data is being updated, which can take up to 15 minutes. During this time some reports cannot be viewed.</span>
+            </div>
+
+            
+
+
+
+<div id="eviivo-list-reports_wrapper" class="dataTables_wrapper no-footer"><div id="eviivo-list-reports_filter" class="dataTables_filter"><label></label></div><table id="eviivo-list-reports" class="md-table md-table_border_none md-table_zebra dataTable no-footer" cellspacing="0" width="100%" style="display: table;">
+    <thead>
+    <tr><th class="filter-enabled sorting" data-key="Name" tabindex="0" aria-controls="eviivo-list-reports" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Name</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-reports-search-0" name="eviivo-list-reports-search-0">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-0">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-0 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-0 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-0" data-columnindex="0" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Availability-Overview_0_0" data-value="Availability Overview" name="filter-0" value="Availability Overview">
+                            <label for="Availability-Overview_0_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Availability Overview</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Booking-Report_1_0" data-value="Booking Report" name="filter-0" value="Booking Report">
+                            <label for="Booking-Report_1_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Booking Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Booking-Search-by-Guest-or-Reference_2_0" data-value="Booking Search by Guest or Reference" name="filter-0" value="Booking Search by Guest or Reference">
+                            <label for="Booking-Search-by-Guest-or-Reference_2_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Booking Search by Guest or Reference</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Bookings-Paid-On-Account_3_0" data-value="Bookings Paid On Account" name="filter-0" value="Bookings Paid On Account">
+                            <label for="Bookings-Paid-On-Account_3_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Bookings Paid On Account</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Booking-Vouchers_4_0" data-value="Booking Vouchers" name="filter-0" value="Booking Vouchers">
+                            <label for="Booking-Vouchers_4_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Booking Vouchers</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Breakfast-Report_5_0" data-value="Breakfast Report" name="filter-0" value="Breakfast Report">
+                            <label for="Breakfast-Report_5_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Breakfast Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Charges-and-Deductions_6_0" data-value="Charges and Deductions" name="filter-0" value="Charges and Deductions">
+                            <label for="Charges-and-Deductions_6_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Charges and Deductions</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Cleaning_7_0" data-value="Cleaning" name="filter-0" value="Cleaning">
+                            <label for="Cleaning_7_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Cleaning</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Daily-Activity-Report_8_0" data-value="Daily Activity Report" name="filter-0" value="Daily Activity Report">
+                            <label for="Daily-Activity-Report_8_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Daily Activity Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Daily-KPIs-and-Balances_9_0" data-value="Daily KPIs and Balances" name="filter-0" value="Daily KPIs and Balances">
+                            <label for="Daily-KPIs-and-Balances_9_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Daily KPIs and Balances</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Daily-Ledger---End-of-Day-Report_10_0" data-value="Daily Ledger - End of Day Report" name="filter-0" value="Daily Ledger - End of Day Report">
+                            <label for="Daily-Ledger---End-of-Day-Report_10_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Daily Ledger - End of Day Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Daily-Payments_11_0" data-value="Daily Payments" name="filter-0" value="Daily Payments">
+                            <label for="Daily-Payments_11_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Daily Payments</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Daily-Revenues_12_0" data-value="Daily Revenues" name="filter-0" value="Daily Revenues">
+                            <label for="Daily-Revenues_12_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Daily Revenues</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="13">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Deposits-due_13_0" data-value="Deposits due" name="filter-0" value="Deposits due">
+                            <label for="Deposits-due_13_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Deposits due</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="14">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Expedia,-Airbnb-and-Agoda-Remittance-Report_14_0" data-value="Expedia, Airbnb and Agoda Remittance Report" name="filter-0" value="Expedia, Airbnb and Agoda Remittance Report">
+                            <label for="Expedia,-Airbnb-and-Agoda-Remittance-Report_14_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Expedia, Airbnb and Agoda Remittance Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="15">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Expedia-Coronavirus---Voucher-Report_15_0" data-value="Expedia Coronavirus - Voucher Report" name="filter-0" value="Expedia Coronavirus - Voucher Report">
+                            <label for="Expedia-Coronavirus---Voucher-Report_15_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Expedia Coronavirus - Voucher Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="16">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Extra-requests_16_0" data-value="Extra requests" name="filter-0" value="Extra requests">
+                            <label for="Extra-requests_16_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Extra requests</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="17">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Guest-Marketing-Report_17_0" data-value="Guest Marketing Report" name="filter-0" value="Guest Marketing Report">
+                            <label for="Guest-Marketing-Report_17_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Guest Marketing Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="18">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="History---Bookings_18_0" data-value="History - Bookings" name="filter-0" value="History - Bookings">
+                            <label for="History---Bookings_18_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">History - Bookings</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="19">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="History---Daily-Rates_19_0" data-value="History - Daily Rates" name="filter-0" value="History - Daily Rates">
+                            <label for="History---Daily-Rates_19_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">History - Daily Rates</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="20">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="History---Seasonal-Rates_20_0" data-value="History - Seasonal Rates" name="filter-0" value="History - Seasonal Rates">
+                            <label for="History---Seasonal-Rates_20_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">History - Seasonal Rates</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="21">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="History---Voided-Extras_21_0" data-value="History - Voided Extras" name="filter-0" value="History - Voided Extras">
+                            <label for="History---Voided-Extras_21_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">History - Voided Extras</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="22">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="History---Voided-Payments_22_0" data-value="History - Voided Payments" name="filter-0" value="History - Voided Payments">
+                            <label for="History---Voided-Payments_22_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">History - Voided Payments</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="23">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Invoices-Issued_23_0" data-value="Invoices Issued" name="filter-0" value="Invoices Issued">
+                            <label for="Invoices-Issued_23_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Invoices Issued</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="24">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="ISTAT-Report-(Italy)_24_0" data-value="ISTAT Report (Italy)" name="filter-0" value="ISTAT Report (Italy)">
+                            <label for="ISTAT-Report-(Italy)_24_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">ISTAT Report (Italy)</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="25">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Journal-Export-Log_25_0" data-value="Journal Export Log" name="filter-0" value="Journal Export Log">
+                            <label for="Journal-Export-Log_25_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Journal Export Log</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="26">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Journal-Preparation_26_0" data-value="Journal Preparation" name="filter-0" value="Journal Preparation">
+                            <label for="Journal-Preparation_26_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Journal Preparation</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="27">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Key-Performance-Indicators_27_0" data-value="Key Performance Indicators" name="filter-0" value="Key Performance Indicators">
+                            <label for="Key-Performance-Indicators_27_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Key Performance Indicators</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="28">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Liability-Report_28_0" data-value="Liability Report" name="filter-0" value="Liability Report">
+                            <label for="Liability-Report_28_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Liability Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="29">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Nationality-Report_29_0" data-value="Nationality Report" name="filter-0" value="Nationality Report">
+                            <label for="Nationality-Report_29_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Nationality Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="30">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Occupancy-Levels_30_0" data-value="Occupancy Levels" name="filter-0" value="Occupancy Levels">
+                            <label for="Occupancy-Levels_30_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Occupancy Levels</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="31">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Operating-Statement_31_0" data-value="Operating Statement" name="filter-0" value="Operating Statement">
+                            <label for="Operating-Statement_31_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Operating Statement</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="32">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Operating-Statement-(summary-by-property)_32_0" data-value="Operating Statement (summary by property)" name="filter-0" value="Operating Statement (summary by property)">
+                            <label for="Operating-Statement-(summary-by-property)_32_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Operating Statement (summary by property)</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="33">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="OTA-Commissions_33_0" data-value="OTA Commissions" name="filter-0" value="OTA Commissions">
+                            <label for="OTA-Commissions_33_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">OTA Commissions</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="34">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Outstanding-Balances_34_0" data-value="Outstanding Balances" name="filter-0" value="Outstanding Balances">
+                            <label for="Outstanding-Balances_34_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Outstanding Balances</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="35">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Partner-Report---Daily-Bookings_35_0" data-value="Partner Report - Daily Bookings" name="filter-0" value="Partner Report - Daily Bookings">
+                            <label for="Partner-Report---Daily-Bookings_35_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Partner Report - Daily Bookings</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="36">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Payments-&amp;-Refunds-Received_36_0" data-value="Payments &amp; Refunds Received" name="filter-0" value="Payments &amp; Refunds Received">
+                            <label for="Payments-&amp;-Refunds-Received_36_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Payments &amp; Refunds Received</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="37">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Performance_37_0" data-value="Performance" name="filter-0" value="Performance">
+                            <label for="Performance_37_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Performance</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="38">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Police-Report_38_0" data-value="Police Report" name="filter-0" value="Police Report">
+                            <label for="Police-Report_38_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Police Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="39">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Police-Report-(Spain)_39_0" data-value="Police Report (Spain)" name="filter-0" value="Police Report (Spain)">
+                            <label for="Police-Report-(Spain)_39_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Police Report (Spain)</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="40">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Promo-Summary_40_0" data-value="Promo Summary" name="filter-0" value="Promo Summary">
+                            <label for="Promo-Summary_40_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Promo Summary</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="41">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Rate-Export_41_0" data-value="Rate Export" name="filter-0" value="Rate Export">
+                            <label for="Rate-Export_41_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Rate Export</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="42">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Revenues_42_0" data-value="Revenues" name="filter-0" value="Revenues">
+                            <label for="Revenues_42_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Revenues</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="43">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Service-Accommodation-Statement-(Essential-Mgmt)_43_0" data-value="Service Accommodation Statement (Essential Mgmt)" name="filter-0" value="Service Accommodation Statement (Essential Mgmt)">
+                            <label for="Service-Accommodation-Statement-(Essential-Mgmt)_43_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Service Accommodation Statement (Essential Mgmt)</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="44">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tax-or-VAT-Report_44_0" data-value="Tax or VAT Report" name="filter-0" value="Tax or VAT Report">
+                            <label for="Tax-or-VAT-Report_44_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tax or VAT Report</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="45">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tax-Report-for-Advanced-Deposits_45_0" data-value="Tax Report for Advanced Deposits" name="filter-0" value="Tax Report for Advanced Deposits">
+                            <label for="Tax-Report-for-Advanced-Deposits_45_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tax Report for Advanced Deposits</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="46">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Tourism-Statistics_46_0" data-value="Tourism Statistics" name="filter-0" value="Tourism Statistics">
+                            <label for="Tourism-Statistics_46_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Tourism Statistics</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="47">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Trial-Balance-Movements---BETA_47_0" data-value="Trial Balance Movements - BETA" name="filter-0" value="Trial Balance Movements - BETA">
+                            <label for="Trial-Balance-Movements---BETA_47_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Trial Balance Movements - BETA</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="48">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Vrbo-Mapping_48_0" data-value="Vrbo Mapping" name="filter-0" value="Vrbo Mapping">
+                            <label for="Vrbo-Mapping_48_0">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Vrbo Mapping</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/reporting#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/reporting#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="sorting" data-key="Description" tabindex="0" aria-controls="eviivo-list-reports" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending">Description</th><th class="sorting" data-key="View" tabindex="0" aria-controls="eviivo-list-reports" rowspan="1" colspan="1" aria-label=": activate to sort column ascending"></th></tr>
+    </thead>
+    <tbody><tr data-key="Availability Overview" data-des="Graphical view of availability by date" class="s-row-undefined even" data-id="undefined">
+            <td>Availability Overview</td>
+            <td>Graphical view of availability by date</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/39?path=/Eviivo%20Premium/Availability%20Overview&amp;name=Availability%20Overview&amp;descriptionGraphical%20view%20of%20availability%20by%20date" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr class="s-row-undefined odd" data-id="undefined">
+                <td>Booking Report</td>
+                <td>Shows bookings, guests and amounts due for a date range</td>
+                <td class="md-table_text-right"><a id="booking-report" class="s-booking-report md-table_action md-table_action-item" href="javascript:;" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:="" href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+            </tr><tr data-key="Booking Search by Guest or Reference" data-des="Find historical bookings or guests" class="s-row-undefined odd" data-id="undefined">
+            <td>Booking Search by Guest or Reference</td>
+            <td>Find historical bookings or guests</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/23?path=/Eviivo%20Basic/Booking%20Search&amp;name=Booking%20Search%20by%20Guest%20or%20Reference&amp;descriptionFind%20historical%20bookings%20or%20guests" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Booking Vouchers" data-des="Booking vouchers Issued &amp; Redeemed (by email)" class="s-row-undefined odd" data-id="undefined">
+            <td>Booking Vouchers</td>
+            <td>Booking vouchers Issued &amp; Redeemed (by email)</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/17?path=/Eviivo%20Basic/Vouchers&amp;name=Booking%20Vouchers&amp;descriptionBooking%20vouchers%20Issued%20&amp;%20Redeemed%20(by%20email)" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Bookings Paid On Account" data-des="Bookings with On Account payments checking out within a given period" class="s-row-undefined even" data-id="undefined">
+            <td>Bookings Paid On Account</td>
+            <td>Bookings with On Account payments checking out within a given period</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/12?path=/Eviivo%20Basic/Bookings%20Paid%20on%20Account&amp;name=Bookings%20Paid%20On%20Account&amp;descriptionBookings%20with%20On%20Account%20payments%20checking%20out%20within%20a%20given%20period" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Breakfast Report" data-des="Purchased breakfasts" class="s-row-undefined odd" data-id="undefined">
+            <td>Breakfast Report</td>
+            <td>Purchased breakfasts</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/8?path=/Eviivo%20Basic/Breakfast%20Report&amp;name=Breakfast%20Report&amp;descriptionPurchased%20breakfasts" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Charges and Deductions" data-des=" Charges and Deductions, grouped by category" class="s-row-undefined odd" data-id="undefined">
+            <td>Charges and Deductions</td>
+            <td>Charges and Deductions, grouped by category</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/7?path=/Eviivo%20Basic/Booking%20Extras&amp;name=Charges%20and%20Deductions&amp;description%20Charges%20and%20Deductions,%20grouped%20by%20category" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Cleaning" data-des="Room cleaning schedule" class="s-row-undefined even" data-id="undefined">
+            <td>Cleaning</td>
+            <td>Room cleaning schedule</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/1?path=/Eviivo%20Housekeeping/Cleaning&amp;name=Cleaning&amp;descriptionRoom%20cleaning%20schedule" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Cleaning" data-des="Room cleaning schedule" class="s-row-undefined even" data-id="undefined">
+            <td>Cleaning</td>
+            <td>Room cleaning schedule</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/48?path=/Eviivo%20Housekeeping/Cleaning&amp;name=Cleaning&amp;descriptionRoom%20cleaning%20schedule" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Daily Activity Report" data-des="Bookings and cancellations - by date - based on the date of stay or the date of booking/cancellation" class="s-row-undefined odd" data-id="undefined">
+            <td>Daily Activity Report</td>
+            <td>Bookings and cancellations - by date - based on the date of stay or the date of booking/cancellation</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/27?path=/Eviivo%20Basic/Daily%20Booking%20Activity&amp;name=Daily%20Activity%20Report&amp;descriptionBookings%20and%20cancellations%20-%20by%20date%20-%20based%20on%20the%20date%20of%20stay%20or%20the%20date%20of%20booking/cancellation" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Daily KPIs and Balances" data-des="Outputs daily KPI and guest balances suitable for importing into Business Intelligence systems" class="s-row-undefined even" data-id="undefined">
+            <td>Daily KPIs and Balances</td>
+            <td>Outputs daily KPI and guest balances suitable for importing into Business Intelligence systems</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/43?path=/Eviivo%20Premium/Daily%20KPIs%20and%20Balances&amp;name=Daily%20KPIs%20and%20Balances&amp;descriptionOutputs%20daily%20KPI%20and%20guest%20balances%20suitable%20for%20importing%20into%20Business%20Intelligence%20systems" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Daily Ledger - End of Day Report" data-des="Shows revenues and balances of in-house bookings, including past bookings with an outstanding balance, and advance deposits received today." class="s-row-undefined odd" data-id="undefined">
+            <td>Daily Ledger - End of Day Report</td>
+            <td>Shows revenues and balances of in-house bookings, including past bookings with an outstanding balance, and advance deposits received today.</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/10?path=/Eviivo%20Basic/End%20of%20Day%20Report&amp;name=Daily%20Ledger%20-%20End%20of%20Day%20Report&amp;descriptionShows%20revenues%20and%20balances%20of%20in-house%20bookings,%20including%20past%20bookings%20with%20an%20outstanding%20balance,%20and%20advance%20deposits%20received%20today." class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Daily Payments" data-des="Bookings and payments - collected and outstanding - for a given period" class="s-row-undefined even" data-id="undefined">
+            <td>Daily Payments</td>
+            <td>Bookings and payments - collected and outstanding - for a given period</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/19?path=/Eviivo%20Basic/Daily%20Payments&amp;name=Daily%20Payments&amp;descriptionBookings%20and%20payments%20-%20collected%20and%20outstanding%20-%20for%20a%20given%20period" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Daily Revenues" data-des="Daily Revenues" class="s-row-undefined odd" data-id="undefined">
+            <td>Daily Revenues</td>
+            <td>Daily Revenues</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/4?path=/Eviivo%20Basic/Daily%20Revenues&amp;name=Daily%20Revenues&amp;descriptionDaily%20Revenues" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Deposits due" data-des="Bookings with deposits due" class="s-row-undefined even" data-id="undefined">
+            <td>Deposits due</td>
+            <td>Bookings with deposits due</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/26?path=/Eviivo%20Basic/Deposits%20Due&amp;name=Deposits%20due&amp;descriptionBookings%20with%20deposits%20due" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Expedia Coronavirus - Voucher Report" data-des="Non-refundable Expedia bookings cancelled on or after 20th April 2020 and booked prior to 20th March for stays in May-June 2020 " class="s-row-undefined odd" data-id="undefined">
+            <td>Expedia Coronavirus - Voucher Report</td>
+            <td>Non-refundable Expedia bookings cancelled on or after 20th April 2020 and booked prior to 20th March for stays in May-June 2020</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/14?path=/Eviivo%20Basic/Expedia%20Vouchers&amp;name=Expedia%20Coronavirus%20-%20Voucher%20Report&amp;descriptionNon-refundable%20Expedia%20bookings%20cancelled%20on%20or%20after%2020th%20April%202020%20and%20booked%20prior%20to%2020th%20March%20for%20stays%20in%20May-June%202020" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Expedia, Airbnb and Agoda Remittance Report" data-des="Expedia, Airbnb and Agoda Remittance for Prepaid Bookings" class="s-row-undefined even" data-id="undefined">
+            <td>Expedia, Airbnb and Agoda Remittance Report</td>
+            <td>Expedia, Airbnb and Agoda Remittance for Prepaid Bookings</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/3?path=/Eviivo%20Basic/Expedia%20Remittance%20Report&amp;name=Expedia,%20Airbnb%20and%20Agoda%20Remittance%20Report&amp;descriptionExpedia,%20Airbnb%20and%20Agoda%20Remittance%20for%20Prepaid%20Bookings" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Extra requests" data-des="Extra requests, for a range of check-in dates" class="s-row-undefined even" data-id="undefined">
+            <td>Extra requests</td>
+            <td>Extra requests, for a range of check-in dates</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/32?path=/Eviivo%20Basic/Booking%20Report%20with%20Extra%20Charges&amp;name=Extra%20requests&amp;descriptionExtra%20requests,%20for%20a%20range%20of%20check-in%20dates" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Guest Marketing Report" data-des="Guests with an email address showing their booking spend in the period and lifetime value" class="s-row-undefined even" data-id="undefined">
+            <td>Guest Marketing Report</td>
+            <td>Guests with an email address showing their booking spend in the period and lifetime value</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/13?path=/Eviivo%20Basic/Guests&amp;name=Guest%20Marketing%20Report&amp;descriptionGuests%20with%20an%20email%20address%20showing%20their%20booking%20spend%20in%20the%20period%20and%20lifetime%20value" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="History - Bookings" data-des="Shows the history of changes made to a booking" class="s-row-undefined odd" data-id="undefined">
+            <td>History - Bookings</td>
+            <td>Shows the history of changes made to a booking</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/40?path=/Eviivo%20Premium/History%20-%20Bookings&amp;name=History%20-%20Bookings&amp;descriptionShows%20the%20history%20of%20changes%20made%20to%20a%20booking" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="History - Daily Rates" data-des="Shows the history of changes made to daily rates" class="s-row-undefined even" data-id="undefined">
+            <td>History - Daily Rates</td>
+            <td>Shows the history of changes made to daily rates</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/35?path=/Eviivo%20Premium/History%20-%20Daily%20Rates&amp;name=History%20-%20Daily%20Rates&amp;descriptionShows%20the%20history%20of%20changes%20made%20to%20daily%20rates" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="History - Seasonal Rates" data-des="Shows the history of changes made to seasonal rates" class="s-row-undefined odd" data-id="undefined">
+            <td>History - Seasonal Rates</td>
+            <td>Shows the history of changes made to seasonal rates</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/44?path=/Eviivo%20Premium/History%20-%20Seasonal%20Rates&amp;name=History%20-%20Seasonal%20Rates&amp;descriptionShows%20the%20history%20of%20changes%20made%20to%20seasonal%20rates" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="History - Voided Extras" data-des="Shows the history of voided extra charges" class="s-row-undefined even" data-id="undefined">
+            <td>History - Voided Extras</td>
+            <td>Shows the history of voided extra charges</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/34?path=/Eviivo%20Premium/History%20-%20Voided%20Extras&amp;name=History%20-%20Voided%20Extras&amp;descriptionShows%20the%20history%20of%20voided%20extra%20charges" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="History - Voided Payments" data-des="Shows the history of voided payments" class="s-row-undefined odd" data-id="undefined">
+            <td>History - Voided Payments</td>
+            <td>Shows the history of voided payments</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/46?path=/Eviivo%20Premium/History%20-%20Voided%20Payments&amp;name=History%20-%20Voided%20Payments&amp;descriptionShows%20the%20history%20of%20voided%20payments" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Invoices Issued" data-des="Invoices that have been issued for a given period" class="s-row-undefined even" data-id="undefined">
+            <td>Invoices Issued</td>
+            <td>Invoices that have been issued for a given period</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/16?path=/Eviivo%20Basic/Invoices%20Issued&amp;name=Invoices%20Issued&amp;descriptionInvoices%20that%20have%20been%20issued%20for%20a%20given%20period" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="ISTAT Report (Italy)" data-des="Occupancy levels for the current and previous night (Italian format)" class="s-row-undefined odd" data-id="undefined">
+            <td>ISTAT Report (Italy)</td>
+            <td>Occupancy levels for the current and previous night (Italian format)</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/30?path=/Eviivo%20Basic/Italian%20ISTAT&amp;name=ISTAT%20Report%20(Italy)&amp;descriptionOccupancy%20levels%20for%20the%20current%20and%20previous%20night%20(Italian%20format)" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Journal Export Log" data-des="Displays accounting Journal and whether exported to an accounting system or still pending" class="s-row-undefined even" data-id="undefined">
+            <td>Journal Export Log</td>
+            <td>Displays accounting Journal and whether exported to an accounting system or still pending</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/45?path=/Eviivo%20Premium/Journal%20Log&amp;name=Journal%20Export%20Log&amp;descriptionDisplays%20accounting%20Journal%20and%20whether%20exported%20to%20an%20accounting%20system%20or%20still%20pending" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Journal Preparation" data-des="Outputs charges and payments for each reservation suitable for balancing a ledger" class="s-row-undefined odd" data-id="undefined">
+            <td>Journal Preparation</td>
+            <td>Outputs charges and payments for each reservation suitable for balancing a ledger</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/2?path=/Eviivo%20Basic/Daily%20Ledger&amp;name=Journal%20Preparation&amp;descriptionOutputs%20charges%20and%20payments%20for%20each%20reservation%20suitable%20for%20balancing%20a%20ledger" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Key Performance Indicators" data-des="Sales, revenue and occupancy data year on year, by month, week or day of stay" class="s-row-undefined odd" data-id="undefined">
+            <td>Key Performance Indicators</td>
+            <td>Sales, revenue and occupancy data year on year, by month, week or day of stay</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/37?path=/Eviivo%20Premium/Sales%20Statistics&amp;name=Key%20Performance%20Indicators&amp;descriptionSales,%20revenue%20and%20occupancy%20data%20year%20on%20year,%20by%20month,%20week%20or%20day%20of%20stay" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Liability Report" data-des="Future reservations with pre-payments" class="s-row-undefined odd" data-id="undefined">
+            <td>Liability Report</td>
+            <td>Future reservations with pre-payments</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/20?path=/Eviivo%20Basic/Liability%20Report&amp;name=Liability%20Report&amp;descriptionFuture%20reservations%20with%20pre-payments" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Nationality Report" data-des="Number of adults and children per nationality and per night, over a specific date range" class="s-row-undefined even" data-id="undefined">
+            <td>Nationality Report</td>
+            <td>Number of adults and children per nationality and per night, over a specific date range</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/18?path=/Eviivo%20Basic/Nationality%20Report&amp;name=Nationality%20Report&amp;descriptionNumber%20of%20adults%20and%20children%20per%20nationality%20and%20per%20night,%20over%20a%20specific%20date%20range" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Occupancy Levels" data-des="Sales and occupancy by room type over 12 months and year-on-year change" class="s-row-undefined odd" data-id="undefined">
+            <td>Occupancy Levels</td>
+            <td>Sales and occupancy by room type over 12 months and year-on-year change</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/33?path=/Eviivo%20Premium/Occupancy%20Levels&amp;name=Occupancy%20Levels&amp;descriptionSales%20and%20occupancy%20by%20room%20type%20over%2012%20months%20and%20year-on-year%20change" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Operating Statement" data-des="Revenues and operational costs of bookings" class="s-row-undefined odd" data-id="undefined">
+            <td>Operating Statement</td>
+            <td>Revenues and operational costs of bookings</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/29?path=/Eviivo%20Basic/Accommodation%20Service%20Costs&amp;name=Operating%20Statement&amp;descriptionRevenues%20and%20operational%20costs%20of%20bookings" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Operating Statement (summary by property)" data-des="Booking revenues and operating costs grouped by property" class="s-row-undefined even" data-id="undefined">
+            <td>Operating Statement (summary by property)</td>
+            <td>Booking revenues and operating costs grouped by property</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/24?path=/Eviivo%20Basic/Operating%20Statement%20Summary%20by%20Property&amp;name=Operating%20Statement%20(summary%20by%20property)&amp;descriptionBooking%20revenues%20and%20operating%20costs%20grouped%20by%20property" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="OTA Commissions" data-des="OTA Commission report" class="s-row-undefined odd" data-id="undefined">
+            <td>OTA Commissions</td>
+            <td>OTA Commission report</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/21?path=/Eviivo%20Basic/OTA%20Commissions&amp;name=OTA%20Commissions&amp;descriptionOTA%20Commission%20report" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Outstanding Balances" data-des="Shows bookings with outstanding balances past checkout date" class="s-row-undefined even" data-id="undefined">
+            <td>Outstanding Balances</td>
+            <td>Shows bookings with outstanding balances past checkout date</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/28?path=/Eviivo%20Basic/Outstanding%20Balances&amp;name=Outstanding%20Balances&amp;descriptionShows%20bookings%20with%20outstanding%20balances%20past%20checkout%20date" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Partner Report - Daily Bookings" data-des="Lists daily booking activity for a partner" class="s-row-undefined odd" data-id="undefined">
+            <td>Partner Report - Daily Bookings</td>
+            <td>Lists daily booking activity for a partner</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/47?path=/Eviivo%20Premium/Partner%20Report%20-%20Daily%20Bookings&amp;name=Partner%20Report%20-%20Daily%20Bookings&amp;descriptionLists%20daily%20booking%20activity%20for%20a%20partner" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Payments &amp; Refunds Received" data-des="Payments &amp; Refunds received for a given period" class="s-row-undefined even" data-id="undefined">
+            <td>Payments &amp; Refunds Received</td>
+            <td>Payments &amp; Refunds received for a given period</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/22?path=/Eviivo%20Basic/Payments%20Received&amp;name=Payments%20&amp;%20Refunds%20Received&amp;descriptionPayments%20&amp;%20Refunds%20received%20for%20a%20given%20period" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Performance" data-des="Revenue, occupancy, room nights, online sales costs and year-on-year growth" class="s-row-undefined odd" data-id="undefined">
+            <td>Performance</td>
+            <td>Revenue, occupancy, room nights, online sales costs and year-on-year growth</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/41?path=/Eviivo%20Premium/Performance&amp;name=Performance&amp;descriptionRevenue,%20occupancy,%20room%20nights,%20online%20sales%20costs%20and%20year-on-year%20growth" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Police Report" data-des="Outputs details of all guests arriving at the property between specified dates" class="s-row-undefined even" data-id="undefined">
+            <td>Police Report</td>
+            <td>Outputs details of all guests arriving at the property between specified dates</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/31?path=/Eviivo%20Basic/Police%20Report&amp;name=Police%20Report&amp;descriptionOutputs%20details%20of%20all%20guests%20arriving%20at%20the%20property%20between%20specified%20dates" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Police Report (Spain)" data-des="Outputs details of all guests arriving at the property between specified dates (Spanish format)" class="s-row-undefined odd" data-id="undefined">
+            <td>Police Report (Spain)</td>
+            <td>Outputs details of all guests arriving at the property between specified dates (Spanish format)</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/15?path=/Eviivo%20Basic/Police%20Report%20-%20Spain&amp;name=Police%20Report%20(Spain)&amp;descriptionOutputs%20details%20of%20all%20guests%20arriving%20at%20the%20property%20between%20specified%20dates%20(Spanish%20format)" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Promo Summary" data-des="Promotions within a specified date range" class="s-row-undefined even" data-id="undefined">
+            <td>Promo Summary</td>
+            <td>Promotions within a specified date range</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/11?path=/Eviivo%20Basic/Promo%20Summary&amp;name=Promo%20Summary&amp;descriptionPromotions%20within%20a%20specified%20date%20range" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Rate Export" data-des="Export of nightly rates for every rate plan" class="s-row-undefined odd" data-id="undefined">
+            <td>Rate Export</td>
+            <td>Export of nightly rates for every rate plan</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/9?path=/Eviivo%20Basic/Rate%20Export&amp;name=Rate%20Export&amp;descriptionExport%20of%20nightly%20rates%20for%20every%20rate%20plan" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Revenues" data-des="Revenue by room type and by source for a given period" class="s-row-undefined even" data-id="undefined">
+            <td>Revenues</td>
+            <td>Revenue by room type and by source for a given period</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/42?path=/Eviivo%20Premium/Revenues&amp;name=Revenues&amp;descriptionRevenue%20by%20room%20type%20and%20by%20source%20for%20a%20given%20period" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Service Accommodation Statement (Essential Mgmt)" data-des=" Revenues and costs for each booking" class="s-row-undefined even" data-id="undefined">
+            <td>Service Accommodation Statement (Essential Mgmt)</td>
+            <td>Revenues and costs for each booking</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/38?path=/Eviivo%20Premium/Service%20Accommodation%20Statement%20(Essential)&amp;name=Service%20Accommodation%20Statement%20(Essential%20Mgmt)&amp;description%20Revenues%20and%20costs%20for%20each%20booking" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Tax or VAT Report" data-des="VAT or Tax collected over a specified date range, grouped by tax rate" class="s-row-undefined odd" data-id="undefined">
+            <td>Tax or VAT Report</td>
+            <td>VAT or Tax collected over a specified date range, grouped by tax rate</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/1?path=/Eviivo%20Basic/Tax%20Report&amp;name=Tax%20or%20VAT%20Report&amp;descriptionVAT%20or%20Tax%20collected%20over%20a%20specified%20date%20range,%20grouped%20by%20tax%20rate" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Tax Report for Advanced Deposits" data-des="Shows VAT payable on advanced deposits" class="s-row-undefined even" data-id="undefined">
+            <td>Tax Report for Advanced Deposits</td>
+            <td>Shows VAT payable on advanced deposits</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/6?path=/Eviivo%20Basic/Tax%20Report%20for%20Advanced%20Deposits&amp;name=Tax%20Report%20for%20Advanced%20Deposits&amp;descriptionShows%20VAT%20payable%20on%20advanced%20deposits" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Tourism Statistics" data-des="Count of guests Arriving, Staying and Departing by home country for a specified stay range" class="s-row-undefined odd" data-id="undefined">
+            <td>Tourism Statistics</td>
+            <td>Count of guests Arriving, Staying and Departing by home country for a specified stay range</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/25?path=/Eviivo%20Basic/Tourism%20Statistics&amp;name=Tourism%20Statistics&amp;descriptionCount%20of%20guests%20Arriving,%20Staying%20and%20Departing%20by%20home%20country%20for%20a%20specified%20stay%20range" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Trial Balance Movements - BETA" data-des="Financial report of credit and debit entries for internal auditing" class="s-row-undefined even" data-id="undefined">
+            <td>Trial Balance Movements - BETA</td>
+            <td>Financial report of credit and debit entries for internal auditing</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/36?path=/Eviivo%20Premium/Trial%20Balance%20Movements&amp;name=Trial%20Balance%20Movements%20-%20BETA&amp;descriptionFinancial%20report%20of%20credit%20and%20debit%20entries%20for%20internal%20auditing" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr><tr data-key="Vrbo Mapping" data-des="Information to map listings with Vrbo on a semi-automated connection" class="s-row-undefined even" data-id="undefined">
+            <td>Vrbo Mapping</td>
+            <td>Information to map listings with Vrbo on a semi-automated connection</td>
+            <td class="md-table_text-right"><a href="https://on.eviivo.com/suite/reporting/showReport/5?path=/Eviivo%20Basic/Vrbo%20Mapping&amp;name=Vrbo%20Mapping&amp;descriptionInformation%20to%20map%20listings%20with%20Vrbo%20on%20a%20semi-automated%20connection" class="md-table_action md-table_action-item" data-tooltip="title" data-tooltip-title="View" data-tooltip-pos="top" title="View" target="_blank">
+                        <svg class="icon-bg icon-bg-eye-outline"><use xlink:href="#icon-bg-eye-outline"></use></svg>
+                    </a></td>
+        </tr></tbody>
+
+                        </table></div>
+ 
+
+        </div>
+    </div>
+</div>
+
+
+﻿
+<div class="pop-up-table">
+    <div class="pop-up-cell">
+        <div class="pop-up-center">
+
+            <div id="popup-reporting" class="popup popup-generic mod-popup-container hide">
+
+                <div class="mod-popup-header s-drag-handle drag-handle">
+                    <div class="mod-row">
+                        <div class="mod-row">
+                            <h3 class="heading-title">Booking Report</h3>
+                        </div>
+                        <span class="mod-popup-close s-close"></span>
+                    </div>
+                </div>
+
+                <div class="mod-popup-content">
+                    <div class="mod-popup-inner-content">
+
+                        <div class="l-row expanded mb20">
+                            <div class="l-column small-2">
+                                <label class="column" for="dateTypeReport">Option:</label>
+                            </div>
+                            <div id="reporting-option" class="l-column">
+                                <div class="cp-radio-group">
+                                    <input checked="checked" id="singleDateType" name="dateTypeReport" type="radio" value="singleDateType">
+                                    <label class="btn btn-grouped btn-invert" for="singleDateType">Single Date</label>
+
+                                    <input class="btn btn-grouped btn-invert" id="rangeDateType" name="dateTypeReport" type="radio" value="rangeDateType">
+                                    <label class="btn btn-grouped btn-invert" for="rangeDateType">Date Range</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="l-row mb20">
+                            <div class="l-column small-2">
+                                <label id="dateFromLabel" class="column">Date:</label>
+                            </div>
+
+                            <div class="l-column small-8">
+                                <div class="l-row">
+                                    <div class="l-column small-4">
+                                        <div class="eviivo-startdate cp-icon-input before">
+                                            <input type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" id="dp1703601289616"><button type="button" class="ui-datepicker-trigger"><img src="./Report Viewer_files/date_range.svg" alt="..." title="..."></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="l-column small-1 end-date-block align-middle align-center np" style="display:none;">
+                                        <label>To:</label>
+                                    </div>
+                                    <div class="l-column small-4 end-date-block" style="display:none;">
+                                        <div class="eviivo-enddate cp-icon-input before">
+                                            <input type="text" class="datepicker diary-datepicker hasDatepicker" readonly="readonly" id="dp1703601289617"><button type="button" class="ui-datepicker-trigger"><img src="./Report Viewer_files/date_range.svg" alt="..." title="..."></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="reporting-by" class="l-row mb20">
+                            <div class="l-column small-2">
+                                <label class="column">Report By:</label>
+                            </div>
+
+                            <div class="l-column">
+                                <div class="cp-radio-group">
+                                    <input id="reporting-booking-date" type="radio" name="reportby" value="1" checked="checked">
+                                    <label for="reporting-booking-date" class="btn btn-grouped btn-invert">Booking Date</label>
+
+                                    <input id="reporting-checkin-date" type="radio" name="reportby" value="2">
+                                    <label for="reporting-checkin-date" class="btn btn-grouped btn-invert">Check-in Date</label>
+
+                                    <input id="reporting-stay-date" type="radio" name="reportby" value="4">
+                                    <label for="reporting-stay-date" class="btn btn-grouped btn-invert">Stay Date</label>
+
+                                    <input id="reporting-checkout-date" type="radio" name="reportby" value="3">
+                                    <label for="reporting-checkout-date" class="btn btn-grouped btn-invert">Check out Date</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="reporting-booking-option" class="l-row mb20">
+                            <div class="l-column small-2">
+                                <label for="lblBookingStatus">Booking Status:</label>
+                            </div>
+
+                            <div class="l-column">
+                                <div class="cp-radio-group">
+                                    <input checked="checked" id="allBookings" name="bookingsStatus" type="radio" value="">
+                                    <label for="allBookings" class="btn btn-grouped btn-invert">All</label>
+
+                                    <input id="confirmedBookings" name="bookingsStatus" type="radio" value="C">
+                                    <label for="confirmedBookings" class="btn btn-grouped btn-invert">Confirmed</label>
+
+                                    <input id="cancelledBookings" name="bookingsStatus" type="radio" value="X">
+                                    <label for="cancelledBookings" class="btn btn-grouped btn-invert">Cancelled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="mod-popup-footer">
+                    <button id="downloadReport" class="btn btn-right">Download</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>      
+<div id="floating-notification-container" class="message-position-container bottom-right width-25"></div>
+ 
+@code {
+
+}

@@ -1,0 +1,853 @@
+﻿@page "/cleaning"
+<PageTitle>Cleaning  </PageTitle>
+<div class="header-bottom">
+    <div class="mod-toolbar">
+        <div id="selectRoomTypesContainer" class="md-dd">
+            <a href="javascript:;" class="md-dd-icon s-md-dd-tgl btn-base-hover" id="btnSelectRoomTypes">
+                <span>Studio Type</span>
+                <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use href="#icon-ic-arrow-dropdown-solid"></use></svg>
+            </a>
+            <div class="md-dd-c md-dd-c-l md-dd-c-s-l s-ignore s-fltr-cntnr"></div>
+        </div>
+
+
+        <div class="mod-toolbar_section">
+
+
+
+            <div class="cp-date-controls cp-date-controls_single-directions">
+                <button id="diary-back-back-button" class="back cp-date-controls_btn hide"><svg class="icon-ic-caret-double-left"><use href="#icon-ic-caret-double-left"></use></svg></button>
+                <button id="diary-back-button" class="back cp-date-controls_btn "><svg class="icon-ic-caret-left"><use href="#icon-ic-caret-left"></use></svg></button>
+                <span class="cp-date-controls_date">
+                    <input id="diary-datepicker-mask" class="hasDatepicker" type="text" readonly="readonly" style="position: relative; z-index: 50;">
+                    <input id="diary-datepicker" class="s-datepicker cp-date-controls_hidden-input hasDatepicker" type="text" readonly="readonly">
+                </span>
+                <button id="diary-go-today-button" class="gotoday cp-date-controls_btn cp-date-controls_calendar-icon" data-tip="Go to Today">
+                    <svg class="icon-ic-calendar-check"><use xlink:href="#icon-ic-calendar-check"></use></svg>
+                </button>
+                <button id="diary-forward-button" class="forward cp-date-controls_btn "><svg class="icon-ic-caret-right"><use href="#icon-ic-caret-right"></use></svg> </button>
+                <button id="diary-forward-forward-button" class="forward cp-date-controls_btn hide"><svg class="icon-ic-caret-double-right"><use href="#icon-ic-caret-double-right"></use></svg></button>
+            </div>
+
+        </div>
+
+        <div class="mod-toolbar_section__end">
+            <button id="bulkEdit" class="btn s-toggle-flyout bulk-btn" data-target="bulk-flyout" disabled="">Bulk actions</button>
+        </div>
+    </div>
+</div>
+<div class="generic-content-outter cleaning-page"> 
+        <div class="cp-paper fixed-table-container-height s-spinner-container">
+            
+
+
+
+<div id="eviivo-list-cleaning_wrapper" class="dataTables_wrapper no-footer"><div class="cp-table_toolbar"><div id="eviivo-list-cleaning_filter" class="dataTables_filter"><label></label></div><div class="cp-table_toolbar-actions"><div id="printButton" class="s-print cp-table_toolbar-print cp-table_toolbar-action"><svg class="icon-ic-printer"><use xlink:href="#icon-ic-printer"></use></svg></div><div class="s-toggle-flyout cp-table_toolbar-action" data-target="columns-flyout"><svg class="icon-ic-gear"><use xlink:href="#icon-ic-gear"></use></svg><span>Columns</span></div></div></div><div class="cp-table_scroll-vertical cp-table_scroll-horizontal"><table id="eviivo-list-cleaning" class="cp-table cp-table_not-fixed cp-table cp-table_fixed-header dataTable no-footer" cellspacing="0" width="100%" style="">
+    <thead>
+    <tr><th class="cp-table_checkbox-col cp-table_text-center cp-table_sticky-column sorting_disabled" rowspan="1" colspan="1" aria-label="
+                
+                    
+                    
+                        
+                    
+                
+            ">
+                <div class="cp-custom-input">
+                    <input type="checkbox" id="cleaning-target-select-all" class="target-select-all">
+                    <label for="cleaning-target-select-all">
+                        <span class="checkbox-input"></span>
+                    </label>
+                </div>
+            </th><th class="filter-enabled property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300" data-key="Property" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Property: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Property</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-1" name="eviivo-list-cleaning-search-1">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-1">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-1 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-1 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-1" data-columnindex="1" id="">
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="MSK-–-Premium_0_1" data-value="MSK – Premium" name="filter-1" value="MSK – Premium">
+                            <label for="MSK-–-Premium_0_1">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">MSK – Premium</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled room-col s-room-col cp-table_sticky-column" data-key="Unit" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Studio: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Studio</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-2" name="eviivo-list-cleaning-search-2">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-2">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-2 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-2 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-2" data-columnindex="2" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="2_0_2" data-value="2" name="filter-2" value="2">
+                            <label for="2_0_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">2</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="3_1_2" data-value="3" name="filter-2" value="3">
+                            <label for="3_1_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">3</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="4_2_2" data-value="4" name="filter-2" value="4">
+                            <label for="4_2_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">4</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="6_3_2" data-value="6" name="filter-2" value="6">
+                            <label for="6_3_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">6</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="7_4_2" data-value="7" name="filter-2" value="7">
+                            <label for="7_4_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">7</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="5">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="8_5_2" data-value="8" name="filter-2" value="8">
+                            <label for="8_5_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">8</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="6">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="9_6_2" data-value="9" name="filter-2" value="9">
+                            <label for="9_6_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">9</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="7">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="10_7_2" data-value="10" name="filter-2" value="10">
+                            <label for="10_7_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">10</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="8">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="11_8_2" data-value="11" name="filter-2" value="11">
+                            <label for="11_8_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">11</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="9">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="12_9_2" data-value="12" name="filter-2" value="12">
+                            <label for="12_9_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">12</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="10">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="13_10_2" data-value="13" name="filter-2" value="13">
+                            <label for="13_10_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">13</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="11">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="14_11_2" data-value="14" name="filter-2" value="14">
+                            <label for="14_11_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">14</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="12">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="15_12_2" data-value="15" name="filter-2" value="15">
+                            <label for="15_12_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">15</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="13">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="16_13_2" data-value="16" name="filter-2" value="16">
+                            <label for="16_13_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">16</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="14">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="17_14_2" data-value="17" name="filter-2" value="17">
+                            <label for="17_14_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">17</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="15">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="18_15_2" data-value="18" name="filter-2" value="18">
+                            <label for="18_15_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">18</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="16">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="19_16_2" data-value="19" name="filter-2" value="19">
+                            <label for="19_16_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">19</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="17">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="20_17_2" data-value="20" name="filter-2" value="20">
+                            <label for="20_17_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">20</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="18">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="21_18_2" data-value="21" name="filter-2" value="21">
+                            <label for="21_18_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">21</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="19">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="22_19_2" data-value="22" name="filter-2" value="22">
+                            <label for="22_19_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">22</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="20">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="23_20_2" data-value="23" name="filter-2" value="23">
+                            <label for="23_20_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">23</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="21">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="24_21_2" data-value="24" name="filter-2" value="24">
+                            <label for="24_21_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">24</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="22">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="25_22_2" data-value="25" name="filter-2" value="25">
+                            <label for="25_22_2">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">25</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled movement-col s-movement-col s-select-filter" data-key="Movement" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Movement: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Movement</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-3" name="eviivo-list-cleaning-search-3">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-3">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-3 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-3 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-3" data-columnindex="3" id="">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Arriving_0_3" data-value="Arriving" name="filter-3" value="Arriving">
+                            <label for="Arriving_0_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Arriving</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Changeover_1_3" data-value="Changeover" name="filter-3" value="Changeover">
+                            <label for="Changeover_1_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Changeover</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="2">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Departing_2_3" data-value="Departing" name="filter-3" value="Departing">
+                            <label for="Departing_2_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Departing</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="3">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_3_3" data-value="Empty" name="filter-3" value="Empty">
+                            <label for="Empty_3_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="4">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Staying_4_3" data-value="Staying" name="filter-3" value="Staying">
+                            <label for="Staying_4_3">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Staying</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled condition-col s-readiness-col s-select-filter" data-key="Condition" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Condition: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Condition</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-4" name="eviivo-list-cleaning-search-4">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-4">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-4 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-4 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-4" data-columnindex="4" id="">
+                    
+                    
+                    
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Not-Ready_0_4" data-value="Not Ready" name="filter-4" value="Not Ready">
+                            <label for="Not-Ready_0_4">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Not Ready</span>
+                            </label>
+                        </div>
+                    </li><li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Occupied_1_4" data-value="Occupied" name="filter-4" value="Occupied">
+                            <label for="Occupied_1_4">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Occupied</span>
+                            </label>
+                        </div>
+                    </li></ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled bedconfig-col s-bedconf-col" data-key="BedConfig" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Beds: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Beds</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-5" name="eviivo-list-cleaning-search-5">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-5">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-5 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-5 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-5" data-columnindex="5" id="">
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="No-Preference_0_5" data-value="No Preference" name="filter-5" value="No Preference">
+                            <label for="No-Preference_0_5">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">No Preference</span>
+                            </label>
+                        </div>
+                    </li>
+                    </ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="filter-enabled schedule-col s-schedule-col" data-key="Schedule" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Cleaning schedule: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Cleaning schedule</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-6" name="eviivo-list-cleaning-search-6">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-6">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-6 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-6 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-6" data-columnindex="6" id="">
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_0_6" data-value="" name="filter-6" value="">
+                            <label for="Empty_0_6">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li>
+                    
+                    <li class="mb4" data-order="1">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Scheduled_1_6" data-value="Scheduled" name="filter-6" value="Scheduled">
+                            <label for="Scheduled_1_6">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Scheduled</span>
+                            </label>
+                        </div>
+                    </li>
+                    </ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="notes-col s-status-col cp-table_text-center sorting_disabled" data-key="RepairNotes" rowspan="1" colspan="1" aria-label="Notes / Repairs">Notes / Repairs</th><th class="filter-enabled assign-col s-assigned-col s-select-filter" data-key="Assigned" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Assign to: activate to sort column ascending"><div class="cp-table_filterable-header">
+                <span class="s-sorting cp-table_title">Assign to</span>
+                <div class="md-dd filter-outer">
+                   <a href="javascript:;" class="th-filter s-md-dd-tgl s-drag-false">
+		                <svg class="icon icon-ic-filter"><use xlink:href="#icon-ic-filter"></use></svg>
+	                </a>
+                   <div class="md-dd-c md-dd-c-s-l s-ignore filter-inner">
+                      <div class="mod-user-section user-details align-center">
+                         <div class="dropdown-header s-search-input-container hide">
+                            <div class="cp-search-bar">
+                               <input type="text" class="stretch-input" id="eviivo-list-cleaning-search-8" name="eviivo-list-cleaning-search-8">
+                               <a href="javascript:;" class="icon-bg-ic-close-a hidden s-clear-search-8">
+                                  <svg class="icon-bg icon-ic-close"><use xlink:href="#icon-ic-close"></use></svg>
+                               </a>
+                            </div>
+                         </div>
+         
+                         <div class="list filter-list">
+                            <div class="mb24 display-flex">
+            <div class="s-selected hide">
+                <span class="s-select-count">
+                </span>
+                selected
+               </div>
+            <div class="ml-auto display-flex ">
+                <a href="javascript:;" class="s-select-all s-8 mr12 link-no-border link-hover-pill">Select All</a>
+                <a href="javascript:;" class="s-select-all s-clear-all s-8 link-no-border link-hover-pill">Clear All</a>
+            </div>
+        </div>
+                            <ul class="mod-autocomplete-filter s-isolate-scroll s-multi-select-container s-multi s-8" data-columnindex="8" id="">
+                    <li class="mb4" data-order="0">
+                        <div class="cp-custom-input">
+                            <input type="checkbox" id="Empty_0_8" data-value="null" name="filter-8" value="">
+                            <label for="Empty_0_8">
+                                <span class="checkbox-input"></span>
+                                <span class="label wrap_text s-label">Empty</span>
+                            </label>
+                        </div>
+                    </li>
+                    </ul>
+                         </div>
+                      </div>
+                      <div class="filter-footer">
+                         <div class="display-flex">
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn btn-secondary s-cancel">Cancel</a>
+                            <a href="https://on.eviivo.com/suite/cleaning#" class="btn ml-auto s-apply">
+                                Apply
+                                <span class="spinner small-spinner no-background light-spinner active s-spinner spinner_inline hide">
+                                    <span class="spin"></span>
+                                </span>
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+            </div></th><th class="status-col s-status-col sorting" data-key="Status" tabindex="0" aria-controls="eviivo-list-cleaning" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending">Status</th><th class="alert-col s-alert-col actions-2 cp-table_text-right cp-table_sticky-column-right sorting_disabled" data-key="Alert" rowspan="1" colspan="1" aria-label="Alert">Alert</th></tr>
+    </thead>
+    <tbody><tr class="s-row-232382 odd" data-id="232382"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning0" name="eviivo-list-cleaning" data-id="232382">
+                                <label for="eviivo-list-cleaning0">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232382" data-title="Property:" for="232382">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">24</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Changeover</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96672">1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232173 even" data-id="232173"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning1" name="eviivo-list-cleaning" data-id="232173">
+                                <label for="eviivo-list-cleaning1">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232173" data-title="Property:" for="232173">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">9</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Changeover</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96446">2 Single Bed, 1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232379 odd" data-id="232379"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning2" name="eviivo-list-cleaning" data-id="232379">
+                                <label for="eviivo-list-cleaning2">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232379" data-title="Property:" for="232379">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">25</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Changeover</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96446">2 Single Bed, 1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232171 even" data-id="232171"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning3" name="eviivo-list-cleaning" data-id="232171">
+                                <label for="eviivo-list-cleaning3">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232171" data-title="Property:" for="232171">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">16</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Changeover</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96446">2 Single Bed, 1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232177 odd" data-id="232177"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning4" name="eviivo-list-cleaning" data-id="232177">
+                                <label for="eviivo-list-cleaning4">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232177" data-title="Property:" for="232177">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">19</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Changeover</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96446">2 Single Bed, 1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232378 even" data-id="232378"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning5" name="eviivo-list-cleaning" data-id="232378">
+                                <label for="eviivo-list-cleaning5">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232378" data-title="Property:" for="232378">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">2</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Arriving</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96443">1 Single Bed, 2 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 20:30</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232375 odd" data-id="232375"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning6" name="eviivo-list-cleaning" data-id="232375">
+                                <label for="eviivo-list-cleaning6">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232375" data-title="Property:" for="232375">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">14</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Arriving</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="97222">1 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 18:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232174 even" data-id="232174"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning7" name="eviivo-list-cleaning" data-id="232174">
+                                <label for="eviivo-list-cleaning7">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232174" data-title="Property:" for="232174">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">23</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Arriving</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="102723">1 Double Bed, 1 Single Bed, 1 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232383 odd" data-id="232383"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning8" name="eviivo-list-cleaning" data-id="232383">
+                                <label for="eviivo-list-cleaning8">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232383" data-title="Property:" for="232383">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">8</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Arriving</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96672">1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232178 even" data-id="232178"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning9" name="eviivo-list-cleaning" data-id="232178">
+                                <label for="eviivo-list-cleaning9">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232178" data-title="Property:" for="232178">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">12</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Arriving</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="102820">1 Single Bed, 2 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL" selected="selected">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232385 odd" data-id="232385"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning10" name="eviivo-list-cleaning" data-id="232385">
+                                <label for="eviivo-list-cleaning10">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232385" data-title="Property:" for="232385">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">3</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96673">3 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232175 even" data-id="232175"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning11" name="eviivo-list-cleaning" data-id="232175">
+                                <label for="eviivo-list-cleaning11">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232175" data-title="Property:" for="232175">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">20</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="102724">1 Double Bed, 2 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232172 odd" data-id="232172"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning12" name="eviivo-list-cleaning" data-id="232172">
+                                <label for="eviivo-list-cleaning12">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232172" data-title="Property:" for="232172">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">22</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96446">2 Single Bed, 1 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232157 even" data-id="232157"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning13" name="eviivo-list-cleaning" data-id="232157">
+                                <label for="eviivo-list-cleaning13">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232157" data-title="Property:" for="232157">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">7</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96481">1 Single Bed, 2 Double Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232465 odd" data-id="232465"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning14" name="eviivo-list-cleaning" data-id="232465">
+                                <label for="eviivo-list-cleaning14">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232465" data-title="Property:" for="232465">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">15</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96688">1 Double Bed, 1 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232466 even" data-id="232466"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning15" name="eviivo-list-cleaning" data-id="232466">
+                                <label for="eviivo-list-cleaning15">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232466" data-title="Property:" for="232466">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">17</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Staying</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Occupied</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"><select class="cp-custom-select_table s-column-select bedConfigSelect"><option value="null" selected="selected">No Preference</option><option value="96688">1 Double Bed, 1 Single Bed</option></select></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232376 odd" data-id="232376"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning16" name="eviivo-list-cleaning" data-id="232376">
+                                <label for="eviivo-list-cleaning16">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232376" data-title="Property:" for="232376">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">11</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Departing</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232386 even" data-id="232386"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning17" name="eviivo-list-cleaning" data-id="232386">
+                                <label for="eviivo-list-cleaning17">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232386" data-title="Property:" for="232386">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">4</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Departing</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232176 odd" data-id="232176"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning18" name="eviivo-list-cleaning" data-id="232176">
+                                <label for="eviivo-list-cleaning18">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232176" data-title="Property:" for="232176">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">13</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Departing</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232377 even" data-id="232377"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning19" name="eviivo-list-cleaning" data-id="232377">
+                                <label for="eviivo-list-cleaning19">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232377" data-title="Property:" for="232377">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">10</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Empty</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232381 odd" data-id="232381"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning20" name="eviivo-list-cleaning" data-id="232381">
+                                <label for="eviivo-list-cleaning20">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232381" data-title="Property:" for="232381">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">21</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Empty</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232384 even" data-id="232384"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning21" name="eviivo-list-cleaning" data-id="232384">
+                                <label for="eviivo-list-cleaning21">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232384" data-title="Property:" for="232384">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">6</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Empty</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr><tr class="s-row-232380 odd" data-id="232380"><td class="  cp-table_text-center cp-table_checkbox-col cp-table_sticky-column"><div class="cp-custom-input">
+                                <input type="checkbox" class="s-select-row" id="eviivo-list-cleaning22" name="eviivo-list-cleaning" data-id="232380">
+                                <label for="eviivo-list-cleaning22">
+                                    <span class="checkbox-input"></span>
+                                </label>
+                            </div></td><td class="property-col s-property-col cp-table_sticky-column cp-table_managed-col size-range-150-300 s-row-selector-label s-row-selector-label232380" data-title="Property:" for="232380">MSK – Premium</td><td class="  room-col s-room-col cp-table_sticky-column " data-title="Studio:">18</td><td class="   movement-col s-movement-col s-select-filter" data-title="Movement:">Empty</td><td class="   condition-col s-readiness-col s-select-filter" data-title="Condition:">Not Ready</td><td class="   bedconfig-col s-bedconf-col" data-title="Beds:"></td><td class="   schedule-col s-schedule-col" data-title="Cleaning schedule:"><select class="cp-custom-select_table s-column-select scheduleSelect"><option value="null" selected="selected"></option><option value="TIM">Clean By 15:00</option><option value="TOD">Clean​​</option><option value="ECI">Early Check-in</option><option value="LCI">Late Check-Out</option><option value="NOW">Clean Now</option><option value="RUL">Scheduled</option><option value="NOT">Do not clean</option></select></td><td class="   notes-col s-status-col cp-table_text-center" data-title="Notes / Repairs:"><button class="cp-table_action  s-toggle-flyout empty-note" data-target="notes-flyout"><svg class="icon-ic-note-pencil"><use xlink:="" href="#icon-ic-note-pencil"></use></svg></button></td><td class="   assign-col s-assigned-col s-select-filter" data-title="Assign to:"><div class="cp-multi-input cp-multi-input_table cp-multi-input_hidden-input s-multi-input relative"><input type="text" class="assignTo" autocomplete="off" id="assignTo" placeholder="Type or select" value=""><ul class="cp-multi-input_menu"><li class="s-option">Heidar Hosseini</li><li class="s-option">MSK Reception</li><li class="s-option">Mohammed Al-khorsan</li><li class="s-option">Mo Hadi</li><li class="s-option">Sultan Sultan</li><li class="s-option">Hesham Salem</li><li class="s-option">Abdullah Alkhorsan</li><li class="s-option">Haleem Taher</li></ul></div></td><td class="    status-col s-status-col" data-title="Status:"><button class="cp-table_action status hide-for-tablet-p"><svg class="icon-ic-broom"> <use xlink:="" href="#icon-ic-broom"></use></svg></button></td><td class="  alert-col s-alert-col  actions-2 cp-table_text-right cp-table_sticky-column-right" data-title="Alert:"></td></tr></tbody>
+</table></div><div class="cp-table_footer"><div class="dataTables_length" id="eviivo-list-cleaning_length" style="display: none;"><label>Show <select name="eviivo-list-cleaning_length" aria-controls="eviivo-list-cleaning" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select> entries</label></div><div class="dataTables_paginate paging_simple_numbers" id="eviivo-list-cleaning_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="eviivo-list-cleaning" data-dt-idx="0" tabindex="-1" id="eviivo-list-cleaning_previous">Previous</a><span><a class="paginate_button current" aria-controls="eviivo-list-cleaning" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="eviivo-list-cleaning" data-dt-idx="2" tabindex="-1" id="eviivo-list-cleaning_next">Next</a></div></div></div>
+ 
+
+        
+                        </div>
+    </div>
+
+@code {
+
+}

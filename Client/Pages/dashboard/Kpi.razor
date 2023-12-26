@@ -1,0 +1,130 @@
+﻿@page "/kpi"
+<PageTitle>Deductions  </PageTitle>
+<div class="header-bottom">
+    <div class="mod-toolbar">
+        <div class="mod-toolbar_section">
+            <div id="selectRoomTypesContainer" class="md-dd">
+                <a href="javascript:;" class="md-dd-icon s-md-dd-tgl btn-base-hover" id="btnSelectRoomTypes">
+                    <span>Studio Type</span>
+                    <svg class="icon-bg icon-ic-arrow-dropdown-solid"><use href="#icon-ic-arrow-dropdown-solid"></use></svg>
+                </a>
+                <div class="md-dd-c md-dd-c-l md-dd-c-s-l s-ignore s-fltr-cntnr"></div>
+            </div>
+
+        </div>
+        <div class="mod-toolbar_section">
+            <div id="range-picker-holder" class="date-range">
+                <select id="ddlBooked">
+                    <option value="0" selected="">Staying</option>
+                    <option value="1">Booked</option>
+                </select>
+                <label for="datepickerstart">between</label>
+                <input id="datepickerstart" type="text" class="datepicker hasDatepicker" readonly="readonly">
+                <label for="datepickerend">and</label>
+                <input id="datepickerend" type="text" class="datepicker hasDatepicker" readonly="readonly">
+                <button id="filter-actions-button" class="btn btn-small ml10">Go!</button>
+            </div>
+        </div>
+
+        <div class="mod-toolbar_section">
+            <div class="md-dd">
+                <a id="" class="md-dd-txt s-md-dd-tgl" href="javascript:;">
+                    Quick Ranges
+                    <div class="icon-font icon-font-arrow_drop_down"></div>
+                </a>
+                <div class="md-dd-c md-dd-c-l md-dd-c-s-a">
+                    <table class="md-table">
+                        <tbody>
+                            <tr>
+                                <td><a href="javascript:;" class="set-date" data-index="0">Today</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="3">Last 7 Days</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="4">Next 7 Days</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;" class="set-date" data-index="1">Yesterday</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="5">Last 30 Days</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="6">Next 30 Days</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="javascript:;" class="set-date" data-index="2">Tomorrow</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="7">Last 60 Days</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="8">Next 60 Days</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><a href="javascript:;" class="set-date" data-index="9">Last 90 Days</a></td>
+                                <td><a href="javascript:;" class="set-date" data-index="10">Next 90 Days</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="generic-content-outter kpi-page">
+    <section class="page-heading">
+        <div class="h2">Key Figures</div>
+    </section>
+
+    <div class="kpi-page-inner">
+        <div class="kpi-section cp-paper cp-paper_p16">
+            <div class="kpi-set mr16"><div id="id_container_kpi-sold" class="spinner-container"><div id="id_kpi-sold" class="kpi-sold kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-local_hotel"><use href="#icon-bg-local_hotel"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 489 nights </div><div class="kpi-text"> Sold </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message">Something is not right... please try again.</span>                             <a href="javascript:void(0);" class="s-close-spinner cp-button"> close this message</a></div>                         </div></div><div id="id_container_kpi-unsold" class="spinner-container"><div id="id_kpi-unsold" class="kpi-unsold kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-local_hotel_outline"><use href="#icon-bg-local_hotel_outline"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 224 nights </div><div class="kpi-text"> Unsold </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-bookingwindow" class="spinner-container"><div id="id_kpi-bookingwindow" class="kpi-bookingwindow kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-average_booking_window"><use href="#icon-bg-average_booking_window"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 27 days </div><div class="kpi-text"> Average booking window </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-onlinebooking" class="spinner-container"><div id="id_kpi-onlinebooking" class="kpi-onlinebooking kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-devices"><use href="#icon-bg-devices"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 98% </div><div class="kpi-text"> Total online </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-numberguests" class="spinner-container"><div id="id_kpi-numberguests" class="kpi-numberguests kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-group_two"><use href="#icon-bg-group_two"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 824 </div><div class="kpi-text"> Number of guests </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-international" class="spinner-container"><div id="id_kpi-international" class="kpi-international kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-language"><use href="#icon-bg-language"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 43.5% </div><div class="kpi-text"> International </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div></div>
+            <div class="kpi-set ml16"><div id="id_container_kpi-occupancy" class="spinner-container"><div id="id_kpi-occupancy" class="kpi-occupancy kpi-item"><div class="kpi-icon"><svg class="icon-bg-average-occupancy"><use href="#icon-bg-average-occupancy"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 69% </div><div class="kpi-text"> Average occupancy </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message">Something is not right... please try again.</span>                             <a href="javascript:void(0);" class="s-close-spinner cp-button"> close this message</a></div>                         </div></div><div id="id_container_kpi-averageprice" class="spinner-container"><div id="id_kpi-averageprice" class="kpi-averageprice kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-night"><use href="#icon-bg-night"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> £177.74 </div><div class="kpi-text"> Average price per night </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-averagestay" class="spinner-container"><div id="id_kpi-averagestay" class="kpi-averagestay kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-date_range_two"><use href="#icon-bg-date_range_two"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 2.6 nights </div><div class="kpi-text"> Average stay </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-mywebsite" class="spinner-container"><div id="id_kpi-mywebsite" class="kpi-mywebsite kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-mouse"><use href="#icon-bg-mouse"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> 0% </div><div class="kpi-text"> My Website </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-totalrevenue" class="spinner-container"><div id="id_kpi-totalrevenue" class="kpi-totalrevenue kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-graph"><use href="#icon-bg-graph"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> £89,042.22 </div><div class="kpi-text"> Total revenue </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div><div id="id_container_kpi-commissioncosts" class="spinner-container"><div id="id_kpi-commissioncosts" class="kpi-commissioncosts kpi-item"><div class="kpi-icon"><svg class="icon-bg icon-bg-percentage_tag"><use href="#icon-bg-percentage_tag"></use></svg></div><div class="kpi-item_inner"><div class="kpi-result"> £13,320.07 </div><div class="kpi-text"> Commission Costs </div></div></div><div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div></div></div>
+        </div>
+        <div id="id_container_bookingRevenue" class="cp-paper cp-paper_p16 booking-revenue-breakdown spinner-container">
+            <div class="h3">Breakdown of Booking Revenue</div>
+            <ul class="md-list mb16">
+                <li>
+                    <div class="md-list_text">Room Revenue</div>
+                    <div class="md-list_result" id="roomRevenue">£86,915.82</div>
+                </li>
+                <li>
+                    <div class="md-list_text">Non Room Revenue</div>
+                    <div class="md-list_result" id="noRoomRevenue">£0.00</div>
+                </li>
+                <li>
+                    <div class="md-list_text">Cancellation Fees</div>
+                    <div class="md-list_result" id="cancellationFees">£2,126.40</div>
+                </li>
+                <li>
+                    <div class="md-list_text">No Show Fees</div>
+                    <div class="md-list_result" id="noShowFees">£0.00</div>
+                </li>
+                <li class="md-list_bold">
+                    <div class="md-list_text">Total Revenue</div>
+                    <div class="md-list_result" id="totalRevenue">£89,042.22</div>
+                </li>
+            </ul>
+            <ul class="md-list mb24">
+                <li class="md-list_heading">
+                    <div>Cost of these bookings</div>
+                </li>
+                <li>
+                    <div class="md-list_text">Taxes</div>
+                    <div class="md-list_result" id="taxes">£14,486.68</div>
+                </li>
+                <li>
+                    <div class="md-list_text">Commissions</div>
+                    <div class="md-list_result" id="commission">£13,320.07</div>
+                </li>
+                <li>
+                    <div class="md-list_text">Card Fees</div>
+                    <div class="md-list_result" id="cardFees">£0.00</div>
+                </li>
+            </ul>
+            <ul class="md-list">
+                <li class="md-list_bold">
+                    <div class="md-list_text">Advanced Deposits</div>
+                    <div class="md-list_results" id="advancedDeposits">£87,475.65</div>
+                </li>
+            </ul>
+            <div class="eviivo-webcore-loading-spinner spinner light-background medium-spinner full-width-spinner hide">                             <div class="position-spinner">                                 <span class="spin"></span>                                 <span class="spinner-message"></span>                             </div>                         </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

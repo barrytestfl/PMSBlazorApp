@@ -1,0 +1,2193 @@
+﻿@page "/policies"
+<PageTitle> General Terms  </PageTitle>
+<div class="page-heading page-heading_centered page-heading_has-translation">
+    <div class="h2">
+        Policies     
+        <span class="ml10 inline-block">
+            
+<div class="display-flex align-items-center">
+    <span class="checkbox-off checked">Collapse all</span>
+    <input type="checkbox" value="false" name="toggleSections" class="switch s-toggleSections" id="toggleSections">
+    <label for="toggleSections"> </label>
+    <span class="checkbox-on ml6">Expand all</span>
+</div>
+        </span>
+    </div>
+
+    
+<div class="">
+        <span class="checkbox-off">Hide</span>
+    <input type="checkbox" checked="" value="true" name="IsTranslationsEnabled" class="switch s-switch" id="IsTranslationsEnabled" data-on-handler="eviivo.webcore.translatableSection.show" data-off-handler="eviivo.webcore.translatableSection.hide">
+    <label for="IsTranslationsEnabled"> </label>
+        <span class="checkbox-on checked">Show translations</span>
+</div>
+
+</div>
+
+<div class="l-centered mb70 pb70 mod-form f-default">
+
+<form action="https://on.eviivo.com/suite/settings/savepolicies" class="l-main-container" data-ajax="true" data-ajax-begin="onSubmitForm" data-ajax-failure="eviivo.eagle.settings.policies.onSaveBookingTermsFailure" data-ajax-loading="#loading-overlay" data-ajax-method="Post" data-ajax-success="eviivo.eagle.settings.policies.onSaveBookingTermsSuccess" id="bookingTermsForm" method="post" novalidate="novalidate">        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="checkInOut" type="checkbox" checked="checked" class="s-group-title">
+                <label for="checkInOut" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Check-in and check-out policies</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Specify your check-in and check-out rules.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="element-row mod-flex-item mod-flex-item_three s-walkme-checkin-time">
+                                    <label for="CheckInTime" class="mb4">
+                                        <label class="fortext " for="Check-in_time">Check-in time</label> <span class="required" aria-required="true">*</span>
+                                    </label>
+                                    <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" id="BusinessCheckinSettings_CheckInTime" name="BusinessCheckinSettings.CheckInTime"><option value="">- Please Select -</option>
+<option value="0000">00:00</option>
+<option value="0030">00:30</option>
+<option value="0100">01:00</option>
+<option value="0130">01:30</option>
+<option value="0200">02:00</option>
+<option value="0230">02:30</option>
+<option value="0300">03:00</option>
+<option value="0330">03:30</option>
+<option value="0400">04:00</option>
+<option value="0430">04:30</option>
+<option value="0500">05:00</option>
+<option value="0530">05:30</option>
+<option value="0600">06:00</option>
+<option value="0630">06:30</option>
+<option value="0700">07:00</option>
+<option value="0730">07:30</option>
+<option value="0800">08:00</option>
+<option value="0830">08:30</option>
+<option value="0900">09:00</option>
+<option value="0930">09:30</option>
+<option value="1000">10:00</option>
+<option value="1030">10:30</option>
+<option value="1100">11:00</option>
+<option value="1130">11:30</option>
+<option value="1200">12:00</option>
+<option value="1230">12:30</option>
+<option value="1300">13:00</option>
+<option value="1330">13:30</option>
+<option value="1400">14:00</option>
+<option value="1430">14:30</option>
+<option selected="selected" value="1500">15:00</option>
+<option value="1530">15:30</option>
+<option value="1600">16:00</option>
+<option value="1630">16:30</option>
+<option value="1700">17:00</option>
+<option value="1730">17:30</option>
+<option value="1800">18:00</option>
+<option value="1830">18:30</option>
+<option value="1900">19:00</option>
+<option value="1930">19:30</option>
+<option value="2000">20:00</option>
+<option value="2030">20:30</option>
+<option value="2100">21:00</option>
+<option value="2130">21:30</option>
+<option value="2200">22:00</option>
+<option value="2230">22:30</option>
+<option value="2300">23:00</option>
+<option value="2330">23:30</option>
+</select>
+                                    <span class="field-validation-valid field-validation-error " data-valmsg-for="BusinessCheckinSettings.CheckInTime" data-valmsg-replace="true"></span>
+                                    <div class="cp-custom-input mt16">
+                                        <input class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The IsEarlyCheckInAvailable field is required." id="BusinessCheckinSettings_IsEarlyCheckInAvailable" name="BusinessCheckinSettings.IsEarlyCheckInAvailable" type="checkbox" value="true"><input name="BusinessCheckinSettings.IsEarlyCheckInAvailable" type="hidden" value="false">
+                                        <label for="BusinessCheckinSettings_IsEarlyCheckInAvailable">
+                                            <span class="checkbox-input checkbox-input_no-margin"></span>
+                                            <span class="label">Allow early check-in by prior arrangement</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="element-row mod-flex-item mod-flex-item_three s-walkme-latest-checkin-time">
+                                    <label for="LatestCheckInTime" class="mb4">
+                                        <label class="fortext" for="Latest_check-in_time">Latest check-in time</label>
+                                    </label>
+                                    <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" id="BusinessCheckinSettings_CheckInTimeLatest" name="BusinessCheckinSettings.CheckInTimeLatest"><option value="">- Please Select -</option>
+<option value=""></option>
+<option value="0000">00:00</option>
+<option value="0030">00:30</option>
+<option value="0100">01:00</option>
+<option value="0130">01:30</option>
+<option value="0200">02:00</option>
+<option value="0230">02:30</option>
+<option value="0300">03:00</option>
+<option value="0330">03:30</option>
+<option value="0400">04:00</option>
+<option value="0430">04:30</option>
+<option value="0500">05:00</option>
+<option value="0530">05:30</option>
+<option value="0600">06:00</option>
+<option value="0630">06:30</option>
+<option value="0700">07:00</option>
+<option value="0730">07:30</option>
+<option value="0800">08:00</option>
+<option value="0830">08:30</option>
+<option value="0900">09:00</option>
+<option value="0930">09:30</option>
+<option value="1000">10:00</option>
+<option value="1030">10:30</option>
+<option value="1100">11:00</option>
+<option value="1130">11:30</option>
+<option value="1200">12:00</option>
+<option value="1230">12:30</option>
+<option value="1300">13:00</option>
+<option value="1330">13:30</option>
+<option value="1400">14:00</option>
+<option value="1430">14:30</option>
+<option value="1500">15:00</option>
+<option value="1530">15:30</option>
+<option value="1600">16:00</option>
+<option value="1630">16:30</option>
+<option value="1700">17:00</option>
+<option value="1730">17:30</option>
+<option value="1800">18:00</option>
+<option value="1830">18:30</option>
+<option value="1900">19:00</option>
+<option value="1930">19:30</option>
+<option value="2000">20:00</option>
+<option value="2030">20:30</option>
+<option value="2100">21:00</option>
+<option value="2130">21:30</option>
+<option value="2200">22:00</option>
+<option value="2230">22:30</option>
+<option value="2300">23:00</option>
+<option selected="selected" value="2330">23:30</option>
+</select>
+                                    <div class="cp-custom-input mt16">
+                                        <input class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The Is24HourCheckin field is required." id="BusinessCheckinSettings_Is24HourCheckin" name="BusinessCheckinSettings.Is24HourCheckin" type="checkbox" value="true"><input name="BusinessCheckinSettings.Is24HourCheckin" type="hidden" value="false">
+                                        <label for="BusinessCheckinSettings_Is24HourCheckin">
+                                            <span class="checkbox-input checkbox-input_no-margin"></span>
+                                            <span class="label">24 hour check-in</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="element-row mb4 mod-flex-item mod-flex-item_three">
+                                    <label for="checkOutTime" class="mb4">
+                                        <label class="fortext" for="Check-out_time">Check-out time</label> <span class="required" aria-required="true">*</span>
+                                    </label>
+                                    <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" id="BusinessCheckinSettings_CheckOutTime" name="BusinessCheckinSettings.CheckOutTime"><option value="">- Please Select -</option>
+<option value="0000">00:00</option>
+<option value="0030">00:30</option>
+<option value="0100">01:00</option>
+<option value="0130">01:30</option>
+<option value="0200">02:00</option>
+<option value="0230">02:30</option>
+<option value="0300">03:00</option>
+<option value="0330">03:30</option>
+<option value="0400">04:00</option>
+<option value="0430">04:30</option>
+<option value="0500">05:00</option>
+<option value="0530">05:30</option>
+<option value="0600">06:00</option>
+<option value="0630">06:30</option>
+<option value="0700">07:00</option>
+<option value="0730">07:30</option>
+<option value="0800">08:00</option>
+<option value="0830">08:30</option>
+<option value="0900">09:00</option>
+<option value="0930">09:30</option>
+<option value="1000">10:00</option>
+<option value="1030">10:30</option>
+<option selected="selected" value="1100">11:00</option>
+<option value="1130">11:30</option>
+<option value="1200">12:00</option>
+<option value="1230">12:30</option>
+<option value="1300">13:00</option>
+<option value="1330">13:30</option>
+<option value="1400">14:00</option>
+<option value="1430">14:30</option>
+<option value="1500">15:00</option>
+<option value="1530">15:30</option>
+<option value="1600">16:00</option>
+<option value="1630">16:30</option>
+<option value="1700">17:00</option>
+<option value="1730">17:30</option>
+<option value="1800">18:00</option>
+<option value="1830">18:30</option>
+<option value="1900">19:00</option>
+<option value="1930">19:30</option>
+<option value="2000">20:00</option>
+<option value="2030">20:30</option>
+<option value="2100">21:00</option>
+<option value="2130">21:30</option>
+<option value="2200">22:00</option>
+<option value="2230">22:30</option>
+<option value="2300">23:00</option>
+<option value="2330">23:30</option>
+</select>
+                                    <span class="field-validation-valid field-validation-error " data-valmsg-for="BusinessCheckinSettings.CheckOutTime" data-valmsg-replace="true"></span>
+                                    <div class="cp-custom-input mt16">
+                                        <input class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The IsLateCheckOutAvailable field is required." id="BusinessCheckinSettings_IsLateCheckOutAvailable" name="BusinessCheckinSettings.IsLateCheckOutAvailable" type="checkbox" value="true"><input name="BusinessCheckinSettings.IsLateCheckOutAvailable" type="hidden" value="false">
+                                        <label for="BusinessCheckinSettings_IsLateCheckOutAvailable">
+                                            <span class="checkbox-input checkbox-input_no-margin"></span>
+                                            <span class="label">Allow late check out by prior arrangement</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Check-in policies form -->
+                    
+
+<section class="l-row l-row_full-width mb4 l-row-borderbox">
+    <!-- How does the guest check-in -->
+    <div class="l-column large-4 medium-3 small-12">
+        <label class="color-dark">How does the guest check in?</label>
+        <div class="mod-notice mod-notice-small plain inline-block">
+            <span class="icon-font icon-font-info_outline"></span>
+            <span>Displayed on guest emails if you choose and on travel sites which support this feature.</span>
+        </div>
+    </div>
+
+    <div class="l-column large-8 medium-9 small-12 end">
+
+        <!-- How does the guest check-in radio button -->
+        <div class="mod-flex-row mod-flex_nowrap">
+            <div class="cp-radio-group mb16">
+                <input checked="checked" data-id="CheckInLocation" id="CheckInLocationAtProperty" name="CheckInPolicies.CheckInLocationCode" type="radio" value="APR">
+                <label class="btn btn-grouped btn-invert" for="CheckInLocationAtProperty">At the property</label>
+                <input data-id="CheckInLocation" id="CheckInLocationOffsite" name="CheckInPolicies.CheckInLocationCode" type="radio" value="OFS">
+                <label class="btn btn-grouped btn-invert" for="CheckInLocationOffsite">Off site</label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-row l-row_full-width mb4 l-row-borderbox">
+
+    <div class="l-column large-4 medium-3 small-12">
+    </div>
+
+    <div class="l-column large-8 medium-9 small-12 end">
+
+        <div class="mod-flex-row mod-flex_nowrap">
+
+            <!-- Check-in method -->
+            <div class="element-row stacked mod-flex-item_three">
+                <label for="CheckInMethod">
+                    Check-in method
+                </label>
+                <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-selected-value="RCP" id="CheckInMethod" name="CheckInPolicies.CheckInMethodCode"><option value="">- Please Select -</option>
+<option selected="selected" value="RCP">Reception</option>
+<option value="GOA">Greeted on arrival</option>
+<option value="DCD">Door code</option>
+<option value="SML">Smart lock</option>
+<option value="LBX">Lock box</option>
+<option value="SKL">Secret key location</option>
+<option value="ISG">Instructions sent to guest</option>
+<option value="CHT">Contact host</option>
+</select>
+            </div>
+
+            <!-- Brand name -->
+            <div id="BrandNamePanel" class="l-column mt20 hide">
+                <label class="color-dark" for="brandName">Brand Name</label>
+                <input class="ml5 w200p" id="brandName" name="CheckInPolicies.BrandName" type="text" value="">
+            </div>
+
+            <!-- How instructions are sent fields -->
+            
+
+<!-- Contact options radio -->
+<div id="HowInstructionsAreSentPanel" class="hide">
+    <label for="HowInstructionsAreSent">
+        <br>
+    </label>
+
+    <div class="l-column cp-radio-group mb16">
+<input data-id="HowInstructionsAreSent" id="HowInstructionsAreSentPhone" name="CheckInPolicies.HowInstructionsAreSentOptions.CheckedOption" type="radio" value="PHO">            <label class="btn btn-grouped btn-invert" for="HowInstructionsAreSentPhone">Phone</label>
+<input data-id="HowInstructionsAreSent" id="HowInstructionsAreSentEmail" name="CheckInPolicies.HowInstructionsAreSentOptions.CheckedOption" type="radio" value="EML">            <label class="btn btn-grouped btn-invert" for="HowInstructionsAreSentEmail">Email</label>
+<input data-id="HowInstructionsAreSent" id="HowInstructionsAreSentSMS" name="CheckInPolicies.HowInstructionsAreSentOptions.CheckedOption" type="radio" value="SMS">            <label class="btn btn-grouped btn-invert" for="HowInstructionsAreSentSMS">SMS</label>
+<input data-id="HowInstructionsAreSent" id="HowInstructionsAreSentOther" name="CheckInPolicies.HowInstructionsAreSentOptions.CheckedOption" type="radio" value="OTH">            <label class="btn btn-grouped btn-invert" for="HowInstructionsAreSentOther">Other</label>
+    </div>
+</div>
+
+<!-- Panel for options text boxes  -->
+<div id="HowInstructionsAreSentTextPanel" class="hide">
+
+    <!-- Phone option text field -->
+    <div id="HowInstructionsAreSentPhonePanel" class="hide">
+        <label for="HowInstructionsAreSentPhone">
+            <br>
+        </label>
+
+        <div class="element-row stacked field-telephone mod-flex-item mod-flex-item_three w200p">
+            <input class="s-telephone-number" id="HowInstructionsAreSentPhoneInput" name="CheckInPolicies.HowInstructionsAreSentOptions.PhoneField" type="tel" value="">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowInstructionsAreSentOptions.PhoneField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- Email option text field -->
+    <div id="HowInstructionsAreSentEmailPanel" class="hide">
+        <label for="HowInstructionsAreSentEmail">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowInstructionsAreSentEmailInput" name="CheckInPolicies.HowInstructionsAreSentOptions.EmailField" type="text" value="">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowInstructionsAreSentOptions.EmailField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- SMS option text field -->
+    <div id="HowInstructionsAreSentSMSPanel" class="hide">
+        <label for="HowInstructionsAreSentSMS">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowInstructionsAreSentSMSInput" name="CheckInPolicies.HowInstructionsAreSentOptions.SMSField" type="text" value="">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowInstructionsAreSentOptions.SMSField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- Other option text field -->
+    <div id="HowInstructionsAreSentOtherPanel" class="hide">
+        <label for="HowInstructionsAreSentOther">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowInstructionsAreSentOtherInput" name="CheckInPolicies.HowInstructionsAreSentOptions.OtherField" type="text" value="">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowInstructionsAreSentOptions.OtherField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+</div>
+
+            <!-- How should guest contact fields -->
+            
+
+<!-- Contact options radio -->
+<div id="HowShouldGuestContactPanel" class="hide">
+    <label for="HowShouldGuestContact">
+        <br>
+    </label>
+
+    <div class="l-column cp-radio-group mb16">
+<input data-id="HowShouldGuestContact" id="HowShouldGuestContactPhone" name="CheckInPolicies.HowShouldGuestContactOptions.CheckedOption" type="radio" value="PHO">            <label class="btn btn-grouped btn-invert" for="HowShouldGuestContactPhone">Phone</label>
+<input data-id="HowShouldGuestContact" id="HowShouldGuestContactEmail" name="CheckInPolicies.HowShouldGuestContactOptions.CheckedOption" type="radio" value="EML">            <label class="btn btn-grouped btn-invert" for="HowShouldGuestContactEmail">Email</label>
+<input data-id="HowShouldGuestContact" id="HowShouldGuestContactSMS" name="CheckInPolicies.HowShouldGuestContactOptions.CheckedOption" type="radio" value="SMS">            <label class="btn btn-grouped btn-invert" for="HowShouldGuestContactSMS">SMS</label>
+<input data-id="HowShouldGuestContact" id="HowShouldGuestContactOther" name="CheckInPolicies.HowShouldGuestContactOptions.CheckedOption" type="radio" value="OTH">            <label class="btn btn-grouped btn-invert" for="HowShouldGuestContactOther">Other</label>
+    </div>
+</div>
+
+<!-- Panel for options text boxes  -->
+<div id="HowShouldGuestContactTextPanel" class="hide">
+
+    <!-- Phone option text field -->
+    <div id="HowShouldGuestContactPhonePanel" class="hide">
+        <label for="HowShouldGuestContactPhone">
+            <br>
+        </label>
+
+        <div class="element-row stacked field-telephone mod-flex-item mod-flex-item_three w200p">
+            <input class="s-telephone-number" id="HowShouldGuestContactPhoneInput" name="CheckInPolicies.HowShouldGuestContactOptions.PhoneField" type="tel" value="+442080544740">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowShouldGuestContactOptions.PhoneField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- Email option text field -->
+    <div id="HowShouldGuestContactEmailPanel" class="hide">
+        <label for="HowShouldGuestContactEmail">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowShouldGuestContactEmailInput" name="CheckInPolicies.HowShouldGuestContactOptions.EmailField" type="text" value="reservation@mskresidence.com">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowShouldGuestContactOptions.EmailField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- SMS option text field -->
+    <div id="HowShouldGuestContactSMSPanel" class="hide">
+        <label for="HowShouldGuestContactSMS">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowShouldGuestContactSMSInput" name="CheckInPolicies.HowShouldGuestContactOptions.SMSField" type="text" value="+447384034146">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowShouldGuestContactOptions.SMSField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <!-- Other option text field -->
+    <div id="HowShouldGuestContactOtherPanel" class="hide">
+        <label for="HowShouldGuestContactOther">
+            <br>
+        </label>
+
+        <div class="element-row stacked mod-flex-item mod-flex-item_three w200p">
+            <input class="" id="HowShouldGuestContactOtherInput" name="CheckInPolicies.HowShouldGuestContactOptions.OtherField" type="text" value="">
+            <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.HowShouldGuestContactOptions.OtherField" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+
+<section class="l-row l-row_full-width mb4 l-row-borderbox">
+
+    <div class="l-column large-4 medium-3 small-12">
+    </div>
+
+    <div class="l-column large-8 medium-9 small-12 end">
+
+        <!-- When instructions are sent select list -->
+        <div id="WhenInstructionsAreSentPanel" class="element-row mod-flex-item_three mb16 hide">
+            <label for="WhenInstructionsAreSent" class="stacked">
+                When?
+            </label>
+            <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-selected-value="" id="WhenInstructionsAreSent" name="CheckInPolicies.WhenInstructionsAreSentCode"><option value="">- Please Select -</option>
+<option value="SAB">Straight after booking</option>
+<option value="MBA">Month before arrival</option>
+<option value="WBA">Week before arrival</option>
+<option value="DOA">Day of arrival</option>
+</select>
+        </div>
+
+        <!-- Off site address -->
+        <div id="OffsiteAddressPanel" class="hide">
+            <div class="mod-flex-row mod-flex_nowrap">
+                <div class="stacked mod-flex-item mod-flex-item_three">
+                    <label for="address-1">Address Line 1 <span aria-required="true" class="required">*</span></label>
+                    <input class="stretch-input valid" id="address-1" name="CheckInPolicies.OffsiteAddress.Address1" type="text" value="">
+                </div>
+                <div class="stacked mod-flex-item mod-flex-item_three">
+                    <label for="address-2">Address Line 2</label>
+                    <input class="stretch-input valid" id="address-2" name="CheckInPolicies.OffsiteAddress.Address2" type="text" value="">
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.Address2" data-valmsg-replace="true"></span>
+                </div>
+
+                <div class="stacked mod-flex-item mod-flex-item_three">
+                    <label for="address-3">Address Line 3</label>
+                    <input class="stretch-input valid" id="address-3" name="CheckInPolicies.OffsiteAddress.Address3" type="text" value="">
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.Address3" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="mod-flex-row mod-flex_nowrap">
+                <div class="stacked mod-flex-item mod-flex-item_four">
+                    <label for="city">Town/City <span aria-required="true" class="required">*</span></label>
+                    <input class="stretch-input valid" id="city" name="CheckInPolicies.OffsiteAddress.City" type="text" value="">
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.City" data-valmsg-replace="true"></span>
+                </div>
+                <div class="stacked mod-flex-item mod-flex-item_four">
+                    <label for="postcode">Postcode</label>
+                    <input class="stretch-input valid" id="postcode" name="CheckInPolicies.OffsiteAddress.PostCode" type="text" value="">
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.PostCode" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <div class="mod-flex-row mod-flex_nowrap">
+                <div class="stacked mod-flex-item mod-flex-item_two">
+                    <label for="county-state">State/Province <span aria-required="true" class="required">*</span></label>
+                    <select class="cp-custom-select cp-custom-select_fw" data-selected-value="0" data-val="true" data-val-number="The field StateProvinceId must be a number." data-val-required="The StateProvinceId field is required." id="county-state" name="CheckInPolicies.OffsiteAddress.StateProvinceId" disabled=""></select>
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.StateProvinceId" data-valmsg-replace="true"></span>
+                </div>
+
+                <div class="stacked mod-flex-item mod-flex-item_two">
+                    <label for="country">Country <span aria-required="true" class="required">*</span></label>
+                    <select class="cp-custom-select cp-custom-select_fw" data-selected-value="0" data-val="true" data-val-number="The field CountryId must be a number." data-val-required="The CountryId field is required." id="country" name="CheckInPolicies.OffsiteAddress.CountryId"><option value="">----</option><option value="16">Afghanistan</option><option value="17">Albania</option><option value="18">Algeria</option><option value="19">American Samoa</option><option value="20">Andorra</option><option value="21">Angola</option><option value="22">Anguilla</option><option value="4355">Antarctica</option><option value="23">Antigua And Barbuda</option><option value="24">Argentina</option><option value="25">Armenia</option><option value="26">Aruba</option><option value="27">Australia</option><option value="28">Austria</option><option value="29">Azerbaijan</option><option value="30">Bahamas</option><option value="31">Bahrain</option><option value="32">Bangladesh</option><option value="33">Barbados</option><option value="34">Belarus</option><option value="35">Belgium</option><option value="36">Belize</option><option value="37">Benin</option><option value="38">Bermuda</option><option value="39">Bhutan</option><option value="40">Bolivia</option><option value="41">Bosnia-Herzegovina</option><option value="42">Botswana</option><option value="4356">Bouvet Island</option><option value="43">Brazil</option><option value="44">British Indian Ocean Territory</option><option value="45">Brunei Darussalam</option><option value="46">Bulgaria</option><option value="47">Burkina Faso</option><option value="48">Burundi</option><option value="49">Cambodia</option><option value="50">Cameroon</option><option value="51">Canada</option><option value="52">Cape Verde</option><option value="53">Cayman Islands</option><option value="54">Central African Republic</option><option value="55">Chad</option><option value="56">Chile</option><option value="57">China</option><option value="58">Christmas Island</option><option value="59">Cocos Islands</option><option value="60">Colombia</option><option value="61">Comoros</option><option value="62">Congo, Democratic Republic Of</option><option value="63">Congo, People's Republic Of</option><option value="64">Cook Islands</option><option value="65">Costa Rica</option><option value="66">Cote D'ivoire</option><option value="67">Croatia</option><option value="68">Cuba</option><option value="69">Cyprus</option><option value="70">Czech Republic</option><option value="71">Denmark</option><option value="72">Djibouti</option><option value="73">Dominica</option><option value="74">Dominican Republic</option><option value="75">East Timor</option><option value="76">Ecuador</option><option value="77">Egypt</option><option value="78">El Salvador</option><option value="79">Equatorial Guinea</option><option value="80">Eritrea</option><option value="81">Estonia</option><option value="82">Ethiopia</option><option value="83">Falkland Islands</option><option value="84">Faroe Islands</option><option value="85">Fiji</option><option value="86">Finland</option><option value="87">France</option><option value="88">French Guiana</option><option value="89">French Polynesia</option><option value="90">French Southern Territories</option><option value="91">Gabon</option><option value="92">Gambia</option><option value="93">Georgia</option><option value="94">Germany</option><option value="95">Ghana</option><option value="96">Gibraltar</option><option value="97">Greece</option><option value="98">Greenland</option><option value="99">Grenada</option><option value="100">Guadeloupe</option><option value="101">Guam</option><option value="102">Guatemala</option><option value="4357">Guernsey</option><option value="103">Guinea</option><option value="104">Guinea-bissau</option><option value="105">Guyana</option><option value="106">Haiti</option><option value="107">Honduras</option><option value="108">Hong Kong</option><option value="109">Hungary</option><option value="110">Iceland</option><option value="111">India</option><option value="112">Indonesia</option><option value="113">Iran</option><option value="114">Iraq</option><option value="115">Ireland</option><option value="4358">Isle of Man</option><option value="116">Israel</option><option value="117">Italy</option><option value="118">Jamaica</option><option value="119">Japan</option><option value="4359">Jersey</option><option value="120">Jordan</option><option value="121">Kazakhstan</option><option value="122">Kenya</option><option value="123">Kiribati</option><option value="124">Kuwait</option><option value="125">Kyrgyzstan</option><option value="126">Laos</option><option value="127">Latvia</option><option value="128">Lebanon</option><option value="129">Lesotho</option><option value="130">Liberia</option><option value="131">Libya</option><option value="132">Liechtenstein</option><option value="133">Lithuania</option><option value="134">Luxembourg</option><option value="135">Macau</option><option value="136">Macedonia</option><option value="137">Madagascar</option><option value="138">Malawi</option><option value="139">Malaysia</option><option value="140">Maldives</option><option value="141">Mali</option><option value="142">Malta</option><option value="143">Marshall Islands</option><option value="144">Martinique</option><option value="145">Mauritania</option><option value="146">Mauritius</option><option value="147">Mayotte</option><option value="148">Mexico</option><option value="149">Micronesia</option><option value="150">Moldova</option><option value="151">Monaco</option><option value="152">Mongolia</option><option value="153">Montenegro</option><option value="154">Montserrat</option><option value="155">Morocco</option><option value="156">Mozambique</option><option value="157">Myanmar</option><option value="158">Namibia</option><option value="159">Nauru</option><option value="160">Nepal</option><option value="162">Netherlands</option><option value="161">Netherlands Antilles</option><option value="163">New Caledonia</option><option value="164">New Zealand</option><option value="165">Nicaragua</option><option value="166">Niger</option><option value="167">Nigeria</option><option value="168">Niue</option><option value="169">Norfolk Island</option><option value="170">North Korea</option><option value="171">Northern Mariana Islands</option><option value="172">Norway</option><option value="173">Oman</option><option value="174">Pakistan</option><option value="175">Palau</option><option value="176">Panama</option><option value="177">Papua New Guinea</option><option value="178">Paraguay</option><option value="179">Peru</option><option value="180">Philippines</option><option value="181">Pitcairn</option><option value="182">Poland</option><option value="183">Portugal</option><option value="184">Puerto Rico</option><option value="185">Qatar</option><option value="186">Reunion</option><option value="187">Romania</option><option value="188">Russia</option><option value="189">Rwanda</option><option value="4360">Saint Barthelemy</option><option value="4361">Saint Martin (French part)</option><option value="190">Samoa</option><option value="191">San Marino</option><option value="192">Sao Tome And Principe</option><option value="193">Saudi Arabia</option><option value="194">Senegal</option><option value="195">Serbia</option><option value="196">Seychelles</option><option value="197">Sierra Leone</option><option value="198">Singapore</option><option value="4413">Sint Maarten</option><option value="199">Slovakia</option><option value="200">Slovenia</option><option value="201">Solomon Islands</option><option value="202">Somalia</option><option value="203">South Africa</option><option value="204">South Georgia And The South Sandwich Islands</option><option value="205">South Korea</option><option value="206">Spain</option><option value="207">Sri Lanka</option><option value="208">St. Helena</option><option value="209">St. Kitts And Nevis</option><option value="210">St. Lucia</option><option value="211">St. Pierre And Miquelon</option><option value="212">St. Vincent And The Grenadines</option><option value="213">Sudan</option><option value="214">Suriname</option><option value="215">Swaziland</option><option value="216">Sweden</option><option value="217">Switzerland</option><option value="218">Syria</option><option value="219">Taiwan</option><option value="220">Tajikistan</option><option value="221">Tanzania</option><option value="222">Thailand</option><option value="223">Togo</option><option value="224">Tokelau</option><option value="225">Tonga</option><option value="226">Trinidad And Tobago</option><option value="227">Tunisia</option><option value="228">Turkey</option><option value="229">Turkmenistan</option><option value="230">Turks And Caicos Islands</option><option value="231">Tuvalu</option><option value="232">Uganda</option><option value="233">Ukraine</option><option value="234">United Arab Emirates</option><option value="235">United Kingdom</option><option value="236">United States</option><option value="4362">United States Minor Outlying Islands</option><option value="237">Uruguay</option><option value="238">Uzbekistan</option><option value="239">Vanuatu</option><option value="240">Vatican City State (Holy See)</option><option value="241">Venezuela</option><option value="242">Vietnam</option><option value="243">Virgin Islands (British)</option><option value="244">Virgin Islands (U.S.)</option><option value="245">Wallis And Futuna Islands</option><option value="246">Western Sahara</option><option value="247">Yemen</option><option value="248">Zambia</option><option value="249">Zimbabwe</option></select>
+                    <span class="field-validation-valid field-validation-error " data-valmsg-for="CheckInPolicies.OffsiteAddress.CountryId" data-valmsg-replace="true"></span>
+                </div>
+
+                <div class="stacked mod-flex-item mod-flex-item_two">
+                    <label class="color-dark">
+                        Google Place ID
+                        <span aria-required="true" class="required">*</span>
+                        <span class="icon-font icon-font-help more-info ml5" data-tooltip="title" data-tooltip-title="Place IDs uniquely identify a place on Google Maps" title="Place IDs uniquely identify a place on Google Maps" data-tooltip-pos="top"></span>
+                    </label>
+                    <input class="mb4" id="GooglePlaceId" name="CheckInPolicies.GooglePlaceId" type="text" value="">
+                    <span class="text-color-light">Find your Google Place ID <a href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder" target="_blank">here</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-row l-row_full-width mb4 l-row-borderbox">
+
+    <div class="l-column large-4 medium-3 small-12">
+    </div>
+
+    <div class="l-column large-8 medium-9 small-12 end">
+
+        <!-- Check-in Instructions -->
+        <div class="large-4 medium-3 small-12 stacked">
+            <label for="CheckInInstructions">Check-in instructions</label>
+        </div>
+        <div class="large-8 medium-9 small-12 end">
+            <div class="mod-multilanguage">
+
+
+
+
+
+
+
+<div id="CheckInInstructions-Translation-defaults" class="w100 mb16">
+        <div class="tab">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="CheckInPolicies_CheckInInstructionsTranslationText_0__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[0].Id" type="hidden" value="60e5aa55-d304-4ddf-863e-173351ba03cf">
+            <input id="CheckInPolicies_CheckInInstructionsTranslationText_0__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[0].CultureCode" type="hidden" value="root">
+            <input id="CheckInPolicies_CheckInInstructionsTranslationText_0__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[0].IsHtmlContentAllowed" type="hidden" value="False">
+<textarea class="stretch-input cp-textarea_extra-small" cols="20" data-language-code="root" id="CheckInPolicies_CheckInInstructionsTranslationText_0__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[0].Content" rows="2"></textarea>        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section w100 mb16" id="CheckInInstructions-Translation-translations">
+
+    <select class="cp-custom-select" id="CheckInPolicies_cultures-dropdown" name="CheckInPolicies.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="CheckInPolicies_CheckInInstructionsTranslationText_1__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[1].Id" type="hidden" value="75fc1e99-cd0d-4581-887c-103edca597f1"><input id="CheckInPolicies_CheckInInstructionsTranslationText_1__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[1].CultureCode" type="hidden" value="en-US"><input id="CheckInPolicies_CheckInInstructionsTranslationText_1__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[1].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small" cols="20" data-language-code="en-US" id="CheckInPolicies_CheckInInstructionsTranslationText_1__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[1].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_2__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[2].Id" type="hidden" value="2a52364a-a139-4e3c-b900-3abf417888ca"><input id="CheckInPolicies_CheckInInstructionsTranslationText_2__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[2].CultureCode" type="hidden" value="fr-FR"><input id="CheckInPolicies_CheckInInstructionsTranslationText_2__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[2].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="fr-FR" id="CheckInPolicies_CheckInInstructionsTranslationText_2__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[2].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_3__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[3].Id" type="hidden" value="b708a477-7388-45a6-95a9-46ef0c951f9c"><input id="CheckInPolicies_CheckInInstructionsTranslationText_3__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[3].CultureCode" type="hidden" value="de-DE"><input id="CheckInPolicies_CheckInInstructionsTranslationText_3__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[3].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="de-DE" id="CheckInPolicies_CheckInInstructionsTranslationText_3__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[3].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_4__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[4].Id" type="hidden" value="f410e506-21fe-490e-9a07-561c9b55781c"><input id="CheckInPolicies_CheckInInstructionsTranslationText_4__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[4].CultureCode" type="hidden" value="it-IT"><input id="CheckInPolicies_CheckInInstructionsTranslationText_4__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[4].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="it-IT" id="CheckInPolicies_CheckInInstructionsTranslationText_4__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[4].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_5__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[5].Id" type="hidden" value="0c37fb3b-976a-4f34-a605-734b1b040227"><input id="CheckInPolicies_CheckInInstructionsTranslationText_5__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[5].CultureCode" type="hidden" value="es-ES"><input id="CheckInPolicies_CheckInInstructionsTranslationText_5__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[5].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="es-ES" id="CheckInPolicies_CheckInInstructionsTranslationText_5__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[5].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_6__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[6].Id" type="hidden" value="e4f1f4c5-d772-4f7f-a299-cf9d3b8a6fbf"><input id="CheckInPolicies_CheckInInstructionsTranslationText_6__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[6].CultureCode" type="hidden" value="ca-ES"><input id="CheckInPolicies_CheckInInstructionsTranslationText_6__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[6].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="ca-ES" id="CheckInPolicies_CheckInInstructionsTranslationText_6__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[6].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_7__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[7].Id" type="hidden" value="3b058505-75ae-4d96-b253-0f4845bba220"><input id="CheckInPolicies_CheckInInstructionsTranslationText_7__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[7].CultureCode" type="hidden" value="pt-PT"><input id="CheckInPolicies_CheckInInstructionsTranslationText_7__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[7].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="pt-PT" id="CheckInPolicies_CheckInInstructionsTranslationText_7__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[7].Content" rows="2"></textarea><input id="CheckInPolicies_CheckInInstructionsTranslationText_8__Id" name="CheckInPolicies.CheckInInstructionsTranslationText[8].Id" type="hidden" value="fdd1870f-da33-42d9-b69d-cee549ebe21c"><input id="CheckInPolicies_CheckInInstructionsTranslationText_8__CultureCode" name="CheckInPolicies.CheckInInstructionsTranslationText[8].CultureCode" type="hidden" value="pt-BR"><input id="CheckInPolicies_CheckInInstructionsTranslationText_8__IsHtmlContentAllowed" name="CheckInPolicies.CheckInInstructionsTranslationText[8].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="pt-BR" id="CheckInPolicies_CheckInInstructionsTranslationText_8__Content" maxlength="1000" name="CheckInPolicies.CheckInInstructionsTranslationText[8].Content" rows="2"></textarea>                
+            </div>
+        </div>
+    
+    <input id="CheckInPolicies_isValidationTranslationsOn" name="CheckInPolicies.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="l-row l-row_full-width mb16 l-row-borderbox">
+
+    <div class="l-column large-4 medium-3 small-12">
+        <!-- Do you have a different out of hours check-in method? -->
+        <div class="large-11 medium-3 small-12 stacked">
+            <label class="color-dark">Do you have a different out of hours check-in method?</label>
+        </div>
+    </div>
+
+    <div class="l-column large-8 medium-9 small-12 end">
+
+        <div class="large-8 medium-9 small-12 end">
+
+            <!-- Do you have a different out of hours check-in method radio button -->
+            <div class="mod-flex-row mod-flex_nowrap">
+                <div class="cp-radio-group mb16">
+                    <input data-id="DifferentCheckInMethod" data-val="true" data-val-required="The DifferentCheckInMethod field is required." id="DifferentCheckInMethodYes" name="CheckInPolicies.DifferentCheckInMethod" type="radio" value="true">
+                    <label class="btn btn-grouped btn-invert" for="DifferentCheckInMethodYes">Yes</label>
+                    <input checked="checked" data-id="DifferentCheckInMethod" id="DifferentCheckInMethodNo" name="CheckInPolicies.DifferentCheckInMethod" type="radio" value="false">
+                    <label class="btn btn-grouped btn-invert" for="DifferentCheckInMethodNo">No</label>
+                </div>
+            </div>
+
+            <!-- Different check-in method Instructions -->
+            <div id="DifferentCheckIndMehtodInstructionsPanel" class="hide">
+                <div class="mod-multilanguage">
+
+
+
+
+
+
+
+<div id="DifferentCheckInMethodInstructions-Translation-defaults" class="w100 mb16">
+        <div class="tab">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_0__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[0].Id" type="hidden" value="3cd4195e-22e7-4d89-bf3c-a4c41ff67f4d">
+            <input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_0__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[0].CultureCode" type="hidden" value="root">
+            <input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_0__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[0].IsHtmlContentAllowed" type="hidden" value="False">
+<textarea class="stretch-input cp-textarea_extra-small" cols="20" data-language-code="root" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_0__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[0].Content" rows="2">PLease use the door bell and a coleague of o</textarea>        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section w100 mb16" id="DifferentCheckInMethodInstructions-Translation-translations">
+
+    <select class="cp-custom-select" id="CheckInPolicies_cultures-dropdown" name="CheckInPolicies.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_1__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[1].Id" type="hidden" value="1820f984-93d2-4a3a-b927-d16e51df5928"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_1__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[1].CultureCode" type="hidden" value="pt-BR"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_1__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[1].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="pt-BR" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_1__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[1].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_2__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[2].Id" type="hidden" value="ce6e58ec-ef42-4a35-bf24-005052b37cb0"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_2__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[2].CultureCode" type="hidden" value="pt-PT"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_2__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[2].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="pt-PT" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_2__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[2].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_3__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[3].Id" type="hidden" value="856fb241-49b2-4f36-9fd2-f650d173ad98"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_3__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[3].CultureCode" type="hidden" value="ca-ES"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_3__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[3].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="ca-ES" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_3__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[3].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_4__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[4].Id" type="hidden" value="d290e5c3-b2e1-49c8-aa02-6d828b3a404c"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_4__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[4].CultureCode" type="hidden" value="en-US"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_4__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[4].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small" cols="20" data-language-code="en-US" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_4__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[4].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_5__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[5].Id" type="hidden" value="4cd2c9bc-c2a8-42b1-b3c4-961707bb2c44"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_5__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[5].CultureCode" type="hidden" value="fr-FR"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_5__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[5].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="fr-FR" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_5__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[5].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_6__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[6].Id" type="hidden" value="4c633eb3-3079-4d8a-89f6-739279ed2518"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_6__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[6].CultureCode" type="hidden" value="de-DE"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_6__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[6].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="de-DE" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_6__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[6].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_7__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[7].Id" type="hidden" value="7c88dfc0-76f3-47aa-9987-98153180bab3"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_7__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[7].CultureCode" type="hidden" value="it-IT"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_7__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[7].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="it-IT" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_7__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[7].Content" rows="2"></textarea><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_8__Id" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[8].Id" type="hidden" value="c690eaa3-5cc8-4238-8acc-e67f42d1938c"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_8__CultureCode" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[8].CultureCode" type="hidden" value="es-ES"><input id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_8__IsHtmlContentAllowed" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[8].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_extra-small hide" cols="20" data-language-code="es-ES" id="CheckInPolicies_DifferentCheckInMethodInstructionsTranslationText_8__Content" maxlength="1000" name="CheckInPolicies.DifferentCheckInMethodInstructionsTranslationText[8].Content" rows="2"></textarea>                
+            </div>
+        </div>
+    
+    <input id="CheckInPolicies_isValidationTranslationsOn" name="CheckInPolicies.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+                    <!-- Building door code -->
+                        <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                            <div class="l-column large-4 medium-3 small-12">
+                                <label for="buildingDoorCode">Building door code</label>
+                            </div>
+
+                            <div class="l-column large-8 medium-9 small-12 end">
+
+                                <div id="BuildingDoorCodePanel" class="stacked w200p">
+                                    <input class="" id="BuildingDoorCode" name="BuildingDoorCode" type="text" value="">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                            <div class="l-column large-4 medium-3 small-12">
+                                <label class="color-dark">Upload Image</label>
+                                <div class="mod-notice mod-notice-small plain inline-block">
+                                    <span class="icon-font icon-font-info_outline"></span>
+                                    <span>Optionally upload any images to help your guests with check-in,
+such as the location where they can pick up the keys.</span>
+                                </div>
+                            </div>
+                            <div class="l-column large-8 medium-9 small-12 end">
+                                <div class="md-uploader_contained spinner-contained" id="photos-container">
+                                    <section class="cp-paper">
+                                        <div id="gallery-check-in" class="media-embed"><main class="md-main"><section class="cp-inner-toolbar" id="gallery-check-in-gallery-toolbar"><div class="cp-inner-toolbar_section mr16"><div class="cp-slide-toggle"><input type="checkbox" id="gallery-check-in-gallery-toolbar-checkbox"><label for="gallery-check-in-gallery-toolbar-checkbox"><span class="label">Re-order</span><span class="slide"><span class="toggle"></span></span></label></div></div><div class="cp-inner-toolbar_section cp-inner-toolbar_section-end"><button class="btn" id="gallery-check-in-gallery-toolbar-add-media">Upload</button></div></section><section class="md-uploader md-uploader_empty md-uploader_fill" id="gallery-check-in-media-container"><div class="s-mod-drop-zone cp-library-container"><div class="mod-notice mod-notice-small alert ml-auto mr-auto"><span><strong>You have no images in this gallery</strong> <br>Select "Upload" or drag files here to upload images.</span></div><div class="s-drop-zone-watermark md-upload-placeholder"><div class=" md-upload-placeholder_intro md-upload-placeholder_start"><div class="md-upload-placeholder_cards"><div class="md-upload-placeholder_card third"><span style="margin: 0px;"><svg class="icon-bg icon-bg-photo_camera" pointer-events="none"><use xlink:href="#icon-bg-photo_camera"></use></svg></span></div><div class="md-upload-placeholder_card second"><span style="margin: 0px;"><svg class="icon-bg icon-bg-photo_camera" pointer-events="none"><use xlink:href="#icon-bg-photo_camera"></use></svg></span></div><div class="md-upload-placeholder_card first"><span style="margin: 0px;"><svg class="icon-bg icon-bg-photo_camera" pointer-events="none"><use xlink:href="#icon-bg-photo_camera"></use></svg></span></div></div><p class="user-select-none s-drag-false" draggable="true">Drop files here to upload<br><br><a href="https://on.eviivo.com/suite/settings/policies#" id="gallery-check-in-media-container-select-files" class="s-drag-false">select files</a></p><small class="user-select-none s-drag-false" draggable="true">Maximum file upload size 20 MB</small></div><input type="file" id="gallery-check-in-media-container-upload-files" multiple="" style="display: none;"><div class="md-upload-mask"><div class="md-upload-mask_animation"><span style="margin: 0px;"><svg class="icon-bg icon-bg-file-image" pointer-events="none"><use xlink:href="#icon-bg-file-image"></use></svg></span><span style="margin: 0px;"><svg class="icon-bg icon-bg-file-pdf" pointer-events="none"><use xlink:href="#icon-bg-file-pdf"></use></svg></span><span style="margin: 0px;"><svg class="icon-bg icon-bg-cloud_upload" pointer-events="none"><use xlink:href="#icon-bg-cloud_upload"></use></svg></span><div class="md-upload-mask_text">Upload to eviivo suite</div></div></div></div></div></section><div class="md-main_overlay"></div></main>
+                                            
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="onlineCancellation" type="checkbox" checked="checked" class="s-group-title">
+                <label for="onlineCancellation" class="mod-collapsable_title mod-collapsable_title-clear mod-collapsable_title-tooltip">
+                    <span>Online cancellation </span>
+                    <span class="icon-font icon-font-help more-info ml8" data-tooltip="title" data-tooltip-title="1) Online cancellations remain subject to the applicable cancellation policy 
+2) Travel Agency bookings (OTAs) may only be cancelled by the travel agency on the agency website " title="1) Online cancellations remain subject to the applicable cancellation policy 
+2) Travel Agency bookings (OTAs) may only be cancelled by the travel agency on the agency website " data-tooltip-pos="top">
+                    </span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label>Allow guests to cancel their reservation online themselves for:</label>
+                        </div>
+
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                            <div class="cp-custom-input">
+                                <input checked="checked" class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The AllowMyWebsiteBookingsCancellations field is required." id="BookingsCancellationsSettings_AllowMyWebsiteBookingsCancellations" name="BookingsCancellationsSettings.AllowMyWebsiteBookingsCancellations" type="checkbox" value="true"><input name="BookingsCancellationsSettings.AllowMyWebsiteBookingsCancellations" type="hidden" value="false">
+                                <label for="BookingsCancellationsSettings_AllowMyWebsiteBookingsCancellations">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Online bookings made on my website</span>
+                                </label>
+                            </div>
+                            <div class="cp-custom-input">
+                                <input checked="checked" class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The AllowDirectBookingsCancellations field is required." id="BookingsCancellationsSettings_AllowDirectBookingsCancellations" name="BookingsCancellationsSettings.AllowDirectBookingsCancellations" type="checkbox" value="true"><input name="BookingsCancellationsSettings.AllowDirectBookingsCancellations" type="hidden" value="false">
+                                <label for="BookingsCancellationsSettings_AllowDirectBookingsCancellations">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Direct bookings taken via phone or email</span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="occupancy" type="checkbox" checked="checked" class="s-group-title">
+                <label for="occupancy" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Guest policies</span>
+                </label>
+                <div class="mod-collapsable_body">
+
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="mimimumGuestAge">What is your guest policy?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="element-row stacked mod-flex-item mod-flex-item_one">
+                                    <select class="valid cp-custom-select" data-val="true" data-val-number="The field ChildPolicyId must be a number." id="ChildPolicyId" name="ChildPolicyId"><option value="">- Please Select -</option>
+<option value="1">No preference</option>
+<option value="8">Infants welcome</option>
+<option value="3">Children welcome</option>
+<option selected="selected" value="9">Infants and children welcome</option>
+<option value="5">Adults preferred</option>
+<option value="2">Adults only</option>
+</select>
+                                    <input id="childrenChildPolicyValue" name="childrenChildPolicyValue" type="hidden" value="Infants and children welcome">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            &nbsp;
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                            <div class="cp-custom-input">
+                                <input class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The OtherRestrictionsApply field is required." id="cbGuestPolicy-OtherRestrictionsApply" name="OtherRestrictionsApply" type="checkbox" value="true"><input name="OtherRestrictionsApply" type="hidden" value="false">
+                                <label for="cbGuestPolicy-OtherRestrictionsApply">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Other restrictions apply</span>
+                                </label>
+                            </div>
+                            <div class="cp-custom-input">
+                                <input checked="checked" class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The GayFriendly field is required." id="cbGuestPolicy-GayFriendly" name="GayFriendly" type="checkbox" value="true"><input name="GayFriendly" type="hidden" value="false">
+                                <label for="cbGuestPolicy-GayFriendly">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">LGBT friendly</span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="allowParties">Do you allow parties?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <div class="cp-radio-group mb16">
+                                        <input id="allowPartiesYes" name="AllowParties" value="True" type="radio">
+                                        <label class="btn btn-grouped btn-invert" for="allowPartiesYes">Yes</label>
+                                        <input id="allowPartiesNo" name="AllowParties" value="False" type="radio">
+                                        <label class="btn btn-grouped btn-invert" for="allowPartiesNo">No</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <div class="cp-custom-input hide" id="NoBachelorBachelorettePartiesDiv">
+                                <input checked="checked" class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" data-val="true" data-val-required="The NoBachelorParties field is required." id="cbGuestPolicy-NoBachelorBacheloretteParties" name="NoBachelorParties" type="checkbox" value="true"><input name="NoBachelorParties" type="hidden" value="false">
+                                <label for="cbGuestPolicy-NoBachelorBacheloretteParties">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">No bachelor/bachelorette parties</span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="mimimumGuestAge">What is the minimum guest age you will accommodate?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <input class="cp-input" data-val="true" data-val-number="The field MininumGuestAge must be a number." data-val-range="The field MininumGuestAge must be between 1 and 21." data-val-range-max="21" data-val-range-min="1" id="mimimumGuestAge" name="MininumGuestAge" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="maximumGuestAge">What is the maximum age eligible for child rates?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <input class="cp-input" data-val="true" data-val-number="The field MaximumChildAge must be a number." data-val-range="The field MaximumChildAge must be between 0 and 2147483647." data-val-range-max="2147483647" data-val-range-min="0" id="maximumGuestAge" name="MaximumChildAge" type="text" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="minimumCheckInAge">What is the minimum age for check-in?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <input class="cp-input" data-val="true" data-val-number="The field MinimumCheckInAge must be a number." data-val-range="The field MinimumCheckInAge must be between 0 and 2147483647." data-val-range-max="2147483647" data-val-range-min="0" id="minimumCheckInAge" name="MinimumCheckInAge" type="text" value="25">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark" for="childrenAgePolicy">Do you allow children to stay free?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="stacked mod-flex-item mod-flex-item_two">
+                                    <div class="cp-radio-group mb16">
+                                        <input id="childrenAgePolicyYes" name="ChildrenStayFree" value="True" type="radio" checked="checked">
+                                        <label class="btn btn-grouped btn-invert" for="childrenAgePolicyYes">Yes</label>
+                                        <input id="childrenAgePolicyNo" name="ChildrenStayFree" value="False" type="radio">
+                                        <label class="btn btn-grouped btn-invert" for="childrenAgePolicyNo">No</label>
+                                    </div>
+
+                                    <div id="childrenStayFreePanel" class="">
+
+                                        <small class="">Under the age of <input class="cp-input" data-val="true" data-val-number="The field ChildrenStayFreeUnderAgeOf must be a number." data-val-range="The field ChildrenStayFreeUnderAgeOf must be between 0 and 21." data-val-range-max="21" data-val-range-min="0" id="childrenStayFreeInput" name="ChildrenStayFreeUnderAgeOf" type="text" value="1"></small>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8" id="paymentMethodsSection">
+            <div class="mod-collapsable">
+                <input id="paymentMethods" type="checkbox" checked="checked" class="s-group-title">
+                <label for="paymentMethods" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Payment methods</span>
+                </label>
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Payment methods accepted at the property.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="cp-columns-container">
+                                        <ul class="cp-columns">
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="0">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_0__Id" name="SelectedPaymentMethods[0].Id" type="hidden" value="11">
+        <input id="SelectedPaymentMethods_0__Text" name="SelectedPaymentMethods[0].Text" type="hidden" value="Cash (Local)">
+        <input id="SelectedPaymentMethods_0__DefaultText" name="SelectedPaymentMethods[0].DefaultText" type="hidden" value="Cash (Local)">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-11" type="checkbox" value="true" name="SelectedPaymentMethods[0].IsSelected">
+
+        <label for="cash-11">
+            <span class="checkbox-input"></span>
+            <span class="label">Cash (Local)</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="1">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_1__Id" name="SelectedPaymentMethods[1].Id" type="hidden" value="1">
+        <input id="SelectedPaymentMethods_1__Text" name="SelectedPaymentMethods[1].Text" type="hidden" value="Cash (GBP)">
+        <input id="SelectedPaymentMethods_1__DefaultText" name="SelectedPaymentMethods[1].DefaultText" type="hidden" value="Cash (GBP)">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-1" type="checkbox" value="true" name="SelectedPaymentMethods[1].IsSelected">
+
+        <label for="cash-1">
+            <span class="checkbox-input"></span>
+            <span class="label">Cash (GBP)</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="2">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_2__Id" name="SelectedPaymentMethods[2].Id" type="hidden" value="2">
+        <input id="SelectedPaymentMethods_2__Text" name="SelectedPaymentMethods[2].Text" type="hidden" value="Cash (Euro)">
+        <input id="SelectedPaymentMethods_2__DefaultText" name="SelectedPaymentMethods[2].DefaultText" type="hidden" value="Cash (Euro)">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-2" type="checkbox" value="true" name="SelectedPaymentMethods[2].IsSelected">
+
+        <label for="cash-2">
+            <span class="checkbox-input"></span>
+            <span class="label">Cash (Euro)</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="3">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_3__Id" name="SelectedPaymentMethods[3].Id" type="hidden" value="7">
+        <input id="SelectedPaymentMethods_3__Text" name="SelectedPaymentMethods[3].Text" type="hidden" value="Cash (USD)">
+        <input id="SelectedPaymentMethods_3__DefaultText" name="SelectedPaymentMethods[3].DefaultText" type="hidden" value="Cash (USD)">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-7" type="checkbox" value="true" name="SelectedPaymentMethods[3].IsSelected">
+
+        <label for="cash-7">
+            <span class="checkbox-input"></span>
+            <span class="label">Cash (USD)</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="4">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_4__Id" name="SelectedPaymentMethods[4].Id" type="hidden" value="8">
+        <input id="SelectedPaymentMethods_4__Text" name="SelectedPaymentMethods[4].Text" type="hidden" value="Cash only">
+        <input id="SelectedPaymentMethods_4__DefaultText" name="SelectedPaymentMethods[4].DefaultText" type="hidden" value="Cash only">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-8" type="checkbox" value="true" name="SelectedPaymentMethods[4].IsSelected">
+
+        <label for="cash-8">
+            <span class="checkbox-input"></span>
+            <span class="label">Cash only</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="5">    <li class="cp-custom-input">
+        <input id="SelectedCards_5__Id" name="SelectedCards[5].Id" type="hidden" value="7">
+        <input id="SelectedCards_5__Text" name="SelectedCards[5].Text" type="hidden" value="VISA">
+        <input id="SelectedCards_5__DefaultText" name="SelectedCards[5].DefaultText" type="hidden" value="VISA">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-7" type="checkbox" value="true" name="SelectedCards[5].IsSelected" checked="checked">
+
+        <label for="card-7">
+            <span class="checkbox-input"></span>
+            <span class="label">VISA</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="6">    <li class="cp-custom-input">
+        <input id="SelectedCards_6__Id" name="SelectedCards[6].Id" type="hidden" value="5">
+        <input id="SelectedCards_6__Text" name="SelectedCards[6].Text" type="hidden" value="Mastercard">
+        <input id="SelectedCards_6__DefaultText" name="SelectedCards[6].DefaultText" type="hidden" value="Mastercard">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-5" type="checkbox" value="true" name="SelectedCards[6].IsSelected" checked="checked">
+
+        <label for="card-5">
+            <span class="checkbox-input"></span>
+            <span class="label">Mastercard</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="7">    <li class="cp-custom-input">
+        <input id="SelectedCards_7__Id" name="SelectedCards[7].Id" type="hidden" value="1">
+        <input id="SelectedCards_7__Text" name="SelectedCards[7].Text" type="hidden" value="American Express">
+        <input id="SelectedCards_7__DefaultText" name="SelectedCards[7].DefaultText" type="hidden" value="American Express">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-1" type="checkbox" value="true" name="SelectedCards[7].IsSelected">
+
+        <label for="card-1">
+            <span class="checkbox-input"></span>
+            <span class="label">American Express</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="8">    <li class="cp-custom-input">
+        <input id="SelectedCards_8__Id" name="SelectedCards[8].Id" type="hidden" value="2">
+        <input id="SelectedCards_8__Text" name="SelectedCards[8].Text" type="hidden" value="Diners Club">
+        <input id="SelectedCards_8__DefaultText" name="SelectedCards[8].DefaultText" type="hidden" value="Diners Club">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-2" type="checkbox" value="true" name="SelectedCards[8].IsSelected">
+
+        <label for="card-2">
+            <span class="checkbox-input"></span>
+            <span class="label">Diners Club</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="9">    <li class="cp-custom-input">
+        <input id="SelectedCards_9__Id" name="SelectedCards[9].Id" type="hidden" value="10">
+        <input id="SelectedCards_9__Text" name="SelectedCards[9].Text" type="hidden" value="Discover">
+        <input id="SelectedCards_9__DefaultText" name="SelectedCards[9].DefaultText" type="hidden" value="Discover">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-10" type="checkbox" value="true" name="SelectedCards[9].IsSelected">
+
+        <label for="card-10">
+            <span class="checkbox-input"></span>
+            <span class="label">Discover</span>
+        </label>
+    </li>
+
+        </ul>
+        <ul class="cp-columns">
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="10">    <li class="cp-custom-input">
+        <input id="SelectedCards_10__Id" name="SelectedCards[10].Id" type="hidden" value="3">
+        <input id="SelectedCards_10__Text" name="SelectedCards[10].Text" type="hidden" value="JCB">
+        <input id="SelectedCards_10__DefaultText" name="SelectedCards[10].DefaultText" type="hidden" value="JCB">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-3" type="checkbox" value="true" name="SelectedCards[10].IsSelected">
+
+        <label for="card-3">
+            <span class="checkbox-input"></span>
+            <span class="label">JCB</span>
+        </label>
+    </li>
+<input id="SelectedCards_Index" name="SelectedCards.Index" type="hidden" value="11">    <li class="cp-custom-input">
+        <input id="SelectedCards_11__Id" name="SelectedCards[11].Id" type="hidden" value="11">
+        <input id="SelectedCards_11__Text" name="SelectedCards[11].Text" type="hidden" value="Other card(s)">
+        <input id="SelectedCards_11__DefaultText" name="SelectedCards[11].DefaultText" type="hidden" value="Other card(s)">
+
+        <input class="s-card-checkbox  s-checkbox" id="card-11" type="checkbox" value="true" name="SelectedCards[11].IsSelected">
+
+        <label for="card-11">
+            <span class="checkbox-input"></span>
+            <span class="label">Other card(s)</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="12">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_12__Id" name="SelectedPaymentMethods[12].Id" type="hidden" value="5">
+        <input id="SelectedPaymentMethods_12__Text" name="SelectedPaymentMethods[12].Text" type="hidden" value="Cheque">
+        <input id="SelectedPaymentMethods_12__DefaultText" name="SelectedPaymentMethods[12].DefaultText" type="hidden" value="Cheque">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-5" type="checkbox" value="true" name="SelectedPaymentMethods[12].IsSelected">
+
+        <label for="cash-5">
+            <span class="checkbox-input"></span>
+            <span class="label">Cheque</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="13">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_13__Id" name="SelectedPaymentMethods[13].Id" type="hidden" value="12">
+        <input id="SelectedPaymentMethods_13__Text" name="SelectedPaymentMethods[13].Text" type="hidden" value="Travellers cheque">
+        <input id="SelectedPaymentMethods_13__DefaultText" name="SelectedPaymentMethods[13].DefaultText" type="hidden" value="Travellers cheque">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-12" type="checkbox" value="true" name="SelectedPaymentMethods[13].IsSelected">
+
+        <label for="cash-12">
+            <span class="checkbox-input"></span>
+            <span class="label">Travellers cheque</span>
+        </label>
+    </li>
+<input id="SelectedPaymentMethods_Index" name="SelectedPaymentMethods.Index" type="hidden" value="14">    <li class="cp-custom-input">
+        <input id="SelectedPaymentMethods_14__Id" name="SelectedPaymentMethods[14].Id" type="hidden" value="10">
+        <input id="SelectedPaymentMethods_14__Text" name="SelectedPaymentMethods[14].Text" type="hidden" value="Bank transfer">
+        <input id="SelectedPaymentMethods_14__DefaultText" name="SelectedPaymentMethods[14].DefaultText" type="hidden" value="Bank transfer">
+
+        <input class="s-cash-checkbox  s-checkbox" id="cash-10" type="checkbox" value="true" name="SelectedPaymentMethods[14].IsSelected" checked="checked">
+
+        <label for="cash-10">
+            <span class="checkbox-input"></span>
+            <span class="label">Bank transfer</span>
+        </label>
+    </li>
+
+        </ul>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="spokenLanguages" type="checkbox" checked="checked" class="s-group-title">
+                <label for="spokenLanguages" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Languages</span>
+                </label>
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Select any languages spoken by you or your staff.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="cp-columns-container">
+                                        <ul class="cp-columns">
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="0">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_0__Id" name="SelectedLanguages[0].Id" type="hidden" value="1">
+        <input id="SelectedLanguages_0__Text" name="SelectedLanguages[0].Text" type="hidden" value="Arabic">
+        <input id="SelectedLanguages_0__DefaultText" name="SelectedLanguages[0].DefaultText" type="hidden" value="Arabic">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-1" type="checkbox" value="true" name="SelectedLanguages[0].IsSelected" checked="checked">
+
+        <label for="language-1">
+            <span class="checkbox-input"></span>
+            <span class="label">Arabic</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="1">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_1__Id" name="SelectedLanguages[1].Id" type="hidden" value="2">
+        <input id="SelectedLanguages_1__Text" name="SelectedLanguages[1].Text" type="hidden" value="Bengali">
+        <input id="SelectedLanguages_1__DefaultText" name="SelectedLanguages[1].DefaultText" type="hidden" value="Bengali">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-2" type="checkbox" value="true" name="SelectedLanguages[1].IsSelected">
+
+        <label for="language-2">
+            <span class="checkbox-input"></span>
+            <span class="label">Bengali</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="2">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_2__Id" name="SelectedLanguages[2].Id" type="hidden" value="3">
+        <input id="SelectedLanguages_2__Text" name="SelectedLanguages[2].Text" type="hidden" value="Bulgarian">
+        <input id="SelectedLanguages_2__DefaultText" name="SelectedLanguages[2].DefaultText" type="hidden" value="Bulgarian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-3" type="checkbox" value="true" name="SelectedLanguages[2].IsSelected">
+
+        <label for="language-3">
+            <span class="checkbox-input"></span>
+            <span class="label">Bulgarian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="3">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_3__Id" name="SelectedLanguages[3].Id" type="hidden" value="4">
+        <input id="SelectedLanguages_3__Text" name="SelectedLanguages[3].Text" type="hidden" value="Czech">
+        <input id="SelectedLanguages_3__DefaultText" name="SelectedLanguages[3].DefaultText" type="hidden" value="Czech">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-4" type="checkbox" value="true" name="SelectedLanguages[3].IsSelected">
+
+        <label for="language-4">
+            <span class="checkbox-input"></span>
+            <span class="label">Czech</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="4">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_4__Id" name="SelectedLanguages[4].Id" type="hidden" value="5">
+        <input id="SelectedLanguages_4__Text" name="SelectedLanguages[4].Text" type="hidden" value="Danish">
+        <input id="SelectedLanguages_4__DefaultText" name="SelectedLanguages[4].DefaultText" type="hidden" value="Danish">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-5" type="checkbox" value="true" name="SelectedLanguages[4].IsSelected">
+
+        <label for="language-5">
+            <span class="checkbox-input"></span>
+            <span class="label">Danish</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="5">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_5__Id" name="SelectedLanguages[5].Id" type="hidden" value="6">
+        <input id="SelectedLanguages_5__Text" name="SelectedLanguages[5].Text" type="hidden" value="Dutch">
+        <input id="SelectedLanguages_5__DefaultText" name="SelectedLanguages[5].DefaultText" type="hidden" value="Dutch">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-6" type="checkbox" value="true" name="SelectedLanguages[5].IsSelected">
+
+        <label for="language-6">
+            <span class="checkbox-input"></span>
+            <span class="label">Dutch</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="6">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_6__Id" name="SelectedLanguages[6].Id" type="hidden" value="7">
+        <input id="SelectedLanguages_6__Text" name="SelectedLanguages[6].Text" type="hidden" value="English">
+        <input id="SelectedLanguages_6__DefaultText" name="SelectedLanguages[6].DefaultText" type="hidden" value="English">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-7" type="checkbox" value="true" name="SelectedLanguages[6].IsSelected" checked="checked">
+
+        <label for="language-7">
+            <span class="checkbox-input"></span>
+            <span class="label">English</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="7">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_7__Id" name="SelectedLanguages[7].Id" type="hidden" value="8">
+        <input id="SelectedLanguages_7__Text" name="SelectedLanguages[7].Text" type="hidden" value="Estonian">
+        <input id="SelectedLanguages_7__DefaultText" name="SelectedLanguages[7].DefaultText" type="hidden" value="Estonian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-8" type="checkbox" value="true" name="SelectedLanguages[7].IsSelected">
+
+        <label for="language-8">
+            <span class="checkbox-input"></span>
+            <span class="label">Estonian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="8">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_8__Id" name="SelectedLanguages[8].Id" type="hidden" value="9">
+        <input id="SelectedLanguages_8__Text" name="SelectedLanguages[8].Text" type="hidden" value="Finnish">
+        <input id="SelectedLanguages_8__DefaultText" name="SelectedLanguages[8].DefaultText" type="hidden" value="Finnish">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-9" type="checkbox" value="true" name="SelectedLanguages[8].IsSelected">
+
+        <label for="language-9">
+            <span class="checkbox-input"></span>
+            <span class="label">Finnish</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="9">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_9__Id" name="SelectedLanguages[9].Id" type="hidden" value="10">
+        <input id="SelectedLanguages_9__Text" name="SelectedLanguages[9].Text" type="hidden" value="French">
+        <input id="SelectedLanguages_9__DefaultText" name="SelectedLanguages[9].DefaultText" type="hidden" value="French">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-10" type="checkbox" value="true" name="SelectedLanguages[9].IsSelected">
+
+        <label for="language-10">
+            <span class="checkbox-input"></span>
+            <span class="label">French</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="10">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_10__Id" name="SelectedLanguages[10].Id" type="hidden" value="11">
+        <input id="SelectedLanguages_10__Text" name="SelectedLanguages[10].Text" type="hidden" value="Gaelic (Irish)">
+        <input id="SelectedLanguages_10__DefaultText" name="SelectedLanguages[10].DefaultText" type="hidden" value="Gaelic (Irish)">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-11" type="checkbox" value="true" name="SelectedLanguages[10].IsSelected">
+
+        <label for="language-11">
+            <span class="checkbox-input"></span>
+            <span class="label">Gaelic (Irish)</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="11">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_11__Id" name="SelectedLanguages[11].Id" type="hidden" value="12">
+        <input id="SelectedLanguages_11__Text" name="SelectedLanguages[11].Text" type="hidden" value="Gaelic (Scottish)">
+        <input id="SelectedLanguages_11__DefaultText" name="SelectedLanguages[11].DefaultText" type="hidden" value="Gaelic (Scottish)">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-12" type="checkbox" value="true" name="SelectedLanguages[11].IsSelected">
+
+        <label for="language-12">
+            <span class="checkbox-input"></span>
+            <span class="label">Gaelic (Scottish)</span>
+        </label>
+    </li>
+
+        </ul>
+        <ul class="cp-columns">
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="12">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_12__Id" name="SelectedLanguages[12].Id" type="hidden" value="13">
+        <input id="SelectedLanguages_12__Text" name="SelectedLanguages[12].Text" type="hidden" value="German">
+        <input id="SelectedLanguages_12__DefaultText" name="SelectedLanguages[12].DefaultText" type="hidden" value="German">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-13" type="checkbox" value="true" name="SelectedLanguages[12].IsSelected">
+
+        <label for="language-13">
+            <span class="checkbox-input"></span>
+            <span class="label">German</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="13">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_13__Id" name="SelectedLanguages[13].Id" type="hidden" value="14">
+        <input id="SelectedLanguages_13__Text" name="SelectedLanguages[13].Text" type="hidden" value="Greek">
+        <input id="SelectedLanguages_13__DefaultText" name="SelectedLanguages[13].DefaultText" type="hidden" value="Greek">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-14" type="checkbox" value="true" name="SelectedLanguages[13].IsSelected">
+
+        <label for="language-14">
+            <span class="checkbox-input"></span>
+            <span class="label">Greek</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="14">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_14__Id" name="SelectedLanguages[14].Id" type="hidden" value="15">
+        <input id="SelectedLanguages_14__Text" name="SelectedLanguages[14].Text" type="hidden" value="Gujarati">
+        <input id="SelectedLanguages_14__DefaultText" name="SelectedLanguages[14].DefaultText" type="hidden" value="Gujarati">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-15" type="checkbox" value="true" name="SelectedLanguages[14].IsSelected">
+
+        <label for="language-15">
+            <span class="checkbox-input"></span>
+            <span class="label">Gujarati</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="15">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_15__Id" name="SelectedLanguages[15].Id" type="hidden" value="16">
+        <input id="SelectedLanguages_15__Text" name="SelectedLanguages[15].Text" type="hidden" value="Hebrew">
+        <input id="SelectedLanguages_15__DefaultText" name="SelectedLanguages[15].DefaultText" type="hidden" value="Hebrew">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-16" type="checkbox" value="true" name="SelectedLanguages[15].IsSelected">
+
+        <label for="language-16">
+            <span class="checkbox-input"></span>
+            <span class="label">Hebrew</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="16">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_16__Id" name="SelectedLanguages[16].Id" type="hidden" value="17">
+        <input id="SelectedLanguages_16__Text" name="SelectedLanguages[16].Text" type="hidden" value="Hindi">
+        <input id="SelectedLanguages_16__DefaultText" name="SelectedLanguages[16].DefaultText" type="hidden" value="Hindi">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-17" type="checkbox" value="true" name="SelectedLanguages[16].IsSelected">
+
+        <label for="language-17">
+            <span class="checkbox-input"></span>
+            <span class="label">Hindi</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="17">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_17__Id" name="SelectedLanguages[17].Id" type="hidden" value="18">
+        <input id="SelectedLanguages_17__Text" name="SelectedLanguages[17].Text" type="hidden" value="Hungarian">
+        <input id="SelectedLanguages_17__DefaultText" name="SelectedLanguages[17].DefaultText" type="hidden" value="Hungarian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-18" type="checkbox" value="true" name="SelectedLanguages[17].IsSelected">
+
+        <label for="language-18">
+            <span class="checkbox-input"></span>
+            <span class="label">Hungarian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="18">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_18__Id" name="SelectedLanguages[18].Id" type="hidden" value="19">
+        <input id="SelectedLanguages_18__Text" name="SelectedLanguages[18].Text" type="hidden" value="Italian">
+        <input id="SelectedLanguages_18__DefaultText" name="SelectedLanguages[18].DefaultText" type="hidden" value="Italian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-19" type="checkbox" value="true" name="SelectedLanguages[18].IsSelected">
+
+        <label for="language-19">
+            <span class="checkbox-input"></span>
+            <span class="label">Italian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="19">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_19__Id" name="SelectedLanguages[19].Id" type="hidden" value="20">
+        <input id="SelectedLanguages_19__Text" name="SelectedLanguages[19].Text" type="hidden" value="Japanese">
+        <input id="SelectedLanguages_19__DefaultText" name="SelectedLanguages[19].DefaultText" type="hidden" value="Japanese">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-20" type="checkbox" value="true" name="SelectedLanguages[19].IsSelected">
+
+        <label for="language-20">
+            <span class="checkbox-input"></span>
+            <span class="label">Japanese</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="20">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_20__Id" name="SelectedLanguages[20].Id" type="hidden" value="21">
+        <input id="SelectedLanguages_20__Text" name="SelectedLanguages[20].Text" type="hidden" value="Korean">
+        <input id="SelectedLanguages_20__DefaultText" name="SelectedLanguages[20].DefaultText" type="hidden" value="Korean">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-21" type="checkbox" value="true" name="SelectedLanguages[20].IsSelected">
+
+        <label for="language-21">
+            <span class="checkbox-input"></span>
+            <span class="label">Korean</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="21">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_21__Id" name="SelectedLanguages[21].Id" type="hidden" value="22">
+        <input id="SelectedLanguages_21__Text" name="SelectedLanguages[21].Text" type="hidden" value="Latvian">
+        <input id="SelectedLanguages_21__DefaultText" name="SelectedLanguages[21].DefaultText" type="hidden" value="Latvian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-22" type="checkbox" value="true" name="SelectedLanguages[21].IsSelected">
+
+        <label for="language-22">
+            <span class="checkbox-input"></span>
+            <span class="label">Latvian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="22">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_22__Id" name="SelectedLanguages[22].Id" type="hidden" value="23">
+        <input id="SelectedLanguages_22__Text" name="SelectedLanguages[22].Text" type="hidden" value="Lithuanian">
+        <input id="SelectedLanguages_22__DefaultText" name="SelectedLanguages[22].DefaultText" type="hidden" value="Lithuanian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-23" type="checkbox" value="true" name="SelectedLanguages[22].IsSelected">
+
+        <label for="language-23">
+            <span class="checkbox-input"></span>
+            <span class="label">Lithuanian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="23">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_23__Id" name="SelectedLanguages[23].Id" type="hidden" value="24">
+        <input id="SelectedLanguages_23__Text" name="SelectedLanguages[23].Text" type="hidden" value="Maltese">
+        <input id="SelectedLanguages_23__DefaultText" name="SelectedLanguages[23].DefaultText" type="hidden" value="Maltese">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-24" type="checkbox" value="true" name="SelectedLanguages[23].IsSelected">
+
+        <label for="language-24">
+            <span class="checkbox-input"></span>
+            <span class="label">Maltese</span>
+        </label>
+    </li>
+
+        </ul>
+        <ul class="cp-columns">
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="24">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_24__Id" name="SelectedLanguages[24].Id" type="hidden" value="25">
+        <input id="SelectedLanguages_24__Text" name="SelectedLanguages[24].Text" type="hidden" value="Mandarin">
+        <input id="SelectedLanguages_24__DefaultText" name="SelectedLanguages[24].DefaultText" type="hidden" value="Mandarin">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-25" type="checkbox" value="true" name="SelectedLanguages[24].IsSelected">
+
+        <label for="language-25">
+            <span class="checkbox-input"></span>
+            <span class="label">Mandarin</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="25">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_25__Id" name="SelectedLanguages[25].Id" type="hidden" value="26">
+        <input id="SelectedLanguages_25__Text" name="SelectedLanguages[25].Text" type="hidden" value="Polish">
+        <input id="SelectedLanguages_25__DefaultText" name="SelectedLanguages[25].DefaultText" type="hidden" value="Polish">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-26" type="checkbox" value="true" name="SelectedLanguages[25].IsSelected">
+
+        <label for="language-26">
+            <span class="checkbox-input"></span>
+            <span class="label">Polish</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="26">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_26__Id" name="SelectedLanguages[26].Id" type="hidden" value="27">
+        <input id="SelectedLanguages_26__Text" name="SelectedLanguages[26].Text" type="hidden" value="Portuguese">
+        <input id="SelectedLanguages_26__DefaultText" name="SelectedLanguages[26].DefaultText" type="hidden" value="Portuguese">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-27" type="checkbox" value="true" name="SelectedLanguages[26].IsSelected">
+
+        <label for="language-27">
+            <span class="checkbox-input"></span>
+            <span class="label">Portuguese</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="27">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_27__Id" name="SelectedLanguages[27].Id" type="hidden" value="28">
+        <input id="SelectedLanguages_27__Text" name="SelectedLanguages[27].Text" type="hidden" value="Romanian">
+        <input id="SelectedLanguages_27__DefaultText" name="SelectedLanguages[27].DefaultText" type="hidden" value="Romanian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-28" type="checkbox" value="true" name="SelectedLanguages[27].IsSelected">
+
+        <label for="language-28">
+            <span class="checkbox-input"></span>
+            <span class="label">Romanian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="28">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_28__Id" name="SelectedLanguages[28].Id" type="hidden" value="29">
+        <input id="SelectedLanguages_28__Text" name="SelectedLanguages[28].Text" type="hidden" value="Russian">
+        <input id="SelectedLanguages_28__DefaultText" name="SelectedLanguages[28].DefaultText" type="hidden" value="Russian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-29" type="checkbox" value="true" name="SelectedLanguages[28].IsSelected">
+
+        <label for="language-29">
+            <span class="checkbox-input"></span>
+            <span class="label">Russian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="29">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_29__Id" name="SelectedLanguages[29].Id" type="hidden" value="30">
+        <input id="SelectedLanguages_29__Text" name="SelectedLanguages[29].Text" type="hidden" value="Slovak">
+        <input id="SelectedLanguages_29__DefaultText" name="SelectedLanguages[29].DefaultText" type="hidden" value="Slovak">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-30" type="checkbox" value="true" name="SelectedLanguages[29].IsSelected">
+
+        <label for="language-30">
+            <span class="checkbox-input"></span>
+            <span class="label">Slovak</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="30">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_30__Id" name="SelectedLanguages[30].Id" type="hidden" value="31">
+        <input id="SelectedLanguages_30__Text" name="SelectedLanguages[30].Text" type="hidden" value="Slovenian">
+        <input id="SelectedLanguages_30__DefaultText" name="SelectedLanguages[30].DefaultText" type="hidden" value="Slovenian">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-31" type="checkbox" value="true" name="SelectedLanguages[30].IsSelected">
+
+        <label for="language-31">
+            <span class="checkbox-input"></span>
+            <span class="label">Slovenian</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="31">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_31__Id" name="SelectedLanguages[31].Id" type="hidden" value="32">
+        <input id="SelectedLanguages_31__Text" name="SelectedLanguages[31].Text" type="hidden" value="Spanish">
+        <input id="SelectedLanguages_31__DefaultText" name="SelectedLanguages[31].DefaultText" type="hidden" value="Spanish">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-32" type="checkbox" value="true" name="SelectedLanguages[31].IsSelected">
+
+        <label for="language-32">
+            <span class="checkbox-input"></span>
+            <span class="label">Spanish</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="32">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_32__Id" name="SelectedLanguages[32].Id" type="hidden" value="33">
+        <input id="SelectedLanguages_32__Text" name="SelectedLanguages[32].Text" type="hidden" value="Swedish">
+        <input id="SelectedLanguages_32__DefaultText" name="SelectedLanguages[32].DefaultText" type="hidden" value="Swedish">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-33" type="checkbox" value="true" name="SelectedLanguages[32].IsSelected">
+
+        <label for="language-33">
+            <span class="checkbox-input"></span>
+            <span class="label">Swedish</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="33">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_33__Id" name="SelectedLanguages[33].Id" type="hidden" value="34">
+        <input id="SelectedLanguages_33__Text" name="SelectedLanguages[33].Text" type="hidden" value="Thai">
+        <input id="SelectedLanguages_33__DefaultText" name="SelectedLanguages[33].DefaultText" type="hidden" value="Thai">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-34" type="checkbox" value="true" name="SelectedLanguages[33].IsSelected">
+
+        <label for="language-34">
+            <span class="checkbox-input"></span>
+            <span class="label">Thai</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="34">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_34__Id" name="SelectedLanguages[34].Id" type="hidden" value="35">
+        <input id="SelectedLanguages_34__Text" name="SelectedLanguages[34].Text" type="hidden" value="Vietnamese">
+        <input id="SelectedLanguages_34__DefaultText" name="SelectedLanguages[34].DefaultText" type="hidden" value="Vietnamese">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-35" type="checkbox" value="true" name="SelectedLanguages[34].IsSelected">
+
+        <label for="language-35">
+            <span class="checkbox-input"></span>
+            <span class="label">Vietnamese</span>
+        </label>
+    </li>
+<input id="SelectedLanguages_Index" name="SelectedLanguages.Index" type="hidden" value="35">    <li class="cp-custom-input">
+        <input id="SelectedLanguages_35__Id" name="SelectedLanguages[35].Id" type="hidden" value="36">
+        <input id="SelectedLanguages_35__Text" name="SelectedLanguages[35].Text" type="hidden" value="Welsh">
+        <input id="SelectedLanguages_35__DefaultText" name="SelectedLanguages[35].DefaultText" type="hidden" value="Welsh">
+
+        <input class="s-language-checkbox  s-checkbox" id="language-36" type="checkbox" value="true" name="SelectedLanguages[35].IsSelected">
+
+        <label for="language-36">
+            <span class="checkbox-input"></span>
+            <span class="label">Welsh</span>
+        </label>
+    </li>
+
+        </ul>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="specialRequirements" type="checkbox" checked="checked" class="s-group-title">
+                <label for="specialRequirements" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>House Rules &amp; Notices</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Specify any major house rule that you would like to draw special attention to.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-multilanguage">
+
+
+
+
+
+
+
+<div id="room-type-display-name-defaults" class="w100 mb16">
+        <div class="tab">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="SpecialRequirementsTranslationText_0__Id" name="SpecialRequirementsTranslationText[0].Id" type="hidden" value="d096357c-27bf-43a3-a79c-300b3768d507">
+            <input id="SpecialRequirementsTranslationText_0__CultureCode" name="SpecialRequirementsTranslationText[0].CultureCode" type="hidden" value="root">
+            <input id="SpecialRequirementsTranslationText_0__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[0].IsHtmlContentAllowed" type="hidden" value="False">
+<textarea class="stretch-input cp-textarea_small" cols="20" data-language-code="root" id="SpecialRequirementsTranslationText_0__Content" maxlength="500" name="SpecialRequirementsTranslationText[0].Content" rows="2">No smoking of Illegal Drugs 
+No uses of Illegal Drugs 
+No Smoking 
+No Violence 
+No Vandalism 
+No Parties/Events 
+Minimum age to check in is 18
+We kindly would like to remind you that we do charge £100 damage deposit in cash or by card at check in for each apartment booked and it will be reimbursed at check out. 
+
+</textarea>        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section w100 mb16" id="room-type-display-name-translations">
+
+    <select class="cp-custom-select" id="cultures-dropdown" name="cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="SpecialRequirementsTranslationText_1__Id" name="SpecialRequirementsTranslationText[1].Id" type="hidden" value="b4166791-dd3e-48f2-bbbe-834a0549d631"><input id="SpecialRequirementsTranslationText_1__CultureCode" name="SpecialRequirementsTranslationText[1].CultureCode" type="hidden" value="pt-BR"><input id="SpecialRequirementsTranslationText_1__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[1].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="pt-BR" id="SpecialRequirementsTranslationText_1__Content" maxlength="500" name="SpecialRequirementsTranslationText[1].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_2__Id" name="SpecialRequirementsTranslationText[2].Id" type="hidden" value="671eaa93-b9b0-47a9-bd21-eeb18fb2e91f"><input id="SpecialRequirementsTranslationText_2__CultureCode" name="SpecialRequirementsTranslationText[2].CultureCode" type="hidden" value="pt-PT"><input id="SpecialRequirementsTranslationText_2__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[2].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="pt-PT" id="SpecialRequirementsTranslationText_2__Content" maxlength="500" name="SpecialRequirementsTranslationText[2].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_3__Id" name="SpecialRequirementsTranslationText[3].Id" type="hidden" value="e8ae0cf0-cf2d-4791-b6a1-8a1532e81301"><input id="SpecialRequirementsTranslationText_3__CultureCode" name="SpecialRequirementsTranslationText[3].CultureCode" type="hidden" value="ca-ES"><input id="SpecialRequirementsTranslationText_3__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[3].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="ca-ES" id="SpecialRequirementsTranslationText_3__Content" maxlength="500" name="SpecialRequirementsTranslationText[3].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_4__Id" name="SpecialRequirementsTranslationText[4].Id" type="hidden" value="64d24249-41f2-4d3c-9057-cef9ccd75eb1"><input id="SpecialRequirementsTranslationText_4__CultureCode" name="SpecialRequirementsTranslationText[4].CultureCode" type="hidden" value="es-ES"><input id="SpecialRequirementsTranslationText_4__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[4].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="es-ES" id="SpecialRequirementsTranslationText_4__Content" maxlength="500" name="SpecialRequirementsTranslationText[4].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_5__Id" name="SpecialRequirementsTranslationText[5].Id" type="hidden" value="27814151-5631-464c-9bf4-955e5f846474"><input id="SpecialRequirementsTranslationText_5__CultureCode" name="SpecialRequirementsTranslationText[5].CultureCode" type="hidden" value="it-IT"><input id="SpecialRequirementsTranslationText_5__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[5].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="it-IT" id="SpecialRequirementsTranslationText_5__Content" maxlength="500" name="SpecialRequirementsTranslationText[5].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_6__Id" name="SpecialRequirementsTranslationText[6].Id" type="hidden" value="351fdc64-c1fd-4046-9d08-7eebdbf99894"><input id="SpecialRequirementsTranslationText_6__CultureCode" name="SpecialRequirementsTranslationText[6].CultureCode" type="hidden" value="de-DE"><input id="SpecialRequirementsTranslationText_6__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[6].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="de-DE" id="SpecialRequirementsTranslationText_6__Content" maxlength="500" name="SpecialRequirementsTranslationText[6].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_7__Id" name="SpecialRequirementsTranslationText[7].Id" type="hidden" value="4232aada-febb-4b92-a0be-6fba1058fbdd"><input id="SpecialRequirementsTranslationText_7__CultureCode" name="SpecialRequirementsTranslationText[7].CultureCode" type="hidden" value="fr-FR"><input id="SpecialRequirementsTranslationText_7__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[7].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small hide" cols="20" data-language-code="fr-FR" id="SpecialRequirementsTranslationText_7__Content" maxlength="500" name="SpecialRequirementsTranslationText[7].Content" rows="2"></textarea><input id="SpecialRequirementsTranslationText_8__Id" name="SpecialRequirementsTranslationText[8].Id" type="hidden" value="fc7cb14d-5814-4b39-a06b-eb5d96873bed"><input id="SpecialRequirementsTranslationText_8__CultureCode" name="SpecialRequirementsTranslationText[8].CultureCode" type="hidden" value="en-US"><input id="SpecialRequirementsTranslationText_8__IsHtmlContentAllowed" name="SpecialRequirementsTranslationText[8].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_small" cols="20" data-language-code="en-US" id="SpecialRequirementsTranslationText_8__Content" maxlength="500" name="SpecialRequirementsTranslationText[8].Content" rows="2"></textarea>                
+            </div>
+        </div>
+    
+    <input id="isValidationTranslationsOn" name="isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                                <div class="mod-notice mod-notice-small plain">
+                                    <span class="icon-font icon-font-info_outline"></span>
+                                    <small>500 characters max</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Enter the quiet hours, during which guests are required to keep their noise levels down to avoid disturbing others.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="element-row mr8 s-walkme-QuietHoursStart">
+                                    <label for="QuietHoursStart" class="mb4">
+                                        <label class="fortext " for="Quiet_hours_start">Quiet hours start</label>
+                                    </label>
+                                    <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" id="HouseRules_QuietHoursStart" name="HouseRules.QuietHoursStart"><option value="">- Please Select -</option>
+<option selected="selected" value=""></option>
+<option value="00:00">00:00</option>
+<option value="00:30">00:30</option>
+<option value="01:00">01:00</option>
+<option value="01:30">01:30</option>
+<option value="02:00">02:00</option>
+<option value="02:30">02:30</option>
+<option value="03:00">03:00</option>
+<option value="03:30">03:30</option>
+<option value="04:00">04:00</option>
+<option value="04:30">04:30</option>
+<option value="05:00">05:00</option>
+<option value="05:30">05:30</option>
+<option value="06:00">06:00</option>
+<option value="06:30">06:30</option>
+<option value="07:00">07:00</option>
+<option value="07:30">07:30</option>
+<option value="08:00">08:00</option>
+<option value="08:30">08:30</option>
+<option value="09:00">09:00</option>
+<option value="09:30">09:30</option>
+<option value="10:00">10:00</option>
+<option value="10:30">10:30</option>
+<option value="11:00">11:00</option>
+<option value="11:30">11:30</option>
+<option value="12:00">12:00</option>
+<option value="12:30">12:30</option>
+<option value="13:00">13:00</option>
+<option value="13:30">13:30</option>
+<option value="14:00">14:00</option>
+<option value="14:30">14:30</option>
+<option value="15:00">15:00</option>
+<option value="15:30">15:30</option>
+<option value="16:00">16:00</option>
+<option value="16:30">16:30</option>
+<option value="17:00">17:00</option>
+<option value="17:30">17:30</option>
+<option value="18:00">18:00</option>
+<option value="18:30">18:30</option>
+<option value="19:00">19:00</option>
+<option value="19:30">19:30</option>
+<option value="20:00">20:00</option>
+<option value="20:30">20:30</option>
+<option value="21:00">21:00</option>
+<option value="21:30">21:30</option>
+<option value="22:00">22:00</option>
+<option value="22:30">22:30</option>
+<option value="23:00">23:00</option>
+<option value="23:30">23:30</option>
+</select>
+                                </div>
+
+                                <div class="element-row mr8">
+                                    <label for="QuietHoursEnd" class="mb4">
+                                        <label class="fortext" for="Quiet_hours_end">Quiet hours end</label>
+                                    </label>
+                                    <select class="cultureSpecificTextArea valid  cp-custom-select cp-custom-select_fw" id="HouseRules_QuietHoursEnd" name="HouseRules.QuietHoursEnd"><option value="">- Please Select -</option>
+<option selected="selected" value=""></option>
+<option value="00:00">00:00</option>
+<option value="00:30">00:30</option>
+<option value="01:00">01:00</option>
+<option value="01:30">01:30</option>
+<option value="02:00">02:00</option>
+<option value="02:30">02:30</option>
+<option value="03:00">03:00</option>
+<option value="03:30">03:30</option>
+<option value="04:00">04:00</option>
+<option value="04:30">04:30</option>
+<option value="05:00">05:00</option>
+<option value="05:30">05:30</option>
+<option value="06:00">06:00</option>
+<option value="06:30">06:30</option>
+<option value="07:00">07:00</option>
+<option value="07:30">07:30</option>
+<option value="08:00">08:00</option>
+<option value="08:30">08:30</option>
+<option value="09:00">09:00</option>
+<option value="09:30">09:30</option>
+<option value="10:00">10:00</option>
+<option value="10:30">10:30</option>
+<option value="11:00">11:00</option>
+<option value="11:30">11:30</option>
+<option value="12:00">12:00</option>
+<option value="12:30">12:30</option>
+<option value="13:00">13:00</option>
+<option value="13:30">13:30</option>
+<option value="14:00">14:00</option>
+<option value="14:30">14:30</option>
+<option value="15:00">15:00</option>
+<option value="15:30">15:30</option>
+<option value="16:00">16:00</option>
+<option value="16:30">16:30</option>
+<option value="17:00">17:00</option>
+<option value="17:30">17:30</option>
+<option value="18:00">18:00</option>
+<option value="18:30">18:30</option>
+<option value="19:00">19:00</option>
+<option value="19:30">19:30</option>
+<option value="20:00">20:00</option>
+<option value="20:30">20:30</option>
+<option value="21:00">21:00</option>
+<option value="21:30">21:30</option>
+<option value="22:00">22:00</option>
+<option value="22:30">22:30</option>
+<option value="23:00">23:00</option>
+<option value="23:30">23:30</option>
+</select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="bookingterms" type="checkbox" checked="checked" class="s-group-title">
+                <label for="bookingterms" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Your booking terms</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    <div class="mod-multilanguage s-communications communications">
+
+                        
+
+
+
+
+
+    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+        <div class="l-column large-4 medium-3 small-12">
+            <label class="color-dark">Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails.</label>
+            <input data-val="true" data-val-required="The BusinessCommunicationType field is required." id="BusinessCommunicationCollection_BusinessCommunication_0__BusinessCommunicationType" name="BusinessCommunicationCollection.BusinessCommunication[0].BusinessCommunicationType" type="hidden" value="BookingTerms">
+            <input data-val="true" data-val-required="The ReadOnly field is required." id="BusinessCommunicationCollection_BusinessCommunication_0__ReadOnly" name="BusinessCommunicationCollection.BusinessCommunication[0].ReadOnly" type="hidden" value="False">
+        </div>
+        <div class="l-column large-8 medium-9 small-12 end">
+            <div class="mod-dropdown-textarea mb16">
+                <div class="tab">Default</div>
+
+
+                <div id="business_bookingterms_40305_content_root" data-type="BookingTerms" data-culture="eviivo.Eagle.Web.UI.ViewModels.v2.BusinessCommunication.CommunicationCultureItemViewModel">
+
+                    <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__RootCultureCommunication_Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].RootCultureCommunication.Content" rows="2"></textarea>
+                    <input id="BusinessCommunicationCollection_BusinessCommunication_0__RootCultureCommunication_ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].RootCultureCommunication.ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                    <input id="BusinessCommunicationCollection_BusinessCommunication_0__RootCultureCommunication_CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].RootCultureCommunication.CultureCode" type="hidden" value="root">
+                    <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_root" name="BusinessCommunicationCollection.BusinessCommunication[0].RootCultureCommunication.RecordUpdated" type="hidden" value="False">
+                </div>
+                <small></small>
+            </div>
+
+                <div class="mod-dropdown-textarea s-translation-textarea">
+                    <select class="cp-select-language s-select" id="ui-id-1" style="display: none;">
+                        
+                            <option value="fr" class="" data-type="BookingTerms">Français</option>
+                            <option value="de" class="" data-type="BookingTerms">Deutsch</option>
+                            <option value="it" class="" data-type="BookingTerms">Italiano</option>
+                            <option value="es" class="" data-type="BookingTerms">Español</option>
+                            <option value="ca-ES" class="" data-type="BookingTerms">Català</option>
+                            <option value="pt-PT" class="" data-type="BookingTerms">Português (PT)</option>
+                            <option value="pt-BR" class="" data-type="BookingTerms">Português (BR) </option>
+                    </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Français</span></span>
+
+                        <div id="business_bookingterms_40305_content_en" class="businessItem s-translated-textarea  textarea-outer" data-type="BookingTerms" data-culture="en">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="en">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_0__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[0].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_0__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[0].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_0__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[0].CultureCode" type="hidden" value="en">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_en" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[0].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_fr" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="fr">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="fr">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_1__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[1].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_1__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[1].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_1__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[1].CultureCode" type="hidden" value="fr">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_fr" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[1].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_de" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="de">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="de">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_2__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[2].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_2__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[2].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_2__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[2].CultureCode" type="hidden" value="de">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_de" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[2].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_it" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="it">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="it">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_3__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[3].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_3__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[3].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_3__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[3].CultureCode" type="hidden" value="it">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_it" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[3].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_es" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="es">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="es">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_4__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[4].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_4__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[4].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_4__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[4].CultureCode" type="hidden" value="es">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_es" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[4].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_ca-ES" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="ca-ES">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="Català">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_5__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[5].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_5__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[5].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_5__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[5].CultureCode" type="hidden" value="ca-ES">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_ca-ES" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[5].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_pt-PT" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="pt-PT">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="Português (PT)">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_6__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[6].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_6__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[6].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_6__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[6].CultureCode" type="hidden" value="pt-PT">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_pt-PT" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[6].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="business_bookingterms_40305_content_pt-BR" class="businessItem s-translated-textarea hidden textarea-outer" data-type="BookingTerms" data-culture="pt-BR">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Provide your standard booking terms.  These should be generic in nature as they will be attached to all your confirmation emails." data-cultureui="Português (BR) ">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_7__Content" maxlength="25000" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[7].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_7__ItemKey" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[7].ItemKey" type="hidden" value="business.bookingterms.40305.content">
+                            <input id="BusinessCommunicationCollection_BusinessCommunication_0__GuestSupportedCultureCommunications_7__CultureCode" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[7].CultureCode" type="hidden" value="pt-BR">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_business_bookingterms_40305_content_pt-BR" name="BusinessCommunicationCollection.BusinessCommunication[0].GuestSupportedCultureCommunications[7].RecordUpdated" type="hidden" value="False">
+                        </div>
+                </div>
+
+        </div>
+
+    </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="smokingPolicy" type="checkbox" checked="checked" class="s-group-title">
+                <label for="smokingPolicy" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Smoking</span>
+                </label>
+                <div class="mod-collapsable_body">
+
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">What is your smoking policy?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="element-row stacked mod-flex-item mod-flex-item_one">
+                                            <ul class="cp-columns">
+   <li class="cp-custom-input">
+                                            <input id="SelectedSmokingPolicies_Index" name="SelectedSmokingPolicies.Index" type="hidden" value="0">
+                                            <input id="SelectedSmokingPolicies_0__Id" name="SelectedSmokingPolicies[0].Id" type="hidden" value="1">
+        <input id="SelectedSmokingPolicies_0__Text" name="SelectedSmokingPolicies[0].Text" type="hidden" value="No smoking">
+        <input id="SelectedSmokingPolicies_0__DefaultText" name="SelectedSmokingPolicies[0].DefaultText" type="hidden" value="No smoking">
+
+        <input class="s-smoking-checkbox  s-checkbox" id="smoking-1" type="checkbox" value="true" name="SelectedSmokingPolicies[0].IsSelected" checked="checked">
+
+        <label for="smoking-1">
+            <span class="checkbox-input"></span>
+            <span class="label">No smoking</span>
+        </label>
+    </li>
+   <li class="cp-custom-input">
+                                            <input id="SelectedSmokingPolicies_Index" name="SelectedSmokingPolicies.Index" type="hidden" value="1">
+                                            <input id="SelectedSmokingPolicies_1__Id" name="SelectedSmokingPolicies[1].Id" type="hidden" value="2">
+        <input id="SelectedSmokingPolicies_1__Text" name="SelectedSmokingPolicies[1].Text" type="hidden" value="Smoking rooms available">
+        <input id="SelectedSmokingPolicies_1__DefaultText" name="SelectedSmokingPolicies[1].DefaultText" type="hidden" value="Smoking rooms available">
+
+        <input class="s-smoking-checkbox  s-checkbox" id="smoking-2" type="checkbox" value="true" name="SelectedSmokingPolicies[1].IsSelected">
+
+        <label for="smoking-2">
+            <span class="checkbox-input"></span>
+            <span class="label">Smoking rooms available</span>
+        </label>
+    </li>
+
+        </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="accessibility" type="checkbox" checked="checked" class="s-group-title">
+                <label for="accessibility" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Accessibility</span>
+                </label>
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Briefly describe any special facilities you make available to people with disabilities.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-multilanguage">
+                                
+
+
+
+
+
+
+<div id="AccessibilityDescription-Translation-defaults" class="w100 mb16">
+        <div class="tab">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="AccessibilityDescription_0__Id" name="AccessibilityDescription[0].Id" type="hidden" value="b7aea432-ca6b-44cd-9b9a-ad535c343853">
+            <input id="AccessibilityDescription_0__CultureCode" name="AccessibilityDescription[0].CultureCode" type="hidden" value="root">
+            <input id="AccessibilityDescription_0__IsHtmlContentAllowed" name="AccessibilityDescription[0].IsHtmlContentAllowed" type="hidden" value="False">
+<textarea class="stretch-input cp-textarea_medium" cols="20" data-language-code="root" id="AccessibilityDescription_0__Content" maxlength="1000" name="AccessibilityDescription[0].Content" rows="2">We currently do not have special facilities available people with disabilities. </textarea>        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section w100 mb16" id="AccessibilityDescription-Translation-translations">
+
+    <select class="cp-custom-select" id="cultures-dropdown" name="cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="AccessibilityDescription_1__Id" name="AccessibilityDescription[1].Id" type="hidden" value="74843c03-8f08-4489-9971-1eee85cc91e1"><input id="AccessibilityDescription_1__CultureCode" name="AccessibilityDescription[1].CultureCode" type="hidden" value="ca-ES"><input id="AccessibilityDescription_1__IsHtmlContentAllowed" name="AccessibilityDescription[1].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="ca-ES" id="AccessibilityDescription_1__Content" maxlength="1000" name="AccessibilityDescription[1].Content" rows="2"></textarea><input id="AccessibilityDescription_2__Id" name="AccessibilityDescription[2].Id" type="hidden" value="20b09149-3b3e-404c-8a2e-00364ffb96db"><input id="AccessibilityDescription_2__CultureCode" name="AccessibilityDescription[2].CultureCode" type="hidden" value="es-ES"><input id="AccessibilityDescription_2__IsHtmlContentAllowed" name="AccessibilityDescription[2].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="es-ES" id="AccessibilityDescription_2__Content" maxlength="1000" name="AccessibilityDescription[2].Content" rows="2"></textarea><input id="AccessibilityDescription_3__Id" name="AccessibilityDescription[3].Id" type="hidden" value="5972e881-0c0b-4dfa-8376-03473bef0ebb"><input id="AccessibilityDescription_3__CultureCode" name="AccessibilityDescription[3].CultureCode" type="hidden" value="it-IT"><input id="AccessibilityDescription_3__IsHtmlContentAllowed" name="AccessibilityDescription[3].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="it-IT" id="AccessibilityDescription_3__Content" maxlength="1000" name="AccessibilityDescription[3].Content" rows="2"></textarea><input id="AccessibilityDescription_4__Id" name="AccessibilityDescription[4].Id" type="hidden" value="f1b18881-4760-4ba3-9bb8-e3bdda483015"><input id="AccessibilityDescription_4__CultureCode" name="AccessibilityDescription[4].CultureCode" type="hidden" value="de-DE"><input id="AccessibilityDescription_4__IsHtmlContentAllowed" name="AccessibilityDescription[4].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="de-DE" id="AccessibilityDescription_4__Content" maxlength="1000" name="AccessibilityDescription[4].Content" rows="2"></textarea><input id="AccessibilityDescription_5__Id" name="AccessibilityDescription[5].Id" type="hidden" value="4555add5-0dc9-4902-9440-1723d598f19b"><input id="AccessibilityDescription_5__CultureCode" name="AccessibilityDescription[5].CultureCode" type="hidden" value="fr-FR"><input id="AccessibilityDescription_5__IsHtmlContentAllowed" name="AccessibilityDescription[5].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="fr-FR" id="AccessibilityDescription_5__Content" maxlength="1000" name="AccessibilityDescription[5].Content" rows="2"></textarea><input id="AccessibilityDescription_6__Id" name="AccessibilityDescription[6].Id" type="hidden" value="9114a5c1-1246-48ab-af14-1578dcacdaff"><input id="AccessibilityDescription_6__CultureCode" name="AccessibilityDescription[6].CultureCode" type="hidden" value="en-US"><input id="AccessibilityDescription_6__IsHtmlContentAllowed" name="AccessibilityDescription[6].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium" cols="20" data-language-code="en-US" id="AccessibilityDescription_6__Content" maxlength="1000" name="AccessibilityDescription[6].Content" rows="2"></textarea><input id="AccessibilityDescription_7__Id" name="AccessibilityDescription[7].Id" type="hidden" value="4572e7a2-4dbf-457d-a253-6785f1501c0d"><input id="AccessibilityDescription_7__CultureCode" name="AccessibilityDescription[7].CultureCode" type="hidden" value="pt-PT"><input id="AccessibilityDescription_7__IsHtmlContentAllowed" name="AccessibilityDescription[7].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="pt-PT" id="AccessibilityDescription_7__Content" maxlength="1000" name="AccessibilityDescription[7].Content" rows="2"></textarea><input id="AccessibilityDescription_8__Id" name="AccessibilityDescription[8].Id" type="hidden" value="6860687e-ae74-43c2-b29f-99c31dbccb62"><input id="AccessibilityDescription_8__CultureCode" name="AccessibilityDescription[8].CultureCode" type="hidden" value="pt-BR"><input id="AccessibilityDescription_8__IsHtmlContentAllowed" name="AccessibilityDescription[8].IsHtmlContentAllowed" type="hidden" value="False"><textarea class="stretch-input cp-textarea_medium hide" cols="20" data-language-code="pt-BR" id="AccessibilityDescription_8__Content" maxlength="1000" name="AccessibilityDescription[8].Content" rows="2"></textarea>                
+            </div>
+        </div>
+    
+    <input id="isValidationTranslationsOn" name="isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">What are your accessibility features?</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+
+                                    <ul class="cp-columns">
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_0__Id" name="SelectedAccessibilityOptions[0].Id" type="hidden" value="75">
+        <input id="SelectedAccessibilityOptions_0__Text" name="SelectedAccessibilityOptions[0].Text" type="hidden" value="Braille or large signage">
+        <input id="SelectedAccessibilityOptions_0__DefaultText" name="SelectedAccessibilityOptions[0].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-75" type="checkbox" value="true" name="SelectedAccessibilityOptions[0].IsSelected">
+
+        <label for="access-75">
+            <span class="checkbox-input"></span>
+            <span class="label">Braille or large signage</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_1__Id" name="SelectedAccessibilityOptions[1].Id" type="hidden" value="74">
+        <input id="SelectedAccessibilityOptions_1__Text" name="SelectedAccessibilityOptions[1].Text" type="hidden" value="Fire alarms with lights">
+        <input id="SelectedAccessibilityOptions_1__DefaultText" name="SelectedAccessibilityOptions[1].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-74" type="checkbox" value="true" name="SelectedAccessibilityOptions[1].IsSelected" checked="checked">
+
+        <label for="access-74">
+            <span class="checkbox-input"></span>
+            <span class="label">Fire alarms with lights</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_2__Id" name="SelectedAccessibilityOptions[2].Id" type="hidden" value="76">
+        <input id="SelectedAccessibilityOptions_2__Text" name="SelectedAccessibilityOptions[2].Text" type="hidden" value="Specially appointed rooms">
+        <input id="SelectedAccessibilityOptions_2__DefaultText" name="SelectedAccessibilityOptions[2].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-76" type="checkbox" value="true" name="SelectedAccessibilityOptions[2].IsSelected">
+
+        <label for="access-76">
+            <span class="checkbox-input"></span>
+            <span class="label">Specially appointed rooms</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_3__Id" name="SelectedAccessibilityOptions[3].Id" type="hidden" value="77">
+        <input id="SelectedAccessibilityOptions_3__Text" name="SelectedAccessibilityOptions[3].Text" type="hidden" value="Subtitles">
+        <input id="SelectedAccessibilityOptions_3__DefaultText" name="SelectedAccessibilityOptions[3].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-77" type="checkbox" value="true" name="SelectedAccessibilityOptions[3].IsSelected">
+
+        <label for="access-77">
+            <span class="checkbox-input"></span>
+            <span class="label">Subtitles</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_4__Id" name="SelectedAccessibilityOptions[4].Id" type="hidden" value="73">
+        <input id="SelectedAccessibilityOptions_4__Text" name="SelectedAccessibilityOptions[4].Text" type="hidden" value="Wheelchair friendly">
+        <input id="SelectedAccessibilityOptions_4__DefaultText" name="SelectedAccessibilityOptions[4].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-73" type="checkbox" value="true" name="SelectedAccessibilityOptions[4].IsSelected">
+
+        <label for="access-73">
+            <span class="checkbox-input"></span>
+            <span class="label">Wheelchair friendly</span>
+        </label>
+    </li>
+                                    </ul>
+                                    <ul class="cp-columns">
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_5__Id" name="SelectedAccessibilityOptions[5].Id" type="hidden" value="115">
+        <input id="SelectedAccessibilityOptions_5__Text" name="SelectedAccessibilityOptions[5].Text" type="hidden" value="Well lit path(s) to entrance">
+        <input id="SelectedAccessibilityOptions_5__DefaultText" name="SelectedAccessibilityOptions[5].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-115" type="checkbox" value="true" name="SelectedAccessibilityOptions[5].IsSelected">
+
+        <label for="access-115">
+            <span class="checkbox-input"></span>
+            <span class="label">Well lit path(s) to entrance</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedAccessibilityOptions_6__Id" name="SelectedAccessibilityOptions[6].Id" type="hidden" value="118">
+        <input id="SelectedAccessibilityOptions_6__Text" name="SelectedAccessibilityOptions[6].Text" type="hidden" value="Wide entrance to property">
+        <input id="SelectedAccessibilityOptions_6__DefaultText" name="SelectedAccessibilityOptions[6].DefaultText" type="hidden" value="">
+
+        <input class="s-access-checkbox  s-checkbox" id="access-118" type="checkbox" value="true" name="SelectedAccessibilityOptions[6].IsSelected">
+
+        <label for="access-118">
+            <span class="checkbox-input"></span>
+            <span class="label">Wide entrance to property</span>
+        </label>
+    </li>
+                                    </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper cp-paper_p8 mb8">
+            <div class="mod-collapsable">
+                <input id="pets" type="checkbox" checked="checked" class="s-group-title">
+                <label for="pets" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Pets</span>
+                </label>
+                <div class="mod-collapsable_body">
+                    <section class="l-row l-row_full-width  l-row-borderbox">
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark">Specify if pets are welcome.</label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                <div class="element-row stacked mod-flex-item mod-flex-item_one">
+                                            <ul class="cp-columns">
+  <li class="cp-custom-input">
+                                            <input id="SelectedPets_Index" name="SelectedPets.Index" type="hidden" value="0" />
+                                            <input id="SelectedPets_0__Id" name="SelectedPets[0].Id" type="hidden" value="1">
+        <input id="SelectedPets_0__Text" name="SelectedPets[0].Text" type="hidden" value="Cats welcome">
+        <input id="SelectedPets_0__DefaultText" name="SelectedPets[0].DefaultText" type="hidden" value="Cats welcome">
+
+        <input class="s-pets-checkbox  s-checkbox" id="pets-1" type="checkbox" value="true" name="SelectedPets[0].IsSelected">
+
+        <label for="pets-1">
+            <span class="checkbox-input"></span>
+            <span class="label">Cats welcome</span>
+        </label>
+    </li>
+   <li class="cp-custom-input">
+                                            <input id="SelectedPets_Index" name="SelectedPets.Index" type="hidden" value="1">
+                                            <input id="SelectedPets_1__Id" name="SelectedPets[1].Id" type="hidden" value="2">
+        <input id="SelectedPets_1__Text" name="SelectedPets[1].Text" type="hidden" value="Dogs welcome">
+        <input id="SelectedPets_1__DefaultText" name="SelectedPets[1].DefaultText" type="hidden" value="Dogs welcome">
+
+        <input class="s-pets-checkbox  s-checkbox" id="pets-2" type="checkbox" value="true" name="SelectedPets[1].IsSelected">
+
+        <label for="pets-2">
+            <span class="checkbox-input"></span>
+            <span class="label">Dogs welcome</span>
+        </label>
+    </li>
+   <li class="cp-custom-input">
+                                            <input id="SelectedPets_Index" name="SelectedPets.Index" type="hidden" value="2">
+                                            <input id="SelectedPets_2__Id" name="SelectedPets[2].Id" type="hidden" value="7">
+        <input id="SelectedPets_2__Text" name="SelectedPets[2].Text" type="hidden" value="Pets welcome">
+        <input id="SelectedPets_2__DefaultText" name="SelectedPets[2].DefaultText" type="hidden" value="Pets welcome">
+
+        <input class="s-pets-checkbox  s-checkbox" id="pets-7" type="checkbox" value="true" name="SelectedPets[2].IsSelected">
+
+        <label for="pets-7">
+            <span class="checkbox-input"></span>
+            <span class="label">Pets welcome</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+        <input id="SelectedPets_Index" name="SelectedPets.Index" type="hidden" value="3">
+        <input id="SelectedPets_3__Id" name="SelectedPets[3].Id" type="hidden" value="11">
+        <input id="SelectedPets_3__Text" name="SelectedPets[3].Text" type="hidden" value="No pets">
+        <input id="SelectedPets_3__DefaultText" name="SelectedPets[3].DefaultText" type="hidden" value="No pets">
+
+        <input class="s-pets-checkbox  s-checkbox" id="pets-11" type="checkbox" value="true" name="SelectedPets[3].IsSelected" checked="checked">
+
+        <label for="pets-11">
+            <span class="checkbox-input"></span>
+            <span class="label">No pets</span>
+        </label>
+    </li>
+    <li class="cp-custom-input">
+                                            <input id="SelectedPets_Index" name="SelectedPets.Index" type="hidden" value="4">
+        <input id="SelectedPets_4__Id" name="SelectedPets[4].Id" type="hidden" value="12">
+        <input id="SelectedPets_4__Text" name="SelectedPets[4].Text" type="hidden" value="Pets by arrangement">
+        <input id="SelectedPets_4__DefaultText" name="SelectedPets[4].DefaultText" type="hidden" value="Pets by arrangement">
+
+        <input class="s-pets-checkbox  s-checkbox" id="pets-12" type="checkbox" value="true" name="SelectedPets[4].IsSelected">
+
+        <label for="pets-12">
+            <span class="checkbox-input"></span>
+            <span class="label">Pets by arrangement</span>
+        </label>
+    </li>
+
+        </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="l-column large-4 medium-3 small-12">
+                            <label class="color-dark"></label>
+                        </div>
+                        <div class="l-column large-8 medium-9 small-12 end">
+                            <div class="mod-flex-row mod-flex_nowrap">
+                                    <div class="mod-notice mod-notice-small plain" id="chargeExtraForPetsLabel">
+        <i class="icon-font icon-font-info_outline"></i>
+
+    If you charge extra for pets, <a href="https://on.eviivo.com/suite/charges" target="_blank">set up a charge</a> 
+</div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+            <div id="documents-submit-wrap" class="clearfix mod-sticky-footer">
+                <button type="submit" class="btn btn-right">Save</button>
+            </div>
+</form>
+</div>
+@code {
+
+}

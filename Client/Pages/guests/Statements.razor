@@ -1,0 +1,1091 @@
+﻿@page "/statements"
+<PageTitle>Communications  </PageTitle>
+
+<section class="page-heading page-heading_centered page-heading_has-translation">
+    <div class="h2 flex-item">Documents</div>
+    
+<div class="">
+        <span class="checkbox-off checked">Hide</span>
+    <input type="checkbox" value="false" name="IsTranslationExists" class="switch s-switch" id="IsTranslationExists" data-on-handler="eviivo.webcore.translatableSection.show" data-off-handler="eviivo.webcore.translatableSection.hide">
+    <label for="IsTranslationExists"> </label>
+        <span class="checkbox-on">Show translations</span>
+</div>
+
+</section>
+
+<div class="l-centered mb70 pb70 mod-form mod-multilanguage s-communications communications full-width">
+
+<form action="https://on.eviivo.com/suite/settings/savecommunications" data-ajax="true" data-ajax-failure="onSaveCommunicationsFailure" data-ajax-loading="#loading-overlay" data-ajax-method="Post" data-ajax-success="onSaveCommunicationsSuccess" id="communicationsForm" method="post" novalidate="novalidate">     
+    <div class="cp-paper mb16">
+
+            <div class="mod-collapsable">
+                <input id="default-guest-message" type="checkbox">
+                <label for="default-guest-message" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Default Guest Messages</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    
+
+
+
+
+
+    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+        <div class="l-column large-4 medium-3 small-12">
+            <label class="color-dark">Statement &amp; Invoice</label>
+            <input data-val="true" data-val-required="The BusinessCommunicationType field is required." id="BusinessCommunication_0__BusinessCommunicationType" name="BusinessCommunication[0].BusinessCommunicationType" type="hidden" value="Invoice">
+            <input data-val="true" data-val-required="The ReadOnly field is required." id="BusinessCommunication_0__ReadOnly" name="BusinessCommunication[0].ReadOnly" type="hidden" value="False">
+        </div>
+        <div class="l-column large-8 medium-9 small-12 end">
+            <div class="mod-dropdown-textarea mb16">
+                <div class="tab hide">Default</div>
+
+
+                <div id="GuestMessage_40305_Invoice_root" data-type="Invoice" data-culture="eviivo.Eagle.Web.UI.ViewModels.v2.BusinessCommunication.CommunicationCultureItemViewModel">
+
+                    <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__RootCultureCommunication_Content" maxlength="4000" name="BusinessCommunication[0].RootCultureCommunication.Content" rows="2"></textarea>
+                    <input id="BusinessCommunication_0__RootCultureCommunication_ItemKey" name="BusinessCommunication[0].RootCultureCommunication.ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                    <input id="BusinessCommunication_0__RootCultureCommunication_CultureCode" name="BusinessCommunication[0].RootCultureCommunication.CultureCode" type="hidden" value="root">
+                    <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_root" name="BusinessCommunication[0].RootCultureCommunication.RecordUpdated" type="hidden" value="False">
+                </div>
+                <small>Enter here the default text to display on statements and invoices (optional)</small>
+            </div>
+
+                <div class="mod-dropdown-textarea s-translation-textarea" style="display: none;">
+                    <select class="cp-select-language s-select" id="ui-id-1" style="display: none;">
+                        
+                            <option value="fr" class="" data-type="Invoice">Français</option>
+                            <option value="de" class="" data-type="Invoice">Deutsch</option>
+                            <option value="it" class="" data-type="Invoice">Italiano</option>
+                            <option value="es" class="" data-type="Invoice">Español</option>
+                            <option value="ca-ES" class="" data-type="Invoice">Català</option>
+                            <option value="pt-PT" class="" data-type="Invoice">Português (PT)</option>
+                            <option value="pt-BR" class="" data-type="Invoice">Português (BR) </option>
+                    </select><span tabindex="0" id="ui-id-1-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-1-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Français</span></span>
+
+                        <div id="GuestMessage_40305_Invoice_en" class="businessItem s-translated-textarea  textarea-outer" data-type="Invoice" data-culture="en">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="en">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_0__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[0].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_0__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[0].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_0__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[0].CultureCode" type="hidden" value="en">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_en" name="BusinessCommunication[0].GuestSupportedCultureCommunications[0].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_fr" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="fr">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="fr">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_1__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[1].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_1__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[1].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_1__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[1].CultureCode" type="hidden" value="fr">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_fr" name="BusinessCommunication[0].GuestSupportedCultureCommunications[1].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_de" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="de">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="de">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_2__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[2].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_2__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[2].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_2__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[2].CultureCode" type="hidden" value="de">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_de" name="BusinessCommunication[0].GuestSupportedCultureCommunications[2].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_it" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="it">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="it">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_3__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[3].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_3__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[3].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_3__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[3].CultureCode" type="hidden" value="it">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_it" name="BusinessCommunication[0].GuestSupportedCultureCommunications[3].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_es" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="es">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="es">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_4__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[4].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_4__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[4].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_4__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[4].CultureCode" type="hidden" value="es">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_es" name="BusinessCommunication[0].GuestSupportedCultureCommunications[4].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_ca-ES" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="ca-ES">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="Català">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_5__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[5].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_5__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[5].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_5__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[5].CultureCode" type="hidden" value="ca-ES">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_ca-ES" name="BusinessCommunication[0].GuestSupportedCultureCommunications[5].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_pt-PT" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="pt-PT">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="Português (PT)">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_6__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[6].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_6__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[6].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_6__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[6].CultureCode" type="hidden" value="pt-PT">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_pt-PT" name="BusinessCommunication[0].GuestSupportedCultureCommunications[6].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_Invoice_pt-BR" class="businessItem s-translated-textarea hidden textarea-outer" data-type="Invoice" data-culture="pt-BR">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Statement &amp; Invoice" data-cultureui="Português (BR) ">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_0__GuestSupportedCultureCommunications_7__Content" maxlength="4000" name="BusinessCommunication[0].GuestSupportedCultureCommunications[7].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_7__ItemKey" name="BusinessCommunication[0].GuestSupportedCultureCommunications[7].ItemKey" type="hidden" value="GuestMessage.40305.Invoice">
+                            <input id="BusinessCommunication_0__GuestSupportedCultureCommunications_7__CultureCode" name="BusinessCommunication[0].GuestSupportedCultureCommunications[7].CultureCode" type="hidden" value="pt-BR">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_Invoice_pt-BR" name="BusinessCommunication[0].GuestSupportedCultureCommunications[7].RecordUpdated" type="hidden" value="False">
+                        </div>
+                </div>
+
+        </div>
+
+    </section>
+    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+        <div class="l-column large-4 medium-3 small-12">
+            <label class="color-dark">Guest Registration</label>
+            <input data-val="true" data-val-required="The BusinessCommunicationType field is required." id="BusinessCommunication_1__BusinessCommunicationType" name="BusinessCommunication[1].BusinessCommunicationType" type="hidden" value="GuestRegistration">
+            <input data-val="true" data-val-required="The ReadOnly field is required." id="BusinessCommunication_1__ReadOnly" name="BusinessCommunication[1].ReadOnly" type="hidden" value="False">
+        </div>
+        <div class="l-column large-8 medium-9 small-12 end">
+            <div class="mod-dropdown-textarea mb16">
+                <div class="tab hide">Default</div>
+
+
+                <div id="GuestMessage_40305_GuestRegistration_root" data-type="GuestRegistration" data-culture="eviivo.Eagle.Web.UI.ViewModels.v2.BusinessCommunication.CommunicationCultureItemViewModel">
+
+                    <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__RootCultureCommunication_Content" maxlength="4000" name="BusinessCommunication[1].RootCultureCommunication.Content" rows="2"></textarea>
+                    <input id="BusinessCommunication_1__RootCultureCommunication_ItemKey" name="BusinessCommunication[1].RootCultureCommunication.ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                    <input id="BusinessCommunication_1__RootCultureCommunication_CultureCode" name="BusinessCommunication[1].RootCultureCommunication.CultureCode" type="hidden" value="root">
+                    <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_root" name="BusinessCommunication[1].RootCultureCommunication.RecordUpdated" type="hidden" value="False">
+                </div>
+                <small>Enter here the text to display on guest registration (optional)</small>
+            </div>
+
+                <div class="mod-dropdown-textarea s-translation-textarea" style="display: none;">
+                    <select class="cp-select-language s-select" id="ui-id-2" style="display: none;">
+                        
+                            <option value="fr" class="" data-type="GuestRegistration">Français</option>
+                            <option value="de" class="" data-type="GuestRegistration">Deutsch</option>
+                            <option value="it" class="" data-type="GuestRegistration">Italiano</option>
+                            <option value="es" class="" data-type="GuestRegistration">Español</option>
+                            <option value="ca-ES" class="" data-type="GuestRegistration">Català</option>
+                            <option value="pt-PT" class="" data-type="GuestRegistration">Português (PT)</option>
+                            <option value="pt-BR" class="" data-type="GuestRegistration">Português (BR) </option>
+                    </select><span tabindex="0" id="ui-id-2-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-2-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Français</span></span>
+
+                        <div id="GuestMessage_40305_GuestRegistration_en" class="businessItem s-translated-textarea  textarea-outer" data-type="GuestRegistration" data-culture="en">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="en">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_0__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[0].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_0__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[0].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_0__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[0].CultureCode" type="hidden" value="en">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_en" name="BusinessCommunication[1].GuestSupportedCultureCommunications[0].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_fr" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="fr">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="fr">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_1__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[1].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_1__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[1].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_1__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[1].CultureCode" type="hidden" value="fr">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_fr" name="BusinessCommunication[1].GuestSupportedCultureCommunications[1].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_de" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="de">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="de">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_2__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[2].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_2__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[2].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_2__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[2].CultureCode" type="hidden" value="de">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_de" name="BusinessCommunication[1].GuestSupportedCultureCommunications[2].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_it" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="it">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="it">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_3__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[3].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_3__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[3].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_3__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[3].CultureCode" type="hidden" value="it">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_it" name="BusinessCommunication[1].GuestSupportedCultureCommunications[3].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_es" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="es">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="es">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_4__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[4].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_4__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[4].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_4__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[4].CultureCode" type="hidden" value="es">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_es" name="BusinessCommunication[1].GuestSupportedCultureCommunications[4].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_ca-ES" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="ca-ES">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="Català">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_5__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[5].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_5__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[5].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_5__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[5].CultureCode" type="hidden" value="ca-ES">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_ca-ES" name="BusinessCommunication[1].GuestSupportedCultureCommunications[5].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_pt-PT" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="pt-PT">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="Português (PT)">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_6__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[6].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_6__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[6].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_6__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[6].CultureCode" type="hidden" value="pt-PT">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_pt-PT" name="BusinessCommunication[1].GuestSupportedCultureCommunications[6].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_GuestRegistration_pt-BR" class="businessItem s-translated-textarea hidden textarea-outer" data-type="GuestRegistration" data-culture="pt-BR">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Guest Registration" data-cultureui="Português (BR) ">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_1__GuestSupportedCultureCommunications_7__Content" maxlength="4000" name="BusinessCommunication[1].GuestSupportedCultureCommunications[7].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_7__ItemKey" name="BusinessCommunication[1].GuestSupportedCultureCommunications[7].ItemKey" type="hidden" value="GuestMessage.40305.GuestRegistration">
+                            <input id="BusinessCommunication_1__GuestSupportedCultureCommunications_7__CultureCode" name="BusinessCommunication[1].GuestSupportedCultureCommunications[7].CultureCode" type="hidden" value="pt-BR">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_GuestRegistration_pt-BR" name="BusinessCommunication[1].GuestSupportedCultureCommunications[7].RecordUpdated" type="hidden" value="False">
+                        </div>
+                </div>
+
+        </div>
+
+    </section>
+    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+        <div class="l-column large-4 medium-3 small-12">
+            <label class="color-dark">OTA Card Decline</label>
+            <input data-val="true" data-val-required="The BusinessCommunicationType field is required." id="BusinessCommunication_2__BusinessCommunicationType" name="BusinessCommunication[2].BusinessCommunicationType" type="hidden" value="OtaCardDecline">
+            <input data-val="true" data-val-required="The ReadOnly field is required." id="BusinessCommunication_2__ReadOnly" name="BusinessCommunication[2].ReadOnly" type="hidden" value="False">
+        </div>
+        <div class="l-column large-8 medium-9 small-12 end">
+            <div class="mod-dropdown-textarea mb16">
+                <div class="tab hide">Default</div>
+
+
+                <div id="GuestMessage_40305_OtaCardDecline_root" data-type="OtaCardDecline" data-culture="eviivo.Eagle.Web.UI.ViewModels.v2.BusinessCommunication.CommunicationCultureItemViewModel">
+
+                    <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_2__RootCultureCommunication_Content" maxlength="4000" name="BusinessCommunication[2].RootCultureCommunication.Content" rows="2"></textarea>
+                    <input id="BusinessCommunication_2__RootCultureCommunication_ItemKey" name="BusinessCommunication[2].RootCultureCommunication.ItemKey" type="hidden" value="GuestMessage.40305.OtaCardDecline">
+                    <input id="BusinessCommunication_2__RootCultureCommunication_CultureCode" name="BusinessCommunication[2].RootCultureCommunication.CultureCode" type="hidden" value="root">
+                    <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OtaCardDecline_root" name="BusinessCommunication[2].RootCultureCommunication.RecordUpdated" type="hidden" value="False">
+                </div>
+                <small>Enter here the default text to display on the email sent to Online Travel Agents when the guest card used to guarantee the reservation has been declined, and you are asking the OTA to obtain another payment method or cancel the booking</small>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section class="l-row l-row_full-width mb16 l-row-borderbox">
+        <div class="l-column large-4 medium-3 small-12">
+            <label class="color-dark">Online Check-In Guest Message</label>
+            <input data-val="true" data-val-required="The BusinessCommunicationType field is required." id="BusinessCommunication_3__BusinessCommunicationType" name="BusinessCommunication[3].BusinessCommunicationType" type="hidden" value="OnlineCheckIn">
+            <input data-val="true" data-val-required="The ReadOnly field is required." id="BusinessCommunication_3__ReadOnly" name="BusinessCommunication[3].ReadOnly" type="hidden" value="False">
+        </div>
+        <div class="l-column large-8 medium-9 small-12 end">
+            <div class="mod-dropdown-textarea mb16">
+                <div class="tab hide">Default</div>
+
+
+                <div id="GuestMessage_40305_OnlineCheckIn_root" data-type="OnlineCheckIn" data-culture="eviivo.Eagle.Web.UI.ViewModels.v2.BusinessCommunication.CommunicationCultureItemViewModel">
+
+                    <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__RootCultureCommunication_Content" maxlength="4000" name="BusinessCommunication[3].RootCultureCommunication.Content" rows="2"></textarea>
+                    <input id="BusinessCommunication_3__RootCultureCommunication_ItemKey" name="BusinessCommunication[3].RootCultureCommunication.ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                    <input id="BusinessCommunication_3__RootCultureCommunication_CultureCode" name="BusinessCommunication[3].RootCultureCommunication.CultureCode" type="hidden" value="root">
+                    <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_root" name="BusinessCommunication[3].RootCultureCommunication.RecordUpdated" type="hidden" value="False">
+                </div>
+                <small>Enter a welcome message displayed on the online check-in page (optional)</small>
+            </div>
+
+                <div class="mod-dropdown-textarea s-translation-textarea" style="display: none;">
+                    <select class="cp-select-language s-select" id="ui-id-3" style="display: none;">
+                        
+                            <option value="fr" class="" data-type="OnlineCheckIn">Français</option>
+                            <option value="de" class="" data-type="OnlineCheckIn">Deutsch</option>
+                            <option value="it" class="" data-type="OnlineCheckIn">Italiano</option>
+                            <option value="es" class="" data-type="OnlineCheckIn">Español</option>
+                            <option value="ca-ES" class="" data-type="OnlineCheckIn">Català</option>
+                            <option value="pt-PT" class="" data-type="OnlineCheckIn">Português (PT)</option>
+                            <option value="pt-BR" class="" data-type="OnlineCheckIn">Português (BR) </option>
+                    </select><span tabindex="0" id="ui-id-3-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="ui-id-3-menu" aria-haspopup="true" class="ui-selectmenu-button ui-selectmenu-button-closed ui-corner-all ui-button ui-widget"><span class="ui-selectmenu-icon ui-icon ui-icon-triangle-1-s"></span><span class="ui-selectmenu-text">Français</span></span>
+
+                        <div id="GuestMessage_40305_OnlineCheckIn_en" class="businessItem s-translated-textarea  textarea-outer" data-type="OnlineCheckIn" data-culture="en">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="en">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_0__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[0].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_0__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[0].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_0__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[0].CultureCode" type="hidden" value="en">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_en" name="BusinessCommunication[3].GuestSupportedCultureCommunications[0].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_fr" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="fr">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="fr">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_1__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[1].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_1__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[1].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_1__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[1].CultureCode" type="hidden" value="fr">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_fr" name="BusinessCommunication[3].GuestSupportedCultureCommunications[1].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_de" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="de">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="de">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_2__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[2].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_2__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[2].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_2__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[2].CultureCode" type="hidden" value="de">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_de" name="BusinessCommunication[3].GuestSupportedCultureCommunications[2].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_it" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="it">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="it">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_3__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[3].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_3__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[3].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_3__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[3].CultureCode" type="hidden" value="it">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_it" name="BusinessCommunication[3].GuestSupportedCultureCommunications[3].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_es" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="es">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="es">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_4__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[4].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_4__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[4].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_4__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[4].CultureCode" type="hidden" value="es">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_es" name="BusinessCommunication[3].GuestSupportedCultureCommunications[4].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_ca-ES" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="ca-ES">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="Català">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_5__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[5].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_5__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[5].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_5__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[5].CultureCode" type="hidden" value="ca-ES">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_ca-ES" name="BusinessCommunication[3].GuestSupportedCultureCommunications[5].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_pt-PT" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="pt-PT">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="Português (PT)">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_6__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[6].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_6__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[6].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_6__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[6].CultureCode" type="hidden" value="pt-PT">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_pt-PT" name="BusinessCommunication[3].GuestSupportedCultureCommunications[6].RecordUpdated" type="hidden" value="False">
+                        </div>
+                        <div id="GuestMessage_40305_OnlineCheckIn_pt-BR" class="businessItem s-translated-textarea hidden textarea-outer" data-type="OnlineCheckIn" data-culture="pt-BR">
+
+                            <button class="cleartext btn btn-link" style="display:none" type="button" data-typeui="Online Check-In Guest Message" data-cultureui="Português (BR) ">Clear</button>
+                            <textarea class="cultureSpecificTextArea" cols="20" id="BusinessCommunication_3__GuestSupportedCultureCommunications_7__Content" maxlength="4000" name="BusinessCommunication[3].GuestSupportedCultureCommunications[7].Content" rows="2"></textarea>
+
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_7__ItemKey" name="BusinessCommunication[3].GuestSupportedCultureCommunications[7].ItemKey" type="hidden" value="GuestMessage.40305.OnlineCheckIn">
+                            <input id="BusinessCommunication_3__GuestSupportedCultureCommunications_7__CultureCode" name="BusinessCommunication[3].GuestSupportedCultureCommunications[7].CultureCode" type="hidden" value="pt-BR">
+                            <input class="recordUpdated" data-val="true" data-val-required="The RecordUpdated field is required." id="recordUpdated_GuestMessage_40305_OnlineCheckIn_pt-BR" name="BusinessCommunication[3].GuestSupportedCultureCommunications[7].RecordUpdated" type="hidden" value="False">
+                        </div>
+                </div>
+
+        </div>
+
+    </section>
+
+                </div>
+            </div>
+        </div>
+        <div class="cp-paper mb16">
+
+            <div class="mod-collapsable">
+                <input id="custom-options" type="checkbox">
+                <label for="custom-options" class="mod-collapsable_title mod-collapsable_title-clear">
+                    <span>Custom Fields</span>
+                </label>
+
+                <div class="mod-collapsable_body">
+                    
+
+
+
+
+<section class="translatableGuestSection">
+    <table class="md-table md-table_zebra md-table_not-fixed datatable" id="custom-fields">
+        <thead>
+            <tr>
+                <th>Field Name</th>
+                <th>Label</th>
+                <th class="md-table_text-center" colspan="2">Display on</th>
+            </tr>
+            <tr>
+                <th colspan="2"></th>
+                <th class="md-table_text-center md-table_wrap-text w10">Guest Registration</th>
+                <th class="md-table_text-center md-table_wrap-text w10">Statement &amp; Invoice</th>
+            </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                    <td>
+                            <div>Internal 1</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-0-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[0].Id" type="hidden" value="c583d768-8c52-4508-80b2-be94a0ba70cb">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-0-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[1].Id" type="hidden" value="4b5d80cd-a470-4fab-adde-1f79a14d21cd"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[2].Id" type="hidden" value="e102b2b2-46ac-46fc-8447-f83a04432d37"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[3].Id" type="hidden" value="d1f250ff-057f-47c9-ad36-f05495fbd922"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[4].Id" type="hidden" value="5c9aab54-b608-42d6-944d-b219f33ee565"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[5].Id" type="hidden" value="489b08bb-7c20-4362-89ec-06d81acd3b72"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[6].Id" type="hidden" value="77acbadf-1628-4dfd-a8ec-cbcac08b923f"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[7].Id" type="hidden" value="b191344d-fbe1-4424-8c09-20432659bdb7"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[8].Id" type="hidden" value="bda40075-0c65-4add-ba35-b49bbd2291ea"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[9].Id" type="hidden" value="28e8bf54-fe30-4086-9772-4d183d7ae861"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_0__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[0].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                        <td></td>
+                        <td></td>
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_0__Label" name="TranslatableGuestFieldViewModel.CustomFields[0].Label" type="hidden" value="Internal 1">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_0__DataType" name="TranslatableGuestFieldViewModel.CustomFields[0].DataType" type="hidden" value="TEXTBOX">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_0__Key" name="TranslatableGuestFieldViewModel.CustomFields[0].Key" type="hidden" value="internal1">
+                </tr>
+                <tr>
+                    <td>
+                            <div>Internal 2</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-1-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[0].Id" type="hidden" value="23c66625-6def-4aef-a3f7-464d177ba9da">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-1-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[1].Id" type="hidden" value="b4b01796-6e15-4622-ad5c-ec3ee148c09d"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[2].Id" type="hidden" value="be696fda-1345-4b6f-bf42-15c55dae07e0"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[3].Id" type="hidden" value="9b8695a0-8ed7-403c-a0bc-80857a3e974b"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[4].Id" type="hidden" value="45d1e110-e9dc-4bbc-904d-375863ecaca4"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[5].Id" type="hidden" value="5d0e4ee2-e104-403c-a10d-79c51fd46c1b"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[6].Id" type="hidden" value="e001afc6-f519-4c3c-9af1-636ad33c2916"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[7].Id" type="hidden" value="5a63e634-d018-4ff9-b2d9-b8cdfe93f930"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[8].Id" type="hidden" value="632962e5-fac3-4d8a-88e2-d43f9044b926"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[9].Id" type="hidden" value="b665c046-5665-4965-a1d3-f1797c33cf76"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_1__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[1].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                        <td></td>
+                        <td></td>
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_1__Label" name="TranslatableGuestFieldViewModel.CustomFields[1].Label" type="hidden" value="Internal 2">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_1__DataType" name="TranslatableGuestFieldViewModel.CustomFields[1].DataType" type="hidden" value="TEXTBOX">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_1__Key" name="TranslatableGuestFieldViewModel.CustomFields[1].Key" type="hidden" value="internal2">
+                </tr>
+                <tr>
+                    <td>
+                            <div>External 1</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-2-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[0].Id" type="hidden" value="d1a2c400-a9e8-404c-8120-1717afb84b66">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-2-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[1].Id" type="hidden" value="c4f2d9e6-ba35-4412-afe4-10b05875f2b7"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[2].Id" type="hidden" value="6e0125d5-96f6-4fa5-ba35-391dd4839e3e"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[3].Id" type="hidden" value="95a8d1be-e519-4632-925a-2fdd85a1125e"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[4].Id" type="hidden" value="65749885-533a-478f-b076-b425cd0b52a1"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[5].Id" type="hidden" value="7996adb4-5a0b-41e3-aa9d-4201c0161991"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[6].Id" type="hidden" value="19eeff55-ec8a-4789-aec0-6785ddb6fb41"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[7].Id" type="hidden" value="1d4838a6-9f38-437a-9b05-ecd0bc7c5afe"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[8].Id" type="hidden" value="045f50b1-4f7e-482f-a5d0-8ee11713db88"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[9].Id" type="hidden" value="73c3a0e5-637a-441b-9bc1-c5477997a3f6"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_2__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[2].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_2__Label" name="TranslatableGuestFieldViewModel.CustomFields[2].Label" type="hidden" value="External 1">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_2__DataType" name="TranslatableGuestFieldViewModel.CustomFields[2].DataType" type="hidden" value="TEXTBOX">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_2__Key" name="TranslatableGuestFieldViewModel.CustomFields[2].Key" type="hidden" value="external1">
+                </tr>
+                <tr>
+                    <td>
+                            <div>External 2</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-3-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[0].Id" type="hidden" value="29f0b9f0-3ff9-4799-9700-5c7f4c72611c">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-3-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[1].Id" type="hidden" value="983a8156-da68-42ff-a7e6-fdbbdbf40058"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[2].Id" type="hidden" value="f67c8e35-5d24-4ad5-af96-dd6aa81ab684"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[3].Id" type="hidden" value="9c443885-b25a-4eed-afd1-8618c7b4faca"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[4].Id" type="hidden" value="8a665354-0cd2-4ef3-b028-6363779d7868"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[5].Id" type="hidden" value="e425a21e-d445-4e53-bfc0-97d86ec5330f"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[6].Id" type="hidden" value="1953fe07-5fa6-417f-8c25-0e1af8d412f4"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[7].Id" type="hidden" value="1deb2eb3-7ce6-4a2d-a295-c97aff29058b"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[8].Id" type="hidden" value="ce4734c5-68ce-43a2-9c0b-4c589d014728"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[9].Id" type="hidden" value="d8c94869-f1b6-41b8-99ee-07b5ed821359"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_3__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[3].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_3__Label" name="TranslatableGuestFieldViewModel.CustomFields[3].Label" type="hidden" value="External 2">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_3__DataType" name="TranslatableGuestFieldViewModel.CustomFields[3].DataType" type="hidden" value="TEXTBOX">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_3__Key" name="TranslatableGuestFieldViewModel.CustomFields[3].Key" type="hidden" value="external2">
+                </tr>
+                <tr>
+                    <td>
+                            <div>External 3</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-4-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[0].Id" type="hidden" value="bbc68e7a-54c2-4578-8edc-cd2bb55befa3">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-4-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[1].Id" type="hidden" value="a3f49d64-22ad-4b64-ab50-6087ce637beb"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[2].Id" type="hidden" value="fd1d1704-48fc-472b-9449-3bf298c577f4"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[3].Id" type="hidden" value="38220d81-d31f-407c-a34c-06893df61954"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[4].Id" type="hidden" value="76a1bf72-5aea-4b8c-9876-0c71a747b71c"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[5].Id" type="hidden" value="be173b1b-427c-42ef-8677-c7e861bcf526"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[6].Id" type="hidden" value="cafeb3d6-f84c-4afc-b597-2e38f05ab132"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[7].Id" type="hidden" value="5d499d19-c445-4655-925d-1a05b534ef4a"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[8].Id" type="hidden" value="780658af-806f-42f7-a94e-d7cce8c4e844"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[9].Id" type="hidden" value="1db3a3b1-6d74-4f50-9308-946fe80236f2"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_4__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[4].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_4__Label" name="TranslatableGuestFieldViewModel.CustomFields[4].Label" type="hidden" value="External 3">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_4__DataType" name="TranslatableGuestFieldViewModel.CustomFields[4].DataType" type="hidden" value="TEXTBOX">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_4__Key" name="TranslatableGuestFieldViewModel.CustomFields[4].Key" type="hidden" value="external3">
+                </tr>
+                <tr>
+                    <td>
+                            <span class="icon-font icon-font-date_range_two"></span>
+                            <span>External 4 (date)</span>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-5-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[0].Id" type="hidden" value="5a971406-8259-4947-bd28-46a23d212d26">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-5-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[1].Id" type="hidden" value="5b31963a-b74b-4fd5-aaf0-65f4d2471c1c"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[2].Id" type="hidden" value="361bfef4-84eb-4684-86db-e42505b5a749"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[3].Id" type="hidden" value="5a0b7f0a-98b6-4eca-abe0-d5aa21a55e80"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[4].Id" type="hidden" value="4177c91c-6c39-49e1-97aa-9ac24d64e4ad"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[5].Id" type="hidden" value="a8764039-8b89-437c-89f2-f6716f6a4709"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[6].Id" type="hidden" value="e61cd2b1-29f8-452e-b084-0d0b6fd316f8"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[7].Id" type="hidden" value="f61d15ac-0158-4577-b920-2c9f6fc5f941"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[8].Id" type="hidden" value="21af423b-cbe3-49be-a58c-dae1768def69"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[9].Id" type="hidden" value="53fa4297-ef51-40e8-9b74-f568aae8808c"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_5__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[5].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_5__Label" name="TranslatableGuestFieldViewModel.CustomFields[5].Label" type="hidden" value="External 4 (date)">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_5__DataType" name="TranslatableGuestFieldViewModel.CustomFields[5].DataType" type="hidden" value="DATE">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_5__Key" name="TranslatableGuestFieldViewModel.CustomFields[5].Key" type="hidden" value="external4">
+                </tr>
+                <tr>
+                    <td>
+                            <span class="icon-font icon-font-date_range_two"></span>
+                            <span>External 5 (date)</span>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-6-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[0].Id" type="hidden" value="8644dab4-94ea-421a-a2c0-eb609fa627ba">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="" class="valid" aria-invalid="false">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-6-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[1].Id" type="hidden" value="b037b84b-2cd1-4daa-9056-9dac620160d6"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[2].Id" type="hidden" value="90fbbdc5-8f04-4999-b4b7-c512e30c4edd"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[3].Id" type="hidden" value="d9282cb6-7ff8-4085-b520-c7c8e6094c28"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[4].Id" type="hidden" value="3883d250-d776-4e8e-93ab-2a2a966a51ed"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[5].Id" type="hidden" value="a1203752-26f3-4453-ba62-512bbba3070c"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[6].Id" type="hidden" value="ac452914-aff2-44ab-915c-91cff4d5c5e9"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[7].Id" type="hidden" value="52859369-1cf8-454f-a397-88f056f7d240"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[8].Id" type="hidden" value="c8eee173-d0c8-434b-8930-1fcfd7352ae0"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[9].Id" type="hidden" value="21ff14f2-a168-44fe-8312-843400ff8a6a"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_6__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[6].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_6__Label" name="TranslatableGuestFieldViewModel.CustomFields[6].Label" type="hidden" value="External 5 (date)">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_6__DataType" name="TranslatableGuestFieldViewModel.CustomFields[6].DataType" type="hidden" value="DATE">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_6__Key" name="TranslatableGuestFieldViewModel.CustomFields[6].Key" type="hidden" value="external5">
+                </tr>
+                <tr>
+                    <td>
+                            <div>External 6</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-7-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[0].Id" type="hidden" value="c20d4061-1fce-4f08-9c14-7f80d05bab2b">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-7-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[1].Id" type="hidden" value="bf6ab1d6-98d3-41a2-90a9-f11cd964106c"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[2].Id" type="hidden" value="a753037b-557c-4473-848b-bda0122f03ff"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[3].Id" type="hidden" value="4432b2e5-1f4d-4a24-be97-af9f35156585"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[4].Id" type="hidden" value="3023bd4d-a516-4dec-ab90-a50b8df428d5"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[5].Id" type="hidden" value="7d1fb3b4-db83-4fd8-a812-87b7c74eee60"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[6].Id" type="hidden" value="0dbb8639-0e58-4491-b084-6b31fecf127c"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[7].Id" type="hidden" value="6b98bbb1-94b1-4863-b385-5deef3dcb417"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[8].Id" type="hidden" value="f3fe808d-3a4e-4b79-831a-42414f728a4c"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[9].Id" type="hidden" value="97f1a3d3-f8ff-4c37-8c80-7bb715f3c11b"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_7__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[7].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                            <div class="multiple-options stacked">
+                                <label class="multiple-options-title">Available options</label>
+                                
+
+
+<div id="custom-fields-page" data-sortable-list="">
+    <div id="optionsListDiv" class="ref-container">
+        <div class="mod-canvas-container mod-canvas-container_stretch">
+            <ul id="optionsUl" class="mb8 mod-sortable mod-sortable_table mod-sortable-feature ui-sortable" data-horizontal-index="-1">
+            </ul>
+            <div class="container-add display-flex justify-space-between align-items-center">
+                <input class="add-text" type="text" id="addOptionInput" placeholder="Additional option" data-listid="0">
+                <button id="addOption" type="button" class="btn btn-small">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                            </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_7__Label" name="TranslatableGuestFieldViewModel.CustomFields[7].Label" type="hidden" value="External 6">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_7__DataType" name="TranslatableGuestFieldViewModel.CustomFields[7].DataType" type="hidden" value="LIST">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_7__Key" name="TranslatableGuestFieldViewModel.CustomFields[7].Key" type="hidden" value="external6">
+                </tr>
+                <tr>
+                    <td>
+                            <div>External 7</div>
+                    </td>
+                    <td>
+                        <div class="custom-fields-label mb16">
+
+
+
+
+
+
+
+<div id="culture-text-8-defaults" class="culture-text">
+        <div class="tab hide">Default</div>
+
+        <div class="input-edit-container">
+
+        <div>
+            <input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_0__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[0].Id" type="hidden" value="0882286d-4632-4e53-a727-0c356fa036f3">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_0__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[0].CultureCode" type="hidden" value="root">
+            <input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_0__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[0].IsHtmlContentAllowed" type="hidden" value="False">
+<input data-language-code="root" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_0__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[0].Content" style="width: 100%" type="text" value="">        </div>
+        </div>
+</div>
+
+
+
+<div class="s-translatable-section hide culture-text" id="culture-text-8-translations">
+
+    <select class="cp-custom-select" id="TranslatableGuestFieldViewModel_cultures-dropdown" name="TranslatableGuestFieldViewModel.cultures-dropdown"><option value="en-US">English (US)</option>
+<option value="fr-FR">Français</option>
+<option value="de-DE">Deutsch</option>
+<option value="it-IT">Italiano</option>
+<option value="es-ES">Español</option>
+<option value="ca-ES">Català</option>
+<option value="pt-PT">Português (PT)</option>
+<option value="pt-BR">Português (BR) </option>
+</select>        <div class="input-edit-container">
+
+            <div>
+
+<input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_1__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[1].Id" type="hidden" value="23c4dc99-7cd1-4bbe-8948-5757b5da5e40"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_1__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[1].CultureCode" type="hidden" value="en-GB"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_1__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[1].IsHtmlContentAllowed" type="hidden" value="False"><input class="" data-language-code="en-GB" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_1__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[1].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_2__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[2].Id" type="hidden" value="d16cc04b-2cfb-4882-b917-ef0b5ec224e8"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_2__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[2].CultureCode" type="hidden" value="en-US"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_2__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[2].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="en-US" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_2__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[2].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_3__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[3].Id" type="hidden" value="7cfd8216-c1b5-4fc6-a26c-618118f455c2"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_3__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[3].CultureCode" type="hidden" value="fr-FR"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_3__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[3].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="fr-FR" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_3__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[3].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_4__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[4].Id" type="hidden" value="3d9317b0-db84-45c7-a65a-4fddc869af0f"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_4__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[4].CultureCode" type="hidden" value="de-DE"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_4__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[4].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="de-DE" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_4__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[4].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_5__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[5].Id" type="hidden" value="d7b803eb-6d6c-4f41-a6ac-a5f43759f75b"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_5__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[5].CultureCode" type="hidden" value="it-IT"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_5__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[5].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="it-IT" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_5__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[5].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_6__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[6].Id" type="hidden" value="726a7d18-98e5-42dd-bd30-48b1480cf541"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_6__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[6].CultureCode" type="hidden" value="es-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_6__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[6].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="es-ES" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_6__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[6].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_7__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[7].Id" type="hidden" value="5b87b73b-01ff-4ecc-87e2-9ee48f1232f2"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_7__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[7].CultureCode" type="hidden" value="ca-ES"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_7__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[7].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="ca-ES" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_7__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[7].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_8__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[8].Id" type="hidden" value="3d0c42c0-d2c9-4481-8c5b-be39004c3d49"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_8__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[8].CultureCode" type="hidden" value="pt-PT"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_8__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[8].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-PT" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_8__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[8].Content" style="width: 100%" type="text" value=""><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_9__Id" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[9].Id" type="hidden" value="6f65bcb9-65b6-4990-9060-16cf712c2e1d"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_9__CultureCode" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[9].CultureCode" type="hidden" value="pt-BR"><input id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_9__IsHtmlContentAllowed" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[9].IsHtmlContentAllowed" type="hidden" value="False"><input class=" hide" data-language-code="pt-BR" id="TranslatableGuestFieldViewModel_CustomFields_8__LabelTranslationOverride_9__Content" name="TranslatableGuestFieldViewModel.CustomFields[8].LabelTranslationOverride[9].Content" style="width: 100%" type="text" value="">                
+            </div>
+        </div>
+    
+    <input id="TranslatableGuestFieldViewModel_isValidationTranslationsOn" name="TranslatableGuestFieldViewModel.isValidationTranslationsOn" type="hidden" value="False">
+</div>
+                        </div>
+                            <div class="multiple-options stacked">
+                                <label class="multiple-options-title">Available options</label>
+                                
+
+
+<div id="custom-fields-page" data-sortable-list="">
+    <div id="optionsListDiv" class="ref-container">
+        <div class="mod-canvas-container mod-canvas-container_stretch">
+            <ul id="optionsUl" class="mb8 mod-sortable mod-sortable_table mod-sortable-feature ui-sortable" data-horizontal-index="-1">
+            </ul>
+            <div class="container-add display-flex justify-space-between align-items-center">
+                <input class="add-text" type="text" id="addOptionInput" placeholder="Additional option" data-listid="1">
+                <button id="addOption" type="button" class="btn btn-small">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                            </div>
+                    </td>
+
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_8__Label" name="TranslatableGuestFieldViewModel.CustomFields[8].Label" type="hidden" value="External 7">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_8__DataType" name="TranslatableGuestFieldViewModel.CustomFields[8].DataType" type="hidden" value="LIST">
+                    <input id="TranslatableGuestFieldViewModel_CustomFields_8__Key" name="TranslatableGuestFieldViewModel.CustomFields[8].Key" type="hidden" value="external7">
+                </tr>
+        </tbody>
+    </table>
+</section>
+
+                    <hr class="divider">
+                    <div class="checkbox-settings">
+                        <div class="custom-input-row">
+                            <label for="SelectedGuestRegistrationFormOption">Registration Form Format</label>
+                            <select class="cp-custom-select" id="SelectedGuestRegistrationFormOption" name="SelectedGuestRegistrationFormOption"><option value="FEA">One form per Adult</option>
+<option value="FPP">One form per Person</option>
+<option selected="selected" value="FPR">One form per Room</option>
+<option value="SPN">Spanish template</option>
+</select>
+                        </div>
+                        <div class="custom-input-row">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input mb8">
+                                <input checked="checked" class="s-reg-from-settings" data-val="true" data-val-required="The IncludeDocumentDetails field is required." id="IncludeDocumentDetails" name="IncludeDocumentDetails" type="checkbox" value="true"><input name="IncludeDocumentDetails" type="hidden" value="false">
+                                <label for="IncludeDocumentDetails">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">
+                                        Include all document details
+                                        <small class="helper-text">Place of issue, Date of issue, Nationality, Date of birth, Country of birth, Place of birth</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="custom-input-row">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input mb8">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The IncludeTravelInformation field is required." id="IncludeTravelInformation" name="IncludeTravelInformation" type="checkbox" value="true"><input name="IncludeTravelInformation" type="hidden" value="false">
+                                <label for="IncludeTravelInformation">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">
+                                        Include travel information
+                                        <small class="helper-text">Date of entry, Date of departure, Previous destination, Next destination</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="custom-input-row">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The IncludeAmountDue field is required." id="IncludeAmountDue" name="IncludeAmountDue" type="checkbox" value="true"><input name="IncludeAmountDue" type="hidden" value="false">
+                                <label for="IncludeAmountDue">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Include amount due</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="custom-input-row">
+                            <label>Invoice Settings</label>
+                            <div class="cp-custom-input">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The IncludePaymentsOnInvoices field is required." id="IncludePaymentsOnInvoices" name="IncludePaymentsOnInvoices" type="checkbox" value="true"><input name="IncludePaymentsOnInvoices" type="hidden" value="false">
+                                <label for="IncludePaymentsOnInvoices">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Include payments on invoices</span>
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="custom-input-row">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The HideTaxNumberFromInvoices field is required." id="HideTaxNumberFromInvoices" name="HideTaxNumberFromInvoices" type="checkbox" value="true"><input name="HideTaxNumberFromInvoices" type="hidden" value="false">
+                                <label for="HideTaxNumberFromInvoices">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Hide tax number from statements and invoices</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="custom-input-row">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The RemoveHeaderFromStatementsInvoices field is required." id="RemoveHeaderFromStatementsInvoices" name="RemoveHeaderFromStatementsInvoices" type="checkbox" value="true"><input name="RemoveHeaderFromStatementsInvoices" type="hidden" value="false">
+                                <label for="RemoveHeaderFromStatementsInvoices">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Remove header from statements and invoices</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="custom-input-row ">
+                            <label>&nbsp;</label>
+                            <div class="cp-custom-input">
+                                <input class="s-reg-from-settings" data-val="true" data-val-required="The RemoveFooterFromStatementsInvoices field is required." id="RemoveFooterFromStatementsInvoices" name="RemoveFooterFromStatementsInvoices" type="checkbox" value="true"><input name="RemoveFooterFromStatementsInvoices" type="hidden" value="false">
+                                <label for="RemoveFooterFromStatementsInvoices">
+                                    <span class="checkbox-input"></span>
+                                    <span class="label">Remove footer from statements and invoices</span>
+                                </label>
+                            </div>
+                        </div>
+
+                            <div class="custom-input-row ">
+                                <label>&nbsp;</label>
+                                <div class="cp-custom-input">
+                                    <input class="s-reg-from-settings" data-val="true" data-val-required="The IsTaxSummaryByLineItemOnInvoicesEnabled field is required." id="IsTaxSummaryByLineItemOnInvoicesEnabled" name="IsTaxSummaryByLineItemOnInvoicesEnabled" type="checkbox" value="true"><input name="IsTaxSummaryByLineItemOnInvoicesEnabled" type="hidden" value="false">
+                                    <label for="IsTaxSummaryByLineItemOnInvoicesEnabled">
+                                        <span class="checkbox-input"></span>
+                                        <span class="label">
+                                            Currency rounding is applied to the tax calculated for each individual line item
+                                            <small class="helper-text"><a href="https://university.eviivo.com/help/articles/tax-rounding/?sso_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sImVtYWlsIjoiaGVpZGFyLmhvc3NlaW5pQGdtYWlsLmNvbSIsImZvcmVuYW1lIjoiSGVpZGFyIiwic3VybmFtZSI6Ikhvc3NlaW5pIiwic3ViIjoiaGVpZGFyLmhvc3NlaW5pQGdtYWlsLmNvbSIsIlVzZXJDdWx0dXJlIjoiZW4tR0IiLCJCdXNTaG9ydG5hbWUiOiJNU0tQcmVtaXVtVzIiLCJCdXNDdWx0dXJlIjoiZW4tR0IiLCJhZ24iOiJNU0sgSW5uIiwiYWdjIjoiSFlNUC1JTUMtMzk2IiwibmJmIjoxNzAzNjAxMTY3LCJleHAiOjE3MDM2MDMyNjd9.GPN0QPOQa9r0NQRaaokppJB2dya-Zd6IjlZwJBfaFmA">Help guide on tax rounding options</a></small>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div id="documents-submit-wrap" class="mod-sticky-footer">
+                    <button id="btn-save" type="submit" name="button" class="btn btn-right">Save</button>
+                </div>
+        </div>
+</form>
+</div>
+
+
+        
+     
+@code {
+
+}
