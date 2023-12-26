@@ -12,9 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\settings\Cleanings.razor" />
-    <None Include="Pages\settings\Deposits.razor" />
-    <None Include="Pages\settings\Propertys.razor" />
+    <None Include="Pages\settings\SCleanings.razor" />
+    <None Include="Pages\settings\SDeposits.razor" />
+    <None Include="Pages\settings\SPropertys.razor" />
   </ItemGroup>
 
   <ItemGroup>
